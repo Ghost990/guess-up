@@ -34,12 +34,17 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
     }
   }, []);
 
-  // Save players to localStorage whenever they change (only save non-empty names)
+  // Save players to localStorage whenever they change (only save trimmed names)
   useEffect(() => {
     try {
-      const nonEmptyPlayers = playerNames.filter(name => name.trim().length > 0);
-      if (nonEmptyPlayers.length > 0) {
-        localStorage.setItem(STORAGE_KEY_PLAYERS, JSON.stringify(nonEmptyPlayers));
+      const normalizedPlayers = playerNames
+        .map(name => name.trim())
+        .filter(name => name.length > 0);
+
+      if (normalizedPlayers.length > 0) {
+        localStorage.setItem(STORAGE_KEY_PLAYERS, JSON.stringify(normalizedPlayers));
+      } else {
+        localStorage.removeItem(STORAGE_KEY_PLAYERS);
       }
     } catch (error) {
       console.error('Failed to save players:', error);
@@ -92,14 +97,31 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
   };
 
   const handleStart = () => {
-    const validNames = playerNames.filter(n => n.trim().length > 0);
+    let nextPlayerNames = playerNames;
+    const pendingName = newPlayerInput.trim();
+
+    if (pendingName) {
+      nextPlayerNames = [...playerNames, pendingName];
+      setPlayerNames(nextPlayerNames);
+      setNewPlayerInput('');
+    }
+
+    const validNames = nextPlayerNames
+      .map(name => name.trim())
+      .filter(name => name.length > 0);
+
     if (validNames.length >= 2) {
       setupGame(validNames, difficulty);
       onStart();
     }
   };
 
-  const validPlayerCount = playerNames.filter(n => n.trim().length > 0).length;
+  const trimmedPlayers = playerNames
+    .map(n => n.trim())
+    .filter(n => n.length > 0);
+  const pendingPlayer = newPlayerInput.trim();
+  const projectedPlayers = pendingPlayer ? [...trimmedPlayers, pendingPlayer] : trimmedPlayers;
+  const validPlayerCount = projectedPlayers.length;
   const canStart = validPlayerCount >= 2;
 
   // Category color badges for preview
