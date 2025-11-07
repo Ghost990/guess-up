@@ -34,7 +34,8 @@ export function GamePlay() {
       }, 3000);
       return () => clearTimeout(timer);
     }
-  }, [game?.phase, startRound]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [game?.phase]);
 
   // Handle player ready countdown (10 seconds)
   useEffect(() => {
@@ -322,9 +323,17 @@ export function GamePlay() {
             <h3 className="text-3xl font-bold mb-6 text-center text-gray-900">
               Who guessed it?
             </h3>
+            <div className="text-sm text-gray-500 mb-4 text-center">
+              Current presenter: {currentPlayer?.name}
+            </div>
             <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
               {players
-                .filter((_, index) => index !== game?.currentPlayerIndex)
+                .filter((player, index) => {
+                  // Filter out the current presenter by both index AND player ID for safety
+                  const isNotPresenterByIndex = index !== game?.currentPlayerIndex;
+                  const isNotPresenterById = player.id !== currentPlayer?.id;
+                  return isNotPresenterByIndex && isNotPresenterById;
+                })
                 .map((player) => (
                   <button
                     key={player.id}
@@ -342,6 +351,11 @@ export function GamePlay() {
                   </button>
                 ))}
             </div>
+            {players.filter((_, index) => index !== game?.currentPlayerIndex).length === 0 && (
+              <div className="text-center text-gray-500 mb-6">
+                No other players to select
+              </div>
+            )}
             <button
               onClick={() => setShowPlayerSelect(false)}
               className="w-full px-6 py-4 rounded-2xl font-semibold text-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"

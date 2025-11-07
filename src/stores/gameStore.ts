@@ -78,8 +78,16 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   startRound: () => {
     const state = get();
-    const { game } = state;
+    const { game, players } = state;
     if (!game) return;
+
+    console.log('[startRound] Called with state:', {
+      currentPlayerIndex: game.currentPlayerIndex,
+      currentPlayer: players[game.currentPlayerIndex]?.name,
+      currentRound: game.currentRound,
+      currentQuestion: game.currentQuestionInRound,
+      phase: game.phase
+    });
 
     const categories: Array<'draw' | 'explain' | 'signal'> = ['draw', 'explain', 'signal'];
     const category = categories[game.currentRound % 3];
@@ -111,15 +119,32 @@ export const useGameStore = create<GameStore>((set, get) => ({
     };
 
     // Use set with function to ensure we get the latest state
-    set((state) => ({
-      game: { ...state.game!, phase: 'playing', currentCategory: category },
-      currentWord: word,
-    }));
+    // CRITICAL: Preserve ALL game state fields, only update phase and category
+    set((state) => {
+      console.log('[startRound] Setting state. Current player index preserved:', state.game?.currentPlayerIndex);
+      return {
+        game: {
+          ...state.game!,
+          phase: 'playing',
+          currentCategory: category,
+        },
+        currentWord: word,
+      };
+    });
   },
 
   endRound: (success, guesserId) => {
     const { game, players } = get();
     if (!game) return;
+
+    console.log('[endRound] Called with:', {
+      success,
+      guesserId,
+      currentPlayerIndex: game.currentPlayerIndex,
+      currentPlayer: players[game.currentPlayerIndex]?.name,
+      currentQuestion: game.currentQuestionInRound,
+      questionsPerRound: game.questionsPerRound
+    });
 
     // Update scores: presenter gets 1 point (entertained), guesser gets 2 points (guessed correctly)
     if (success && guesserId) {
@@ -143,9 +168,19 @@ export const useGameStore = create<GameStore>((set, get) => ({
       const nextPlayerIndex = (game.currentPlayerIndex + 1) % players.length;
       const nextRound = game.currentRound + 1;
 
+      console.log('[endRound] Round complete! Moving to next player:', {
+        currentPlayerIndex: game.currentPlayerIndex,
+        nextPlayerIndex,
+        currentPlayer: players[game.currentPlayerIndex]?.name,
+        nextPlayer: players[nextPlayerIndex]?.name,
+        nextRound
+      });
+
       if (nextRound >= game.settings.totalRounds) {
+        console.log('[endRound] Game over!');
         set({ game: { ...game, phase: 'gameOver', currentRound: nextRound } });
       } else {
+        console.log('[endRound] Setting state with nextPlayerIndex:', nextPlayerIndex);
         set({
           game: {
             ...game,
@@ -162,6 +197,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       }
     } else {
       // Continue with next question in same round
+      console.log('[endRound] Continuing same round, next question:', nextQuestionInRound);
       set({
         game: {
           ...game,

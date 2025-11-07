@@ -1,14 +1,56 @@
 'use client';
 
-import { useState, KeyboardEvent } from 'react';
+import { useState, useEffect, KeyboardEvent } from 'react';
 import { useGameStore } from '@/stores/gameStore';
 import { Trash2, Plus, Sparkles } from 'lucide-react';
+
+const STORAGE_KEY_PLAYERS = 'guessup-player-names';
+const STORAGE_KEY_DIFFICULTY = 'guessup-difficulty';
 
 export function PlayerSetup({ onStart }: { onStart: () => void }) {
   const [playerNames, setPlayerNames] = useState<string[]>(['', '']);
   const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('medium');
   const [newPlayerInput, setNewPlayerInput] = useState('');
   const setupGame = useGameStore(state => state.setupGame);
+
+  // Load saved players and difficulty from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedPlayers = localStorage.getItem(STORAGE_KEY_PLAYERS);
+      const savedDifficulty = localStorage.getItem(STORAGE_KEY_DIFFICULTY);
+
+      if (savedPlayers) {
+        const parsed = JSON.parse(savedPlayers);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setPlayerNames(parsed);
+        }
+      }
+
+      if (savedDifficulty && ['easy', 'medium', 'hard'].includes(savedDifficulty)) {
+        setDifficulty(savedDifficulty as 'easy' | 'medium' | 'hard');
+      }
+    } catch (error) {
+      console.error('Failed to load saved players:', error);
+    }
+  }, []);
+
+  // Save players to localStorage whenever they change
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY_PLAYERS, JSON.stringify(playerNames));
+    } catch (error) {
+      console.error('Failed to save players:', error);
+    }
+  }, [playerNames]);
+
+  // Save difficulty to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY_DIFFICULTY, difficulty);
+    } catch (error) {
+      console.error('Failed to save difficulty:', error);
+    }
+  }, [difficulty]);
 
   const addPlayer = (name?: string) => {
     const playerName = (name || newPlayerInput).trim();
