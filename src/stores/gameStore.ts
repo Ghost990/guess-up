@@ -67,7 +67,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       startedAt: null,
       endedAt: null,
       currentQuestionInRound: 1,
-      questionsPerRound: 10,
+      questionsPerRound: 1,
     };
 
     set({
@@ -121,13 +121,32 @@ export const useGameStore = create<GameStore>((set, get) => ({
     // Use set with function to ensure we get the latest state
     // CRITICAL: Preserve ALL game state fields, only update phase and category
     set((state) => {
-      console.log('[startRound] Setting state. Current player index preserved:', state.game?.currentPlayerIndex);
+      console.log('[startRound] ===== SETTING STATE =====');
+      console.log('[startRound] Current state.game before update:', {
+        currentPlayerIndex: state.game?.currentPlayerIndex,
+        currentQuestionInRound: state.game?.currentQuestionInRound,
+        currentRound: state.game?.currentRound,
+        currentCategory: state.game?.currentCategory,
+        phase: state.game?.phase,
+      });
+      console.log('[startRound] New category:', category);
+
+      const updatedGame = {
+        ...state.game!,
+        phase: 'playing' as const,
+        currentCategory: category,
+      };
+
+      console.log('[startRound] Updated game state:', {
+        currentPlayerIndex: updatedGame.currentPlayerIndex,
+        currentQuestionInRound: updatedGame.currentQuestionInRound,
+        currentRound: updatedGame.currentRound,
+        currentCategory: updatedGame.currentCategory,
+        phase: updatedGame.phase,
+      });
+
       return {
-        game: {
-          ...state.game!,
-          phase: 'playing',
-          currentCategory: category,
-        },
+        game: updatedGame,
         currentWord: word,
       };
     });
@@ -137,18 +156,22 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const { game, players } = get();
     if (!game) return;
 
-    console.log('[endRound] Called with:', {
-      success,
-      guesserId,
+    console.log('[endRound] ===== CALLED =====');
+    console.log('[endRound] Input:', { success, guesserId });
+    console.log('[endRound] Current state:', {
       currentPlayerIndex: game.currentPlayerIndex,
       currentPlayer: players[game.currentPlayerIndex]?.name,
-      currentQuestion: game.currentQuestionInRound,
-      questionsPerRound: game.questionsPerRound
+      currentQuestionInRound: game.currentQuestionInRound,
+      questionsPerRound: game.questionsPerRound,
+      currentRound: game.currentRound,
+      currentCategory: game.currentCategory,
     });
 
-    // Update scores: presenter gets 1 point (entertained), guesser gets 2 points (guessed correctly)
+    let updatedPlayers = players;
+
+    // Update scores: presenter gets 1 point, guesser gets 2 points
     if (success && guesserId) {
-      const updatedPlayers = players.map((p) => {
+      updatedPlayers = players.map((p) => {
         if (p.id === players[game.currentPlayerIndex].id) {
           return { ...p, score: p.score + 1 };
         }
@@ -157,58 +180,55 @@ export const useGameStore = create<GameStore>((set, get) => ({
         }
         return p;
       });
-      set({ players: updatedPlayers });
+      console.log('[endRound] Scores updated');
     }
 
-    // Check if round is complete (10 questions)
-    if (game.currentQuestionInRound >= game.questionsPerRound) {
-      // Round complete, move to next player
-      const nextPlayerIndex = (game.currentPlayerIndex + 1) % players.length;
-      const nextRound = game.currentRound + 1;
+    const normalizedPlayers = updatedPlayers.map((p) => ({
+      ...p,
+      hasGuessedCorrectly: false,
+    }));
 
-      console.log('[endRound] Round complete! Moving to next player:', {
-        currentPlayerIndex: game.currentPlayerIndex,
-        nextPlayerIndex,
-        currentPlayer: players[game.currentPlayerIndex]?.name,
-        nextPlayer: players[nextPlayerIndex]?.name,
-        nextRound
-      });
+    const nextPlayerIndex = (game.currentPlayerIndex + 1) % players.length;
+    const nextRound = game.currentRound + 1;
+    const isGameComplete = nextRound >= game.settings.totalRounds;
 
-      if (nextRound >= game.settings.totalRounds) {
-        console.log('[endRound] Game over!');
-        set({ game: { ...game, phase: 'gameOver', currentRound: nextRound } });
-      } else {
-        console.log('[endRound] Setting state with nextPlayerIndex:', nextPlayerIndex);
-        set({
-          game: {
-            ...game,
-            phase: 'roundEnd',
-            currentRound: nextRound,
-            currentPlayerIndex: nextPlayerIndex,
-            currentQuestionInRound: 1,
-          },
-          players: players.map((p) => ({
-            ...p,
-            hasGuessedCorrectly: false,
-          })),
-        });
-      }
-    } else {
-      // Continue with next question in same round
-      const nextQuestionInRound = game.currentQuestionInRound + 1;
-      console.log('[endRound] Continuing same round, next question:', nextQuestionInRound);
+    console.log('[endRound] ===== TURN COMPLETE =====');
+    console.log('[endRound] Next turn details:', {
+      currentPlayerIndex: game.currentPlayerIndex,
+      currentPlayer: players[game.currentPlayerIndex]?.name,
+      nextPlayerIndex,
+      nextPlayer: players[nextPlayerIndex]?.name,
+      currentRound: game.currentRound,
+      nextRound,
+      totalRounds: game.settings.totalRounds,
+    });
+
+    if (isGameComplete) {
+      console.log('[endRound] ===== GAME OVER =====');
       set({
+        players: normalizedPlayers,
+        game: {
+          ...game,
+          phase: 'gameOver',
+          currentRound: nextRound,
+          endedAt: Date.now(),
+        },
+      });
+    } else {
+      console.log('[endRound] Advancing to next player');
+      set({
+        players: normalizedPlayers,
         game: {
           ...game,
           phase: 'roundEnd',
-          currentQuestionInRound: nextQuestionInRound,
+          currentRound: nextRound,
+          currentPlayerIndex: nextPlayerIndex,
+          currentQuestionInRound: 1,
         },
-        players: players.map((p) => ({
-          ...p,
-          hasGuessedCorrectly: false,
-        })),
       });
     }
+
+    console.log('[endRound] ===== COMPLETE =====\n');
   },
 
   resetGame: () => set({ game: null, players: [], currentWord: null }),

@@ -8,8 +8,8 @@ interface StunningTimerProps {
   totalDuration: number;
   category: Category;
   currentPlayer: string;
-  currentQuestion: number;
-  totalQuestions: number;
+  currentTurn: number;
+  totalTurns: number;
   onGotIt: () => void;
   onPass: () => void;
 }
@@ -19,8 +19,8 @@ export function StunningTimer({
   totalDuration,
   category,
   currentPlayer,
-  currentQuestion,
-  totalQuestions,
+  currentTurn,
+  totalTurns,
   onGotIt,
   onPass,
 }: StunningTimerProps) {
@@ -329,7 +329,7 @@ export function StunningTimer({
             </button>
           </div>
 
-          {/* Question progress indicator */}
+          {/* Round progress indicator */}
           <div className="text-center">
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl border"
@@ -339,15 +339,15 @@ export function StunningTimer({
               }}
             >
               <div className="flex items-center gap-1">
-                {Array.from({ length: totalQuestions }).map((_, i) => (
+                {Array.from({ length: totalTurns }).map((_, i) => (
                   <div
                     key={i}
                     className="w-2 h-2 rounded-full transition-all duration-300"
                     style={{
-                      background: i < currentQuestion
+                      background: i < currentTurn
                         ? categoryTheme.primary
                         : 'rgba(255, 255, 255, 0.2)',
-                      boxShadow: i < currentQuestion
+                      boxShadow: i < currentTurn
                         ? `0 0 8px ${categoryTheme.glow}`
                         : 'none',
                     }}
@@ -358,7 +358,7 @@ export function StunningTimer({
                 className="text-sm font-bold"
                 style={{ color: categoryTheme.light }}
               >
-                {currentQuestion} / {totalQuestions}
+                {currentTurn} / {totalTurns} Rounds
               </span>
             </div>
           </div>

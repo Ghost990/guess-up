@@ -149,9 +149,9 @@ export interface Game {
   /** Room/lobby join code (6 digits) */
   joinCode?: string;
 
-  /** Current question number in round (1-indexed) */
+  /** Current question number in round (1-indexed, defaults to 1 per turn) */
   currentQuestionInRound: number;
 
-  /** Questions per round (default 10) */
+  /** Questions per round (default 1) */
   questionsPerRound: number;
 }

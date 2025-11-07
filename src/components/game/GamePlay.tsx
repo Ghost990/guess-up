@@ -21,6 +21,11 @@ export function GamePlay() {
   const readyTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const currentPlayer = players[game?.currentPlayerIndex ?? 0];
+  const totalRounds = game?.settings.totalRounds ?? 0;
+  const currentRoundNumber = Math.min((game?.currentRound ?? 0) + 1, totalRounds || 1);
+  const selectablePlayers = currentPlayer
+    ? players.filter((player) => player.id !== currentPlayer.id)
+    : [];
 
   // Debug logging
   useEffect(() => {
@@ -31,10 +36,10 @@ export function GamePlay() {
         currentPlayer: currentPlayer?.name,
         allPlayers: players.map(p => p.name),
         currentRound: game.currentRound,
-        currentQuestion: game.currentQuestionInRound
+        totalRounds: game.settings.totalRounds
       });
     }
-  }, [game?.phase, game?.currentPlayerIndex, currentPlayer?.name, players, game?.currentRound, game?.currentQuestionInRound, game]);
+  }, [game?.phase, game?.currentPlayerIndex, currentPlayer?.name, players, game?.currentRound, game?.settings.totalRounds, game]);
 
   // Handle round end transition
   useEffect(() => {
@@ -197,8 +202,8 @@ export function GamePlay() {
   if (showTimesUp) {
     return (
       <div className="min-h-screen flex items-center justify-center p-6 animate-pulse" style={{ background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)' }}>
-        <div className="text-center space-y-12">
-          <div className="space-y-6">
+      <div className="text-center space-y-12">
+        <div className="space-y-6">
             <div className="text-8xl animate-bounce">⏰</div>
             <h1 className="text-6xl font-extrabold text-white animate-pulse">
               TIME&apos;S UP!
@@ -210,7 +215,7 @@ export function GamePlay() {
 
           <div className="space-y-6">
             <div className="text-white text-2xl font-semibold drop-shadow-lg">
-              Question {game.currentQuestionInRound} / {game.questionsPerRound}
+              Round {currentRoundNumber} / {game.settings.totalRounds}
             </div>
             <div className="flex justify-center gap-8">
               {players.map(player => (
@@ -326,8 +331,8 @@ export function GamePlay() {
         totalDuration={Math.floor(game.settings.roundDuration / 1000)}
         category={game.currentCategory}
         currentPlayer={currentPlayer?.name || ''}
-        currentQuestion={game.currentQuestionInRound}
-        totalQuestions={game.questionsPerRound}
+        currentTurn={currentRoundNumber}
+        totalTurns={game.settings.totalRounds}
         onGotIt={() => setShowPlayerSelect(true)}
         onPass={() => endRound(false)}
       />
@@ -347,16 +352,10 @@ export function GamePlay() {
             </div>
 
             <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
-              {players
-                .filter((player, index) => {
-                  // Filter out the current presenter by both index AND player ID for safety
-                  const isNotPresenterByIndex = index !== game?.currentPlayerIndex;
-                  const isNotPresenterById = player.id !== currentPlayer?.id;
-                  return isNotPresenterByIndex && isNotPresenterById;
-                })
-                .map((player, idx) => (
+              {selectablePlayers.map((player, idx) => (
                   <button
                     key={player.id}
+                    type="button"
                     onClick={() => {
                       endRound(true, player.id);
                       setShowPlayerSelect(false);
@@ -376,7 +375,7 @@ export function GamePlay() {
                 ))}
             </div>
 
-            {players.filter((_, index) => index !== game?.currentPlayerIndex).length === 0 && (
+            {selectablePlayers.length === 0 && (
               <div className="text-center text-gray-500 mb-6 text-lg">
                 No other players to select
               </div>
@@ -384,6 +383,7 @@ export function GamePlay() {
 
             <button
               onClick={() => setShowPlayerSelect(false)}
+              type="button"
               className="w-full px-6 py-5 rounded-2xl font-bold text-xl bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all hover:scale-105 active:scale-95"
             >
               ✕ Cancel
@@ -418,10 +418,22 @@ export function GamePlay() {
         }
       `}</style>
 
+      {/* DEBUG: State inspector - top left */}
+      <div className="fixed top-6 left-6 z-50 backdrop-blur-xl bg-black bg-opacity-70 rounded-2xl p-4 border border-red-500 border-opacity-60 shadow-2xl font-mono text-xs">
+        <div className="text-red-400 font-bold mb-2">DEBUG STATE:</div>
+        <div className="text-white space-y-1">
+          <div>Player: {game.currentPlayerIndex} ({players[game.currentPlayerIndex]?.name})</div>
+          <div>Category: {game.currentCategory}</div>
+          <div className="text-yellow-400 font-bold">Round: {currentRoundNumber} / {game.settings.totalRounds}</div>
+          <div>Total Turns: {game.settings.totalRounds}</div>
+          <div>Phase: {game.phase}</div>
+        </div>
+      </div>
+
       {/* Floating scores indicator - bottom right */}
       <div className="fixed bottom-6 right-6 z-40 backdrop-blur-xl bg-white bg-opacity-10 rounded-2xl p-4 border border-white border-opacity-20 shadow-2xl">
         <div className="text-xs text-white text-opacity-70 mb-2 text-center font-semibold uppercase tracking-wider">
-          Round {game.currentRound + 1} / {game.settings.totalRounds}
+          Round {currentRoundNumber} / {game.settings.totalRounds}
         </div>
         <div className="flex gap-4">
           {players.map(player => (

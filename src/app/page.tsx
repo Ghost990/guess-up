@@ -4,17 +4,31 @@ import { useState, useEffect } from 'react';
 import { PlayerSetup } from '@/components/game/PlayerSetup';
 import { GamePlay } from '@/components/game/GamePlay';
 import { useGameStore } from '@/stores/gameStore';
+import { useHasHydrated } from '@/hooks/useHasHydrated';
 
 export default function Home() {
   const { game, startRound } = useGameStore();
   const [showSetup, setShowSetup] = useState(true);
+  const hasHydrated = useHasHydrated();
 
   // Auto-start first round when game is set up
   useEffect(() => {
+    if (!hasHydrated) return;
     if (game && game.phase === 'setup') {
       startRound();
     }
-  }, [game, startRound]);
+  }, [game, startRound, hasHydrated]);
+
+  if (!hasHydrated) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-slate-950 text-white">
+        <div className="text-center space-y-2">
+          <div className="text-3xl font-bold tracking-tight">GuessUp</div>
+          <div className="text-sm text-white/70">Loading game state…</div>
+        </div>
+      </main>
+    );
+  }
 
   // Show setup screen if no game exists
   if (!game || showSetup) {
