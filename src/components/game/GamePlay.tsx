@@ -20,7 +20,7 @@ export function GamePlay() {
   const peekTimerRef = useRef<NodeJS.Timeout | null>(null);
   const readyTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const currentPlayer = players[game?.currentPlayerIndex || 0];
+  const currentPlayer = players[game?.currentPlayerIndex ?? 0];
 
   // Debug logging
   useEffect(() => {
