@@ -1,0 +1,1452 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "language": "hu",
+    "totalWords": 180,
+    "categories": ["draw", "explain", "signal"],
+    "difficulties": ["easy", "medium", "hard"],
+    "lastUpdated": "2025-01-07"
+  },
+  "words": [
+    {
+      "id": "001",
+      "text": "kutya",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["animal", "pet"]
+    },
+    {
+      "id": "002",
+      "text": "macska",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["animal", "pet"]
+    },
+    {
+      "id": "003",
+      "text": "ház",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["object", "building"]
+    },
+    {
+      "id": "004",
+      "text": "autó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "vehicle"]
+    },
+    {
+      "id": "005",
+      "text": "fa",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 2,
+      "tags": ["nature", "plant"]
+    },
+    {
+      "id": "006",
+      "text": "nap",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["nature", "sky"]
+    },
+    {
+      "id": "007",
+      "text": "hold",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["nature", "sky"]
+    },
+    {
+      "id": "008",
+      "text": "virág",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["nature", "plant"]
+    },
+    {
+      "id": "009",
+      "text": "alma",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["food", "fruit"]
+    },
+    {
+      "id": "010",
+      "text": "kenyér",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["food"]
+    },
+    {
+      "id": "011",
+      "text": "víz",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["drink", "nature"]
+    },
+    {
+      "id": "012",
+      "text": "madár",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["animal"]
+    },
+    {
+      "id": "013",
+      "text": "hal",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["animal", "water"]
+    },
+    {
+      "id": "014",
+      "text": "ló",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 2,
+      "tags": ["animal"]
+    },
+    {
+      "id": "015",
+      "text": "tehén",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["animal", "farm"]
+    },
+    {
+      "id": "016",
+      "text": "szék",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "furniture"]
+    },
+    {
+      "id": "017",
+      "text": "asztal",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["object", "furniture"]
+    },
+    {
+      "id": "018",
+      "text": "ágy",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["object", "furniture"]
+    },
+    {
+      "id": "019",
+      "text": "könyv",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["object"]
+    },
+    {
+      "id": "020",
+      "text": "toll",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object"]
+    },
+    {
+      "id": "021",
+      "text": "telefon",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["object", "technology"]
+    },
+    {
+      "id": "022",
+      "text": "számítógép",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": ["object", "technology"]
+    },
+    {
+      "id": "023",
+      "text": "tévé",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "technology"]
+    },
+    {
+      "id": "024",
+      "text": "óra",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["object", "time"]
+    },
+    {
+      "id": "025",
+      "text": "ablak",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["object", "building"]
+    },
+    {
+      "id": "026",
+      "text": "ajtó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "building"]
+    },
+    {
+      "id": "027",
+      "text": "futás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["action", "sport"]
+    },
+    {
+      "id": "028",
+      "text": "ugrás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["action", "sport"]
+    },
+    {
+      "id": "029",
+      "text": "alvás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["action"]
+    },
+    {
+      "id": "030",
+      "text": "evés",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["action"]
+    },
+    {
+      "id": "031",
+      "text": "ivás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["action"]
+    },
+    {
+      "id": "032",
+      "text": "tánc",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["action", "art"]
+    },
+    {
+      "id": "033",
+      "text": "ének",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["action", "art"]
+    },
+    {
+      "id": "034",
+      "text": "orvos",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["profession"]
+    },
+    {
+      "id": "035",
+      "text": "tanár",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["profession"]
+    },
+    {
+      "id": "036",
+      "text": "rendőr",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["profession"]
+    },
+    {
+      "id": "037",
+      "text": "tűzoltó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["profession"]
+    },
+    {
+      "id": "038",
+      "text": "pék",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["profession"]
+    },
+    {
+      "id": "039",
+      "text": "szakács",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["profession"]
+    },
+    {
+      "id": "040",
+      "text": "pilóta",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["profession"]
+    },
+    {
+      "id": "041",
+      "text": "foci",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["sport"]
+    },
+    {
+      "id": "042",
+      "text": "kosárlabda",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": ["sport"]
+    },
+    {
+      "id": "043",
+      "text": "úszás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["sport", "action"]
+    },
+    {
+      "id": "044",
+      "text": "tenisz",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["sport"]
+    },
+    {
+      "id": "045",
+      "text": "bicikli",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["object", "vehicle", "sport"]
+    },
+    {
+      "id": "046",
+      "text": "pizza",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["food"]
+    },
+    {
+      "id": "047",
+      "text": "hamburger",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": ["food"]
+    },
+    {
+      "id": "048",
+      "text": "fagylalt",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": ["food"]
+    },
+    {
+      "id": "049",
+      "text": "torta",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["food"]
+    },
+    {
+      "id": "050",
+      "text": "csokoládé",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": ["food"]
+    },
+    {
+      "id": "051",
+      "text": "elefánt",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["animal"]
+    },
+    {
+      "id": "052",
+      "text": "zsiráf",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["animal"]
+    },
+    {
+      "id": "053",
+      "text": "oroszlán",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["animal"]
+    },
+    {
+      "id": "054",
+      "text": "majom",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["animal"]
+    },
+    {
+      "id": "055",
+      "text": "pingvin",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["animal"]
+    },
+    {
+      "id": "056",
+      "text": "delfin",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["animal", "water"]
+    },
+    {
+      "id": "057",
+      "text": "krokodil",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["animal"]
+    },
+    {
+      "id": "058",
+      "text": "kígyó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["animal"]
+    },
+    {
+      "id": "059",
+      "text": "pillangó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["animal", "insect"]
+    },
+    {
+      "id": "060",
+      "text": "méh",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["animal", "insect"]
+    },
+    {
+      "id": "061",
+      "text": "repülőgép",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": ["object", "vehicle"]
+    },
+    {
+      "id": "062",
+      "text": "vonat",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["object", "vehicle"]
+    },
+    {
+      "id": "063",
+      "text": "hajó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "vehicle"]
+    },
+    {
+      "id": "064",
+      "text": "helikopter",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": ["object", "vehicle"]
+    },
+    {
+      "id": "065",
+      "text": "gitár",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["object", "music"]
+    },
+    {
+      "id": "066",
+      "text": "zongora",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["object", "music"]
+    },
+    {
+      "id": "067",
+      "text": "dob",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["object", "music"]
+    },
+    {
+      "id": "068",
+      "text": "foci labda",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": ["object", "sport"]
+    },
+    {
+      "id": "069",
+      "text": "esernyő",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["object"]
+    },
+    {
+      "id": "070",
+      "text": "szemüveg",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["object"]
+    },
+    {
+      "id": "071",
+      "text": "sapka",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["object", "clothing"]
+    },
+    {
+      "id": "072",
+      "text": "cipő",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "clothing"]
+    },
+    {
+      "id": "073",
+      "text": "nadrág",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["object", "clothing"]
+    },
+    {
+      "id": "074",
+      "text": "póló",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["object", "clothing"]
+    },
+    {
+      "id": "075",
+      "text": "kabát",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["object", "clothing"]
+    },
+    {
+      "id": "076",
+      "text": "mosoly",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["emotion"]
+    },
+    {
+      "id": "077",
+      "text": "nevetés",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["emotion", "action"]
+    },
+    {
+      "id": "078",
+      "text": "sírás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["emotion", "action"]
+    },
+    {
+      "id": "079",
+      "text": "düh",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 3,
+      "tags": ["emotion"]
+    },
+    {
+      "id": "080",
+      "text": "öröm",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": ["emotion"]
+    },
+    {
+      "id": "081",
+      "text": "szerelem",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["emotion"]
+    },
+    {
+      "id": "082",
+      "text": "barátság",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["emotion"]
+    },
+    {
+      "id": "083",
+      "text": "karácsony",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": ["event", "holiday"]
+    },
+    {
+      "id": "084",
+      "text": "születésnap",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": ["event"]
+    },
+    {
+      "id": "085",
+      "text": "esküvő",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["event"]
+    },
+    {
+      "id": "086",
+      "text": "húsvét",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["event", "holiday"]
+    },
+    {
+      "id": "087",
+      "text": "iskola",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["place", "building"]
+    },
+    {
+      "id": "088",
+      "text": "kórház",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["place", "building"]
+    },
+    {
+      "id": "089",
+      "text": "posta",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["place", "building"]
+    },
+    {
+      "id": "090",
+      "text": "repülőtér",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": ["place", "building"]
+    },
+    {
+      "id": "091",
+      "text": "étterem",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["place", "building"]
+    },
+    {
+      "id": "092",
+      "text": "park",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["place"]
+    },
+    {
+      "id": "093",
+      "text": "strand",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["place"]
+    },
+    {
+      "id": "094",
+      "text": "hegy",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["place", "nature"]
+    },
+    {
+      "id": "095",
+      "text": "tenger",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": ["place", "nature"]
+    },
+    {
+      "id": "096",
+      "text": "folyó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["place", "nature"]
+    },
+    {
+      "id": "097",
+      "text": "tó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 2,
+      "tags": ["place", "nature"]
+    },
+    {
+      "id": "098",
+      "text": "erdő",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["place", "nature"]
+    },
+    {
+      "id": "099",
+      "text": "sivatag",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["place", "nature"]
+    },
+    {
+      "id": "100",
+      "text": "eső",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["weather", "nature"]
+    },
+    {
+      "id": "101",
+      "text": "hó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 2,
+      "tags": ["weather", "nature"]
+    },
+    {
+      "id": "102",
+      "text": "villám",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["weather", "nature"]
+    },
+    {
+      "id": "103",
+      "text": "szél",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": ["weather", "nature"]
+    },
+    {
+      "id": "104",
+      "text": "szivárvány",
+      "categories": ["draw", "explain"],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": ["weather", "nature"]
+    },
+    {
+      "id": "105",
+      "text": "robot",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["technology"]
+    },
+    {
+      "id": "106",
+      "text": "űrhajó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["technology", "vehicle"]
+    },
+    {
+      "id": "107",
+      "text": "kamera",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["technology", "object"]
+    },
+    {
+      "id": "108",
+      "text": "mikrohullámú sütő",
+      "categories": ["draw", "explain"],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": ["technology", "object"]
+    },
+    {
+      "id": "109",
+      "text": "hűtőszekrény",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": ["object"]
+    },
+    {
+      "id": "110",
+      "text": "mosógép",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["object"]
+    },
+    {
+      "id": "111",
+      "text": "porszívó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["object"]
+    },
+    {
+      "id": "112",
+      "text": "gomba",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["nature", "food"]
+    },
+    {
+      "id": "113",
+      "text": "paradicsom",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": ["food", "vegetable"]
+    },
+    {
+      "id": "114",
+      "text": "burgonya",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["food", "vegetable"]
+    },
+    {
+      "id": "115",
+      "text": "répa",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["food", "vegetable"]
+    },
+    {
+      "id": "116",
+      "text": "banán",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["food", "fruit"]
+    },
+    {
+      "id": "117",
+      "text": "narancs",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["food", "fruit"]
+    },
+    {
+      "id": "118",
+      "text": "szőlő",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["food", "fruit"]
+    },
+    {
+      "id": "119",
+      "text": "eper",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["food", "fruit"]
+    },
+    {
+      "id": "120",
+      "text": "dinnyye",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["food", "fruit"]
+    },
+    {
+      "id": "121",
+      "text": "király",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["profession", "historical"]
+    },
+    {
+      "id": "122",
+      "text": "királynő",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["profession", "historical"]
+    },
+    {
+      "id": "123",
+      "text": "lovag",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["profession", "historical"]
+    },
+    {
+      "id": "124",
+      "text": "kalóz",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["profession", "historical"]
+    },
+    {
+      "id": "125",
+      "text": "varázsló",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["profession", "fantasy"]
+    },
+    {
+      "id": "126",
+      "text": "sárkány",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["fantasy", "animal"]
+    },
+    {
+      "id": "127",
+      "text": "tündér",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["fantasy"]
+    },
+    {
+      "id": "128",
+      "text": "óriás",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["fantasy"]
+    },
+    {
+      "id": "129",
+      "text": "rajzolás",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["action", "art"]
+    },
+    {
+      "id": "130",
+      "text": "olvasás",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["action"]
+    },
+    {
+      "id": "131",
+      "text": "írás",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["action"]
+    },
+    {
+      "id": "132",
+      "text": "főzés",
+      "categories": ["explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["action"]
+    },
+    {
+      "id": "133",
+      "text": "mosogatás",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": ["action"]
+    },
+    {
+      "id": "134",
+      "text": "takarítás",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": ["action"]
+    },
+    {
+      "id": "135",
+      "text": "vásárlás",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["action"]
+    },
+    {
+      "id": "136",
+      "text": "vezetés",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["action"]
+    },
+    {
+      "id": "137",
+      "text": "fotózás",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["action", "art"]
+    },
+    {
+      "id": "138",
+      "text": "építkezés",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": ["action"]
+    },
+    {
+      "id": "139",
+      "text": "halászat",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["action", "sport"]
+    },
+    {
+      "id": "140",
+      "text": "vadászat",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": ["action", "sport"]
+    },
+    {
+      "id": "141",
+      "text": "kert",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["place"]
+    },
+    {
+      "id": "142",
+      "text": "híd",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": ["object", "building"]
+    },
+    {
+      "id": "143",
+      "text": "torony",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["object", "building"]
+    },
+    {
+      "id": "144",
+      "text": "kastély",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["building", "historical"]
+    },
+    {
+      "id": "145",
+      "text": "templom",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["building"]
+    },
+    {
+      "id": "146",
+      "text": "piramis",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["building", "historical"]
+    },
+    {
+      "id": "147",
+      "text": "szobor",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["object", "art"]
+    },
+    {
+      "id": "148",
+      "text": "festmény",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": ["object", "art"]
+    },
+    {
+      "id": "149",
+      "text": "csillag",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": ["nature", "sky"]
+    },
+    {
+      "id": "150",
+      "text": "bolygó",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["nature", "sky"]
+    },
+    {
+      "id": "151",
+      "text": "űr",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 2,
+      "tags": ["abstract", "sky"]
+    },
+    {
+      "id": "152",
+      "text": "gravitáció",
+      "categories": ["explain"],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": ["abstract", "science"]
+    },
+    {
+      "id": "153",
+      "text": "energia",
+      "categories": ["explain"],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": ["abstract", "science"]
+    },
+    {
+      "id": "154",
+      "text": "sebesség",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "155",
+      "text": "idő",
+      "categories": ["explain"],
+      "difficulty": "hard",
+      "length": 3,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "156",
+      "text": "szabadság",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "157",
+      "text": "igazság",
+      "categories": ["explain"],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "158",
+      "text": "béke",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 4,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "159",
+      "text": "háború",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 6,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "160",
+      "text": "baleset",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["event"]
+    },
+    {
+      "id": "161",
+      "text": "verseny",
+      "categories": ["explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["event", "sport"]
+    },
+    {
+      "id": "162",
+      "text": "koncert",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["event", "music"]
+    },
+    {
+      "id": "163",
+      "text": "mozi",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": ["place", "building"]
+    },
+    {
+      "id": "164",
+      "text": "cirkusz",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["event", "place"]
+    },
+    {
+      "id": "165",
+      "text": "bohóc",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["profession"]
+    },
+    {
+      "id": "166",
+      "text": "bűvész",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["profession"]
+    },
+    {
+      "id": "167",
+      "text": "akrobata",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": ["profession"]
+    },
+    {
+      "id": "168",
+      "text": "léggömb",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["object"]
+    },
+    {
+      "id": "169",
+      "text": "ajándék",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": ["object"]
+    },
+    {
+      "id": "170",
+      "text": "kulcs",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": ["object"]
+    },
+    {
+      "id": "171",
+      "text": "lakat",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["object"]
+    },
+    {
+      "id": "172",
+      "text": "kincs",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": ["object"]
+    },
+    {
+      "id": "173",
+      "text": "térkép",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["object"]
+    },
+    {
+      "id": "174",
+      "text": "iránytű",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": ["object"]
+    },
+    {
+      "id": "175",
+      "text": "távcső",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": ["object"]
+    },
+    {
+      "id": "176",
+      "text": "mikroszkóp",
+      "categories": ["draw", "explain", "signal"],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": ["object", "science"]
+    },
+    {
+      "id": "177",
+      "text": "tudomány",
+      "categories": ["explain"],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": ["abstract"]
+    },
+    {
+      "id": "178",
+      "text": "kísérlet",
+      "categories": ["explain", "signal"],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": ["action", "science"]
+    },
+    {
+      "id": "179",
+      "text": "laboratórium",
+      "categories": ["draw", "explain"],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": ["place", "science"]
+    },
+    {
+      "id": "180",
+      "text": "találmány",
+      "categories": ["explain"],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": ["abstract"]
+    }
+  ]
+}

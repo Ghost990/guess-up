@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/project-build \"GuessUp - Activity game web app with 3 categories (draw, explain, hand signals). Next.js 15 + TypeScript + Tailwind. Features: round counter, category/word display with timer, mobile-first design (timer visible to all, words hidden), Hungarian word database in JSON, player randomization. Similar to Activity board game.\" --type web --framework nextjs --complexity moderate --design-trends 2025 --mobile-first --visual-research)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash([ -f \"package.json\" ])",
+      "Bash(cat:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(lsof:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
