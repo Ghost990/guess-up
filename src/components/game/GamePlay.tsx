@@ -22,10 +22,26 @@ export function GamePlay() {
 
   const currentPlayer = players[game?.currentPlayerIndex || 0];
 
+  // Debug logging
+  useEffect(() => {
+    if (game) {
+      console.log('[GamePlay] State update:', {
+        phase: game.phase,
+        currentPlayerIndex: game.currentPlayerIndex,
+        currentPlayer: currentPlayer?.name,
+        allPlayers: players.map(p => p.name),
+        currentRound: game.currentRound,
+        currentQuestion: game.currentQuestionInRound
+      });
+    }
+  }, [game?.phase, game?.currentPlayerIndex, currentPlayer?.name, players, game?.currentRound, game?.currentQuestionInRound, game]);
+
   // Handle round end transition
   useEffect(() => {
     if (game?.phase === 'roundEnd') {
+      console.log('[GamePlay] Round end transition starting, will call startRound() in 3s');
       const timer = setTimeout(() => {
+        console.log('[GamePlay] Calling startRound() now');
         setShowPlayerReady(true);
         setReadyCountdown(10);
         setShowWord(false);
