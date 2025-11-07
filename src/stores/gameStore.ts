@@ -119,14 +119,14 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const { game, players } = get();
     if (!game) return;
 
-    // Update scores: presenter gets 2 points, guesser gets 1 point
+    // Update scores: presenter gets 1 point (entertained), guesser gets 2 points (guessed correctly)
     if (success && guesserId) {
       const updatedPlayers = players.map((p) => {
         if (p.id === players[game.currentPlayerIndex].id) {
-          return { ...p, score: p.score + 2 };
+          return { ...p, score: p.score + 1 };
         }
         if (p.id === guesserId) {
-          return { ...p, score: p.score + 1 };
+          return { ...p, score: p.score + 2 };
         }
         return p;
       });

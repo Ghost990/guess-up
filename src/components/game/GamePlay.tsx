@@ -21,7 +21,6 @@ export function GamePlay() {
   const readyTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const currentPlayer = players[game?.currentPlayerIndex || 0];
-  const otherPlayers = players.filter((_, index) => index !== game?.currentPlayerIndex);
 
   // Handle round end transition
   useEffect(() => {
@@ -170,7 +169,7 @@ export function GamePlay() {
           <div className="text-6xl">✨</div>
           <h2 className="text-4xl font-extrabold text-white">Round Complete!</h2>
           <div className="text-2xl text-white font-semibold">
-            Next: {players[(game.currentPlayerIndex + 1) % players.length]?.name}
+            Next: {players[game.currentPlayerIndex]?.name}
           </div>
           <div className="text-white text-lg opacity-80">Get ready...</div>
         </div>
@@ -323,23 +322,25 @@ export function GamePlay() {
             <h3 className="text-3xl font-bold mb-6 text-center text-gray-900">
               Who guessed it?
             </h3>
-            <div className="space-y-3 mb-6">
-              {otherPlayers.map((player) => (
-                <button
-                  key={player.id}
-                  onClick={() => {
-                    endRound(true, player.id);
-                    setShowPlayerSelect(false);
-                  }}
-                  className="w-full px-8 py-5 rounded-2xl font-bold text-xl text-white shadow-xl hover:opacity-90 transition-all hover:scale-105 active:scale-95"
-                  style={{
-                    backgroundColor: categoryColor,
-                    boxShadow: `0 10px 30px ${categoryColor}60`,
-                  }}
-                >
-                  {player.name}
-                </button>
-              ))}
+            <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
+              {players
+                .filter((_, index) => index !== game?.currentPlayerIndex)
+                .map((player) => (
+                  <button
+                    key={player.id}
+                    onClick={() => {
+                      endRound(true, player.id);
+                      setShowPlayerSelect(false);
+                    }}
+                    className="w-full px-8 py-5 rounded-2xl font-bold text-xl text-white shadow-xl hover:opacity-90 transition-all hover:scale-105 active:scale-95"
+                    style={{
+                      backgroundColor: categoryColor,
+                      boxShadow: `0 10px 30px ${categoryColor}60`,
+                    }}
+                  >
+                    {player.name}
+                  </button>
+                ))}
             </div>
             <button
               onClick={() => setShowPlayerSelect(false)}
