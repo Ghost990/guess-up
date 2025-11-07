@@ -34,10 +34,13 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
     }
   }, []);
 
-  // Save players to localStorage whenever they change
+  // Save players to localStorage whenever they change (only save non-empty names)
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY_PLAYERS, JSON.stringify(playerNames));
+      const nonEmptyPlayers = playerNames.filter(name => name.trim().length > 0);
+      if (nonEmptyPlayers.length > 0) {
+        localStorage.setItem(STORAGE_KEY_PLAYERS, JSON.stringify(nonEmptyPlayers));
+      }
     } catch (error) {
       console.error('Failed to save players:', error);
     }

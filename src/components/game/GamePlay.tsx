@@ -332,16 +332,20 @@ export function GamePlay() {
         onPass={() => endRound(false)}
       />
 
-      {/* Player selection modal */}
+      {/* Player selection modal - Enhanced with better visibility */}
       {showPlayerSelect && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6 z-50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl transform transition-all">
-            <h3 className="text-3xl font-bold mb-6 text-center text-gray-900">
-              Who guessed it?
-            </h3>
-            <div className="text-sm text-gray-500 mb-4 text-center">
-              Current presenter: {currentPlayer?.name}
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-6 z-50 backdrop-blur-md animate-fadeIn">
+          <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl transform transition-all scale-100 animate-slideUp">
+            <div className="text-center mb-6">
+              <div className="text-6xl mb-4">🎉</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 mb-2">
+                Who guessed it?
+              </h3>
+              <div className="text-lg text-gray-600 font-semibold">
+                Presenter: <span className="text-gray-900">{currentPlayer?.name}</span>
+              </div>
             </div>
+
             <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
               {players
                 .filter((player, index) => {
@@ -350,37 +354,69 @@ export function GamePlay() {
                   const isNotPresenterById = player.id !== currentPlayer?.id;
                   return isNotPresenterByIndex && isNotPresenterById;
                 })
-                .map((player) => (
+                .map((player, idx) => (
                   <button
                     key={player.id}
                     onClick={() => {
                       endRound(true, player.id);
                       setShowPlayerSelect(false);
                     }}
-                    className="w-full px-8 py-5 rounded-2xl font-bold text-xl text-white shadow-xl hover:opacity-90 transition-all hover:scale-105 active:scale-95"
+                    className="w-full px-8 py-6 rounded-2xl font-bold text-2xl text-white shadow-xl hover:opacity-90 transition-all hover:scale-105 active:scale-95 transform"
                     style={{
                       backgroundColor: categoryColor,
-                      boxShadow: `0 10px 30px ${categoryColor}60`,
+                      boxShadow: `0 10px 40px ${categoryColor}80`,
+                      animationDelay: `${idx * 50}ms`,
                     }}
                   >
-                    {player.name}
+                    <div className="flex items-center justify-center gap-3">
+                      <span className="text-3xl">👤</span>
+                      <span>{player.name}</span>
+                    </div>
                   </button>
                 ))}
             </div>
+
             {players.filter((_, index) => index !== game?.currentPlayerIndex).length === 0 && (
-              <div className="text-center text-gray-500 mb-6">
+              <div className="text-center text-gray-500 mb-6 text-lg">
                 No other players to select
               </div>
             )}
+
             <button
               onClick={() => setShowPlayerSelect(false)}
-              className="w-full px-6 py-4 rounded-2xl font-semibold text-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+              className="w-full px-6 py-5 rounded-2xl font-bold text-xl bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all hover:scale-105 active:scale-95"
             >
-              Cancel
+              ✕ Cancel
             </button>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.2s ease-out;
+        }
+
+        .animate-slideUp {
+          animation: slideUp 0.3s ease-out;
+        }
+      `}</style>
 
       {/* Floating scores indicator - bottom right */}
       <div className="fixed bottom-6 right-6 z-40 backdrop-blur-xl bg-white bg-opacity-10 rounded-2xl p-4 border border-white border-opacity-20 shadow-2xl">

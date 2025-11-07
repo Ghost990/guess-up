@@ -160,10 +160,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
       set({ players: updatedPlayers });
     }
 
-    const nextQuestionInRound = game.currentQuestionInRound + 1;
-
     // Check if round is complete (10 questions)
-    if (nextQuestionInRound > game.questionsPerRound) {
+    if (game.currentQuestionInRound >= game.questionsPerRound) {
       // Round complete, move to next player
       const nextPlayerIndex = (game.currentPlayerIndex + 1) % players.length;
       const nextRound = game.currentRound + 1;
@@ -197,6 +195,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       }
     } else {
       // Continue with next question in same round
+      const nextQuestionInRound = game.currentQuestionInRound + 1;
       console.log('[endRound] Continuing same round, next question:', nextQuestionInRound);
       set({
         game: {
