@@ -77,7 +77,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
   },
 
   startRound: () => {
-    const { game } = get();
+    const state = get();
+    const { game } = state;
     if (!game) return;
 
     const categories: Array<'draw' | 'explain' | 'signal'> = ['draw', 'explain', 'signal'];
@@ -109,10 +110,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
       tags: rawWord.tags || [],
     };
 
-    set({
-      game: { ...game, phase: 'playing', currentCategory: category },
+    // Use set with function to ensure we get the latest state
+    set((state) => ({
+      game: { ...state.game!, phase: 'playing', currentCategory: category },
       currentWord: word,
-    });
+    }));
   },
 
   endRound: (success, guesserId) => {
