@@ -140,7 +140,7 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
         {/* Title */}
         <div className="text-center space-y-2">
           <h1
-            className="text-6xl font-black tracking-tight text-white"
+            className="text-5xl sm:text-6xl font-black tracking-tight text-white"
             style={{ fontFamily: 'var(--font-syne)' }}
           >
             Guess<span style={{ color: '#FFD60A' }}>Up</span>

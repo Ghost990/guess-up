@@ -243,36 +243,79 @@ export function GamePlay() {
   }
 
   if (showPlayerReady) {
+    const readyCategoryEmoji =
+      game.currentCategory === 'draw' ? '🎨' :
+      game.currentCategory === 'explain' ? '💬' : '👋';
+    const readyCategoryLabel =
+      game.currentCategory === 'draw' ? 'DRAW' :
+      game.currentCategory === 'explain' ? 'EXPLAIN' : 'SIGNAL';
+
     return (
-      <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' }}>
-        <div className="text-center space-y-12">
-          <div className="space-y-6">
-            <div className="text-7xl animate-bounce">🎯</div>
-            <h1 className="text-5xl font-extrabold text-white">
-              Get Ready!
-            </h1>
-            <div className="text-3xl font-bold text-white">
-              {currentPlayer?.name}&apos;s Turn
+      <div
+        className="min-h-[100dvh] flex flex-col items-center justify-center p-6"
+        style={{
+          background: `radial-gradient(ellipse at 50% 40%, ${categoryColor}15 0%, transparent 60%), #0A0A12`,
+        }}
+      >
+        <div className="text-center space-y-10">
+          {/* Category emoji + pill */}
+          <div className="space-y-3">
+            <div className="text-6xl">{readyCategoryEmoji}</div>
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold tracking-wider"
+              style={{
+                background: 'rgba(255,255,255,0.08)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                color: categoryColor,
+              }}
+            >
+              {readyCategoryLabel}
             </div>
           </div>
 
+          {/* Get Ready heading */}
+          <h1
+            className="text-5xl font-black text-white"
+            style={{ fontFamily: 'var(--font-syne)' }}
+          >
+            Get Ready!
+          </h1>
+
+          {/* Player name */}
+          <div className="text-xl text-white/60 font-medium">
+            {currentPlayer?.name}&apos;s Turn
+          </div>
+
+          {/* Countdown number */}
           <div className="relative">
-            <div className="text-8xl font-extrabold text-white animate-pulse">
+            <div
+              className="text-[8rem] leading-none font-thin text-white/80"
+              style={{ fontFamily: 'var(--font-syne)' }}
+            >
               {readyCountdown}
             </div>
-            <div className="text-xl text-white font-semibold mt-4 opacity-90">
+            <div className="text-base text-white/40 mt-4">
               Starting in {readyCountdown} seconds...
             </div>
           </div>
 
+          {/* Start Now button */}
           <button
             onClick={handleSkipReady}
-            className="px-12 py-5 rounded-full bg-white text-pink-600 font-bold text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-transform"
+            className="px-12 py-5 rounded-2xl font-bold text-xl text-white active:scale-95 transition-transform"
+            style={{
+              background: 'rgba(255,255,255,0.08)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+            }}
           >
-            🚀 Start Now!
+            Start Now!
           </button>
 
-          <div className="text-white text-sm opacity-70">
+          <div className="text-white/30 text-sm">
             Only {currentPlayer?.name} should see the word
           </div>
         </div>

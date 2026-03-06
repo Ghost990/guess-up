@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guessup-v1';
+const CACHE_NAME = 'guessup-v3';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',

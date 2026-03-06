@@ -72,6 +72,8 @@ export function StunningTimer({
               background: `${theme.primary}22`,
               color: theme.primary,
               border: `1.5px solid ${theme.primary}44`,
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
             }}
           >
             <span className="text-lg">{theme.emoji}</span>
@@ -86,7 +88,32 @@ export function StunningTimer({
 
       {/* MIDDLE: SVG circular timer */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="relative" style={{ width: svgSize, height: svgSize }}>
+        <div
+          className="relative"
+          style={{
+            width: svgSize,
+            height: svgSize,
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            borderRadius: '50%',
+            border: '1px solid rgba(255,255,255,0.1)',
+          }}
+        >
+          {/* Inner frosted layer */}
+          <div
+            className="absolute rounded-full"
+            style={{
+              width: svgSize * 0.6,
+              height: svgSize * 0.6,
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              background: 'rgba(255,255,255,0.03)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255,255,255,0.06)',
+            }}
+          />
           <svg width={svgSize} height={svgSize} className="transform -rotate-90">
             <defs>
               <filter id="glow">
@@ -102,9 +129,9 @@ export function StunningTimer({
               cx={center}
               cy={center}
               r={radius}
-              stroke="rgba(255,255,255,0.1)"
+              stroke="rgba(255,255,255,0.08)"
               strokeWidth={strokeWidth}
-              fill="none"
+              fill="rgba(255,255,255,0.02)"
             />
             {/* Progress circle */}
             <circle
@@ -125,7 +152,7 @@ export function StunningTimer({
           {/* Timer number overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <div
-              className={`text-7xl font-extrabold tracking-tight ${isPulsing ? 'animate-pulse' : ''}`}
+              className={`text-7xl font-semibold tracking-tighter ${isPulsing ? 'animate-pulse' : ''}`}
               style={{
                 fontFamily: 'var(--font-syne)',
                 color: timeColor,
@@ -149,20 +176,28 @@ export function StunningTimer({
         <div className="flex gap-3">
           <button
             onClick={onGotIt}
-            className="flex-1 py-5 rounded-2xl text-xl font-bold text-white active:scale-95 transition-transform"
+            className="flex-1 py-5 rounded-2xl text-xl font-bold active:scale-95 transition-transform"
             style={{
-              background: 'linear-gradient(135deg, #00E676 0%, #00C853 100%)',
-              boxShadow: '0 6px 24px rgba(0,230,118,0.3)',
+              background: 'rgba(0,230,118,0.12)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(0,230,118,0.25)',
+              color: '#00E676',
+              boxShadow: '0 6px 24px rgba(0,230,118,0.15)',
             }}
           >
             ✓ Got It!
           </button>
           <button
             onClick={onPass}
-            className="flex-1 py-5 rounded-2xl text-xl font-bold text-white active:scale-95 transition-transform"
+            className="flex-1 py-5 rounded-2xl text-xl font-bold active:scale-95 transition-transform"
             style={{
-              background: 'linear-gradient(135deg, #FF4444 0%, #D32F2F 100%)',
-              boxShadow: '0 6px 24px rgba(255,68,68,0.3)',
+              background: 'rgba(255,68,68,0.12)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255,68,68,0.25)',
+              color: '#FF4444',
+              boxShadow: '0 6px 24px rgba(255,68,68,0.15)',
             }}
           >
             ✗ Skip
