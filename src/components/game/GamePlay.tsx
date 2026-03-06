@@ -174,9 +174,9 @@ export function GamePlay() {
   if (!game || !currentWord) return null;
 
   const categoryColor =
-    game.currentCategory === 'draw' ? 'var(--color-draw)' :
-    game.currentCategory === 'explain' ? 'var(--color-explain)' :
-    'var(--color-signal)';
+    game.currentCategory === 'draw' ? '#FFD60A' :
+    game.currentCategory === 'explain' ? '#00E5FF' :
+    '#FF3A8F';
 
   const progressPercent = (timeLeft / (game.settings.roundDuration / 1000)) * 100;
   const timerColor =
@@ -466,54 +466,62 @@ export function GamePlay() {
 
       {/* Player selection modal - Enhanced with better visibility */}
       {showPlayerSelect && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-6 z-50 backdrop-blur-md animate-fadeIn">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl transform transition-all scale-100 animate-slideUp">
-            <div className="text-center mb-6">
-              <div className="text-6xl mb-4">🎉</div>
-              <h3 className="text-4xl font-extrabold text-gray-900 mb-2">
+        <div
+          className="fixed inset-0 flex items-end justify-center z-50 p-4 pb-8"
+          style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(12px)' }}
+        >
+          <div
+            className="w-full max-w-md space-y-4"
+            style={{
+              background: 'rgba(12,12,20,0.97)',
+              backdropFilter: 'blur(40px)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '28px',
+              padding: '32px 24px',
+            }}
+          >
+            <div className="text-center space-y-1 pb-2">
+              <div className="text-5xl">🎉</div>
+              <h3 className="text-3xl font-black text-white" style={{ fontFamily: 'var(--font-syne)' }}>
                 Who guessed it?
               </h3>
-              <div className="text-lg text-gray-600 font-semibold">
-                Presenter: <span className="text-gray-900">{currentPlayer?.name}</span>
-              </div>
+              <p className="text-white/40 text-sm">
+                {currentPlayer?.name} was presenting
+              </p>
             </div>
 
-            <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
-              {selectablePlayers.map((player, idx) => (
-                  <button
-                    key={player.id}
-                    type="button"
-                    onClick={() => {
-                      endRound(true, player.id);
-                      setShowPlayerSelect(false);
-                    }}
-                    className="w-full px-8 py-6 rounded-2xl font-bold text-2xl text-white shadow-xl hover:opacity-90 transition-all hover:scale-105 active:scale-95 transform"
-                    style={{
-                      backgroundColor: categoryColor,
-                      boxShadow: `0 10px 40px ${categoryColor}80`,
-                      animationDelay: `${idx * 50}ms`,
-                    }}
-                  >
-                    <div className="flex items-center justify-center gap-3">
-                      <span className="text-3xl">👤</span>
-                      <span>{player.name}</span>
-                    </div>
-                  </button>
-                ))}
+            <div className="space-y-2 max-h-72 overflow-y-auto">
+              {selectablePlayers.map((player) => (
+                <button
+                  key={player.id}
+                  type="button"
+                  onClick={() => {
+                    endRound(true, player.id);
+                    setShowPlayerSelect(false);
+                  }}
+                  className="w-full py-4 rounded-2xl font-bold text-xl text-white active:scale-95 transition-transform"
+                  style={{
+                    background: `${categoryColor}18`,
+                    border: `1px solid ${categoryColor}50`,
+                    color: '#fff',
+                  }}
+                >
+                  {player.name}
+                </button>
+              ))}
             </div>
-
-            {selectablePlayers.length === 0 && (
-              <div className="text-center text-gray-500 mb-6 text-lg">
-                No other players to select
-              </div>
-            )}
 
             <button
               onClick={() => setShowPlayerSelect(false)}
               type="button"
-              className="w-full px-6 py-5 rounded-2xl font-bold text-xl bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all hover:scale-105 active:scale-95"
+              className="w-full py-4 rounded-2xl font-bold text-base active:scale-95 transition-transform"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                color: 'rgba(255,255,255,0.5)',
+              }}
             >
-              ✕ Cancel
+              Cancel
             </button>
           </div>
         </div>

@@ -2,21 +2,21 @@
 
 :root {
   /* Color tokens - Direct values from design system */
-  --color-primary: #8b5cf6;
-  --color-primary-hover: #7c3aed;
-  --color-draw: #3b82f6;
-  --color-explain: #10b981;
-  --color-signal: #f97316;
+  --color-primary: #FFD60A;
+  --color-primary-hover: #e6c000;
+  --color-draw: #FFD60A;
+  --color-explain: #00E5FF;
+  --color-signal: #FF3A8F;
 
   /* Semantic colors */
-  --color-success: #10b981;
-  --color-error: #ef4444;
-  --color-warning: #f59e0b;
-  --color-info: #3b82f6;
+  --color-success: #00E676;
+  --color-error: #FF4444;
+  --color-warning: #F59E0B;
+  --color-info: #00E5FF;
 
   /* Neutral colors */
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
+  --color-background: #0A0A12;
+  --color-foreground: #ffffff;
   --color-muted: #f1f5f9;
   --color-border: #e2e8f0;
 
