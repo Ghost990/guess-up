@@ -45,25 +45,39 @@ export default function Home() {
     const players = useGameStore.getState().players;
     const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
     const winner = sortedPlayers[0];
+    const medals = ['🥇', '🥈', '🥉'];
 
     return (
-      <main className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: 'var(--color-background)' }}>
-        <div className="text-center space-y-8">
-          <h1 className="text-5xl font-extrabold" style={{ color: 'var(--color-primary)' }}>
+      <main className="min-h-[100dvh] flex flex-col items-center justify-center p-6 relative" style={{ background: '#0A0A12' }}>
+        <div style={{
+          position: 'absolute', top: '25%', left: '50%', transform: 'translate(-50%,-50%)',
+          width: '350px', height: '350px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,214,10,0.12), transparent 70%)',
+          filter: 'blur(50px)', pointerEvents: 'none'
+        }} />
+        <div className="w-full max-w-md text-center space-y-8 relative z-10">
+          <div className="text-7xl">🏆</div>
+          <h1 className="text-4xl font-black text-white" style={{ fontFamily: 'var(--font-syne)' }}>
             Game Over!
           </h1>
-          <div className="space-y-4">
-            <div className="text-3xl font-bold" style={{ color: 'var(--color-success)' }}>
-              🏆 {winner.name} Wins!
-            </div>
-            <div className="text-xl font-semibold">Score: {winner.score}</div>
+          <div className="space-y-1">
+            <p className="text-3xl font-black" style={{ color: '#FFD60A', fontFamily: 'var(--font-syne)' }}>
+              {winner.name}
+            </p>
+            <p className="text-white/40 text-sm">Winner with {winner.score} points</p>
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold">Final Scores</h2>
             {sortedPlayers.map((player, index) => (
-              <div key={player.id} className="flex justify-between items-center px-6 py-3 rounded-lg" style={{ backgroundColor: 'var(--color-muted)' }}>
-                <span className="font-semibold">{index + 1}. {player.name}</span>
-                <span className="font-bold">{player.score} points</span>
+              <div key={player.id} className="flex items-center justify-between px-5 py-4 rounded-xl" style={{
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}>
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">{medals[index] || `${index + 1}.`}</span>
+                  <span className="text-white font-bold">{player.name}</span>
+                </div>
+                <span className="text-white font-black text-lg">{player.score}</span>
               </div>
             ))}
           </div>
@@ -72,8 +86,12 @@ export default function Home() {
               useGameStore.getState().resetGame();
               setShowSetup(true);
             }}
-            className="px-8 py-4 rounded-lg font-bold text-lg text-white shadow-lg"
-            style={{ backgroundColor: 'var(--color-primary)' }}
+            className="w-full py-5 rounded-2xl font-black text-xl text-white active:scale-95 transition-transform"
+            style={{
+              fontFamily: 'var(--font-syne)',
+              background: 'linear-gradient(135deg, #00E676 0%, #00C853 100%)',
+              boxShadow: '0 8px 32px rgba(0,230,118,0.3)',
+            }}
           >
             Play Again
           </button>

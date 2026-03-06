@@ -11,9 +11,10 @@ interface GameStore {
   usedWordIds: string[];
 
   // Actions
-  setupGame: (playerNames: string[], difficulty: 'easy' | 'medium' | 'hard') => void;
+  setupGame: (playerNames: string[], difficulty: 'easy' | 'medium' | 'hard', maxRounds?: number) => void;
   startRound: () => void;
   endRound: (success: boolean, guesserId?: string) => void;
+  finishGame: () => void;
   resetGame: () => void;
 }
 
@@ -25,7 +26,7 @@ export const useGameStore = create<GameStore>()(
   currentWord: null,
   usedWordIds: [],
 
-  setupGame: (playerNames, difficulty) => {
+  setupGame: (playerNames, difficulty, maxRounds) => {
     const now = Date.now();
     const players: Player[] = playerNames.map((name, index) => ({
       id: `player-${index + 1}`,
@@ -37,7 +38,7 @@ export const useGameStore = create<GameStore>()(
       hasGuessedCorrectly: false,
     }));
 
-    const totalRounds = playerNames.length * 3;
+    const totalRounds = maxRounds ?? playerNames.length * 3;
     const gameSettings = {
       totalRounds,
       difficulty: (difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3) as 1 | 2 | 3,
@@ -238,6 +239,12 @@ export const useGameStore = create<GameStore>()(
     }
 
     console.log('[endRound] ===== COMPLETE =====\n');
+  },
+
+  finishGame: () => {
+    const { game } = get();
+    if (!game) return;
+    set({ game: { ...game, phase: 'gameOver', endedAt: Date.now() } });
   },
 
   resetGame: () => set({ game: null, players: [], currentWord: null, usedWordIds: [] }),

@@ -5,7 +5,7 @@ import { useGameStore } from '@/stores/gameStore';
 import { StunningTimer } from './StunningTimer';
 
 export function GamePlay() {
-  const { game, players, currentWord, startRound, endRound } = useGameStore();
+  const { game, players, currentWord, startRound, endRound, finishGame } = useGameStore();
   const [timeLeft, setTimeLeft] = useState(60);
   const [showPlayerReady, setShowPlayerReady] = useState(true);
   const [readyCountdown, setReadyCountdown] = useState(10);
@@ -185,15 +185,53 @@ export function GamePlay() {
     'var(--color-error)';
 
   if (game.phase === 'roundEnd') {
+    const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
     return (
-      <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-        <div className="text-center space-y-8 animate-pulse">
+      <div className="min-h-[100dvh] flex flex-col items-center justify-center p-6" style={{ background: '#0A0A12' }}>
+        <div className="w-full max-w-md space-y-8 text-center">
           <div className="text-6xl">✨</div>
-          <h2 className="text-4xl font-extrabold text-white">Round Complete!</h2>
-          <div className="text-2xl text-white font-semibold">
-            Next: {players[game.currentPlayerIndex]?.name}
+          <h2 className="text-4xl font-black text-white" style={{ fontFamily: 'var(--font-syne)' }}>
+            Round Complete!
+          </h2>
+          <p className="text-lg text-white/50">
+            Next up: <span className="font-bold text-white" style={{ color: categoryColor }}>{players[game.currentPlayerIndex]?.name}</span>
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {sortedPlayers.map((p) => (
+              <div key={p.id} className="px-5 py-3 rounded-xl text-center" style={{
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}>
+                <div className="text-white/60 text-sm font-medium">{p.name}</div>
+                <div className="text-white text-xl font-black">{p.score}</div>
+              </div>
+            ))}
           </div>
-          <div className="text-white text-lg opacity-80">Get ready...</div>
+          <div className="space-y-3 pt-4">
+            <button
+              onClick={() => {}}
+              className="w-full py-4 rounded-2xl font-bold text-lg text-white active:scale-95 transition-transform"
+              style={{
+                background: 'linear-gradient(135deg, rgba(0,230,118,0.2), rgba(0,200,83,0.2))',
+                border: '1px solid rgba(0,230,118,0.4)',
+                backdropFilter: 'blur(16px)',
+              }}
+            >
+              Continue →
+            </button>
+            <button
+              onClick={() => finishGame()}
+              className="w-full py-3 rounded-2xl font-bold text-sm text-white/70 active:scale-95 transition-transform"
+              style={{
+                background: 'rgba(255,68,68,0.1)',
+                border: '1px solid rgba(255,68,68,0.3)',
+                backdropFilter: 'blur(16px)',
+              }}
+            >
+              Finish Game
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -201,42 +239,62 @@ export function GamePlay() {
 
   if (showTimesUp) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6 animate-pulse" style={{ background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)' }}>
-      <div className="text-center space-y-12">
-        <div className="space-y-6">
-            <div className="text-8xl animate-bounce">⏰</div>
-            <h1 className="text-6xl font-extrabold text-white animate-pulse">
-              TIME&apos;S UP!
+      <div className="min-h-[100dvh] flex items-center justify-center p-6 relative" style={{ background: '#0A0A12' }}>
+        <div style={{
+          position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)',
+          width: '400px', height: '400px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,68,68,0.15), transparent 70%)',
+          filter: 'blur(40px)', pointerEvents: 'none'
+        }} />
+        <div className="w-full max-w-md text-center space-y-8" style={{
+          background: 'rgba(15,15,20,0.95)',
+          backdropFilter: 'blur(40px)',
+          border: '1px solid rgba(255,255,255,0.1)',
+          borderRadius: '24px',
+          padding: '40px 32px',
+        }}>
+          <div className="space-y-3">
+            <div className="text-6xl">⏱️</div>
+            <h1 className="text-4xl font-black text-white" style={{ fontFamily: 'var(--font-syne)' }}>
+              Time&apos;s Up!
             </h1>
-            <div className="text-3xl font-bold text-white opacity-90">
-              Round ended for {currentPlayer?.name}
-            </div>
+            <p className="text-white/40 text-sm">
+              Round {currentRoundNumber} / {game.settings.totalRounds}
+            </p>
           </div>
 
-          <div className="space-y-6">
-            <div className="text-white text-2xl font-semibold drop-shadow-lg">
-              Round {currentRoundNumber} / {game.settings.totalRounds}
-            </div>
-            <div className="flex justify-center gap-8">
-              {players.map(player => (
-                <div key={player.id} className="text-center bg-white bg-opacity-30 rounded-2xl p-6 backdrop-blur-sm border-2 border-white border-opacity-40 shadow-2xl">
-                  <div className="text-white text-base font-bold drop-shadow-md mb-2">{player.name}</div>
-                  <div className="text-white text-4xl font-black drop-shadow-lg" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3)' }}>{player.score}</div>
-                </div>
-              ))}
-            </div>
+          <p className="text-lg font-bold text-white/60">Who guessed it?</p>
+
+          <div className="space-y-2 max-h-64 overflow-y-auto">
+            {selectablePlayers.map((player) => (
+              <button
+                key={player.id}
+                onClick={() => {
+                  setShowTimesUp(false);
+                  endRound(true, player.id);
+                }}
+                className="w-full px-6 py-4 rounded-xl font-bold text-lg text-white transition-all active:scale-95"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                }}
+              >
+                {player.name}
+              </button>
+            ))}
           </div>
 
           <button
             onClick={handleNextRound}
-            className="px-16 py-6 rounded-full bg-white text-red-600 font-bold text-3xl shadow-2xl hover:scale-105 active:scale-95 transition-transform animate-pulse"
+            className="w-full py-4 rounded-xl font-bold text-base active:scale-95 transition-transform"
+            style={{
+              background: 'rgba(255,68,68,0.12)',
+              border: '1px solid rgba(255,68,68,0.3)',
+              color: '#FF6B6B',
+            }}
           >
-            ➡️ Next Round
+            No one guessed it
           </button>
-
-          <div className="text-white text-lg opacity-80">
-            No points awarded
-          </div>
         </div>
       </div>
     );
@@ -324,24 +382,50 @@ export function GamePlay() {
   }
 
   if (!showPlayerReady && showWord && wordRevealTimer > 0) {
+    const categoryEmoji = game.currentCategory === 'draw' ? '🎨' : game.currentCategory === 'explain' ? '💬' : '👋';
     return (
-      <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: categoryColor }}>
-        <div className="text-center space-y-8">
-          <div className="text-white text-3xl font-bold mb-4">
-            {currentPlayer?.name}'s Turn
-          </div>
-          <div className="text-white text-6xl font-extrabold animate-pulse">
-            {currentWord.text.toUpperCase()}
-          </div>
-          <div className="text-white text-5xl font-extrabold">
-            {wordRevealTimer}
-          </div>
-          <div className="text-white text-2xl font-semibold opacity-90">
-            {game.currentCategory === 'draw' ? '🎨 Draw it!' :
-             game.currentCategory === 'explain' ? '💬 Explain it!' :
-             '👋 Signal it!'}
-          </div>
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 relative"
+        style={{ background: '#0A0A12' }}>
+        <div style={{
+          position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)',
+          width: '300px', height: '300px', borderRadius: '50%',
+          background: `radial-gradient(circle, ${categoryColor}20, transparent 70%)`,
+          filter: 'blur(40px)', pointerEvents: 'none'
+        }} />
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: '8px',
+          padding: '10px 24px', borderRadius: '999px',
+          background: `${categoryColor}20`,
+          border: `1px solid ${categoryColor}60`,
+          backdropFilter: 'blur(20px)',
+          marginBottom: '32px'
+        }}>
+          <span style={{ fontSize: '1.5rem' }}>{categoryEmoji}</span>
+          <span style={{ color: categoryColor, fontWeight: 700, fontFamily: 'var(--font-syne)', letterSpacing: '0.1em' }}>
+            {game.currentCategory.toUpperCase()}
+          </span>
         </div>
+        <div style={{
+          background: 'rgba(255,255,255,0.06)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255,255,255,0.12)',
+          borderRadius: '24px',
+          padding: '48px 40px',
+          textAlign: 'center',
+          width: '100%',
+          maxWidth: '400px'
+        }}>
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem', letterSpacing: '0.15em', marginBottom: '16px', fontFamily: 'var(--font-syne)' }}>YOUR WORD</p>
+          <p style={{ color: '#FFFFFF', fontSize: 'clamp(2rem,8vw,3rem)', fontWeight: 900, fontFamily: 'var(--font-syne)', lineHeight: 1.1 }}>
+            {currentWord?.text.toUpperCase()}
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.875rem', marginTop: '20px' }}>
+            Others will {game.currentCategory} this
+          </p>
+        </div>
+        <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.875rem', marginTop: '32px' }}>
+          Starting in {wordRevealTimer}s...
+        </p>
       </div>
     );
   }

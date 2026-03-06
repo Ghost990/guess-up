@@ -23,6 +23,7 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
   const [playerNames, setPlayerNames] = useState<string[]>(['', '']);
   const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('medium');
   const [newPlayerInput, setNewPlayerInput] = useState('');
+  const [selectedRounds, setSelectedRounds] = useState(9);
   const setupGame = useGameStore(state => state.setupGame);
 
   useEffect(() => {
@@ -118,7 +119,7 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
       .filter(name => name.length > 0);
 
     if (validNames.length >= 2) {
-      setupGame(validNames, difficulty);
+      setupGame(validNames, difficulty, selectedRounds);
       onStart();
     }
   };
@@ -271,6 +272,32 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
           <p className="text-center text-sm text-white/40">
             {difficultyConfig[difficulty].desc}
           </p>
+        </div>
+
+        {/* Rounds section */}
+        <div className="space-y-3">
+          <h2 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-syne)' }}>
+            Rounds
+          </h2>
+          <div className="flex gap-3">
+            {[6, 9, 12, 15, 18].map((count) => {
+              const selected = selectedRounds === count;
+              return (
+                <button
+                  key={count}
+                  onClick={() => setSelectedRounds(count)}
+                  className="flex-1 py-3 rounded-xl font-bold text-sm transition-all active:scale-95"
+                  style={{
+                    background: selected ? 'rgba(255,255,255,0.15)' : '#12121E',
+                    color: selected ? '#FFFFFF' : 'rgba(255,255,255,0.5)',
+                    border: selected ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.1)',
+                  }}
+                >
+                  {count}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Start button */}
