@@ -385,12 +385,11 @@ export function GamePlay() {
     const categoryEmoji = game.currentCategory === 'draw' ? '🎨' : game.currentCategory === 'explain' ? '💬' : '👋';
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6 relative"
-        style={{ background: '#0A0A12' }}>
+        style={{ background: `linear-gradient(160deg, ${categoryColor} 0%, ${categoryColor}99 45%, #0A0A12 100%)` }}>
         <div style={{
-          position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)',
-          width: '300px', height: '300px', borderRadius: '50%',
-          background: `radial-gradient(circle, ${categoryColor}20, transparent 70%)`,
-          filter: 'blur(40px)', pointerEvents: 'none'
+          position: 'absolute', inset: 0,
+          background: 'rgba(0,0,0,0.15)',
+          pointerEvents: 'none'
         }} />
         <div style={{
           display: 'flex', alignItems: 'center', gap: '8px',

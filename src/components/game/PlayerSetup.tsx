@@ -1,8 +1,17 @@
 'use client';
 
-import { useState, useEffect, KeyboardEvent } from 'react';
+import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import { useGameStore } from '@/stores/gameStore';
 import { Trash2, Plus } from 'lucide-react';
+
+// PWA install prompt
+let deferredPrompt: any = null;
+if (typeof window !== 'undefined') {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+}
 
 const STORAGE_KEY_PLAYERS = 'guessup-player-names';
 const STORAGE_KEY_DIFFICULTY = 'guessup-difficulty';
@@ -24,7 +33,29 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
   const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('medium');
   const [newPlayerInput, setNewPlayerInput] = useState('');
   const [selectedRounds, setSelectedRounds] = useState(9);
+  const [canInstall, setCanInstall] = useState(false);
+  const [installed, setInstalled] = useState(false);
   const setupGame = useGameStore(state => state.setupGame);
+
+  useEffect(() => {
+    setCanInstall(!!deferredPrompt);
+    const onPrompt = () => setCanInstall(true);
+    const onInstalled = () => { setInstalled(true); setCanInstall(false); };
+    window.addEventListener('beforeinstallprompt', onPrompt);
+    window.addEventListener('appinstalled', onInstalled);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', onPrompt);
+      window.removeEventListener('appinstalled', onInstalled);
+    };
+  }, []);
+
+  const handleInstall = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const result = await deferredPrompt.userChoice;
+    if (result.outcome === 'accepted') { setInstalled(true); setCanInstall(false); }
+    deferredPrompt = null;
+  };
 
   useEffect(() => {
     try {
@@ -320,6 +351,26 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
           <p className="text-center text-white/30 text-sm">
             Add at least 2 players to start
           </p>
+        )}
+
+        {/* PWA Install button */}
+        {canInstall && !installed && (
+          <button
+            onClick={handleInstall}
+            className="w-full py-4 rounded-2xl font-bold text-base active:scale-95 transition-transform"
+            style={{
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(12px)',
+              color: 'rgba(255,255,255,0.6)',
+              fontFamily: 'var(--font-syne)',
+            }}
+          >
+            📲 Install App
+          </button>
+        )}
+        {installed && (
+          <p className="text-center text-[#00E676]/70 text-sm">✓ App installed!</p>
         )}
       </div>
     </div>
