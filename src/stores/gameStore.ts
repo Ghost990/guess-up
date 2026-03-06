@@ -121,10 +121,14 @@ export const useGameStore = create<GameStore>()(
 
     // Filter words - avoid already used ones, fallback to all if pool exhausted
     const { usedWordIds } = get();
+    // Also track words used in THIS game session (stored on game object)
+    const gameUsedWordIds: string[] = (game as any).gameUsedWordIds ?? [];
+    const allUsedIds = [...new Set([...usedWordIds, ...gameUsedWordIds])];
+
     const allMatchingWords = wordsData.words.filter(
       (w: any) => w.difficulty === wordDifficulty && w.categories.includes(category)
     );
-    const unusedWords = allMatchingWords.filter((w: any) => !usedWordIds.includes(w.id));
+    const unusedWords = allMatchingWords.filter((w: any) => !allUsedIds.includes(w.id));
     const pool = unusedWords.length > 0 ? unusedWords : allMatchingWords;
     const shuffledWords = fisherYatesShuffle(pool);
     // Fallback: if no word found for this category/difficulty, use any word
@@ -158,6 +162,7 @@ export const useGameStore = create<GameStore>()(
         ...state.game!,
         phase: 'playing' as const,
         currentCategory: category,
+        gameUsedWordIds: [...((state.game as any).gameUsedWordIds ?? []), rawWord.id],
       };
 
       console.log('[startRound] Updated game state:', {
