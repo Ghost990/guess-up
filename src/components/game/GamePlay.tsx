@@ -107,9 +107,9 @@ export function GamePlay() {
     }
   }, [game?.phase, showPlayerReady, showWord, wordRevealTimer]);
 
-  // Handle gameplay timer
+  // Handle gameplay timer — only starts after player ready countdown and word reveal are done
   useEffect(() => {
-    if (game?.phase === 'playing' && !showWord) {
+    if (game?.phase === 'playing' && !showWord && !showPlayerReady) {
       const duration = Math.floor(game.settings.roundDuration / 1000);
       setTimeLeft(duration);
 
@@ -127,7 +127,7 @@ export function GamePlay() {
         if (timerRef.current) clearInterval(timerRef.current);
       };
     }
-  }, [game?.phase, showWord, game?.settings.roundDuration]);
+  }, [game?.phase, showWord, showPlayerReady, game?.settings.roundDuration]);
 
   // Handle timer expiration - show time's up screen
   useEffect(() => {

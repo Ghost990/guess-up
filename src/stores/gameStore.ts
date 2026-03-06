@@ -34,10 +34,10 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
     const totalRounds = playerNames.length * 3;
     const gameSettings = {
-      totalRounds: totalRounds as 5 | 10 | 15,
+      totalRounds,
       difficulty: (difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3) as 1 | 2 | 3,
       categories: ['draw', 'explain', 'signal'] as Array<'draw' | 'explain' | 'signal'>,
-      roundDuration: 60000 as 30000 | 60000 | 90000,
+      roundDuration: (difficulty === 'easy' ? 60000 : difficulty === 'medium' ? 45000 : 30000) as 30000 | 45000 | 60000 | 90000,
       wordRevealDuration: 3000,
       allowMidGameJoin: false,
     };

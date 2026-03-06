@@ -60,7 +60,7 @@ export const CATEGORY_TO_ROLE: Record<Category, Role> = {
  */
 export interface GameSettings {
   /** Total rounds to play */
-  totalRounds: 5 | 10 | 15;
+  totalRounds: number;
 
   /** Word difficulty level */
   difficulty: Difficulty;
@@ -68,8 +68,8 @@ export interface GameSettings {
   /** Enabled categories (min 1, max 3) */
   categories: Category[];
 
-  /** Milliseconds per round (30s, 60s, or 90s) */
-  roundDuration: 30000 | 60000 | 90000;
+  /** Milliseconds per round (30s, 45s, 60s, or 90s) */
+  roundDuration: 30000 | 45000 | 60000 | 90000;
 
   /** Milliseconds to show word to active player */
   wordRevealDuration: number;  // Default 3000
