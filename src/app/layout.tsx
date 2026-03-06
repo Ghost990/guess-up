@@ -1,8 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Syne, DM_Sans } from "next/font/google";
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "700", "800"],
+  variable: "--font-syne",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+});
 
 export const metadata: Metadata = {
   title: "GuessUp - Activity Party Game",
@@ -23,7 +32,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#667eea",
+  themeColor: "#0A0A12",
 };
 
 export default function RootLayout({
@@ -33,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hu">
-      <body className={inter.className}>
+      <body className={`${syne.variable} ${dmSans.variable} font-sans`} style={{ fontFamily: 'var(--font-dm-sans)' }}>
         {children}
         <script
           dangerouslySetInnerHTML={{

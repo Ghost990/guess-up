@@ -418,32 +418,6 @@ export function GamePlay() {
         }
       `}</style>
 
-      {/* DEBUG: State inspector - top left */}
-      <div className="fixed top-6 left-6 z-50 backdrop-blur-xl bg-black bg-opacity-70 rounded-2xl p-4 border border-red-500 border-opacity-60 shadow-2xl font-mono text-xs">
-        <div className="text-red-400 font-bold mb-2">DEBUG STATE:</div>
-        <div className="text-white space-y-1">
-          <div>Player: {game.currentPlayerIndex} ({players[game.currentPlayerIndex]?.name})</div>
-          <div>Category: {game.currentCategory}</div>
-          <div className="text-yellow-400 font-bold">Round: {currentRoundNumber} / {game.settings.totalRounds}</div>
-          <div>Total Turns: {game.settings.totalRounds}</div>
-          <div>Phase: {game.phase}</div>
-        </div>
-      </div>
-
-      {/* Floating scores indicator - bottom right */}
-      <div className="fixed bottom-6 right-6 z-40 backdrop-blur-xl bg-white bg-opacity-10 rounded-2xl p-4 border border-white border-opacity-20 shadow-2xl">
-        <div className="text-xs text-white text-opacity-70 mb-2 text-center font-semibold uppercase tracking-wider">
-          Round {currentRoundNumber} / {game.settings.totalRounds}
-        </div>
-        <div className="flex gap-4">
-          {players.map(player => (
-            <div key={player.id} className="text-center">
-              <div className="text-xs text-white text-opacity-80 mb-1 font-medium">{player.name}</div>
-              <div className="text-2xl font-bold text-white">{player.score}</div>
-            </div>
-          ))}
-        </div>
-      </div>
     </>
   );
 }

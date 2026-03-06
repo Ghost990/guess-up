@@ -2,10 +2,22 @@
 
 import { useState, useEffect, KeyboardEvent } from 'react';
 import { useGameStore } from '@/stores/gameStore';
-import { Trash2, Plus, Sparkles } from 'lucide-react';
+import { Trash2, Plus } from 'lucide-react';
 
 const STORAGE_KEY_PLAYERS = 'guessup-player-names';
 const STORAGE_KEY_DIFFICULTY = 'guessup-difficulty';
+
+const categoryBadges = [
+  { emoji: '\u{1F3A8}', label: 'DRAW', color: '#FFD60A' },
+  { emoji: '\u{1F4AC}', label: 'EXPLAIN', color: '#00E5FF' },
+  { emoji: '\u{1F44B}', label: 'SIGNAL', color: '#FF3A8F' },
+];
+
+const difficultyConfig = {
+  easy: { color: '#00E676', tint: '#00E67615', border: '#00E67644', desc: 'Common, everyday words' },
+  medium: { color: '#F59E0B', tint: '#F59E0B15', border: '#F59E0B44', desc: 'Trickier concepts and actions' },
+  hard: { color: '#FF4444', tint: '#FF444415', border: '#FF444444', desc: 'Rare, abstract or tricky words' },
+};
 
 export function PlayerSetup({ onStart }: { onStart: () => void }) {
   const [playerNames, setPlayerNames] = useState<string[]>(['', '']);
@@ -13,7 +25,6 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
   const [newPlayerInput, setNewPlayerInput] = useState('');
   const setupGame = useGameStore(state => state.setupGame);
 
-  // Load saved players and difficulty from localStorage on mount
   useEffect(() => {
     try {
       const savedPlayers = localStorage.getItem(STORAGE_KEY_PLAYERS);
@@ -34,7 +45,6 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
     }
   }, []);
 
-  // Save players to localStorage whenever they change (only save trimmed names)
   useEffect(() => {
     try {
       const normalizedPlayers = playerNames
@@ -51,7 +61,6 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
     }
   }, [playerNames]);
 
-  // Save difficulty to localStorage whenever it changes
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY_DIFFICULTY, difficulty);
@@ -84,13 +93,11 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
     if (e.key === 'Enter') {
       e.preventDefault();
       if (index !== undefined) {
-        // Focus next input or start button
         const nextInput = document.querySelector(`input[data-player="${index + 1}"]`) as HTMLInputElement;
         if (nextInput) {
           nextInput.focus();
         }
       } else {
-        // Add player from "Add Player" input
         addPlayer();
       }
     }
@@ -124,259 +131,170 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
   const validPlayerCount = projectedPlayers.length;
   const canStart = validPlayerCount >= 2;
 
-  // Category color badges for preview
-  const categoryBadges = [
-    { emoji: '🎨', label: 'Draw', color: '#3b82f6', gradient: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)' },
-    { emoji: '💬', label: 'Explain', color: '#10b981', gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' },
-    { emoji: '👋', label: 'Signal', color: '#f97316', gradient: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)' },
-  ];
-
   return (
     <div
-      className="min-h-screen flex items-center justify-center relative overflow-hidden p-6"
-      style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      }}
+      className="min-h-[100dvh] flex flex-col items-center px-6 py-10 overflow-y-auto"
+      style={{ background: '#0A0A12' }}
     >
-      {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div
-          className="absolute w-96 h-96 rounded-full blur-3xl animate-pulse"
-          style={{
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent)',
-            top: '-10%',
-            left: '-10%',
-            animationDuration: '4s',
-          }}
-        />
-        <div
-          className="absolute w-96 h-96 rounded-full blur-3xl animate-pulse"
-          style={{
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent)',
-            bottom: '-10%',
-            right: '-10%',
-            animationDuration: '5s',
-            animationDelay: '1s',
-          }}
-        />
-      </div>
+      <div className="w-full max-w-lg space-y-8">
+        {/* Title */}
+        <div className="text-center space-y-2">
+          <h1
+            className="text-6xl font-black tracking-tight text-white"
+            style={{ fontFamily: 'var(--font-syne)' }}
+          >
+            Guess<span style={{ color: '#FFD60A' }}>Up</span>
+          </h1>
+          <p className="text-white/50 text-lg font-medium">Party Game</p>
+        </div>
 
-      {/* Main content card */}
-      <div
-        className="relative z-10 w-full max-w-lg backdrop-blur-2xl rounded-3xl shadow-2xl border-2 overflow-hidden"
-        style={{
-          background: 'rgba(255, 255, 255, 0.1)',
-          borderColor: 'rgba(255, 255, 255, 0.2)',
-          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 60px rgba(255, 255, 255, 0.05)',
-        }}
-      >
-        <div className="p-8 space-y-8">
-          {/* Title section with sparkle animation */}
-          <div className="text-center space-y-3 relative">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
-              <Sparkles className="w-8 h-8 text-yellow-300 animate-pulse" style={{ animationDuration: '2s' }} />
-            </div>
-            <h1
-              className="text-6xl font-black tracking-tight"
+        {/* Category badges */}
+        <div className="flex justify-center gap-3">
+          {categoryBadges.map((badge) => (
+            <div
+              key={badge.label}
+              className="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider flex items-center gap-1.5"
               style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 40px rgba(255, 255, 255, 0.3)',
+                background: `${badge.color}18`,
+                color: badge.color,
+                border: `1px solid ${badge.color}33`,
               }}
             >
-              GuessUp
-            </h1>
-            <p className="text-xl font-semibold text-white/90">
-              Activity Party Game
-            </p>
-
-            {/* Category preview badges */}
-            <div className="flex justify-center gap-2 mt-4 pt-2">
-              {categoryBadges.map((badge) => (
-                <div
-                  key={badge.label}
-                  className="group px-3 py-1.5 rounded-full backdrop-blur-xl border transition-all duration-300 hover:scale-110"
-                  style={{
-                    background: `${badge.color}25`,
-                    borderColor: `${badge.color}60`,
-                  }}
-                >
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm">{badge.emoji}</span>
-                    <span className="text-xs font-bold text-white/80">{badge.label}</span>
-                  </div>
-                </div>
-              ))}
+              <span>{badge.emoji}</span>
+              <span>{badge.label}</span>
             </div>
+          ))}
+        </div>
+
+        {/* Players section */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-syne)' }}>
+              Players ({validPlayerCount}/8)
+            </h2>
+            <span className="text-sm text-white/40">Min: 2</span>
           </div>
 
-          {/* Players section */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-white">Players ({validPlayerCount}/8)</h2>
-              <span className="text-sm font-medium text-white/70">Min: 2 players</span>
-            </div>
-
-            {/* Player list */}
-            <div className="space-y-3 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
-              {playerNames.map((name, index) => (
-                <div
-                  key={index}
-                  className="group relative backdrop-blur-xl rounded-xl border-2 transition-all duration-300 hover:scale-[1.02]"
-                  style={{
-                    background: name.trim() ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.08)',
-                    borderColor: name.trim() ? 'rgba(255, 255, 255, 0.3)' : 'rgba(255, 255, 255, 0.15)',
-                  }}
-                >
-                  <div className="flex items-center gap-2 p-1">
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => updatePlayer(index, e.target.value)}
-                      onKeyPress={(e) => handleKeyPress(e, index)}
-                      placeholder={`Player ${index + 1}`}
-                      data-player={index}
-                      className="flex-1 px-4 py-3 bg-transparent text-white placeholder-white/50 text-lg font-semibold focus:outline-none"
-                      maxLength={20}
-                      autoComplete="off"
-                    />
-                    {playerNames.length > 2 && (
-                      <button
-                        onClick={() => removePlayer(index)}
-                        className="p-2 rounded-lg transition-all duration-200 hover:bg-red-500/20 active:scale-95 group-hover:opacity-100 opacity-0"
-                        style={{
-                          color: '#ef4444',
-                        }}
-                        title="Remove player"
-                      >
-                        <Trash2 className="w-5 h-5" />
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Add player section */}
-            {playerNames.length < 8 && (
+          <div className="space-y-2 max-h-64 overflow-y-auto">
+            {playerNames.map((name, index) => (
               <div
-                className="backdrop-blur-xl rounded-xl border-2 border-dashed transition-all duration-300 hover:border-white/40"
+                key={index}
+                className="rounded-xl border transition-colors"
                 style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
+                  background: '#12121E',
+                  borderColor: name.trim() ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.06)',
                 }}
               >
                 <div className="flex items-center gap-2 p-1">
                   <input
                     type="text"
-                    value={newPlayerInput}
-                    onChange={(e) => setNewPlayerInput(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    placeholder="Add new player..."
-                    className="flex-1 px-4 py-3 bg-transparent text-white placeholder-white/50 text-lg font-semibold focus:outline-none"
+                    value={name}
+                    onChange={(e) => updatePlayer(index, e.target.value)}
+                    onKeyPress={(e) => handleKeyPress(e, index)}
+                    placeholder={`Player ${index + 1}`}
+                    data-player={index}
+                    className="flex-1 px-4 py-3 bg-transparent text-white placeholder-white/30 text-base font-medium focus:outline-none"
                     maxLength={20}
                     autoComplete="off"
                   />
-                  <button
-                    onClick={() => addPlayer()}
-                    disabled={!newPlayerInput.trim()}
-                    className="p-2 rounded-lg transition-all duration-200 hover:bg-white/10 active:scale-95 disabled:opacity-30"
-                    style={{
-                      color: 'white',
-                    }}
-                    title="Add player"
-                  >
-                    <Plus className="w-6 h-6" />
-                  </button>
+                  {playerNames.length > 2 && (
+                    <button
+                      onClick={() => removePlayer(index)}
+                      className="p-2 rounded-lg text-white/30 hover:text-red-400 hover:bg-red-400/10 transition-colors"
+                      title="Remove player"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
-            )}
+            ))}
           </div>
 
-          {/* Difficulty section */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-white">Difficulty</h2>
-            <div className="grid grid-cols-3 gap-3">
-              {(['easy', 'medium', 'hard'] as const).map((level) => (
+          {playerNames.length < 8 && (
+            <div
+              className="rounded-xl border border-dashed transition-colors"
+              style={{
+                background: '#12121E',
+                borderColor: 'rgba(255,255,255,0.1)',
+              }}
+            >
+              <div className="flex items-center gap-2 p-1">
+                <input
+                  type="text"
+                  value={newPlayerInput}
+                  onChange={(e) => setNewPlayerInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Add new player..."
+                  className="flex-1 px-4 py-3 bg-transparent text-white placeholder-white/30 text-base font-medium focus:outline-none"
+                  maxLength={20}
+                  autoComplete="off"
+                />
                 <button
-                  key={level}
-                  onClick={() => setDifficulty(level)}
-                  className="group relative px-4 py-3 rounded-xl font-bold capitalize text-lg transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
-                  style={{
-                    background: difficulty === level
-                      ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%)'
-                      : 'rgba(255, 255, 255, 0.1)',
-                    color: 'white',
-                    borderWidth: '2px',
-                    borderStyle: 'solid',
-                    borderColor: difficulty === level ? 'rgba(255, 255, 255, 0.5)' : 'rgba(255, 255, 255, 0.2)',
-                    boxShadow: difficulty === level ? '0 8px 32px rgba(255, 255, 255, 0.2)' : 'none',
-                  }}
+                  onClick={() => addPlayer()}
+                  disabled={!newPlayerInput.trim()}
+                  className="p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20"
+                  title="Add player"
                 >
-                  <span className="relative z-10">{level}</span>
-                  {/* Shine effect on hover */}
-                  {difficulty === level && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 animate-pulse" style={{ animationDuration: '2s' }} />
-                  )}
+                  <Plus className="w-5 h-5" />
                 </button>
-              ))}
-            </div>
-            <div className="text-center text-sm text-white/70 mt-2">
-              {difficulty === 'easy' && '🟢 Common, everyday words'}
-              {difficulty === 'medium' && '🟡 Trickier concepts and actions'}
-              {difficulty === 'hard' && '🔴 Rare, abstract or tricky words'}
-            </div>
-          </div>
-
-          {/* Start button */}
-          <button
-            onClick={handleStart}
-            disabled={!canStart}
-            className="group relative w-full px-8 py-5 rounded-2xl font-black text-2xl text-white shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-            style={{
-              background: canStart
-                ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                : 'rgba(255, 255, 255, 0.1)',
-              boxShadow: canStart ? '0 10px 40px rgba(16, 185, 129, 0.4)' : 'none',
-            }}
-          >
-            <div className="relative z-10 flex items-center justify-center gap-3">
-              <span>Start Game</span>
-              <span className="text-3xl group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </div>
-            {/* Animated shine effect */}
-            {canStart && (
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -translate-x-full group-hover:translate-x-full transition-all duration-700" />
-            )}
-          </button>
-
-          {/* Helper text */}
-          {!canStart && (
-            <div className="text-center text-white/60 text-sm animate-pulse">
-              Add at least 2 players to start
+              </div>
             </div>
           )}
         </div>
-      </div>
 
-      {/* Custom scrollbar styles */}
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(255, 255, 255, 0.5);
-        }
-      `}</style>
+        {/* Difficulty section */}
+        <div className="space-y-3">
+          <h2 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-syne)' }}>
+            Difficulty
+          </h2>
+          <div className="grid grid-cols-3 gap-3">
+            {(['easy', 'medium', 'hard'] as const).map((level) => {
+              const cfg = difficultyConfig[level];
+              const selected = difficulty === level;
+              return (
+                <button
+                  key={level}
+                  onClick={() => setDifficulty(level)}
+                  className="px-4 py-3 rounded-xl font-bold capitalize text-sm transition-all active:scale-95"
+                  style={{
+                    background: selected ? cfg.tint : '#12121E',
+                    color: selected ? cfg.color : 'rgba(255,255,255,0.5)',
+                    border: `1.5px solid ${selected ? cfg.border : 'rgba(255,255,255,0.08)'}`,
+                  }}
+                >
+                  {level}
+                </button>
+              );
+            })}
+          </div>
+          <p className="text-center text-sm text-white/40">
+            {difficultyConfig[difficulty].desc}
+          </p>
+        </div>
+
+        {/* Start button */}
+        <button
+          onClick={handleStart}
+          disabled={!canStart}
+          className="w-full py-5 rounded-2xl font-black text-xl text-white active:scale-95 transition-transform disabled:opacity-40 disabled:active:scale-100"
+          style={{
+            fontFamily: 'var(--font-syne)',
+            background: canStart
+              ? 'linear-gradient(135deg, #00E676 0%, #00C853 100%)'
+              : '#12121E',
+            boxShadow: canStart ? '0 8px 32px rgba(0,230,118,0.3)' : 'none',
+          }}
+        >
+          Start Game
+        </button>
+
+        {!canStart && (
+          <p className="text-center text-white/30 text-sm">
+            Add at least 2 players to start
+          </p>
+        )}
+      </div>
     </div>
   );
 }
