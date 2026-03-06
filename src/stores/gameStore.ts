@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import type { Game, Player, Word } from '@/types';
 import { fisherYatesShuffle } from '@/lib/game/randomization';
 import wordsData from '@/data/words-hu.json';
@@ -7,6 +8,7 @@ interface GameStore {
   game: Game | null;
   players: Player[];
   currentWord: Word | null;
+  usedWordIds: string[];
 
   // Actions
   setupGame: (playerNames: string[], difficulty: 'easy' | 'medium' | 'hard') => void;
@@ -15,10 +17,13 @@ interface GameStore {
   resetGame: () => void;
 }
 
-export const useGameStore = create<GameStore>((set, get) => ({
+export const useGameStore = create<GameStore>()(
+  persist(
+    (set, get) => ({
   game: null,
   players: [],
   currentWord: null,
+  usedWordIds: [],
 
   setupGame: (playerNames, difficulty) => {
     const now = Date.now();
@@ -37,7 +42,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       totalRounds,
       difficulty: (difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3) as 1 | 2 | 3,
       categories: ['draw', 'explain', 'signal'] as Array<'draw' | 'explain' | 'signal'>,
-      roundDuration: (difficulty === 'easy' ? 60000 : difficulty === 'medium' ? 45000 : 30000) as 30000 | 45000 | 60000 | 90000,
+      roundDuration: 60000 as 30000 | 45000 | 60000 | 90000,
       wordRevealDuration: 3000,
       allowMidGameJoin: false,
     };
@@ -100,11 +105,14 @@ export const useGameStore = create<GameStore>((set, get) => ({
     };
     const wordDifficulty = difficultyMap[game.settings.difficulty];
 
-    // Filter words - the JSON structure has string difficulty and categories array
-    const filteredWords = wordsData.words.filter(
+    // Filter words - avoid already used ones, fallback to all if pool exhausted
+    const { usedWordIds } = get();
+    const allMatchingWords = wordsData.words.filter(
       (w: any) => w.difficulty === wordDifficulty && w.categories.includes(category)
     );
-    const shuffledWords = fisherYatesShuffle(filteredWords);
+    const unusedWords = allMatchingWords.filter((w: any) => !usedWordIds.includes(w.id));
+    const pool = unusedWords.length > 0 ? unusedWords : allMatchingWords;
+    const shuffledWords = fisherYatesShuffle(pool);
     const rawWord = shuffledWords[0] as any;
 
     // Map JSON word to Word type
@@ -148,6 +156,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       return {
         game: updatedGame,
         currentWord: word,
+        usedWordIds: [...state.usedWordIds, rawWord.id],
       };
     });
   },
@@ -231,5 +240,17 @@ export const useGameStore = create<GameStore>((set, get) => ({
     console.log('[endRound] ===== COMPLETE =====\n');
   },
 
-  resetGame: () => set({ game: null, players: [], currentWord: null }),
-}));
+  resetGame: () => set({ game: null, players: [], currentWord: null, usedWordIds: [] }),
+    }),
+    {
+      name: 'guessup-game-state',
+      // Don't persist debug/transient stuff
+      partialize: (state) => ({
+        game: state.game,
+        players: state.players,
+        currentWord: state.currentWord,
+        usedWordIds: state.usedWordIds,
+      }),
+    }
+  )
+);

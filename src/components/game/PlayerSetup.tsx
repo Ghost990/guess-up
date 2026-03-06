@@ -323,9 +323,9 @@ export function PlayerSetup({ onStart }: { onStart: () => void }) {
               ))}
             </div>
             <div className="text-center text-sm text-white/70 mt-2">
-              {difficulty === 'easy' && '⏱️ 60 seconds per round'}
-              {difficulty === 'medium' && '⏱️ 45 seconds per round'}
-              {difficulty === 'hard' && '⏱️ 30 seconds per round'}
+              {difficulty === 'easy' && '🟢 Common, everyday words'}
+              {difficulty === 'medium' && '🟡 Trickier concepts and actions'}
+              {difficulty === 'hard' && '🔴 Rare, abstract or tricky words'}
             </div>
           </div>
 
