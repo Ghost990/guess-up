@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guessup-v5';
+const CACHE_NAME = 'guessup-v6';
 
 // On install: skip waiting immediately, wipe all old caches
 self.addEventListener('install', (event) => {

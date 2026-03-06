@@ -39,6 +39,15 @@ export const useGameStore = create<GameStore>()(
     }));
 
     const totalRounds = maxRounds ?? playerNames.length * 3;
+
+    // Build shuffled category sequence for this game
+    const baseCategories: Array<'draw' | 'explain' | 'signal'> = ['draw', 'explain', 'signal'];
+    const categorySequence: Array<'draw' | 'explain' | 'signal'> = [];
+    for (let i = 0; i < Math.ceil(totalRounds / 3); i++) {
+      const shuffled = [...baseCategories].sort(() => Math.random() - 0.5);
+      categorySequence.push(...shuffled);
+    }
+
     const gameSettings = {
       totalRounds,
       difficulty: (difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3) as 1 | 2 | 3,
@@ -78,7 +87,7 @@ export const useGameStore = create<GameStore>()(
 
     set({
       players,
-      game: newGame,
+      game: { ...newGame, categorySequence } as any,
     });
   },
 
@@ -95,8 +104,10 @@ export const useGameStore = create<GameStore>()(
       phase: game.phase
     });
 
-    const categories: Array<'draw' | 'explain' | 'signal'> = ['draw', 'explain', 'signal'];
-    const category = categories[game.currentRound % 3];
+    // Use per-game shuffled category sequence if available, fallback to round % 3
+    const categorySequence: Array<'draw' | 'explain' | 'signal'> =
+      (game as any).categorySequence ?? ['draw', 'explain', 'signal'];
+    const category = categorySequence[game.currentRound % categorySequence.length];
 
     // Map numeric difficulty to string for word filtering
     const difficultyMap: Record<number, 'easy' | 'medium' | 'hard'> = {
@@ -114,7 +125,8 @@ export const useGameStore = create<GameStore>()(
     const unusedWords = allMatchingWords.filter((w: any) => !usedWordIds.includes(w.id));
     const pool = unusedWords.length > 0 ? unusedWords : allMatchingWords;
     const shuffledWords = fisherYatesShuffle(pool);
-    const rawWord = shuffledWords[0] as any;
+    // Fallback: if no word found for this category/difficulty, use any word
+    const rawWord = (shuffledWords[0] ?? wordsData.words.find((w: any) => w.difficulty === wordDifficulty) ?? wordsData.words[0]) as any;
 
     // Map JSON word to Word type
     const word: Word = {
