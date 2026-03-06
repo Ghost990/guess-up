@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Game, Player, Word } from '@/types';
-import { fisherYatesShuffle } from '@/lib/game/randomization';
+import { fisherYatesShuffle, getRandomItem } from '@/lib/game/randomization';
 import wordsData from '@/data/words-hu.json';
 
 interface GameStore {
@@ -28,8 +28,8 @@ export const useGameStore = create<GameStore>()(
 
   setupGame: (playerNames, difficulty, maxRounds) => {
     const now = Date.now();
-    // Shuffle player order every game
-    const shuffledNames = [...playerNames].sort(() => Math.random() - 0.5);
+    // Shuffle player order every game (proper Fisher-Yates)
+    const shuffledNames = fisherYatesShuffle([...playerNames]);
     const players: Player[] = shuffledNames.map((name, index) => ({
       id: `player-${index + 1}`,
       name,
@@ -46,8 +46,7 @@ export const useGameStore = create<GameStore>()(
     const baseCategories: Array<'draw' | 'explain' | 'signal'> = ['draw', 'explain', 'signal'];
     const categorySequence: Array<'draw' | 'explain' | 'signal'> = [];
     for (let i = 0; i < Math.ceil(totalRounds / 3); i++) {
-      const shuffled = [...baseCategories].sort(() => Math.random() - 0.5);
-      categorySequence.push(...shuffled);
+      categorySequence.push(...fisherYatesShuffle([...baseCategories]));
     }
 
     const gameSettings = {
@@ -130,9 +129,10 @@ export const useGameStore = create<GameStore>()(
     );
     const unusedWords = allMatchingWords.filter((w: any) => !allUsedIds.includes(w.id));
     const pool = unusedWords.length > 0 ? unusedWords : allMatchingWords;
-    const shuffledWords = fisherYatesShuffle(pool);
-    // Fallback: if no word found for this category/difficulty, use any word
-    const rawWord = (shuffledWords[0] ?? wordsData.words.find((w: any) => w.difficulty === wordDifficulty) ?? wordsData.words[0]) as any;
+    const rawWord = (pool.length > 0
+      ? getRandomItem(pool)
+      : getRandomItem(wordsData.words.filter((w: any) => w.difficulty === wordDifficulty)) ?? wordsData.words[0]
+    ) as any;
 
     // Map JSON word to Word type
     const word: Word = {
