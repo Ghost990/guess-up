@@ -51,6 +51,9 @@ export function GamePlay() {
         setReadyCountdown(10);
         setShowWord(false);
         setWordRevealTimer(3);
+        setTimeLeft(60);       // Pre-reset to avoid false Times Up trigger
+        setShowTimesUp(false); // Clear previous round's Times Up state
+        setShowPlayerSelect(false);
         startRound();
       }, 3000);
       return () => clearTimeout(timer);
@@ -130,10 +133,15 @@ export function GamePlay() {
   }, [game?.phase, showWord, showPlayerReady, game?.settings.roundDuration]);
 
   // Handle timer expiration - show time's up screen
+  // Guard: only fire if timeLeft was previously > 0 (timer actually ran, not stale 0 from prev round)
+  const prevTimeLeftRef = useRef<number>(60);
   useEffect(() => {
     if (game?.phase === 'playing' && !showWord && !showPlayerReady && timeLeft === 0 && !showTimesUp) {
-      setShowTimesUp(true);
+      if (prevTimeLeftRef.current > 0) {
+        setShowTimesUp(true);
+      }
     }
+    prevTimeLeftRef.current = timeLeft;
   }, [timeLeft, game?.phase, showWord, showPlayerReady, showTimesUp]);
 
   // Handle word peek timer (5 seconds)
