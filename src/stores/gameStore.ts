@@ -28,7 +28,9 @@ export const useGameStore = create<GameStore>()(
 
   setupGame: (playerNames, difficulty, maxRounds) => {
     const now = Date.now();
-    const players: Player[] = playerNames.map((name, index) => ({
+    // Shuffle player order every game
+    const shuffledNames = [...playerNames].sort(() => Math.random() - 0.5);
+    const players: Player[] = shuffledNames.map((name, index) => ({
       id: `player-${index + 1}`,
       name,
       score: 0,
@@ -259,7 +261,7 @@ export const useGameStore = create<GameStore>()(
     set({ game: { ...game, phase: 'gameOver', endedAt: Date.now() } });
   },
 
-  resetGame: () => set({ game: null, players: [], currentWord: null, usedWordIds: [] }),
+  resetGame: () => set((state) => ({ game: null, players: [], currentWord: null, usedWordIds: state.usedWordIds })),
     }),
     {
       name: 'guessup-game-state',
