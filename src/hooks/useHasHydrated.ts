@@ -1,17 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from "react";
 
-/**
- * Track when client-side hydration has completed.
- * Prevents SSR/client mismatches by rendering content only after mount.
- */
+const subscribe = () => () => {};
+
 export function useHasHydrated(): boolean {
-  const [hasHydrated, setHasHydrated] = useState(false);
-
-  useEffect(() => {
-    setHasHydrated(true);
-  }, []);
-
-  return hasHydrated;
+  return useSyncExternalStore(subscribe, () => true, () => false);
 }

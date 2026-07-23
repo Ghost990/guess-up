@@ -1,378 +1,323 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef, KeyboardEvent } from 'react';
-import { useGameStore } from '@/stores/gameStore';
-import { Trash2, Plus } from 'lucide-react';
+import { FormEvent, useEffect, useState } from "react";
+import { ArrowRight, Check, Clock3, Layers3, Plus, Trash2, Users } from "lucide-react";
+import { CategoryBadge } from "./CategoryBadge";
+import { HowToPlay } from "./HowToPlay";
+import { LanguageSwitch } from "./LanguageSwitch";
+import { Logo } from "./Logo";
+import { messages } from "@/i18n/translations";
+import { useGameStore } from "@/stores/gameStore";
+import type { Category, Difficulty } from "@/types";
 
-// PWA install prompt
-let deferredPrompt: any = null;
-if (typeof window !== 'undefined') {
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-  });
+const PLAYER_STORAGE_KEY = "guessup-player-names";
+const roundOptions = [1, 2, 3, 4] as const;
+const durationOptions = [30000, 45000, 60000, 90000] as const;
+const standardDifficultyOptions: Difficulty[] = ["easy", "medium", "hard"];
+const englishDifficultyOptions: Difficulty[] = [
+  "lowEnglish",
+  ...standardDifficultyOptions,
+];
+const categoryOptions: Category[] = ["draw", "explain", "signal"];
+
+interface PlayerDraft {
+  id: string;
+  name: string;
 }
 
-const STORAGE_KEY_PLAYERS = 'guessup-player-names';
-const STORAGE_KEY_DIFFICULTY = 'guessup-difficulty';
+let nextDraftId = 0;
 
-const categoryBadges = [
-  { emoji: '\u{1F3A8}', label: 'DRAW', color: '#FFD60A' },
-  { emoji: '\u{1F4AC}', label: 'EXPLAIN', color: '#00E5FF' },
-  { emoji: '\u{1F44B}', label: 'SIGNAL', color: '#FF3A8F' },
-];
+function createDraft(name = ""): PlayerDraft {
+  nextDraftId += 1;
+  return { id: `player-draft-${nextDraftId}`, name };
+}
 
-const difficultyConfig = {
-  easy: { color: '#00E676', tint: '#00E67615', border: '#00E67644', desc: 'Common, everyday words' },
-  medium: { color: '#F59E0B', tint: '#F59E0B15', border: '#F59E0B44', desc: 'Trickier concepts and actions' },
-  hard: { color: '#FF4444', tint: '#FF444415', border: '#FF444444', desc: 'Rare, abstract or tricky words' },
-};
+function loadSavedPlayers(): PlayerDraft[] {
+  if (typeof window === "undefined") return [createDraft(), createDraft()];
+  try {
+    const value = JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY) ?? "null");
+    if (Array.isArray(value) && value.length >= 2) {
+      return value.slice(0, 8).map((name) => createDraft(String(name)));
+    }
+  } catch {
+    // A malformed convenience value should never block game setup.
+  }
+  return [createDraft(), createDraft()];
+}
 
-export function PlayerSetup({ onStart }: { onStart: () => void }) {
-  const [playerNames, setPlayerNames] = useState<string[]>(['', '']);
-  const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('medium');
-  const [newPlayerInput, setNewPlayerInput] = useState('');
-  const [selectedRounds, setSelectedRounds] = useState(9);
-  const [canInstall, setCanInstall] = useState(false);
-  const [installed, setInstalled] = useState(false);
-  const setupGame = useGameStore(state => state.setupGame);
+export function PlayerSetup() {
+  const language = useGameStore((state) => state.language);
+  const setLanguage = useGameStore((state) => state.setLanguage);
+  const setupGame = useGameStore((state) => state.setupGame);
+  const [players, setPlayers] = useState(loadSavedPlayers);
+  const [difficulty, setDifficulty] = useState<Difficulty>("medium");
+  const [roundsPerPlayer, setRoundsPerPlayer] = useState(2);
+  const [roundDuration, setRoundDuration] =
+    useState<(typeof durationOptions)[number]>(60000);
+  const [categories, setCategories] = useState<Category[]>(categoryOptions);
+  const copy = messages[language];
+  const difficultyOptions =
+    language === "en" ? englishDifficultyOptions : standardDifficultyOptions;
+
+  const validNames = players.map((player) => player.name.trim()).filter(Boolean);
+  const hasDuplicates =
+    new Set(validNames.map((name) => name.toLocaleLowerCase(language))).size !==
+    validNames.length;
+  const canStart = validNames.length >= 2 && !hasDuplicates && categories.length > 0;
+  const totalTasks = validNames.length * roundsPerPlayer;
 
   useEffect(() => {
-    setCanInstall(!!deferredPrompt);
-    const onPrompt = () => setCanInstall(true);
-    const onInstalled = () => { setInstalled(true); setCanInstall(false); };
-    window.addEventListener('beforeinstallprompt', onPrompt);
-    window.addEventListener('appinstalled', onInstalled);
-    return () => {
-      window.removeEventListener('beforeinstallprompt', onPrompt);
-      window.removeEventListener('appinstalled', onInstalled);
-    };
-  }, []);
+    localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(validNames));
+  }, [validNames]);
 
-  const handleInstall = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const result = await deferredPrompt.userChoice;
-    if (result.outcome === 'accepted') { setInstalled(true); setCanInstall(false); }
-    deferredPrompt = null;
-  };
-
-  useEffect(() => {
-    try {
-      const savedPlayers = localStorage.getItem(STORAGE_KEY_PLAYERS);
-      const savedDifficulty = localStorage.getItem(STORAGE_KEY_DIFFICULTY);
-
-      if (savedPlayers) {
-        const parsed = JSON.parse(savedPlayers);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setPlayerNames(parsed);
-        }
-      }
-
-      if (savedDifficulty && ['easy', 'medium', 'hard'].includes(savedDifficulty)) {
-        setDifficulty(savedDifficulty as 'easy' | 'medium' | 'hard');
-      }
-    } catch (error) {
-      console.error('Failed to load saved players:', error);
-    }
-  }, []);
-
-  useEffect(() => {
-    try {
-      const normalizedPlayers = playerNames
-        .map(name => name.trim())
-        .filter(name => name.length > 0);
-
-      if (normalizedPlayers.length > 0) {
-        localStorage.setItem(STORAGE_KEY_PLAYERS, JSON.stringify(normalizedPlayers));
-      } else {
-        localStorage.removeItem(STORAGE_KEY_PLAYERS);
-      }
-    } catch (error) {
-      console.error('Failed to save players:', error);
-    }
-  }, [playerNames]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY_DIFFICULTY, difficulty);
-    } catch (error) {
-      console.error('Failed to save difficulty:', error);
-    }
-  }, [difficulty]);
-
-  const addPlayer = (name?: string) => {
-    const playerName = (name || newPlayerInput).trim();
-    if (playerName && playerNames.length < 8) {
-      setPlayerNames([...playerNames, playerName]);
-      setNewPlayerInput('');
-    }
+  const updatePlayer = (index: number, value: string) => {
+    setPlayers((drafts) =>
+      drafts.map((draft, playerIndex) =>
+        playerIndex === index ? { ...draft, name: value } : draft,
+      ),
+    );
   };
 
   const removePlayer = (index: number) => {
-    if (playerNames.length > 2) {
-      setPlayerNames(playerNames.filter((_, i) => i !== index));
-    }
+    setPlayers((drafts) => drafts.filter((_, playerIndex) => playerIndex !== index));
   };
 
-  const updatePlayer = (index: number, name: string) => {
-    const updated = [...playerNames];
-    updated[index] = name;
-    setPlayerNames(updated);
-  };
-
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>, index?: number) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      if (index !== undefined) {
-        const nextInput = document.querySelector(`input[data-player="${index + 1}"]`) as HTMLInputElement;
-        if (nextInput) {
-          nextInput.focus();
-        }
-      } else {
-        addPlayer();
+  const toggleCategory = (category: Category) => {
+    setCategories((current) => {
+      if (current.includes(category)) {
+        return current.length === 1 ? current : current.filter((item) => item !== category);
       }
-    }
+      return categoryOptions.filter((item) => [...current, category].includes(item));
+    });
   };
 
-  const handleStart = () => {
-    let nextPlayerNames = playerNames;
-    const pendingName = newPlayerInput.trim();
-
-    if (pendingName) {
-      nextPlayerNames = [...playerNames, pendingName];
-      setPlayerNames(nextPlayerNames);
-      setNewPlayerInput('');
+  const handleLanguageChange = (nextLanguage: typeof language) => {
+    if (nextLanguage === "hu" && difficulty === "lowEnglish") {
+      setDifficulty("easy");
     }
-
-    const validNames = nextPlayerNames
-      .map(name => name.trim())
-      .filter(name => name.length > 0);
-
-    if (validNames.length >= 2) {
-      setupGame(validNames, difficulty, selectedRounds);
-      onStart();
-    }
+    setLanguage(nextLanguage);
   };
 
-  const trimmedPlayers = playerNames
-    .map(n => n.trim())
-    .filter(n => n.length > 0);
-  const pendingPlayer = newPlayerInput.trim();
-  const projectedPlayers = pendingPlayer ? [...trimmedPlayers, pendingPlayer] : trimmedPlayers;
-  const validPlayerCount = projectedPlayers.length;
-  const canStart = validPlayerCount >= 2;
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!canStart) return;
+    setupGame({
+      playerNames: validNames,
+      difficulty,
+      roundsPerPlayer,
+      roundDuration,
+      language,
+      categories,
+    });
+  };
 
   return (
-    <div
-      className="min-h-[100dvh] flex flex-col items-center px-6 py-10 overflow-y-auto"
-      style={{ background: '#0A0A12' }}
-    >
-      <div className="w-full max-w-lg space-y-8">
-        {/* Title */}
-        <div className="text-center space-y-2">
-          <h1
-            className="text-5xl sm:text-6xl font-black tracking-tight text-white"
-            style={{ fontFamily: 'var(--font-syne)' }}
-          >
-            Guess<span style={{ color: '#FFD60A' }}>Up</span>
-          </h1>
-          <p className="text-white/50 text-lg font-medium">Party Game</p>
+    <main className="setup-page">
+      <header className="topbar">
+        <Logo />
+        <div className="topbar-actions">
+          <HowToPlay language={language} />
+          <LanguageSwitch language={language} onChange={handleLanguageChange} />
         </div>
+      </header>
 
-        {/* Category badges */}
-        <div className="flex justify-center gap-3">
-          {categoryBadges.map((badge) => (
-            <div
-              key={badge.label}
-              className="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider flex items-center gap-1.5"
-              style={{
-                background: `${badge.color}18`,
-                color: badge.color,
-                border: `1px solid ${badge.color}33`,
-              }}
-            >
-              <span>{badge.emoji}</span>
-              <span>{badge.label}</span>
-            </div>
-          ))}
-        </div>
+      <div className="setup-layout">
+        <section className="setup-intro" aria-labelledby="setup-title">
+          <p className="setup-tagline">{copy.setup.tagline}</p>
+          <h1 id="setup-title">{copy.setup.title}</h1>
+          <p className="setup-subtitle">{copy.setup.subtitle}</p>
 
-        {/* Players section */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-syne)' }}>
-              Players ({validPlayerCount}/8)
-            </h2>
-            <span className="text-sm text-white/40">Min: 2</span>
+          <div className="rules-list">
+            <h2>{copy.setup.rulesTitle}</h2>
+            <ol>
+              {copy.setup.rules.map((rule, index) => (
+                <li key={rule}>
+                  <span>{index + 1}</span>
+                  <p>{rule}</p>
+                </li>
+              ))}
+            </ol>
           </div>
+        </section>
 
-          <div className="space-y-2 max-h-64 overflow-y-auto">
-            {playerNames.map((name, index) => (
-              <div
-                key={index}
-                className="rounded-xl border transition-colors"
-                style={{
-                  background: '#12121E',
-                  borderColor: name.trim() ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.06)',
-                }}
-              >
-                <div className="flex items-center gap-2 p-1">
+        <form className="setup-form" onSubmit={handleSubmit}>
+          <section className="form-section" aria-labelledby="players-title">
+            <div className="section-heading">
+              <span className="section-icon"><Users aria-hidden="true" size={19} /></span>
+              <div>
+                <h2 id="players-title">{copy.setup.players}</h2>
+                <p>{copy.setup.minPlayers}</p>
+              </div>
+              <strong>{validNames.length}/8</strong>
+            </div>
+
+            <div className="player-list">
+              {players.map((player, index) => (
+                <div className="player-field" key={player.id}>
+                  <span aria-hidden="true">{index + 1}</span>
+                  <label className="sr-only" htmlFor={`player-${index}`}>
+                    {copy.setup.playerPlaceholder} {index + 1}
+                  </label>
                   <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => updatePlayer(index, e.target.value)}
-                    onKeyPress={(e) => handleKeyPress(e, index)}
-                    placeholder={`Player ${index + 1}`}
-                    data-player={index}
-                    className="flex-1 px-4 py-3 bg-transparent text-white placeholder-white/30 text-base font-medium focus:outline-none"
+                    id={`player-${index}`}
+                    value={player.name}
                     maxLength={20}
                     autoComplete="off"
+                    placeholder={`${copy.setup.playerPlaceholder} ${index + 1}`}
+                    onChange={(event) => updatePlayer(index, event.target.value)}
                   />
-                  {playerNames.length > 2 && (
+                  {players.length > 2 && (
                     <button
+                      type="button"
+                      className="icon-button"
+                      aria-label={`${copy.setup.removePlayer}: ${player.name || index + 1}`}
                       onClick={() => removePlayer(index)}
-                      className="p-2 rounded-lg text-white/30 hover:text-red-400 hover:bg-red-400/10 transition-colors"
-                      title="Remove player"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 aria-hidden="true" size={18} />
                     </button>
                   )}
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {playerNames.length < 8 && (
-            <div
-              className="rounded-xl border border-dashed transition-colors"
-              style={{
-                background: '#12121E',
-                borderColor: 'rgba(255,255,255,0.1)',
-              }}
-            >
-              <div className="flex items-center gap-2 p-1">
-                <input
-                  type="text"
-                  value={newPlayerInput}
-                  onChange={(e) => setNewPlayerInput(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Add new player..."
-                  className="flex-1 px-4 py-3 bg-transparent text-white placeholder-white/30 text-base font-medium focus:outline-none"
-                  maxLength={20}
-                  autoComplete="off"
-                />
-                <button
-                  onClick={() => addPlayer()}
-                  disabled={!newPlayerInput.trim()}
-                  className="p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20"
-                  title="Add player"
-                >
-                  <Plus className="w-5 h-5" />
-                </button>
-              </div>
+              ))}
             </div>
-          )}
-        </div>
 
-        {/* Difficulty section */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-syne)' }}>
-            Difficulty
-          </h2>
-          <div className="grid grid-cols-3 gap-3">
-            {(['easy', 'medium', 'hard'] as const).map((level) => {
-              const cfg = difficultyConfig[level];
-              const selected = difficulty === level;
-              return (
-                <button
-                  key={level}
-                  onClick={() => setDifficulty(level)}
-                  className="px-4 py-3 rounded-xl font-bold capitalize text-sm transition-all active:scale-95"
-                  style={{
-                    background: selected ? cfg.tint : '#12121E',
-                    color: selected ? cfg.color : 'rgba(255,255,255,0.5)',
-                    border: `1.5px solid ${selected ? cfg.border : 'rgba(255,255,255,0.08)'}`,
-                  }}
-                >
-                  {level}
-                </button>
-              );
-            })}
-          </div>
-          <p className="text-center text-sm text-white/40">
-            {difficultyConfig[difficulty].desc}
-          </p>
-        </div>
+            {hasDuplicates && <p className="form-error">{copy.setup.duplicateNames}</p>}
+            {players.length < 8 && (
+              <button
+                type="button"
+                className="text-button"
+                onClick={() => setPlayers((drafts) => [...drafts, createDraft()])}
+              >
+                <Plus aria-hidden="true" size={18} />
+                {copy.setup.addPlayer}
+              </button>
+            )}
+          </section>
 
-        {/* Rounds section */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-syne)' }}>
-            Rounds
-          </h2>
-          <div className="flex gap-3">
-            {[6, 9, 12, 15, 18].map((count) => {
-              const selected = selectedRounds === count;
-              return (
-                <button
-                  key={count}
-                  onClick={() => setSelectedRounds(count)}
-                  className="flex-1 py-3 rounded-xl font-bold text-sm transition-all active:scale-95"
-                  style={{
-                    background: selected ? 'rgba(255,255,255,0.15)' : '#12121E',
-                    color: selected ? '#FFFFFF' : 'rgba(255,255,255,0.5)',
-                    border: selected ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.1)',
-                  }}
-                >
-                  {count}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+          <section className="form-section" aria-labelledby="difficulty-title">
+            <div className="form-section-heading">
+              <h2 id="difficulty-title">{copy.setup.difficulty}</h2>
+            </div>
+            <div
+              className="segmented-grid segmented-grid--difficulty"
+              role="radiogroup"
+              aria-labelledby="difficulty-title"
+            >
+              {difficultyOptions.map((option) => {
+                const optionCopy = copy.setup.difficultyOptions[option];
+                return (
+                  <label key={option}>
+                    <input
+                      type="radio"
+                      name="difficulty"
+                      value={option}
+                      checked={difficulty === option}
+                      onChange={() => setDifficulty(option)}
+                    />
+                    <span>
+                      <strong>{optionCopy.label}</strong>
+                      <small>{optionCopy.description}</small>
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          </section>
 
-        {/* Start button */}
-        <button
-          onClick={handleStart}
-          disabled={!canStart}
-          className="w-full py-5 rounded-2xl font-black text-xl text-white active:scale-95 transition-transform disabled:opacity-40 disabled:active:scale-100"
-          style={{
-            fontFamily: 'var(--font-syne)',
-            background: canStart
-              ? 'linear-gradient(135deg, #00E676 0%, #00C853 100%)'
-              : '#12121E',
-            boxShadow: canStart ? '0 8px 32px rgba(0,230,118,0.3)' : 'none',
-          }}
-        >
-          Start Game
-        </button>
-
-        {!canStart && (
-          <p className="text-center text-white/30 text-sm">
-            Add at least 2 players to start
-          </p>
-        )}
-
-        {/* PWA Install button */}
-        {canInstall && !installed && (
-          <button
-            onClick={handleInstall}
-            className="w-full py-4 rounded-2xl font-bold text-base active:scale-95 transition-transform"
-            style={{
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              backdropFilter: 'blur(12px)',
-              color: 'rgba(255,255,255,0.6)',
-              fontFamily: 'var(--font-syne)',
-            }}
+          <section
+            className="form-section"
+            role="group"
+            aria-labelledby="language-title"
           >
-            📲 Install App
-          </button>
-        )}
-        {installed && (
-          <p className="text-center text-[#00E676]/70 text-sm">✓ App installed!</p>
-        )}
+            <div className="form-section-heading">
+              <h2 id="language-title">{copy.setup.gameLanguage}</h2>
+              <p className="field-hint">{copy.setup.languageHint}</p>
+            </div>
+            <LanguageSwitch language={language} onChange={handleLanguageChange} />
+          </section>
+
+          <section
+            className="form-section"
+            role="group"
+            aria-labelledby="rounds-title"
+          >
+            <div className="form-section-heading">
+              <h2 id="rounds-title">{copy.setup.roundsPerPlayer}</h2>
+              <p className="field-hint">{copy.setup.roundsHint}</p>
+            </div>
+            <div className="choice-row">
+              {roundOptions.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  aria-pressed={roundsPerPlayer === option}
+                  onClick={() => setRoundsPerPlayer(option)}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+            <p className="selection-summary">
+              <Layers3 aria-hidden="true" size={17} />
+              {copy.setup.totalTasks(totalTasks)}
+            </p>
+          </section>
+
+          <section
+            className="form-section"
+            role="group"
+            aria-labelledby="duration-title"
+          >
+            <div className="form-section-heading">
+              <h2 id="duration-title">{copy.setup.duration}</h2>
+            </div>
+            <div className="choice-row choice-row--duration">
+              {durationOptions.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  aria-pressed={roundDuration === option}
+                  onClick={() => setRoundDuration(option)}
+                >
+                  <Clock3 aria-hidden="true" size={16} />
+                  {option / 1000} {copy.setup.seconds}
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <section
+            className="form-section"
+            role="group"
+            aria-labelledby="categories-title"
+          >
+            <div className="form-section-heading">
+              <h2 id="categories-title">{copy.setup.categories}</h2>
+            </div>
+            <div className="category-choices">
+              {categoryOptions.map((category) => (
+                <button
+                  key={category}
+                  type="button"
+                  data-category={category}
+                  aria-pressed={categories.includes(category)}
+                  onClick={() => toggleCategory(category)}
+                >
+                  <CategoryBadge category={category} language={language} />
+                  {categories.includes(category) && <Check aria-hidden="true" size={18} />}
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <div className="start-area">
+            <button className="primary-button" type="submit" disabled={!canStart}>
+              {copy.setup.start}
+              <ArrowRight aria-hidden="true" size={20} />
+            </button>
+            {!canStart && !hasDuplicates && <p>{copy.setup.startHint}</p>}
+          </div>
+        </form>
       </div>
-    </div>
+    </main>
   );
 }

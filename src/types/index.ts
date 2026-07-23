@@ -8,13 +8,13 @@ export type {
   Game,
   GamePhase,
   GameSettings,
+  RoundResult,
   Role,
 } from './game';
 
 export {
   VALID_PHASE_TRANSITIONS,
   CATEGORY_TO_ROLE,
-  DEFAULT_GAME_SETTINGS,
 } from './game';
 
 // Player types
@@ -30,16 +30,16 @@ export { PLAYER_CONSTRAINTS } from './player';
 // Word types
 export type {
   Word,
-  WordCategory,
+  WordPack,
   Category,
   Difficulty,
+  Language,
   WordFilter,
-  WordQueryResult,
 } from './word';
 
 export {
-  DIFFICULTY_LABELS,
-  WORD_CONSTRAINTS,
+  CATEGORIES,
+  DIFFICULTY_LEVELS,
 } from './word';
 
 // Timer types

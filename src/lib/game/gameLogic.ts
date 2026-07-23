@@ -80,7 +80,10 @@ export function shouldEndGame(
  * @returns Random 6-character game ID
  */
 export function generateGameId(): string {
-  return Math.random().toString(36).substring(2, 8).toUpperCase();
+  return Math.floor(Math.random() * 36 ** 6)
+    .toString(36)
+    .padStart(6, '0')
+    .toUpperCase();
 }
 
 /**

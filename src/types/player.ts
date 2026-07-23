@@ -67,7 +67,7 @@ export const PLAYER_CONSTRAINTS = {
   NAME_MAX_LENGTH: 20,
   MIN_PLAYERS: 2,
   MAX_PLAYERS: 8,
-  NAME_PATTERN: /^[a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ0-9\s-]+$/,  // Hungarian chars
+  NAME_PATTERN: /^[\p{L}\p{N}\s'-]+$/u,
 } as const;
 
 /**

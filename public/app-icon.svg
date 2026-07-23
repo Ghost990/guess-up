@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">GuessUp app icon</title>
+  <rect width="512" height="512" rx="104" fill="#17130e"/>
+  <path fill="#ff6239" d="M118 92h276c40 0 72 32 72 72v174c0 40-32 72-72 72H251l-103 72v-72h-30c-40 0-72-32-72-72V164c0-40 32-72 72-72Z"/>
+  <path fill="none" stroke="#17130e" stroke-linecap="round" stroke-linejoin="round" stroke-width="42" d="m176 252 80-80 80 80M256 180v150"/>
+  <circle cx="390" cy="134" r="46" fill="#ffd84c" stroke="#17130e" stroke-width="20"/>
+</svg>

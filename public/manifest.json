@@ -1,13 +1,13 @@
 {
   "name": "GuessUp",
   "short_name": "GuessUp",
-  "description": "Activity party game — draw, explain, signal!",
+  "description": "Multilingual activity party game — draw, explain, and act!",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0A0A12",
-  "theme_color": "#0A0A12",
+  "background_color": "#100e0d",
+  "theme_color": "#17130e",
   "icons": [
     {
       "src": "/icon-192.png",
