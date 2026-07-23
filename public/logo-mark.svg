@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-labelledby="title">
+  <title id="title">GuessUp</title>
+  <path fill="#ff6239" d="M8 5h24a5 5 0 0 1 5 5v16a5 5 0 0 1-5 5H19l-7 5v-5H8a5 5 0 0 1-5-5V10a5 5 0 0 1 5-5Z"/>
+  <path fill="none" stroke="#17130e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m14.5 19 5.5-5.5 5.5 5.5M20 14v11"/>
+  <circle cx="31.5" cy="8.5" r="3.5" fill="#ffd84c" stroke="#17130e" stroke-width="1.5"/>
+</svg>

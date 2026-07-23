@@ -1,282 +1,293 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-import type { Game, Player, Word } from '@/types';
-import { fisherYatesShuffle, getRandomItem } from '@/lib/game/randomization';
-import wordsData from '@/data/words-hu.json';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { getCategoryForTurn, getTotalRounds, applyScore, GUESSER_POINTS, PRESENTER_POINTS } from "@/lib/game/rounds";
+import { pickWord } from "@/lib/game/wordPacks";
+import type {
+  Category,
+  Difficulty,
+  Game,
+  Language,
+  Player,
+  RoundResult,
+} from "@/types";
+
+export interface SetupGameInput {
+  playerNames: string[];
+  difficulty: Difficulty;
+  roundsPerPlayer: number;
+  roundDuration: 30000 | 45000 | 60000 | 90000;
+  language: Language;
+  categories?: Category[];
+}
 
 interface GameStore {
   game: Game | null;
-  players: Player[];
-  currentWord: Word | null;
-  usedWordIds: string[];
-
-  // Actions
-  setupGame: (playerNames: string[], difficulty: 'easy' | 'medium' | 'hard', maxRounds?: number) => void;
-  startRound: () => void;
+  language: Language;
+  lastResult: RoundResult | null;
+  setLanguage: (language: Language) => void;
+  setupGame: (input: SetupGameInput) => void;
+  startPlaying: () => void;
+  pauseRound: () => void;
+  resumeRound: () => void;
   endRound: (success: boolean, guesserId?: string) => void;
+  startNextRound: () => void;
   finishGame: () => void;
   resetGame: () => void;
+}
+
+type PersistedGameState = Pick<GameStore, "game" | "language" | "lastResult">;
+
+function createId(prefix: string): string {
+  const id =
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  return `${prefix}-${id}`;
+}
+
+function normalizeNames(playerNames: string[]): string[] {
+  const normalized = playerNames.map((name) => name.trim()).filter(Boolean);
+  const uniqueNames = new Set(normalized.map((name) => name.toLocaleLowerCase()));
+
+  if (normalized.length < 2 || normalized.length > 8) {
+    throw new Error("A game requires between 2 and 8 players.");
+  }
+  if (uniqueNames.size !== normalized.length) {
+    throw new Error("Player names must be unique.");
+  }
+
+  return normalized;
 }
 
 export const useGameStore = create<GameStore>()(
   persist(
     (set, get) => ({
-  game: null,
-  players: [],
-  currentWord: null,
-  usedWordIds: [],
+      game: null,
+      language: "hu",
+      lastResult: null,
 
-  setupGame: (playerNames, difficulty, maxRounds) => {
-    const now = Date.now();
-    // Shuffle player order every game (proper Fisher-Yates)
-    const shuffledNames = fisherYatesShuffle([...playerNames]);
-    const players: Player[] = shuffledNames.map((name, index) => ({
-      id: `player-${index + 1}`,
-      name,
-      score: 0,
-      joinedAt: now,
-      isHost: index === 0,
-      isActive: true,
-      hasGuessedCorrectly: false,
-    }));
-
-    const totalRounds = maxRounds ?? playerNames.length * 3;
-
-    // Build shuffled category sequence for this game
-    const baseCategories: Array<'draw' | 'explain' | 'signal'> = ['draw', 'explain', 'signal'];
-    const categorySequence: Array<'draw' | 'explain' | 'signal'> = [];
-    for (let i = 0; i < Math.ceil(totalRounds / 3); i++) {
-      categorySequence.push(...fisherYatesShuffle([...baseCategories]));
-    }
-
-    const gameSettings = {
-      totalRounds,
-      difficulty: (difficulty === 'easy' ? 1 : difficulty === 'medium' ? 2 : 3) as 1 | 2 | 3,
-      categories: ['draw', 'explain', 'signal'] as Array<'draw' | 'explain' | 'signal'>,
-      roundDuration: 60000 as 30000 | 45000 | 60000 | 90000,
-      wordRevealDuration: 3000,
-      allowMidGameJoin: false,
-    };
-
-    const newGame: Game = {
-      id: `game-${Date.now()}`,
-      hostPlayerId: players[0].id,
-      players,
-      phase: 'setup',
-      currentRound: 0,
-      totalRounds,
-      currentPlayerIndex: 0,
-      currentCategory: 'draw',
-      currentWord: null,
-      timer: {
-        serverTime: now,
-        phaseStartTime: now,
-        phaseDuration: 60000,
-        remainingMs: 60000,
-        isPaused: false,
-        pausedAt: null,
+      setLanguage: (language) => {
+        if (get().game) return;
+        set({ language });
       },
-      scores: Object.fromEntries(players.map(p => [p.id, 0])),
-      guesses: [],
-      settings: gameSettings,
-      createdAt: Date.now(),
-      startedAt: null,
-      endedAt: null,
-      currentQuestionInRound: 1,
-      questionsPerRound: 1,
-    };
 
-    set({
-      players,
-      game: { ...newGame, categorySequence } as any,
-    });
-  },
-
-  startRound: () => {
-    const state = get();
-    const { game, players } = state;
-    if (!game) return;
-
-    console.log('[startRound] Called with state:', {
-      currentPlayerIndex: game.currentPlayerIndex,
-      currentPlayer: players[game.currentPlayerIndex]?.name,
-      currentRound: game.currentRound,
-      currentQuestion: game.currentQuestionInRound,
-      phase: game.phase
-    });
-
-    // Use per-game shuffled category sequence if available, fallback to round % 3
-    const categorySequence: Array<'draw' | 'explain' | 'signal'> =
-      (game as any).categorySequence ?? ['draw', 'explain', 'signal'];
-    const category = categorySequence[game.currentRound % categorySequence.length];
-
-    // Map numeric difficulty to string for word filtering
-    const difficultyMap: Record<number, 'easy' | 'medium' | 'hard'> = {
-      1: 'easy',
-      2: 'medium',
-      3: 'hard',
-    };
-    const wordDifficulty = difficultyMap[game.settings.difficulty];
-
-    // Filter words - avoid already used ones, fallback to all if pool exhausted
-    const { usedWordIds } = get();
-    // Also track words used in THIS game session (stored on game object)
-    const gameUsedWordIds: string[] = (game as any).gameUsedWordIds ?? [];
-    const allUsedIds = [...new Set([...usedWordIds, ...gameUsedWordIds])];
-
-    const allMatchingWords = wordsData.words.filter(
-      (w: any) => w.difficulty === wordDifficulty && w.categories.includes(category)
-    );
-    const unusedWords = allMatchingWords.filter((w: any) => !allUsedIds.includes(w.id));
-    const pool = unusedWords.length > 0 ? unusedWords : allMatchingWords;
-    const rawWord = (pool.length > 0
-      ? getRandomItem(pool)
-      : getRandomItem(wordsData.words.filter((w: any) => w.difficulty === wordDifficulty)) ?? wordsData.words[0]
-    ) as any;
-
-    // Map JSON word to Word type
-    const word: Word = {
-      id: rawWord.id,
-      text: rawWord.text,
-      category: 'animals', // Default category, not critical for gameplay
-      difficulty: game.settings.difficulty,
-      length: rawWord.length,
-      language: 'hu',
-      tags: rawWord.tags || [],
-    };
-
-    // Use set with function to ensure we get the latest state
-    // CRITICAL: Preserve ALL game state fields, only update phase and category
-    set((state) => {
-      console.log('[startRound] ===== SETTING STATE =====');
-      console.log('[startRound] Current state.game before update:', {
-        currentPlayerIndex: state.game?.currentPlayerIndex,
-        currentQuestionInRound: state.game?.currentQuestionInRound,
-        currentRound: state.game?.currentRound,
-        currentCategory: state.game?.currentCategory,
-        phase: state.game?.phase,
-      });
-      console.log('[startRound] New category:', category);
-
-      const updatedGame = {
-        ...state.game!,
-        phase: 'playing' as const,
-        currentCategory: category,
-        gameUsedWordIds: [...((state.game as any).gameUsedWordIds ?? []), rawWord.id],
-      };
-
-      console.log('[startRound] Updated game state:', {
-        currentPlayerIndex: updatedGame.currentPlayerIndex,
-        currentQuestionInRound: updatedGame.currentQuestionInRound,
-        currentRound: updatedGame.currentRound,
-        currentCategory: updatedGame.currentCategory,
-        phase: updatedGame.phase,
-      });
-
-      return {
-        game: updatedGame,
-        currentWord: word,
-        usedWordIds: [...state.usedWordIds, rawWord.id],
-      };
-    });
-  },
-
-  endRound: (success, guesserId) => {
-    const { game, players } = get();
-    if (!game) return;
-
-    console.log('[endRound] ===== CALLED =====');
-    console.log('[endRound] Input:', { success, guesserId });
-    console.log('[endRound] Current state:', {
-      currentPlayerIndex: game.currentPlayerIndex,
-      currentPlayer: players[game.currentPlayerIndex]?.name,
-      currentQuestionInRound: game.currentQuestionInRound,
-      questionsPerRound: game.questionsPerRound,
-      currentRound: game.currentRound,
-      currentCategory: game.currentCategory,
-    });
-
-    let updatedPlayers = players;
-
-    // Update scores: presenter gets 1 point, guesser gets 2 points
-    if (success && guesserId) {
-      updatedPlayers = players.map((p) => {
-        if (p.id === players[game.currentPlayerIndex].id) {
-          return { ...p, score: p.score + 1 };
+      setupGame: ({
+        playerNames,
+        difficulty,
+        roundsPerPlayer,
+        roundDuration,
+        language,
+        categories = ["draw", "explain", "signal"],
+      }) => {
+        const names = normalizeNames(playerNames);
+        if (categories.length === 0) {
+          throw new Error("At least one category is required.");
         }
-        if (p.id === guesserId) {
-          return { ...p, score: p.score + 2 };
+        if (difficulty === "lowEnglish" && language !== "en") {
+          throw new Error("Low English difficulty requires the English language.");
         }
-        return p;
-      });
-      console.log('[endRound] Scores updated');
-    }
 
-    const normalizedPlayers = updatedPlayers.map((p) => ({
-      ...p,
-      hasGuessedCorrectly: false,
-    }));
+        const now = Date.now();
+        const players: Player[] = names.map((name, index) => ({
+          id: createId("player"),
+          name,
+          score: 0,
+          joinedAt: now,
+          isHost: index === 0,
+          isActive: true,
+          hasGuessedCorrectly: false,
+        }));
+        const totalRounds = getTotalRounds(players.length, roundsPerPlayer);
+        const currentCategory = getCategoryForTurn(0, players.length, categories);
+        const currentWord = pickWord({
+          language,
+          difficulty,
+          category: currentCategory,
+        });
 
-    const nextPlayerIndex = (game.currentPlayerIndex + 1) % players.length;
-    const nextRound = game.currentRound + 1;
-    const isGameComplete = nextRound >= game.settings.totalRounds;
+        const game: Game = {
+          id: createId("game"),
+          players,
+          phase: "wordReveal",
+          currentRound: 0,
+          currentPlayerIndex: 0,
+          currentCategory,
+          currentWord,
+          settings: {
+            roundsPerPlayer,
+            totalRounds,
+            difficulty,
+            categories,
+            roundDuration,
+            wordRevealDuration: 3000,
+            language,
+          },
+          usedWordIds: [currentWord.id],
+          roundEndsAt: null,
+          pausedRemainingMs: null,
+          createdAt: now,
+          startedAt: now,
+          endedAt: null,
+        };
 
-    console.log('[endRound] ===== TURN COMPLETE =====');
-    console.log('[endRound] Next turn details:', {
-      currentPlayerIndex: game.currentPlayerIndex,
-      currentPlayer: players[game.currentPlayerIndex]?.name,
-      nextPlayerIndex,
-      nextPlayer: players[nextPlayerIndex]?.name,
-      currentRound: game.currentRound,
-      nextRound,
-      totalRounds: game.settings.totalRounds,
-    });
+        set({ game, language, lastResult: null });
+      },
 
-    if (isGameComplete) {
-      console.log('[endRound] ===== GAME OVER =====');
-      set({
-        players: normalizedPlayers,
-        game: {
-          ...game,
-          phase: 'gameOver',
-          currentRound: nextRound,
-          endedAt: Date.now(),
-        },
-      });
-    } else {
-      console.log('[endRound] Advancing to next player');
-      set({
-        players: normalizedPlayers,
-        game: {
-          ...game,
-          phase: 'roundEnd',
-          currentRound: nextRound,
-          currentPlayerIndex: nextPlayerIndex,
-          currentQuestionInRound: 1,
-        },
-      });
-    }
+      startPlaying: () => {
+        const { game } = get();
+        if (!game || game.phase !== "wordReveal") return;
 
-    console.log('[endRound] ===== COMPLETE =====\n');
-  },
+        set({
+          game: {
+            ...game,
+            phase: "playing",
+            roundEndsAt: Date.now() + game.settings.roundDuration,
+            pausedRemainingMs: null,
+          },
+        });
+      },
 
-  finishGame: () => {
-    const { game } = get();
-    if (!game) return;
-    set({ game: { ...game, phase: 'gameOver', endedAt: Date.now() } });
-  },
+      pauseRound: () => {
+        const { game } = get();
+        if (!game || game.phase !== "playing" || game.roundEndsAt === null) return;
+        set({
+          game: {
+            ...game,
+            phase: "paused",
+            pausedRemainingMs: Math.max(0, game.roundEndsAt - Date.now()),
+            roundEndsAt: null,
+          },
+        });
+      },
 
-  resetGame: () => set((state) => ({ game: null, players: [], currentWord: null, usedWordIds: state.usedWordIds })),
+      resumeRound: () => {
+        const { game } = get();
+        if (!game || game.phase !== "paused" || game.pausedRemainingMs === null) return;
+        set({
+          game: {
+            ...game,
+            phase: "playing",
+            roundEndsAt: Date.now() + game.pausedRemainingMs,
+            pausedRemainingMs: null,
+          },
+        });
+      },
+
+      endRound: (success, guesserId) => {
+        const { game } = get();
+        if (!game || (game.phase !== "playing" && game.phase !== "paused")) return;
+
+        const presenter = game.players[game.currentPlayerIndex];
+        const validGuesser =
+          success &&
+          guesserId &&
+          guesserId !== presenter.id &&
+          game.players.some((player) => player.id === guesserId)
+            ? guesserId
+            : null;
+
+        if (success && !validGuesser) return;
+
+        const players = validGuesser
+          ? applyScore(game.players, presenter.id, validGuesser)
+          : game.players;
+        const lastResult: RoundResult = {
+          roundIndex: game.currentRound,
+          presenterId: presenter.id,
+          guesserId: validGuesser,
+          success: Boolean(validGuesser),
+          word: game.currentWord,
+          category: game.currentCategory,
+          presenterPoints: validGuesser ? PRESENTER_POINTS : 0,
+          guesserPoints: validGuesser ? GUESSER_POINTS : 0,
+        };
+        const isLastRound = game.currentRound >= game.settings.totalRounds - 1;
+
+        set({
+          game: {
+            ...game,
+            players,
+            phase: isLastRound ? "gameOver" : "roundEnd",
+            roundEndsAt: null,
+            pausedRemainingMs: null,
+            endedAt: isLastRound ? Date.now() : null,
+          },
+          lastResult,
+        });
+      },
+
+      startNextRound: () => {
+        const { game } = get();
+        if (!game || game.phase !== "roundEnd") return;
+
+        const nextRound = game.currentRound + 1;
+        if (nextRound >= game.settings.totalRounds) return;
+
+        const currentPlayerIndex = nextRound % game.players.length;
+        const currentCategory = getCategoryForTurn(
+          nextRound,
+          game.players.length,
+          game.settings.categories,
+        );
+        const currentWord = pickWord({
+          language: game.settings.language,
+          difficulty: game.settings.difficulty,
+          category: currentCategory,
+          excludeIds: game.usedWordIds,
+        });
+
+        set({
+          game: {
+            ...game,
+            phase: "wordReveal",
+            currentRound: nextRound,
+            currentPlayerIndex,
+            currentCategory,
+            currentWord,
+            usedWordIds: [...game.usedWordIds, currentWord.id],
+            roundEndsAt: null,
+            pausedRemainingMs: null,
+          },
+          lastResult: null,
+        });
+      },
+
+      finishGame: () => {
+        const { game } = get();
+        if (!game || game.phase === "gameOver") return;
+        set({
+          game: {
+            ...game,
+            phase: "gameOver",
+            roundEndsAt: null,
+            pausedRemainingMs: null,
+            endedAt: Date.now(),
+          },
+        });
+      },
+
+      resetGame: () => set({ game: null, lastResult: null }),
     }),
     {
-      name: 'guessup-game-state',
-      // Don't persist debug/transient stuff
+      name: "guessup-game-state",
+      version: 2,
+      migrate: (persistedState, version) => {
+        const state = persistedState as Partial<GameStore>;
+        if (version < 2) {
+          const language: Language = state.language === "en" ? "en" : "hu";
+          return {
+            game: null,
+            language,
+            lastResult: null,
+          };
+        }
+        return state as PersistedGameState;
+      },
       partialize: (state) => ({
         game: state.game,
-        players: state.players,
-        currentWord: state.currentWord,
-        usedWordIds: state.usedWordIds,
+        language: state.language,
+        lastResult: state.lastResult,
       }),
-    }
-  )
+    },
+  ),
 );

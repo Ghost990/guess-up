@@ -5,7 +5,7 @@
 
 import { Player } from './player';
 import { Word, Category } from './word';
-import { GamePhase, GameSettings } from './game';
+import { GameSettings } from './game';
 
 /**
  * Guess submitted by a player
@@ -31,7 +31,7 @@ export interface Guess {
  * Game event base interface
  * All game events extend this
  */
-export interface GameEvent<T = any> {
+export interface GameEvent<T = unknown> {
   /** Event type discriminator */
   type: GameEventType;
 

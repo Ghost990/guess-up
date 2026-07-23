@@ -1,21 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import "../styles/globals.css";
 
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "700", "800"],
-  variable: "--font-syne",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-});
-
 export const metadata: Metadata = {
-  title: "GuessUp - Activity Party Game",
-  description: "Mobile-first activity game with Draw, Explain, and Signal categories",
+  title: "GuessUp — Party Game",
+  description: "A fast, multilingual draw, explain, and act party game.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -30,31 +19,15 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  themeColor: "#0A0A12",
+  themeColor: "#17130e",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="hu">
-      <body className={`${syne.variable} ${dmSans.variable} font-sans`} style={{ fontFamily: 'var(--font-dm-sans)' }}>
+      <body>
         {children}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js');
-                });
-              }
-            `,
-          }}
-        />
+        <ServiceWorkerRegistration />
       </body>
     </html>
   );

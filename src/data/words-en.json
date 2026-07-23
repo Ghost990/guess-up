@@ -1,0 +1,9381 @@
+{
+  "metadata": {
+    "version": "2.1.0",
+    "language": "en",
+    "totalWords": 720,
+    "categories": [
+      "draw",
+      "explain",
+      "signal"
+    ],
+    "difficulties": [
+      "lowEnglish",
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "lastUpdated": "2026-07-23"
+  },
+  "words": [
+    {
+      "id": "low-draw-001",
+      "text": "apple",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-002",
+      "text": "banana",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-003",
+      "text": "cat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-004",
+      "text": "dog",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-005",
+      "text": "house",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-006",
+      "text": "car",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-007",
+      "text": "tree",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-008",
+      "text": "sun",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-009",
+      "text": "moon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-010",
+      "text": "star",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-011",
+      "text": "ball",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-012",
+      "text": "fish",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-013",
+      "text": "boat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-014",
+      "text": "cup",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-015",
+      "text": "chair",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-016",
+      "text": "bed",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-017",
+      "text": "door",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-018",
+      "text": "shoe",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-019",
+      "text": "hat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-020",
+      "text": "pizza",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-021",
+      "text": "cake",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-022",
+      "text": "flower",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-023",
+      "text": "book",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-024",
+      "text": "phone",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-025",
+      "text": "key",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-026",
+      "text": "clock",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-027",
+      "text": "spoon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-028",
+      "text": "fork",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-029",
+      "text": "bottle",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-030",
+      "text": "shirt",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-031",
+      "text": "sock",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-032",
+      "text": "eye",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-033",
+      "text": "hand",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-034",
+      "text": "foot",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-035",
+      "text": "nose",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-036",
+      "text": "face",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-037",
+      "text": "egg",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-038",
+      "text": "cheese",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-039",
+      "text": "bread",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-040",
+      "text": "cloud",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-041",
+      "text": "rain",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-042",
+      "text": "snowman",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 7,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-043",
+      "text": "heart",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-044",
+      "text": "box",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-045",
+      "text": "table",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-046",
+      "text": "lamp",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-047",
+      "text": "candle",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-048",
+      "text": "guitar",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-049",
+      "text": "bus",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-050",
+      "text": "train",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-051",
+      "text": "plane",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-052",
+      "text": "bike",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-053",
+      "text": "mouse",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-054",
+      "text": "bird",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-055",
+      "text": "duck",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-056",
+      "text": "cow",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-057",
+      "text": "pig",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-058",
+      "text": "horse",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-059",
+      "text": "rabbit",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-draw-060",
+      "text": "snake",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "draw"
+      ]
+    },
+    {
+      "id": "low-explain-001",
+      "text": "water",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-002",
+      "text": "milk",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-003",
+      "text": "beer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-004",
+      "text": "coffee",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-005",
+      "text": "tea",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-006",
+      "text": "baby",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-007",
+      "text": "mother",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-008",
+      "text": "father",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-009",
+      "text": "friend",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-010",
+      "text": "school",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-011",
+      "text": "work",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-012",
+      "text": "home",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-013",
+      "text": "morning",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 7,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-014",
+      "text": "night",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-015",
+      "text": "hot",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-016",
+      "text": "cold",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-017",
+      "text": "big",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-018",
+      "text": "small",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-019",
+      "text": "happy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-020",
+      "text": "sad",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-021",
+      "text": "fast",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-022",
+      "text": "slow",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-023",
+      "text": "yes",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-024",
+      "text": "no",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 2,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-025",
+      "text": "hello",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-026",
+      "text": "goodbye",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 7,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-027",
+      "text": "money",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-028",
+      "text": "food",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-029",
+      "text": "music",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-030",
+      "text": "movie",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-031",
+      "text": "game",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-032",
+      "text": "party",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-033",
+      "text": "beach",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-034",
+      "text": "city",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-035",
+      "text": "country",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 7,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-036",
+      "text": "doctor",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-037",
+      "text": "teacher",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 7,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-038",
+      "text": "police",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-039",
+      "text": "king",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-040",
+      "text": "queen",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-041",
+      "text": "red",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-042",
+      "text": "blue",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-043",
+      "text": "green",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-044",
+      "text": "white",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-045",
+      "text": "black",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-046",
+      "text": "one",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-047",
+      "text": "two",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-048",
+      "text": "three",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-049",
+      "text": "left",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-050",
+      "text": "right",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-051",
+      "text": "up",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 2,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-052",
+      "text": "down",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-053",
+      "text": "old",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-054",
+      "text": "young",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-055",
+      "text": "clean",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-056",
+      "text": "dirty",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-057",
+      "text": "loud",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-058",
+      "text": "quiet",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-059",
+      "text": "good",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-explain-060",
+      "text": "bad",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "explain"
+      ]
+    },
+    {
+      "id": "low-signal-001",
+      "text": "run",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-002",
+      "text": "walk",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-003",
+      "text": "jump",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-004",
+      "text": "sit",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-005",
+      "text": "stand",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-006",
+      "text": "sleep",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-007",
+      "text": "wake",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-008",
+      "text": "eat",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-009",
+      "text": "drink",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-010",
+      "text": "laugh",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-011",
+      "text": "cry",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-012",
+      "text": "dance",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-013",
+      "text": "sing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-014",
+      "text": "swim",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-015",
+      "text": "clap",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-016",
+      "text": "wave",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-017",
+      "text": "smile",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-018",
+      "text": "sneeze",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-019",
+      "text": "cough",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-020",
+      "text": "read",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-021",
+      "text": "write",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-022",
+      "text": "drive",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-023",
+      "text": "cook",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-024",
+      "text": "wash",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-025",
+      "text": "brush",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-026",
+      "text": "open",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-027",
+      "text": "close",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-028",
+      "text": "push",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-029",
+      "text": "pull",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-030",
+      "text": "throw",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-031",
+      "text": "catch",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-032",
+      "text": "kick",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-033",
+      "text": "hug",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-034",
+      "text": "kiss",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-035",
+      "text": "point",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-036",
+      "text": "look",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-037",
+      "text": "listen",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-038",
+      "text": "talk",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-039",
+      "text": "whisper",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 7,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-040",
+      "text": "shout",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-041",
+      "text": "wait",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-042",
+      "text": "stop",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-043",
+      "text": "start",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-044",
+      "text": "fall",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-045",
+      "text": "climb",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-046",
+      "text": "fly",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-047",
+      "text": "skate",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-048",
+      "text": "ski",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-049",
+      "text": "row",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-050",
+      "text": "dig",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 3,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-051",
+      "text": "build",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-052",
+      "text": "carry",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-053",
+      "text": "lift",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-054",
+      "text": "hide",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-055",
+      "text": "search",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 6,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-056",
+      "text": "knock",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-057",
+      "text": "ring",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-058",
+      "text": "count",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-059",
+      "text": "pray",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 4,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "low-signal-060",
+      "text": "think",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "lowEnglish",
+      "length": 5,
+      "tags": [
+        "low-english",
+        "signal"
+      ]
+    },
+    {
+      "id": "001",
+      "text": "apple",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "002",
+      "text": "banana",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "003",
+      "text": "cat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "004",
+      "text": "dog",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "005",
+      "text": "house",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "006",
+      "text": "tree",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "007",
+      "text": "sun",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "008",
+      "text": "moon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "009",
+      "text": "star",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "010",
+      "text": "cloud",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "011",
+      "text": "flower",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "012",
+      "text": "car",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "013",
+      "text": "bus",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "014",
+      "text": "bicycle",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "015",
+      "text": "boat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "016",
+      "text": "airplane",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "017",
+      "text": "book",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "018",
+      "text": "chair",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "019",
+      "text": "table",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "020",
+      "text": "cup",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "021",
+      "text": "spoon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "022",
+      "text": "fork",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "023",
+      "text": "key",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "024",
+      "text": "clock",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "025",
+      "text": "phone",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "026",
+      "text": "hat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "027",
+      "text": "shoe",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "028",
+      "text": "sock",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "029",
+      "text": "shirt",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "030",
+      "text": "bed",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "031",
+      "text": "door",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "032",
+      "text": "window",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "033",
+      "text": "umbrella",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "034",
+      "text": "balloon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "035",
+      "text": "cake",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "036",
+      "text": "pizza",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "037",
+      "text": "ice cream",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "038",
+      "text": "sandwich",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "039",
+      "text": "fish",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "040",
+      "text": "bird",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "041",
+      "text": "horse",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "042",
+      "text": "rabbit",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "043",
+      "text": "elephant",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "044",
+      "text": "lion",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "045",
+      "text": "butterfly",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "046",
+      "text": "bee",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "047",
+      "text": "frog",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "048",
+      "text": "snake",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "049",
+      "text": "mountain",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "050",
+      "text": "river",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "051",
+      "text": "beach",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "052",
+      "text": "snowman",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "053",
+      "text": "rainbow",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "054",
+      "text": "castle",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "055",
+      "text": "robot",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "056",
+      "text": "guitar",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "057",
+      "text": "camera",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "058",
+      "text": "backpack",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "059",
+      "text": "candle",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "060",
+      "text": "toothbrush",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "061",
+      "text": "friendship",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "062",
+      "text": "family",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "063",
+      "text": "school",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "064",
+      "text": "birthday",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "065",
+      "text": "weekend",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "066",
+      "text": "breakfast",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "067",
+      "text": "summer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "068",
+      "text": "winter",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "069",
+      "text": "color",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "070",
+      "text": "music",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "071",
+      "text": "game",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "072",
+      "text": "story",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "073",
+      "text": "dream",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "074",
+      "text": "joke",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "075",
+      "text": "secret",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "076",
+      "text": "treasure",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "077",
+      "text": "holiday",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "078",
+      "text": "homework",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "079",
+      "text": "weather",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "080",
+      "text": "animal",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "081",
+      "text": "vegetable",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "082",
+      "text": "city",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "083",
+      "text": "village",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "084",
+      "text": "country",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "085",
+      "text": "ocean",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "086",
+      "text": "forest",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "087",
+      "text": "garden",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "088",
+      "text": "kitchen",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "089",
+      "text": "bedroom",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "090",
+      "text": "library",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "091",
+      "text": "hospital",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "092",
+      "text": "airport",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "093",
+      "text": "playground",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "094",
+      "text": "supermarket",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "095",
+      "text": "restaurant",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "096",
+      "text": "doctor",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "097",
+      "text": "teacher",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "098",
+      "text": "firefighter",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "099",
+      "text": "police officer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "100",
+      "text": "farmer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "101",
+      "text": "artist",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "102",
+      "text": "singer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "103",
+      "text": "dancer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "104",
+      "text": "baby",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "105",
+      "text": "neighbor",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "106",
+      "text": "team",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "107",
+      "text": "winner",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "108",
+      "text": "loser",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "109",
+      "text": "fast",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "110",
+      "text": "slow",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "111",
+      "text": "loud",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "112",
+      "text": "quiet",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "113",
+      "text": "happy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "114",
+      "text": "sad",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 3,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "115",
+      "text": "brave",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "116",
+      "text": "kind",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "117",
+      "text": "hungry",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "118",
+      "text": "thirsty",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "119",
+      "text": "early",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "120",
+      "text": "late",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "easy",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "121",
+      "text": "running",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "122",
+      "text": "jumping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "123",
+      "text": "swimming",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "124",
+      "text": "sleeping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "125",
+      "text": "eating",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "126",
+      "text": "drinking",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "127",
+      "text": "reading",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "128",
+      "text": "writing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "129",
+      "text": "drawing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "130",
+      "text": "singing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "131",
+      "text": "dancing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "132",
+      "text": "laughing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "133",
+      "text": "crying",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "134",
+      "text": "sneezing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "135",
+      "text": "coughing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "136",
+      "text": "waving",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "137",
+      "text": "clapping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "138",
+      "text": "cooking",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "139",
+      "text": "brushing teeth",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "140",
+      "text": "washing hands",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "141",
+      "text": "opening a door",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "142",
+      "text": "closing a window",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "143",
+      "text": "throwing a ball",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "144",
+      "text": "catching a ball",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "145",
+      "text": "kicking a ball",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "146",
+      "text": "riding a bike",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "147",
+      "text": "driving",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "148",
+      "text": "flying",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "149",
+      "text": "fishing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "150",
+      "text": "shopping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "151",
+      "text": "cleaning",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "152",
+      "text": "sweeping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "153",
+      "text": "digging",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "154",
+      "text": "climbing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "155",
+      "text": "skating",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "156",
+      "text": "skiing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "157",
+      "text": "bowling",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "158",
+      "text": "taking a photo",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "159",
+      "text": "playing guitar",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "160",
+      "text": "walking a dog",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "161",
+      "text": "feeding a baby",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "162",
+      "text": "carrying a box",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "163",
+      "text": "tying a shoe",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 12,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "164",
+      "text": "combing hair",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 12,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "165",
+      "text": "putting on a hat",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "166",
+      "text": "checking the time",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "167",
+      "text": "making a phone call",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "168",
+      "text": "waiting",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "169",
+      "text": "hiding",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 6,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "170",
+      "text": "searching",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "171",
+      "text": "pointing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "172",
+      "text": "whispering",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "173",
+      "text": "shouting",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "174",
+      "text": "thinking",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "175",
+      "text": "forgetting",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 10,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "176",
+      "text": "waking up",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 9,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "177",
+      "text": "falling down",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 12,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "178",
+      "text": "winning a race",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "179",
+      "text": "blowing a kiss",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "180",
+      "text": "giving a high five",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "easy",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "181",
+      "text": "lighthouse",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "182",
+      "text": "windmill",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "183",
+      "text": "volcano",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "184",
+      "text": "waterfall",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "185",
+      "text": "tent",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "186",
+      "text": "campfire",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "187",
+      "text": "roller coaster",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "188",
+      "text": "traffic light",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "189",
+      "text": "mailbox",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "190",
+      "text": "suitcase",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "191",
+      "text": "headphones",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "192",
+      "text": "binoculars",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "193",
+      "text": "microscope",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "194",
+      "text": "telescope",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "195",
+      "text": "compass",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "196",
+      "text": "hourglass",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "197",
+      "text": "treasure chest",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "198",
+      "text": "pirate ship",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "199",
+      "text": "hot-air balloon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "200",
+      "text": "submarine",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "201",
+      "text": "helicopter",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "202",
+      "text": "tractor",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "203",
+      "text": "ambulance",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "204",
+      "text": "skateboard",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "205",
+      "text": "snowflake",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "206",
+      "text": "cactus",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "207",
+      "text": "palm tree",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "208",
+      "text": "spiderweb",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "209",
+      "text": "penguin",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "210",
+      "text": "octopus",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "211",
+      "text": "crocodile",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "212",
+      "text": "kangaroo",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "213",
+      "text": "peacock",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "214",
+      "text": "hedgehog",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "215",
+      "text": "jellyfish",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "216",
+      "text": "flamingo",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "217",
+      "text": "dragon",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "218",
+      "text": "mermaid",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "219",
+      "text": "astronaut",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "220",
+      "text": "detective",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "221",
+      "text": "chef",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "222",
+      "text": "knight",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "223",
+      "text": "crown",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "224",
+      "text": "trophy",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "225",
+      "text": "maze",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "226",
+      "text": "bridge",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "227",
+      "text": "tunnel",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "228",
+      "text": "fountain",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "229",
+      "text": "aquarium",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "230",
+      "text": "bookshelf",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "231",
+      "text": "fireplace",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "232",
+      "text": "washing machine",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "233",
+      "text": "vacuum cleaner",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "234",
+      "text": "alarm clock",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "235",
+      "text": "birthday present",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "236",
+      "text": "chessboard",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "237",
+      "text": "popcorn",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "238",
+      "text": "hamburger",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "239",
+      "text": "doughnut",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "240",
+      "text": "pineapple",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "241",
+      "text": "courage",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "242",
+      "text": "patience",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "243",
+      "text": "curiosity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "244",
+      "text": "honesty",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "245",
+      "text": "teamwork",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "246",
+      "text": "competition",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "247",
+      "text": "adventure",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "248",
+      "text": "tradition",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "249",
+      "text": "culture",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "250",
+      "text": "memory",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "251",
+      "text": "imagination",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "252",
+      "text": "talent",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "253",
+      "text": "hobby",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "254",
+      "text": "habit",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "255",
+      "text": "surprise",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "256",
+      "text": "luck",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "257",
+      "text": "mistake",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "258",
+      "text": "promise",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "259",
+      "text": "choice",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "260",
+      "text": "opinion",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "261",
+      "text": "reason",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "262",
+      "text": "solution",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "263",
+      "text": "problem",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "264",
+      "text": "question",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "265",
+      "text": "answer",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "266",
+      "text": "rule",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "267",
+      "text": "freedom",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "268",
+      "text": "safety",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "269",
+      "text": "danger",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "270",
+      "text": "health",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "271",
+      "text": "exercise",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "272",
+      "text": "energy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "273",
+      "text": "nature",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "274",
+      "text": "pollution",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "275",
+      "text": "recycling",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "276",
+      "text": "technology",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "277",
+      "text": "internet",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "278",
+      "text": "password",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "279",
+      "text": "message",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "280",
+      "text": "news",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "281",
+      "text": "map",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 3,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "282",
+      "text": "journey",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "283",
+      "text": "destination",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "284",
+      "text": "souvenir",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "285",
+      "text": "festival",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "286",
+      "text": "concert",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "287",
+      "text": "museum",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "288",
+      "text": "invention",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "289",
+      "text": "experiment",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "290",
+      "text": "language",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "291",
+      "text": "translation",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "292",
+      "text": "accent",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "293",
+      "text": "recipe",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "294",
+      "text": "ingredient",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "295",
+      "text": "temperature",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "296",
+      "text": "shadow",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 6,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "297",
+      "text": "reflection",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "298",
+      "text": "echo",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 4,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "299",
+      "text": "gravity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "300",
+      "text": "electricity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "301",
+      "text": "borrowing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 9,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "302",
+      "text": "lending",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "303",
+      "text": "apologizing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "304",
+      "text": "celebrating",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 11,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "305",
+      "text": "arguing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 7,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "306",
+      "text": "agreeing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "307",
+      "text": "refusing",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "308",
+      "text": "inviting",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 8,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "309",
+      "text": "introducing yourself",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "310",
+      "text": "giving directions",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "311",
+      "text": "telling a joke",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "312",
+      "text": "keeping a secret",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "313",
+      "text": "solving a puzzle",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "314",
+      "text": "missing the bus",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "315",
+      "text": "losing your keys",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "316",
+      "text": "finding money",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "317",
+      "text": "opening a present",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "318",
+      "text": "blowing out candles",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "319",
+      "text": "ordering food",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "320",
+      "text": "paying the bill",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "321",
+      "text": "packing a suitcase",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "322",
+      "text": "setting up a tent",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "323",
+      "text": "lighting a campfire",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "324",
+      "text": "taking an elevator",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "325",
+      "text": "crossing the street",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "326",
+      "text": "walking in the rain",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "327",
+      "text": "building a snowman",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "328",
+      "text": "planting a tree",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "329",
+      "text": "watering flowers",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "330",
+      "text": "walking on tiptoe",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "331",
+      "text": "balancing on one foot",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 21,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "332",
+      "text": "lifting weights",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "333",
+      "text": "doing yoga",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 10,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "334",
+      "text": "playing chess",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "335",
+      "text": "playing tennis",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "336",
+      "text": "playing basketball",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "337",
+      "text": "playing the piano",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "338",
+      "text": "playing the drums",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "339",
+      "text": "conducting an orchestra",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 23,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "340",
+      "text": "painting a portrait",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "341",
+      "text": "fixing a bicycle",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "342",
+      "text": "changing a light bulb",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 21,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "343",
+      "text": "sewing a button",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "344",
+      "text": "wrapping a gift",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "345",
+      "text": "baking a cake",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "346",
+      "text": "peeling an onion",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "347",
+      "text": "tasting something sour",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "348",
+      "text": "touching something hot",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "349",
+      "text": "hearing a strange noise",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 23,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "350",
+      "text": "seeing a ghost",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "351",
+      "text": "meeting an alien",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "352",
+      "text": "acting like a robot",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "353",
+      "text": "escaping from a maze",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "354",
+      "text": "chasing a butterfly",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "355",
+      "text": "being stuck in traffic",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "356",
+      "text": "taking an exam",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "357",
+      "text": "giving a speech",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "358",
+      "text": "making a wish",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "359",
+      "text": "receiving good news",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "360",
+      "text": "missing someone",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "medium",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "361",
+      "text": "solar eclipse",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "362",
+      "text": "northern lights",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "363",
+      "text": "coral reef",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "364",
+      "text": "suspension bridge",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "365",
+      "text": "ancient ruins",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "366",
+      "text": "space station",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "367",
+      "text": "DNA double helix",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "368",
+      "text": "human skeleton",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "369",
+      "text": "nervous system",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "370",
+      "text": "solar system",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "371",
+      "text": "constellation",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "372",
+      "text": "optical illusion",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "373",
+      "text": "chess tournament",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "374",
+      "text": "orchestra pit",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "375",
+      "text": "film studio",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "376",
+      "text": "construction site",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "377",
+      "text": "archaeological dig",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "378",
+      "text": "botanical garden",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "379",
+      "text": "courtroom",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "380",
+      "text": "laboratory",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "381",
+      "text": "parliament building",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "382",
+      "text": "medieval battlefield",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "383",
+      "text": "shipwreck",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "384",
+      "text": "deserted island",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "385",
+      "text": "underground cave",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "386",
+      "text": "mountain rescue",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "387",
+      "text": "wildlife sanctuary",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "388",
+      "text": "city skyline",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "389",
+      "text": "rush-hour traffic",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "390",
+      "text": "carnival parade",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "391",
+      "text": "masquerade ball",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "392",
+      "text": "family tree",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "393",
+      "text": "chain reaction",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "394",
+      "text": "domino effect",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "395",
+      "text": "time machine",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "396",
+      "text": "parallel universe",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "397",
+      "text": "black hole",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "398",
+      "text": "meteor shower",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "399",
+      "text": "satellite dish",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "400",
+      "text": "renewable energy",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "401",
+      "text": "wind farm",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "402",
+      "text": "hydroelectric dam",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "403",
+      "text": "recycling center",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "404",
+      "text": "water cycle",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "405",
+      "text": "food chain",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "406",
+      "text": "camouflage",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "407",
+      "text": "metamorphosis",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "408",
+      "text": "migration route",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "409",
+      "text": "treasure map",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "410",
+      "text": "escape room",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "411",
+      "text": "obstacle course",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "412",
+      "text": "Rube Goldberg machine",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "413",
+      "text": "puppet theater",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "414",
+      "text": "recording studio",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "415",
+      "text": "virtual reality headset",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 23,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "416",
+      "text": "3D printer",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "417",
+      "text": "fingerprint",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "418",
+      "text": "bar code",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "419",
+      "text": "emergency exit",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "420",
+      "text": "lightning conductor",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "visual",
+        "drawing"
+      ]
+    },
+    {
+      "id": "421",
+      "text": "democracy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "422",
+      "text": "justice",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "423",
+      "text": "equality",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "424",
+      "text": "responsibility",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "425",
+      "text": "identity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "426",
+      "text": "reputation",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "427",
+      "text": "prejudice",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "428",
+      "text": "empathy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "429",
+      "text": "nostalgia",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "430",
+      "text": "irony",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 5,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "431",
+      "text": "coincidence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "432",
+      "text": "dilemma",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "433",
+      "text": "compromise",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "434",
+      "text": "consequence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "435",
+      "text": "motivation",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "436",
+      "text": "inspiration",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "437",
+      "text": "ambition",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "438",
+      "text": "creativity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "439",
+      "text": "privacy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "440",
+      "text": "misinformation",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "441",
+      "text": "censorship",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "442",
+      "text": "propaganda",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "443",
+      "text": "stereotype",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "444",
+      "text": "generation gap",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "445",
+      "text": "culture shock",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "446",
+      "text": "body language",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "447",
+      "text": "first impression",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "448",
+      "text": "peer pressure",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "449",
+      "text": "common sense",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "450",
+      "text": "critical thinking",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "451",
+      "text": "artificial intelligence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 23,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "452",
+      "text": "virtual reality",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "453",
+      "text": "climate change",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "454",
+      "text": "sustainable development",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 23,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "455",
+      "text": "biodiversity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "456",
+      "text": "ecosystem",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "457",
+      "text": "evolution",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "458",
+      "text": "immunity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "459",
+      "text": "renewable resource",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "460",
+      "text": "supply and demand",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "461",
+      "text": "inflation",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "462",
+      "text": "entrepreneurship",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "463",
+      "text": "copyright",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "464",
+      "text": "algorithm",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "465",
+      "text": "probability",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "466",
+      "text": "perspective",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "467",
+      "text": "metaphor",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "468",
+      "text": "paradox",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "469",
+      "text": "hypothesis",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "470",
+      "text": "evidence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 8,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "471",
+      "text": "cause and effect",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "472",
+      "text": "moral compass",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "473",
+      "text": "social responsibility",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "474",
+      "text": "cultural heritage",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "475",
+      "text": "language barrier",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "476",
+      "text": "emotional intelligence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "477",
+      "text": "confirmation bias",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "478",
+      "text": "placebo effect",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "479",
+      "text": "butterfly effect",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "480",
+      "text": "time zone",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 9,
+      "tags": [
+        "concept",
+        "explaining"
+      ]
+    },
+    {
+      "id": "481",
+      "text": "procrastinating",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "482",
+      "text": "multitasking",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "483",
+      "text": "eavesdropping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "484",
+      "text": "negotiating",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "485",
+      "text": "persuading",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "486",
+      "text": "exaggerating",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "487",
+      "text": "improvising",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "488",
+      "text": "daydreaming",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "489",
+      "text": "sleepwalking",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "490",
+      "text": "impersonating someone",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "491",
+      "text": "breaking the ice",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "492",
+      "text": "reading between the lines",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 25,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "493",
+      "text": "jumping to conclusions",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "494",
+      "text": "changing your mind",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "495",
+      "text": "taking responsibility",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "496",
+      "text": "making a compromise",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "497",
+      "text": "resisting temptation",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "498",
+      "text": "overcoming a fear",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "499",
+      "text": "hiding your disappointment",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 26,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "500",
+      "text": "pretending to understand",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "501",
+      "text": "feeling out of place",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "502",
+      "text": "getting stage fright",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "503",
+      "text": "having déjà vu",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "504",
+      "text": "losing track of time",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "505",
+      "text": "remembering a childhood memory",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 30,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "506",
+      "text": "solving a mystery",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "507",
+      "text": "cracking a code",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "508",
+      "text": "defusing an argument",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "509",
+      "text": "organizing a protest",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "510",
+      "text": "running for office",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "511",
+      "text": "interviewing for a job",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "512",
+      "text": "asking for a raise",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "513",
+      "text": "missing a deadline",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "514",
+      "text": "working from home",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "515",
+      "text": "giving first aid",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "516",
+      "text": "rescuing an animal",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "517",
+      "text": "navigating without a map",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "518",
+      "text": "surviving on an island",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "519",
+      "text": "climbing a mountain",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "520",
+      "text": "exploring a cave",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "521",
+      "text": "performing a magic trick",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "522",
+      "text": "juggling three balls",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "523",
+      "text": "walking a tightrope",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "524",
+      "text": "directing a movie",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "525",
+      "text": "reporting live news",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "526",
+      "text": "translating a conversation",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 26,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "527",
+      "text": "conducting an experiment",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "528",
+      "text": "programming a robot",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "529",
+      "text": "launching a rocket",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "530",
+      "text": "discovering a new planet",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "531",
+      "text": "experiencing zero gravity",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 25,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "532",
+      "text": "escaping quicksand",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "533",
+      "text": "avoiding laser beams",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "534",
+      "text": "disarming an alarm",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "535",
+      "text": "tracking footprints",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "536",
+      "text": "predicting the weather",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "537",
+      "text": "witnessing an eclipse",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "538",
+      "text": "protecting the environment",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 26,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "539",
+      "text": "resolving a conflict",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    },
+    {
+      "id": "540",
+      "text": "keeping a straight face",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 23,
+      "tags": [
+        "action",
+        "charades"
+      ]
+    }
+  ]
+}
