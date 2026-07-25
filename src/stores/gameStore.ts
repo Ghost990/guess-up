@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { getCategoryForTurn, getTotalRounds, applyScore, GUESSER_POINTS, PRESENTER_POINTS } from "@/lib/game/rounds";
+import { initializePlayerOrder } from "@/lib/game/turnRotation";
 import { pickWord } from "@/lib/game/wordPacks";
 import type {
   Category,
@@ -88,7 +89,7 @@ export const useGameStore = create<GameStore>()(
         }
 
         const now = Date.now();
-        const players: Player[] = names.map((name, index) => ({
+        const createdPlayers: Player[] = names.map((name, index) => ({
           id: createId("player"),
           name,
           score: 0,
@@ -97,6 +98,7 @@ export const useGameStore = create<GameStore>()(
           isActive: true,
           hasGuessedCorrectly: false,
         }));
+        const players = initializePlayerOrder(createdPlayers);
         const totalRounds = getTotalRounds(players.length, roundsPerPlayer);
         const currentCategory = getCategoryForTurn(0, players.length, categories);
         const currentWord = pickWord({

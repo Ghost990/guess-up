@@ -14,6 +14,7 @@ function setup(playerNames = ["Anna", "Béla", "Csilla"], roundsPerPlayer = 2) {
 
 describe("game store", () => {
   beforeEach(() => {
+    vi.restoreAllMocks();
     localStorage.clear();
     useGameStore.setState({ game: null, language: "hu", lastResult: null });
     vi.useRealTimers();
@@ -31,6 +32,15 @@ describe("game store", () => {
 
     state.setLanguage("hu");
     expect(useGameStore.getState().language).toBe("en");
+  });
+
+  it("randomizes the player order once when the game starts", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+    setup(["Anna", "Béla", "Csilla"], 2);
+
+    expect(useGameStore.getState().game?.players.map((player) => player.name))
+      .toEqual(["Béla", "Csilla", "Anna"]);
+    expect(useGameStore.getState().game?.settings.totalRounds).toBe(6);
   });
 
   it("rejects invalid and duplicate player lists", () => {
