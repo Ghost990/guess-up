@@ -38,14 +38,43 @@ describe("localized word packs", () => {
     }
   });
 
-  it("ships a dedicated English Challenging pool between Medium and Hard", () => {
+  it("ships balanced English Challenging and Hard pools", () => {
     const pack = getWordPack("en");
 
-    for (const category of categories) {
-      const matching = pack.words.filter(
-        (word) => word.difficulty === "challenging" && word.categories.includes(category),
-      );
-      expect(matching).toHaveLength(30);
+    for (const difficulty of ["challenging", "hard"] as const) {
+      for (const category of categories) {
+        const matching = pack.words.filter(
+          (word) => word.difficulty === difficulty && word.categories.includes(category),
+        );
+        expect(matching).toHaveLength(60);
+      }
+    }
+  });
+
+  it("validates the researched upper-tier expansion contract", () => {
+    const words = getWordPack("en").words;
+    const additions = words.filter((word) =>
+      word.id.startsWith("upper-en-"),
+    );
+    const normalizedTexts = additions.map((word) => word.text.trim().toLocaleLowerCase("en"));
+    const existingTexts = new Set(
+      words
+        .filter((word) => !word.id.startsWith("upper-en-"))
+        .map((word) => word.text.trim().toLocaleLowerCase("en")),
+    );
+
+    expect(additions).toHaveLength(180);
+    expect(new Set(normalizedTexts).size).toBe(additions.length);
+    for (const word of additions) {
+      expect(word.text).toBe(word.text.trim());
+      expect(word.text.length).toBeGreaterThan(0);
+      expect(word.text.length).toBeLessThanOrEqual(60);
+      expect(existingTexts.has(word.text.toLocaleLowerCase("en"))).toBe(false);
+      expect(word.length).toBe(word.text.length);
+      expect(word.categories).toHaveLength(1);
+      expect(word.tags).toContain(word.difficulty);
+      expect(word.tags).toContain(word.categories[0]);
+      expect(word.tags).toContain("original-expansion");
     }
   });
 

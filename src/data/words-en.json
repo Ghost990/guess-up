@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "2.2.0",
+    "version": "2.3.0",
     "language": "en",
-    "totalWords": 720,
+    "totalWords": 900,
     "categories": [
       "draw",
       "explain",
@@ -9376,6 +9376,2526 @@
       "tags": [
         "action",
         "charades"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-001",
+      "text": "clock tower",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 11,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-002",
+      "text": "glass greenhouse",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-003",
+      "text": "planetarium dome",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-004",
+      "text": "train station platform",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 22,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-005",
+      "text": "airport control tower",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 21,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-006",
+      "text": "mountain cable car",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 18,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-007",
+      "text": "ski lift",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 8,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-008",
+      "text": "glacier cave",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 12,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-009",
+      "text": "volcanic crater",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-010",
+      "text": "rainforest canopy",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-011",
+      "text": "river delta",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 11,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-012",
+      "text": "beaver dam",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 10,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-013",
+      "text": "bamboo forest",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 13,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-014",
+      "text": "harbor crane",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 12,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-015",
+      "text": "crane lifting beams",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 19,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-016",
+      "text": "street food stall",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-017",
+      "text": "farmers market",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-018",
+      "text": "zoo enclosure",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 13,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-019",
+      "text": "circus big top",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-020",
+      "text": "ferris wheel at night",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 21,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-021",
+      "text": "water park slides",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-022",
+      "text": "kayak in rapids",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-023",
+      "text": "diving board pool",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-024",
+      "text": "fire truck ladder",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-025",
+      "text": "observatory dome",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-026",
+      "text": "aquarium tunnel",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-027",
+      "text": "railway crossing",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-028",
+      "text": "treehouse village",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-029",
+      "text": "coastal boardwalk",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-draw-030",
+      "text": "rooftop garden",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-001",
+      "text": "electric circuit",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-002",
+      "text": "magnetic field",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-003",
+      "text": "sound waves",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-004",
+      "text": "light refraction",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-005",
+      "text": "photosynthesis",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-006",
+      "text": "pollination",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 11,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-007",
+      "text": "wetland habitat",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-008",
+      "text": "erosion",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 7,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-009",
+      "text": "tectonic plates",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-010",
+      "text": "lunar phases",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-011",
+      "text": "ocean current",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-012",
+      "text": "greenhouse effect",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-013",
+      "text": "water treatment plant",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-014",
+      "text": "factory assembly line",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-015",
+      "text": "supply chain",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-016",
+      "text": "electricity grid",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-017",
+      "text": "air traffic control",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-018",
+      "text": "traffic roundabout",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-019",
+      "text": "airport baggage carousel",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-020",
+      "text": "public transit network",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-021",
+      "text": "factory conveyor belt",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-022",
+      "text": "fire sprinkler system",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-023",
+      "text": "bicycle gear mechanism",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-024",
+      "text": "lock mechanism",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-025",
+      "text": "satellite orbit",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-026",
+      "text": "weather radar",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-027",
+      "text": "parachute deployment",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-028",
+      "text": "pneumatic tube system",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-029",
+      "text": "circuit board",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-draw-030",
+      "text": "mechanical clockwork",
+      "categories": [
+        "draw"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "hard",
+        "draw",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-001",
+      "text": "awkward silence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-002",
+      "text": "comfort zone",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 12,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-003",
+      "text": "guilty pleasure",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-004",
+      "text": "mixed feelings",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-005",
+      "text": "second chance",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 13,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-006",
+      "text": "inside joke",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 11,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-007",
+      "text": "white lie",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 9,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-008",
+      "text": "work-life balance",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-009",
+      "text": "attention span",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-010",
+      "text": "emotional support",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 17,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-011",
+      "text": "personal space",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-012",
+      "text": "healthy boundary",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-013",
+      "text": "hidden talent",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 13,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-014",
+      "text": "bad habit",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 9,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-015",
+      "text": "morning routine",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-016",
+      "text": "learning curve",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-017",
+      "text": "homesickness",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 12,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-018",
+      "text": "gratitude",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 9,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-019",
+      "text": "jealousy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 8,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-020",
+      "text": "forgiveness",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 11,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-021",
+      "text": "resilience",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 10,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-022",
+      "text": "self-confidence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-023",
+      "text": "misunderstanding",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-024",
+      "text": "sarcasm",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 7,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-025",
+      "text": "superstition",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 12,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-026",
+      "text": "sense of humor",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-027",
+      "text": "loyalty",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 7,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-028",
+      "text": "shared responsibility",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 21,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-029",
+      "text": "accountability",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 14,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-explain-030",
+      "text": "time management",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "challenging",
+      "length": 15,
+      "tags": [
+        "challenging",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-001",
+      "text": "cognitive dissonance",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-002",
+      "text": "opportunity cost",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-003",
+      "text": "sunk cost fallacy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-004",
+      "text": "social conformity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-005",
+      "text": "survivorship bias",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-006",
+      "text": "diminishing returns",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 19,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-007",
+      "text": "moral ambiguity",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-008",
+      "text": "collective memory",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-009",
+      "text": "learned helplessness",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-010",
+      "text": "self-fulfilling prophecy",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-011",
+      "text": "groupthink",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 10,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-012",
+      "text": "information overload",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-013",
+      "text": "decision fatigue",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-014",
+      "text": "impostor syndrome",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-015",
+      "text": "emotional labor",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-016",
+      "text": "delayed gratification",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-017",
+      "text": "unintended consequences",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 23,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-018",
+      "text": "cultural assimilation",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 21,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-019",
+      "text": "algorithmic bias",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-020",
+      "text": "echo chamber",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 12,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-021",
+      "text": "network effect",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 14,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-022",
+      "text": "tragedy of the commons",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 22,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-023",
+      "text": "burden of proof",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-024",
+      "text": "double standard",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 15,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-025",
+      "text": "tipping point",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-026",
+      "text": "feedback loop",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 13,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-027",
+      "text": "circular reasoning",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 18,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-028",
+      "text": "false equivalence",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 17,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-029",
+      "text": "conflict of interest",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 20,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-explain-030",
+      "text": "scarcity mindset",
+      "categories": [
+        "explain"
+      ],
+      "difficulty": "hard",
+      "length": 16,
+      "tags": [
+        "hard",
+        "explain",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-001",
+      "text": "catching a falling hat",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 22,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-002",
+      "text": "opening a stuck jar",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 19,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-003",
+      "text": "waving down a departing bus",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 27,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-004",
+      "text": "searching pockets for a lost key",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 32,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-005",
+      "text": "untangling headphone cords",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 26,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-006",
+      "text": "sneaking a peek at a surprise",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 29,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-007",
+      "text": "discovering a stain on your shirt",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 33,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-008",
+      "text": "balancing a stack of books",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 26,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-009",
+      "text": "checking if the coast is clear",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 30,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-010",
+      "text": "trying not to sneeze",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 20,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-011",
+      "text": "choosing between two desserts",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 29,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-012",
+      "text": "squeezing into a crowded elevator",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 33,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-013",
+      "text": "recognizing someone from far away",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 33,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-014",
+      "text": "realizing you forgot your wallet",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 32,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-015",
+      "text": "fixing a crooked picture frame",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 30,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-016",
+      "text": "racing to catch a closing door",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 30,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-017",
+      "text": "returning an awkward wave",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 25,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-018",
+      "text": "taking a difficult selfie",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 25,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-019",
+      "text": "shielding papers from the wind",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 30,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-020",
+      "text": "trying on oversized shoes",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 25,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-021",
+      "text": "waiting in a long line",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 22,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-022",
+      "text": "hiding behind a curtain",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 23,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-023",
+      "text": "trying to reach a high shelf",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 28,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-024",
+      "text": "checking your reflection in a window",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 36,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-025",
+      "text": "catching yourself almost slipping",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 33,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-026",
+      "text": "fumbling with a stubborn umbrella",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 33,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-027",
+      "text": "finding a hair in your food",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 27,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-028",
+      "text": "silently celebrating good news",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 30,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-029",
+      "text": "dodging a puddle",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 16,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-challenging-signal-030",
+      "text": "pretending to love an unwanted gift",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "challenging",
+      "length": 35,
+      "tags": [
+        "challenging",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-001",
+      "text": "arriving late to a formal dinner",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 32,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-002",
+      "text": "trying to remember someone's name",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 33,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-003",
+      "text": "politely leaving a boring conversation",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 38,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-004",
+      "text": "hosting a party where no one talks",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 34,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-005",
+      "text": "giving directions to a confused tourist",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 39,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-006",
+      "text": "realizing you are in the wrong meeting",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 38,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-007",
+      "text": "returning an item to a store",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 28,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-008",
+      "text": "assembling furniture from pictures",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 34,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-009",
+      "text": "teaching a complicated dance step",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 33,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-010",
+      "text": "setting a table for unexpected guests",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 37,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-011",
+      "text": "convincing friends to try your idea",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 35,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-012",
+      "text": "being photographed by a tourist",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 31,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-013",
+      "text": "preparing for a surprise inspection",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 35,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-014",
+      "text": "meeting your partner's parents",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 30,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-015",
+      "text": "trying to fold a fitted sheet",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 29,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-016",
+      "text": "losing your place in a presentation",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 35,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-017",
+      "text": "communicating through a closed window",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 37,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-018",
+      "text": "organizing a group photo",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 24,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-019",
+      "text": "following a complicated recipe",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 30,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-020",
+      "text": "giving gentle advice to a friend",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 32,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-021",
+      "text": "packing a suitcase that will not close",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 38,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-022",
+      "text": "being seated between two strangers",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 34,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-023",
+      "text": "joining a group photo uninvited",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 31,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-024",
+      "text": "reacting to an unexpected compliment",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 36,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-025",
+      "text": "making an excuse for a missed appointment",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 41,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-026",
+      "text": "calming a nervous friend before a speech",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 40,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-027",
+      "text": "introducing people who already know each other",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 46,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-028",
+      "text": "leading a tour through a museum",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 31,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-029",
+      "text": "trying to open a stubborn suitcase",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 34,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
+      ]
+    },
+    {
+      "id": "upper-en-hard-signal-030",
+      "text": "pointing out a typo on a screen",
+      "categories": [
+        "signal"
+      ],
+      "difficulty": "hard",
+      "length": 31,
+      "tags": [
+        "hard",
+        "signal",
+        "original-expansion"
       ]
     }
   ]
