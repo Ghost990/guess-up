@@ -39,16 +39,29 @@ describe("game store", () => {
     expect(() => setup(Array.from({ length: 9 }, (_, index) => `${index}`))).toThrow();
   });
 
-  it("rejects Low English tasks for a non-English game", () => {
-    expect(() =>
-      useGameStore.getState().setupGame({
-        playerNames: ["Anna", "Béla"],
-        difficulty: "lowEnglish",
-        roundsPerPlayer: 1,
-        roundDuration: 60000,
-        language: "hu",
-      }),
-    ).toThrow("Low English difficulty requires the English language.");
+  it.each(["lowEnglish", "challenging"] as const)("rejects %s tasks for a non-English game", (difficulty) => {
+    expect(() => useGameStore.getState().setupGame({
+      playerNames: ["Anna", "Béla"],
+      difficulty,
+      roundsPerPlayer: 1,
+      roundDuration: 60000,
+      language: "hu",
+    })).toThrow("This difficulty requires the English language.");
+  });
+
+  it("starts an English Challenging game from the dedicated task pool", () => {
+    useGameStore.getState().setupGame({
+      playerNames: ["Anna", "Ben"],
+      difficulty: "challenging",
+      roundsPerPlayer: 1,
+      roundDuration: 60000,
+      language: "en",
+    });
+
+    expect(useGameStore.getState().game).toMatchObject({
+      settings: { language: "en", difficulty: "challenging" },
+      currentWord: { difficulty: "challenging" },
+    });
   });
 
   it("uses an absolute deadline and supports pause/resume", () => {

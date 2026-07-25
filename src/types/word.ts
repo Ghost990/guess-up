@@ -2,7 +2,7 @@ export type Language = "hu" | "en";
 
 export type Category = "draw" | "explain" | "signal";
 
-export type Difficulty = "lowEnglish" | "easy" | "medium" | "hard";
+export type Difficulty = "lowEnglish" | "easy" | "medium" | "challenging" | "hard";
 
 export interface Word {
   id: string;
@@ -35,6 +35,7 @@ export const DIFFICULTY_LEVELS: Difficulty[] = [
   "lowEnglish",
   "easy",
   "medium",
+  "challenging",
   "hard",
 ];
 export const CATEGORIES: Category[] = ["draw", "explain", "signal"];

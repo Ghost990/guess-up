@@ -16,8 +16,12 @@ const durationOptions = [30000, 45000, 60000, 90000] as const;
 const standardDifficultyOptions: Difficulty[] = ["easy", "medium", "hard"];
 const englishDifficultyOptions: Difficulty[] = [
   "lowEnglish",
-  ...standardDifficultyOptions,
+  "easy",
+  "medium",
+  "challenging",
+  "hard",
 ];
+const englishOnlyDifficulties: Difficulty[] = ["lowEnglish", "challenging"];
 const categoryOptions: Category[] = ["draw", "explain", "signal"];
 
 interface PlayerDraft {
@@ -92,7 +96,7 @@ export function PlayerSetup() {
   };
 
   const handleLanguageChange = (nextLanguage: typeof language) => {
-    if (nextLanguage === "hu" && difficulty === "lowEnglish") {
+    if (nextLanguage === "hu" && englishOnlyDifficulties.includes(difficulty)) {
       setDifficulty("easy");
     }
     setLanguage(nextLanguage);

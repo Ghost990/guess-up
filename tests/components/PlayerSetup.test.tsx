@@ -47,18 +47,23 @@ describe("PlayerSetup", () => {
     });
   });
 
-  it("offers Low English only for English games and resets it when switching back", () => {
+  it("offers English-only difficulty tiers and resets Challenging when switching back", () => {
     render(<PlayerSetup />);
     expect(screen.queryByRole("radio", { name: /Low English/i })).not
       .toBeInTheDocument();
+    expect(screen.queryByRole("radio", { name: /Challenging/i })).not
+      .toBeInTheDocument();
 
     fireEvent.click(screen.getAllByRole("button", { name: "English" })[0]);
-    const lowEnglish = screen.getByRole("radio", { name: /Low English/i });
-    fireEvent.click(lowEnglish);
-    expect(lowEnglish).toBeChecked();
+    expect(screen.getByRole("radio", { name: /Low English/i })).toBeInTheDocument();
+    const challenging = screen.getByRole("radio", { name: /Challenging/i });
+    fireEvent.click(challenging);
+    expect(challenging).toBeChecked();
 
     fireEvent.click(screen.getAllByRole("button", { name: "Magyar" })[0]);
     expect(screen.queryByRole("radio", { name: /Low English/i })).not
+      .toBeInTheDocument();
+    expect(screen.queryByRole("radio", { name: /Challenging/i })).not
       .toBeInTheDocument();
     expect(screen.getByRole("radio", { name: /Könnyű/i })).toBeChecked();
   });

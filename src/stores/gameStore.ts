@@ -83,8 +83,8 @@ export const useGameStore = create<GameStore>()(
         if (categories.length === 0) {
           throw new Error("At least one category is required.");
         }
-        if (difficulty === "lowEnglish" && language !== "en") {
-          throw new Error("Low English difficulty requires the English language.");
+        if (["lowEnglish", "challenging"].includes(difficulty) && language !== "en") {
+          throw new Error("This difficulty requires the English language.");
         }
 
         const now = Date.now();

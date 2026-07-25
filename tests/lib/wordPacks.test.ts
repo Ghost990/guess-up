@@ -38,6 +38,17 @@ describe("localized word packs", () => {
     }
   });
 
+  it("ships a dedicated English Challenging pool between Medium and Hard", () => {
+    const pack = getWordPack("en");
+
+    for (const category of categories) {
+      const matching = pack.words.filter(
+        (word) => word.difficulty === "challenging" && word.categories.includes(category),
+      );
+      expect(matching).toHaveLength(30);
+    }
+  });
+
   it("selects from the requested language, difficulty, and category", () => {
     vi.spyOn(Math, "random").mockReturnValue(0);
     const word = pickWord({
