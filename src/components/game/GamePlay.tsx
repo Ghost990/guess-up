@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, Eye, EyeOff, SkipForward } from "lucide-react";
+import { EffectsSettings } from "@/components/effects/EffectsSettings";
+import { useEffects } from "@/components/effects/EffectsProvider";
 import { CategoryBadge } from "./CategoryBadge";
 import { HowToPlay } from "./HowToPlay";
 import { Logo } from "./Logo";
@@ -27,11 +29,14 @@ export function GamePlay() {
   const pauseRound = useGameStore((state) => state.pauseRound);
   const resumeRound = useGameStore((state) => state.resumeRound);
   const endRound = useGameStore((state) => state.endRound);
+  const { trigger } = useEffects();
   const [wordRevealed, setWordRevealed] = useState(false);
   const [showWord, setShowWord] = useState(false);
   const [scoringOpen, setScoringOpen] = useState(game?.phase === "paused");
   const [remainingMs, setRemainingMs] = useState(0);
   const [timerExpired, setTimerExpired] = useState(false);
+  const lastCountdownSecond = useRef<number | null>(null);
+  const timeoutEffectPlayed = useRef(false);
 
   const currentPlayer = game?.players[game.currentPlayerIndex];
   const language = game?.settings.language ?? "hu";
@@ -59,6 +64,22 @@ export function GamePlay() {
   const remainingSeconds = Math.ceil(remainingMs / 1000);
   const importantTimeAnnouncement =
     remainingSeconds === 10 || remainingSeconds === 5 ? `${remainingSeconds}` : "";
+
+  useEffect(() => {
+    if (game?.phase !== "playing") return;
+    if (
+      remainingSeconds > 0 &&
+      remainingSeconds <= 5 &&
+      lastCountdownSecond.current !== remainingSeconds
+    ) {
+      lastCountdownSecond.current = remainingSeconds;
+      trigger("countdown");
+    }
+    if (timerExpired && !timeoutEffectPlayed.current) {
+      timeoutEffectPlayed.current = true;
+      trigger("timeout");
+    }
+  }, [game?.phase, remainingSeconds, timerExpired, trigger]);
 
   if (!game || !currentPlayer) return null;
   if (game.phase === "roundEnd") return <RoundResultScreen />;
@@ -102,7 +123,13 @@ export function GamePlay() {
           <p className="category-instruction">
             {copy.categories[game.currentCategory].instruction}
           </p>
-          <button className="primary-button primary-button--inverse" onClick={startPlaying}>
+          <button
+            className="primary-button primary-button--inverse"
+            onClick={() => {
+              trigger("roundStart");
+              startPlaying();
+            }}
+          >
             {copy.reveal.startNow}
             <Check aria-hidden="true" size={20} />
           </button>
@@ -122,11 +149,18 @@ export function GamePlay() {
     setScoringOpen(false);
   };
 
+  const completeRound = (success: boolean, guesserId?: string) => {
+    if (success) trigger("correct");
+    else if (!timeExpired) trigger("pass");
+    endRound(success, guesserId);
+  };
+
   return (
     <main className="game-page">
       <header className="game-topbar">
         <Logo compact />
         <div className="game-topbar__meta">
+          <EffectsSettings language={language} compact />
           <HowToPlay language={language} compact />
           <span>{progressLabel}</span>
         </div>
@@ -171,7 +205,11 @@ export function GamePlay() {
               <Check aria-hidden="true" size={22} />
               {copy.play.gotIt}
             </button>
-            <button className="secondary-button" type="button" onClick={() => endRound(false)}>
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => completeRound(false)}
+            >
               <SkipForward aria-hidden="true" size={21} />
               {copy.play.pass}
             </button>
@@ -187,8 +225,8 @@ export function GamePlay() {
         presenterId={currentPlayer.id}
         language={language}
         timeExpired={timeExpired}
-        onSelect={(playerId) => endRound(true, playerId)}
-        onNoOne={() => endRound(false)}
+        onSelect={(playerId) => completeRound(true, playerId)}
+        onNoOne={() => completeRound(false)}
         onCancel={cancelScoring}
       />
     </main>

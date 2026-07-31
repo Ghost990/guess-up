@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { ArrowRight, Check, Clock3, Layers3, Plus, Trash2, Users } from "lucide-react";
+import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { CategoryBadge } from "./CategoryBadge";
 import { HowToPlay } from "./HowToPlay";
 import { LanguageSwitch } from "./LanguageSwitch";
@@ -120,6 +121,7 @@ export function PlayerSetup() {
       <header className="topbar">
         <Logo />
         <div className="topbar-actions">
+          <EffectsSettings language={language} compact />
           <HowToPlay language={language} />
           <LanguageSwitch language={language} onChange={handleLanguageChange} />
         </div>

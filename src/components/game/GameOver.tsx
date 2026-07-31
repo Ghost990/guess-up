@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { RotateCcw, Trophy } from "lucide-react";
+import { useEffects } from "@/components/effects/EffectsProvider";
 import { Scoreboard } from "./Scoreboard";
 import { messages } from "@/i18n/translations";
 import { useGameStore } from "@/stores/gameStore";
@@ -8,6 +10,11 @@ import { useGameStore } from "@/stores/gameStore";
 export function GameOver() {
   const game = useGameStore((state) => state.game);
   const resetGame = useGameStore((state) => state.resetGame);
+  const { capabilities, trigger } = useEffects();
+
+  useEffect(() => {
+    trigger("winner");
+  }, [trigger]);
 
   if (!game) return null;
 
@@ -18,7 +25,11 @@ export function GameOver() {
 
   return (
     <main className="game-over-page">
-      <section className="winner-panel" aria-labelledby="game-over-title">
+      <section
+        className="winner-panel"
+        aria-labelledby="game-over-title"
+        data-celebrate={!capabilities.reducedMotion}
+      >
         <span className="winner-icon"><Trophy aria-hidden="true" /></span>
         <p>{copy.gameOver.title}</p>
         <h1 id="game-over-title">

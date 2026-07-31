@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { EffectsProvider } from "@/components/effects/EffectsProvider";
 import { GameOver } from "@/components/game/GameOver";
 import { GamePlay } from "@/components/game/GamePlay";
 import { Logo } from "@/components/game/Logo";
@@ -19,16 +20,22 @@ export default function Home() {
     document.documentElement.lang = activeLanguage;
   }, [activeLanguage]);
 
+  let content;
+
   if (!hasHydrated) {
-    return (
+    content = (
       <main className="loading-screen">
         <Logo />
         <p>{messages[language].setup.tagline}</p>
       </main>
     );
+  } else if (!game) {
+    content = <PlayerSetup />;
+  } else if (game.phase === "gameOver") {
+    content = <GameOver />;
+  } else {
+    content = <GamePlay key={`${game.id}-${game.currentRound}`} />;
   }
 
-  if (!game) return <PlayerSetup />;
-  if (game.phase === "gameOver") return <GameOver />;
-  return <GamePlay key={`${game.id}-${game.currentRound}`} />;
+  return <EffectsProvider>{content}</EffectsProvider>;
 }
