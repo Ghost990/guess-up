@@ -86,6 +86,7 @@ Start with:
 - [GAME_READY.md](GAME_READY.md) — player and operator guide
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) — verified implementation status
 - [WORD_DATABASE_INFO.md](WORD_DATABASE_INFO.md) — task-pack schema and counts
+- [docs/PRODUCT_STRATEGY_AND_MONETIZATION.md](docs/PRODUCT_STRATEGY_AND_MONETIZATION.md) — approved product expansion, monetization, and first-wave scope
 - [docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md) — active versus historical documents
 
 Many older root-level documents are retained as implementation history. They may describe retired multiplayer, scoring, reveal, or design prototypes and are not authoritative unless listed as active in the documentation map.

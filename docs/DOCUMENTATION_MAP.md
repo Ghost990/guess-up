@@ -12,6 +12,7 @@ The repository contains current documentation and retained historical planning a
 - `AGENTS.md` — repository workflow and quality expectations
 - `CLAUDE.md` — compact agent context
 - `docs/ENGLISH_PROMPT_RESEARCH.md` — research constraints for the current English expansion
+- `docs/PRODUCT_STRATEGY_AND_MONETIZATION.md` — approved post-legacy product direction, numbered feature scope, scalable architecture boundaries, and monetization hypotheses
 
 The tested code remains the final executable source of truth.
 
