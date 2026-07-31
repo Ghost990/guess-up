@@ -68,6 +68,14 @@ describe("GamePlay task reveal", () => {
     expect(screen.queryByText("apple")).not.toBeInTheDocument();
   });
 
+  it("inherits the selected pack surface and accent on the question screen", () => {
+    render(<GamePlay />);
+
+    const gamePage = document.querySelector("main.game-page");
+    expect(gamePage).toHaveAttribute("data-pack-surface", "city");
+    expect(gamePage).toHaveStyle({ "--pack-accent": "#9fe870" });
+  });
+
   it("only offers task help after the player explicitly reveals the private task", () => {
     useGameStore.setState({ game: gameFor("wordReveal") });
     render(<GamePlay />);

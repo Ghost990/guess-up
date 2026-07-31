@@ -3,6 +3,7 @@ import {
   PACK_AUDIENCES,
   PACK_AVAILABILITIES,
   PACK_CONTENT_SOURCE_KINDS,
+  PACK_SURFACE_STYLES,
   TASK_PACK_MANIFEST_SCHEMA_VERSION,
   type RegisteredTaskContentSource,
   type TaskPackManifest,
@@ -89,9 +90,16 @@ export function validateTaskPackManifest(
 
   if (
     !hasNonBlankText(manifest.visualTheme.accentColor) ||
-    !hasNonBlankText(manifest.visualTheme.coverAsset)
+    !hasNonBlankText(manifest.visualTheme.coverAsset) ||
+    !PACK_SURFACE_STYLES.includes(manifest.visualTheme.surfaceStyle)
   ) {
-    issues.push(issue("invalid_visual_theme", manifest, "Visual theme must have an accent color and cover asset."));
+    issues.push(
+      issue(
+        "invalid_visual_theme",
+        manifest,
+        "Visual theme must have an accent color, cover asset, and supported surface style.",
+      ),
+    );
   }
 
   const source = contentSources.find((candidate) => candidate.id === manifest.contentSource.id);

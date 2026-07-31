@@ -14,7 +14,7 @@ import {
   resolvePackPickerItems,
   validateTaskPackManifests,
 } from "@/lib/packs";
-import type { TaskPackManifest } from "@/types/packs";
+import { PACK_SURFACE_STYLES, type TaskPackManifest } from "@/types/packs";
 
 describe("task pack registry", () => {
   it("registers localized manifests that reference the existing word-pack sources", () => {
@@ -33,6 +33,17 @@ describe("task pack registry", () => {
     ]);
     expect(classicHungarianPackManifest.contentSource.location).toBe("src/data/words-hu.json");
     expect(classicEnglishPackManifest.contentSource.location).toBe("src/data/words-en.json");
+  });
+
+  it("gives every pack an explicit gameplay surface style", () => {
+    const allowedStyles = new Set(PACK_SURFACE_STYLES);
+
+    expect(
+      taskPackManifests.every((manifest) => allowedStyles.has(manifest.visualTheme.surfaceStyle)),
+    ).toBe(true);
+    expect(taskPackRegistry.getById("movies-hungarian")?.visualTheme.surfaceStyle).toBe("cinema");
+    expect(taskPackRegistry.getById("series-hungarian")?.visualTheme.surfaceStyle).toBe("broadcast");
+    expect(taskPackRegistry.getById("gaming-hungarian")?.visualTheme.surfaceStyle).toBe("arcade");
   });
 
   it("filters deterministically by locale, audience, availability, and tags", () => {
@@ -62,6 +73,22 @@ describe("task pack registry", () => {
     expect(validateTaskPackManifests([invalidManifest], taskContentSources).map((entry) => entry.code)).toEqual(
       expect.arrayContaining(["unsupported_schema_version", "unknown_content_source"]),
     );
+  });
+
+  it("rejects unsupported gameplay surface styles at runtime", () => {
+    const invalidThemeManifest = {
+      ...classicHungarianPackManifest,
+      visualTheme: {
+        ...classicHungarianPackManifest.visualTheme,
+        surfaceStyle: "laser-grid",
+      },
+    } as unknown as TaskPackManifest;
+
+    expect(
+      validateTaskPackManifests([invalidThemeManifest], taskContentSources).map(
+        (entry) => entry.code,
+      ),
+    ).toContain("invalid_visual_theme");
   });
 
   it("rejects duplicate manifest IDs before creating a registry", () => {

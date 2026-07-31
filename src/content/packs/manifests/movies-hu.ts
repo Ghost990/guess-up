@@ -25,6 +25,7 @@ export const moviesHungarianPackManifest = {
     accentColor: "#ef5d7a",
     coverAsset: "movies-cinema-reel",
     backgroundStyle: "warm",
+    surfaceStyle: "cinema",
   },
   tags: ["movies", "cinema", "film", "hungarian"],
 } as const satisfies TaskPackManifest;

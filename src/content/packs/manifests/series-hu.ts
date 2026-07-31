@@ -25,6 +25,7 @@ export const seriesHungarianPackManifest = {
     accentColor: "#6dc6dd",
     coverAsset: "series-episode-screen",
     backgroundStyle: "cool",
+    surfaceStyle: "broadcast",
   },
   tags: ["series", "television", "tv", "hungarian"],
 } as const satisfies TaskPackManifest;

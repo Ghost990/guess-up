@@ -25,6 +25,7 @@ export const classicEnglishPackManifest = {
     accentColor: "#6dc6dd",
     coverAsset: "classic-english-table",
     backgroundStyle: "cool",
+    surfaceStyle: "classic",
   },
   tags: ["classic", "party", "english"],
 } as const satisfies TaskPackManifest;

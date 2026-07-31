@@ -25,6 +25,7 @@ export const challengeHungarianPackManifest = {
     accentColor: "#ef5d7a",
     coverAsset: "challenge-hungarian-climb",
     backgroundStyle: "playful",
+    surfaceStyle: "summit",
   },
   tags: ["challenge", "party", "hungarian"],
 } as const satisfies TaskPackManifest;

@@ -25,6 +25,7 @@ export const gamingHungarianPackManifest = {
     accentColor: "#9fe870",
     coverAsset: "gaming-pixel-arcade",
     backgroundStyle: "playful",
+    surfaceStyle: "arcade",
   },
   tags: ["gaming", "video-games", "arcade", "hungarian"],
 } as const satisfies TaskPackManifest;

@@ -7,6 +7,7 @@ import { useEffects } from "@/components/effects/EffectsProvider";
 import { PackScene } from "@/components/illustrations";
 import { taskPackRegistry } from "@/content/packs";
 import { getCountdownEffectCue } from "@/lib/effects/effectEngine";
+import { getPackSurfaceAttributes } from "@/lib/packs";
 import { CategoryBadge } from "./CategoryBadge";
 import { HowToPlay } from "./HowToPlay";
 import { Logo } from "./Logo";
@@ -51,6 +52,7 @@ export function GamePlay() {
   const selectedPack = game?.settings.packId
     ? taskPackRegistry.getById(game.settings.packId)
     : null;
+  const packSurface = getPackSurfaceAttributes(selectedPack);
 
   useEffect(() => {
     if (!game || (game.phase !== "playing" && game.phase !== "paused")) return;
@@ -98,7 +100,7 @@ export function GamePlay() {
 
   if (game.phase === "wordReveal" && !wordRevealed) {
     return (
-      <main className="handoff-screen" data-category={game.currentCategory}>
+      <main className="handoff-screen" data-category={game.currentCategory} {...packSurface}>
         <div className="handoff-content">
           {selectedPack ? (
             <div className="handoff-pack-art" aria-hidden="true">
@@ -132,7 +134,7 @@ export function GamePlay() {
 
   if (game.phase === "wordReveal") {
     return (
-      <main className="reveal-screen" data-category={game.currentCategory}>
+      <main className="reveal-screen" data-category={game.currentCategory} {...packSurface}>
         <div className="reveal-content">
           {selectedPack ? (
             <div className="reveal-pack-art" aria-hidden="true">
@@ -182,7 +184,7 @@ export function GamePlay() {
   };
 
   return (
-    <main className="game-page">
+    <main className="game-page" {...packSurface}>
       <header className="game-topbar">
         <Logo compact />
         <div className="game-topbar__meta">

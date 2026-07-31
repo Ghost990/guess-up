@@ -25,6 +25,7 @@ export const easyEnergyEnglishPackManifest = {
     accentColor: "#9fe870",
     coverAsset: "easy-energy-english-city",
     backgroundStyle: "playful",
+    surfaceStyle: "city",
   },
   tags: ["easy", "party", "english-learning"],
 } as const satisfies TaskPackManifest;

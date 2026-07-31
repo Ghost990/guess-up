@@ -25,6 +25,7 @@ export const classicHungarianPackManifest = {
     accentColor: "#f5b642",
     coverAsset: "classic-hungarian-party",
     backgroundStyle: "warm",
+    surfaceStyle: "classic",
   },
   tags: ["classic", "party", "hungarian"],
 } as const satisfies TaskPackManifest;

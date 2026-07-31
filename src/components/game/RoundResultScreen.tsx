@@ -1,6 +1,8 @@
 "use client";
 
 import { ArrowGlyph, CheckGlyph, SkipGlyph } from "@/components/icons";
+import { taskPackRegistry } from "@/content/packs";
+import { getPackSurfaceAttributes } from "@/lib/packs";
 import { CategoryBadge } from "./CategoryBadge";
 import { Scoreboard } from "./Scoreboard";
 import { messages } from "@/i18n/translations";
@@ -19,9 +21,13 @@ export function RoundResultScreen() {
   const presenter = game.players.find((player) => player.id === result.presenterId);
   const guesser = game.players.find((player) => player.id === result.guesserId);
   const nextPlayer = game.players[(game.currentRound + 1) % game.players.length];
+  const selectedPack = game.settings.packId
+    ? taskPackRegistry.getById(game.settings.packId)
+    : null;
+  const packSurface = getPackSurfaceAttributes(selectedPack);
 
   return (
-    <main className="game-page">
+    <main className="game-page" {...packSurface}>
       <div className="result-layout">
         <section className="result-stage" aria-labelledby="result-title">
           <CategoryBadge category={result.category} language={language} />
