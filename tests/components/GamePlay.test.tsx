@@ -15,12 +15,12 @@ function gameFor(phase: Game["phase"]): Game {
     currentRound: 0,
     currentPlayerIndex: 0,
     currentCategory: "draw",
-    currentWord: { id: "apple", text: "apple", categories: ["draw"], difficulty: "easy", length: 5, tags: ["food"] },
+    currentWord: { id: "low-draw-001", text: "apple", categories: ["draw"], difficulty: "lowEnglish", length: 5, tags: ["food"] },
     settings: {
-      packId: "classic-english",
+      packId: "easy-energy-english",
       roundsPerPlayer: 1,
       totalRounds: 2,
-      difficulty: "easy",
+      difficulty: "lowEnglish",
       categories: ["draw"],
       roundDuration: 30000,
       wordRevealDuration: 3000,
@@ -49,20 +49,21 @@ describe("GamePlay task reveal", () => {
   it("uses a tap toggle and puts the answer in a separate live card", () => {
     render(<GamePlay />);
 
-    const toggle = screen.getByRole("button", { name: "Task" });
+    const toggle = screen.getByRole("button", { name: "Show task" });
     expect(toggle).toHaveAttribute("aria-pressed", "false");
     fireEvent.pointerDown(toggle);
     expect(screen.queryByText("apple")).not.toBeInTheDocument();
 
     fireEvent.click(toggle);
     const card = document.getElementById("active-task-card");
-    expect(toggle).toHaveAccessibleName("Hide");
+    expect(card?.nextElementSibling).toBe(toggle);
+    expect(toggle).toHaveAccessibleName("Hide task");
     expect(toggle).toHaveAttribute("aria-pressed", "true");
     expect(card).toHaveAttribute("aria-live", "polite");
     expect(within(card!).getByText("apple")).toBeInTheDocument();
 
     fireEvent.click(toggle);
-    expect(toggle).toHaveAccessibleName("Task");
+    expect(toggle).toHaveAccessibleName("Show task");
     expect(screen.queryByText("apple")).not.toBeInTheDocument();
   });
 
@@ -75,7 +76,8 @@ describe("GamePlay task reveal", () => {
     fireEvent.click(screen.getByRole("button", { name: "Show help" }));
 
     expect(screen.getByRole("heading", { name: "Task help" })).toBeInTheDocument();
-    expect(screen.getByText("This shows task metadata only, not a definition.")).toBeInTheDocument();
+    expect(screen.getByText("Hungarian meaning: alma")).toBeInTheDocument();
+    expect(screen.getByText("Only reviewed meaning and verified task metadata are shown.")).toBeInTheDocument();
     expect(screen.getByText("Tags: food")).toBeInTheDocument();
   });
 });

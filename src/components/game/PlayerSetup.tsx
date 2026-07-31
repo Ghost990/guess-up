@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { ArrowRight, Check, Clock3, Layers3, Plus, Trash2, Users } from "lucide-react";
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
+import { PackScene } from "@/components/illustrations";
 import { PackPicker } from "@/components/packs";
 import { taskPackManifests, taskPackRegistry } from "@/content/packs";
 import { createFreeEntitlementProvider, resolvePackPickerItems } from "@/lib/packs";
@@ -175,6 +176,15 @@ export function PlayerSetup() {
           <p className="setup-tagline">{copy.setup.tagline}</p>
           <h1 id="setup-title">{copy.setup.title}</h1>
           <p className="setup-subtitle">{copy.setup.subtitle}</p>
+
+          {selectedPack ? (
+            <div className="setup-pack-art" aria-hidden="true">
+              <PackScene
+                coverAsset={selectedPack.visualTheme.coverAsset}
+                variant="setup"
+              />
+            </div>
+          ) : null}
 
           <div className="rules-list">
             <h2>{copy.setup.rulesTitle}</h2>

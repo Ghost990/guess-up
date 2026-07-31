@@ -62,11 +62,28 @@ Current experience manifests:
 ### Effects and celebration
 
 - Centralized effect engine
-- Web Audio cues for round start, countdown, correct, pass, timeout, and winner
+- Web Audio cues for round start, escalating 5-3/2/1 countdown tiers, correct, pass, timeout, and winner
 - Haptics behind capability checks
 - Persistent independent sound/haptics preferences
 - Reduced-motion-aware winner celebration
 - SSR-safe provider and unsupported-browser fallbacks
+
+### Mobile reveal and task assistance
+
+- Active tasks reveal with a single tap and hide with a second tap
+- Task content lives in a dedicated live card above the touch control, rather than under a held finger
+- HU/EN localized assistance panel with difficulty, first character, length, and semantic tags
+- Browser speech-synthesis pronunciation when supported
+- Human-reviewed, offline Hungarian glosses for all 180 Low English prompts
+- System/editorial tags are filtered out instead of presented as fake semantic hints
+
+### Illustration language
+
+- Four original inline-SVG pack scenes built from people, places, play objects, and diagram motifs
+- Shared warm-black outline, off-white paper, coral/cyan/yellow palette, and print-offset shadow language
+- Manifest-driven `coverAsset` resolution with an accessible fallback scene
+- Artwork reused on Pack Cards, setup, private handoff, reveal, and Game Over
+- Decorative and meaningful-image accessibility contracts covered by component tests
 
 ### Working brand
 
@@ -98,7 +115,7 @@ All 1,440 records have unique IDs within their language source. Runtime selectio
 ```text
 npm run lint       passed
 npm run typecheck  passed
-npm run test       58/58 passed across 13 files
+npm run test       77/77 passed across 18 files
 npm run build      passed; static / route generated
 npm run test:e2e   2/2 passed (Desktop Chrome + Pixel 5)
 git diff --check   passed
@@ -109,8 +126,10 @@ Bounded production visual QA:
 - desktop setup: `clientWidth 1440`, `scrollWidth 1440`
 - Pixel-width setup: `clientWidth 393`, `scrollWidth 393`
 - Pixel-width Game Over/Recap: `clientWidth 393`, `scrollWidth 393`
+- Pixel-width active play: `clientWidth 393`, `scrollWidth 393`
+- revealed task card bottom `580.6px`; reveal control top `596.6px`; separate 16px touch/content gap
 - zero console errors and zero uncaught page errors
-- pack picker and recap inspected as isolated mobile surfaces
+- setup, pack picker, handoff, open help, active reveal, and recap inspected as mobile surfaces
 - app icon and horizontal logo exports visually inspected after rasterization
 
 ## Known limitations and follow-up work

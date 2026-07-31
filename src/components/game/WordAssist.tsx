@@ -2,6 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 import { Volume2 } from "lucide-react";
+import { getLowEnglishHungarianGloss } from "@/content/hints/lowEnglishHuGlosses";
 import { messages } from "@/i18n/translations";
 import { getWordAssistFacts } from "@/lib/game/wordAssist";
 import type { Language, Word } from "@/types";
@@ -36,6 +37,7 @@ export function WordAssist({ word, language }: WordAssistProps) {
   );
   const copy = messages[language];
   const facts = getWordAssistFacts(word);
+  const hungarianGloss = getLowEnglishHungarianGloss(word);
   const localizedTags = facts.tags.map(
     (tag) => copy.assist.tagLabels[tag as keyof typeof copy.assist.tagLabels] ?? tag,
   );
@@ -63,6 +65,11 @@ export function WordAssist({ word, language }: WordAssistProps) {
       {open ? (
         <div id="word-assist-details" className="word-assist__details">
           <h2>{copy.assist.title}</h2>
+          {hungarianGloss ? (
+            <p className="word-assist__gloss">
+              {copy.assist.hungarianMeaning(hungarianGloss)}
+            </p>
+          ) : null}
           <p>{copy.assist.metadataNotice}</p>
           <ul>
             <li>{copy.assist.difficulty(copy.setup.difficultyOptions[word.difficulty].label)}</li>

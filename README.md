@@ -14,8 +14,11 @@ Mobile-first, single-device party game for 2–8 players. Pass one phone around,
 - Refresh-safe persisted game state and absolute round deadlines
 - Installable web app manifest
 - Experience-based task-pack picker with versioned manifests and entitlement boundary
+- Original inline-SVG pack scenes reused across setup, handoff, reveal, and recap surfaces
+- Tap-to-reveal active task card with a physically separate mobile control zone
+- Localized task assistance with pronunciation, verified metadata, and 180 reviewed Low English Hungarian glosses
 - Game Night Recap with standings, round statistics, native share, text copy, and PNG export
-- Optional sound, haptics, and reduced-motion-aware winner celebration
+- Optional sound and haptics with escalating final-five-second cues, plus reduced-motion-aware winner celebration
 
 > The service worker currently uses a network-only strategy. The app is installable, but a fresh load is not guaranteed to work offline.
 

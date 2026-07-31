@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { RotateCcw, Trophy } from "lucide-react";
 import { useEffects } from "@/components/effects/EffectsProvider";
+import { PackScene } from "@/components/illustrations";
 import { GameNightRecap } from "@/components/recap/GameNightRecap";
+import { taskPackRegistry } from "@/content/packs";
 import { buildGameNightRecap } from "@/lib/recap/buildGameNightRecap";
 import {
   copyRecapText,
@@ -63,6 +65,9 @@ export function GameOver() {
   const copy = messages[language];
   const sorted = [...game.players].sort((a, b) => b.score - a.score);
   const leaders = sorted.filter((player) => player.score === sorted[0]?.score);
+  const selectedPack = game.settings.packId
+    ? taskPackRegistry.getById(game.settings.packId)
+    : null;
 
   return (
     <main className="game-over-page">
@@ -71,6 +76,14 @@ export function GameOver() {
         aria-labelledby="game-over-title"
         data-celebrate={!capabilities.reducedMotion}
       >
+        {selectedPack ? (
+          <div className="winner-pack-art" aria-hidden="true">
+            <PackScene
+              coverAsset={selectedPack.visualTheme.coverAsset}
+              variant="recap"
+            />
+          </div>
+        ) : null}
         <span className="winner-icon"><Trophy aria-hidden="true" /></span>
         <p>{copy.gameOver.title}</p>
         <h1 id="game-over-title">

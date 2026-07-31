@@ -6,6 +6,22 @@ export interface WordAssistFacts {
   tags: string[];
 }
 
+const SYSTEM_TAGS = new Set([
+  "challenging",
+  "charades",
+  "draw",
+  "drawing",
+  "easy",
+  "explain",
+  "explaining",
+  "hard",
+  "low-english",
+  "medium",
+  "original-expansion",
+  "signal",
+  "visual",
+]);
+
 function normalizeForComparison(value: string): string {
   return value
     .normalize("NFKD")
@@ -24,7 +40,14 @@ export function getWordAssistFacts(word: Word): WordAssistFacts {
   const seenTags = new Set<string>();
   const tags = word.tags.filter((tag) => {
     const normalized = normalizeForComparison(tag);
-    if (!normalized || normalized === answer || seenTags.has(normalized)) return false;
+    if (
+      !normalized ||
+      normalized === answer ||
+      SYSTEM_TAGS.has(normalized) ||
+      seenTags.has(normalized)
+    ) {
+      return false;
+    }
     seenTags.add(normalized);
     return true;
   });

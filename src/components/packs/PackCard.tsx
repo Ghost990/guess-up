@@ -45,7 +45,7 @@ export function PackCard({
       data-testid={`pack-card-${manifest.id}`}
       style={style}
     >
-      <div className="mb-5 overflow-hidden rounded-lg border border-[color:var(--border)] bg-[#fff8e8]">
+      <div className="mb-5 overflow-hidden rounded-lg border border-[var(--line)] bg-[#fff8e8]">
         <PackScene
           className="block h-auto w-full"
           coverAsset={manifest.visualTheme.coverAsset}

@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Eye, EyeOff, SkipForward } from "lucide-react";
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { useEffects } from "@/components/effects/EffectsProvider";
+import { PackScene } from "@/components/illustrations";
+import { taskPackRegistry } from "@/content/packs";
+import { getCountdownEffectCue } from "@/lib/effects/effectEngine";
 import { CategoryBadge } from "./CategoryBadge";
 import { HowToPlay } from "./HowToPlay";
 import { Logo } from "./Logo";
@@ -45,6 +48,9 @@ export function GamePlay() {
   const roundKey = game ? `${game.id}:${game.currentRound}` : null;
   const wordRevealed = revealedRoundKey === roundKey;
   const showWord = shownRoundKey === roundKey;
+  const selectedPack = game?.settings.packId
+    ? taskPackRegistry.getById(game.settings.packId)
+    : null;
 
   useEffect(() => {
     if (!game || (game.phase !== "playing" && game.phase !== "paused")) return;
@@ -71,13 +77,10 @@ export function GamePlay() {
 
   useEffect(() => {
     if (game?.phase !== "playing") return;
-    if (
-      remainingSeconds > 0 &&
-      remainingSeconds <= 5 &&
-      lastCountdownSecond.current !== remainingSeconds
-    ) {
+    const countdownCue = getCountdownEffectCue(remainingSeconds);
+    if (countdownCue && lastCountdownSecond.current !== remainingSeconds) {
       lastCountdownSecond.current = remainingSeconds;
-      trigger("countdown");
+      trigger(countdownCue);
     }
     if (timerExpired && !timeoutEffectPlayed.current) {
       timeoutEffectPlayed.current = true;
@@ -95,6 +98,14 @@ export function GamePlay() {
     return (
       <main className="handoff-screen" data-category={game.currentCategory}>
         <div className="handoff-content">
+          {selectedPack ? (
+            <div className="handoff-pack-art" aria-hidden="true">
+              <PackScene
+                coverAsset={selectedPack.visualTheme.coverAsset}
+                variant="handoff"
+              />
+            </div>
+          ) : null}
           <span className="privacy-label"><EyeOff aria-hidden="true" />{copy.ready.privateLabel}</span>
           <CategoryBadge
             category={game.currentCategory}
@@ -121,6 +132,14 @@ export function GamePlay() {
     return (
       <main className="reveal-screen" data-category={game.currentCategory}>
         <div className="reveal-content">
+          {selectedPack ? (
+            <div className="reveal-pack-art" aria-hidden="true">
+              <PackScene
+                coverAsset={selectedPack.visualTheme.coverAsset}
+                variant="reveal"
+              />
+            </div>
+          ) : null}
           <CategoryBadge category={game.currentCategory} language={language} />
           <p>{copy.reveal.label}</p>
           <h1>{game.currentWord.text}</h1>
@@ -188,6 +207,16 @@ export function GamePlay() {
           />
           <span className="sr-only" aria-live="polite">{importantTimeAnnouncement}</span>
 
+          <section
+            id="active-task-card"
+            className="active-task-card"
+            aria-live="polite"
+            aria-atomic="true"
+            data-revealed={showWord}
+          >
+            {showWord ? <p>{game.currentWord.text}</p> : <p>{copy.play.wordHidden}</p>}
+          </section>
+
           <button
             type="button"
             className="peek-button"
@@ -198,15 +227,6 @@ export function GamePlay() {
             {showWord ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
             {showWord ? copy.play.hideWord : copy.play.peek}
           </button>
-
-          <section
-            id="active-task-card"
-            className="active-task-card"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            {showWord ? <p>{game.currentWord.text}</p> : <p>{copy.play.wordHidden}</p>}
-          </section>
 
           <div className="play-actions">
             <button className="primary-button" type="button" onClick={openScoring}>
