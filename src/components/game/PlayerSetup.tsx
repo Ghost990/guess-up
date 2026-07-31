@@ -3,6 +3,10 @@
 import { FormEvent, useEffect, useState } from "react";
 import { ArrowRight, Check, Clock3, Layers3, Plus, Trash2, Users } from "lucide-react";
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
+import { PackPicker } from "@/components/packs";
+import { taskPackManifests, taskPackRegistry } from "@/content/packs";
+import { createFreeEntitlementProvider, resolvePackPickerItems } from "@/lib/packs";
+import { getDefaultPackId } from "@/lib/game/wordPacks";
 import { CategoryBadge } from "./CategoryBadge";
 import { HowToPlay } from "./HowToPlay";
 import { LanguageSwitch } from "./LanguageSwitch";
@@ -10,6 +14,7 @@ import { Logo } from "./Logo";
 import { messages } from "@/i18n/translations";
 import { useGameStore } from "@/stores/gameStore";
 import type { Category, Difficulty } from "@/types";
+import type { PackPickerItem } from "@/types/packs";
 
 const PLAYER_STORAGE_KEY = "guessup-player-names";
 const roundOptions = [1, 2, 3, 4] as const;
@@ -60,9 +65,17 @@ export function PlayerSetup() {
   const [roundDuration, setRoundDuration] =
     useState<(typeof durationOptions)[number]>(60000);
   const [categories, setCategories] = useState<Category[]>(categoryOptions);
+  const [selectedPackId, setSelectedPackId] = useState(() => getDefaultPackId(language));
+  const [packItems, setPackItems] = useState<readonly PackPickerItem[]>([]);
   const copy = messages[language];
-  const difficultyOptions =
+  const selectedPack = taskPackRegistry.getById(selectedPackId);
+  const languageDifficultyOptions =
     language === "en" ? englishDifficultyOptions : standardDifficultyOptions;
+  const difficultyOptions = selectedPack
+    ? languageDifficultyOptions.filter((option) =>
+        selectedPack.compatibility.difficulties.includes(option),
+      )
+    : languageDifficultyOptions;
 
   const validNames = players.map((player) => player.name.trim()).filter(Boolean);
   const hasDuplicates =
@@ -74,6 +87,18 @@ export function PlayerSetup() {
   useEffect(() => {
     localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(validNames));
   }, [validNames]);
+
+  useEffect(() => {
+    let active = true;
+    const manifests = taskPackManifests.filter((manifest) => manifest.locale === language);
+    const entitlementProvider = createFreeEntitlementProvider(manifests);
+    void resolvePackPickerItems(manifests, entitlementProvider).then((items) => {
+      if (active) setPackItems(items);
+    });
+    return () => {
+      active = false;
+    };
+  }, [language]);
 
   const updatePlayer = (index: number, value: string) => {
     setPlayers((drafts) =>
@@ -97,10 +122,27 @@ export function PlayerSetup() {
   };
 
   const handleLanguageChange = (nextLanguage: typeof language) => {
-    if (nextLanguage === "hu" && englishOnlyDifficulties.includes(difficulty)) {
-      setDifficulty("easy");
-    }
+    const nextPackId = getDefaultPackId(nextLanguage);
+    const nextPack = taskPackRegistry.getById(nextPackId);
+    const nextDifficulty = nextLanguage === "hu" && englishOnlyDifficulties.includes(difficulty)
+      ? "easy"
+      : difficulty;
+    setSelectedPackId(nextPackId);
+    setDifficulty(
+      nextPack?.compatibility.difficulties.includes(nextDifficulty)
+        ? nextDifficulty
+        : nextPack?.compatibility.difficulties[0] ?? "easy",
+    );
     setLanguage(nextLanguage);
+  };
+
+  const handlePackSelect = (packId: string) => {
+    const manifest = taskPackRegistry.getById(packId);
+    if (!manifest || manifest.locale !== language) return;
+    setSelectedPackId(packId);
+    if (!manifest.compatibility.difficulties.includes(difficulty)) {
+      setDifficulty(manifest.compatibility.difficulties[0]);
+    }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -112,6 +154,7 @@ export function PlayerSetup() {
       roundsPerPlayer,
       roundDuration,
       language,
+      packId: selectedPackId,
       categories,
     });
   };
@@ -239,6 +282,24 @@ export function PlayerSetup() {
               <p className="field-hint">{copy.setup.languageHint}</p>
             </div>
             <LanguageSwitch language={language} onChange={handleLanguageChange} />
+          </section>
+
+          <section className="form-section form-section--packs">
+            <PackPicker
+              items={packItems}
+              selectedPackId={selectedPackId}
+              copy={{
+                heading: copy.setup.pack.heading,
+                emptyMessage: copy.setup.pack.empty,
+                card: {
+                  selectLabel: copy.setup.pack.select,
+                  selectedLabel: copy.setup.pack.selected,
+                  lockedLabel: copy.setup.pack.locked,
+                  audienceLabels: copy.setup.pack.audiences,
+                },
+              }}
+              onSelect={handlePackSelect}
+            />
           </section>
 
           <section

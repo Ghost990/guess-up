@@ -25,6 +25,8 @@ export const CATEGORY_TO_ROLE: Record<Category, Role> = {
 };
 
 export interface GameSettings {
+  /** Optional only for migration compatibility with persisted v2 games. */
+  packId?: string;
   roundsPerPlayer: number;
   totalRounds: number;
   difficulty: Difficulty;

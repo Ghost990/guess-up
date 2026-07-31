@@ -74,7 +74,10 @@ export function GameNightRecap({
   const pairing = recap.awards.strongestPairing;
 
   return (
-    <section aria-labelledby="game-night-recap-title" className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-5 text-[var(--ink)] sm:p-7">
+    <section
+      aria-label={labels.title}
+      className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-5 text-[var(--ink)] sm:p-7"
+    >
       <header className="space-y-2">
         <p className="text-sm font-bold uppercase tracking-[0.12em] text-[var(--accent)]">{labels.title}</p>
         <h2 id="game-night-recap-title" className="text-2xl font-black tracking-tight sm:text-3xl">

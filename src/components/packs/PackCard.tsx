@@ -1,12 +1,13 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import type { PackAccessState, TaskPackManifest } from "@/types/packs";
+import type { PackAccessState, PackAudience, TaskPackManifest } from "@/types/packs";
 
 export interface PackCardCopy {
   selectLabel: string;
   selectedLabel: string;
   lockedLabel: string;
+  audienceLabels?: Partial<Record<PackAudience, string>>;
 }
 
 export interface PackCardProps {
@@ -45,7 +46,9 @@ export function PackCard({
     >
       <div className="mb-5 h-2 w-16 rounded-full" style={{ backgroundColor: manifest.visualTheme.accentColor }} />
       <div className="flex-1">
-        <p className="mb-2 text-sm font-semibold text-[var(--muted)]">{manifest.audience}</p>
+        <p className="mb-2 text-sm font-semibold text-[var(--muted)]">
+          {copy.audienceLabels?.[manifest.audience] ?? manifest.audience}
+        </p>
         <h3 className="text-xl font-extrabold tracking-tight">{manifest.metadata.title}</h3>
         <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{manifest.metadata.description}</p>
       </div>

@@ -6,7 +6,12 @@ import { useGameStore } from "@/stores/gameStore";
 describe("PlayerSetup", () => {
   beforeEach(() => {
     localStorage.clear();
-    useGameStore.setState({ game: null, language: "hu", lastResult: null });
+    useGameStore.setState({
+      game: null,
+      language: "hu",
+      lastResult: null,
+      roundHistory: [],
+    });
   });
 
   it("switches the interface and task language together", () => {
@@ -66,5 +71,24 @@ describe("PlayerSetup", () => {
     expect(screen.queryByRole("radio", { name: /Challenging/i })).not
       .toBeInTheDocument();
     expect(screen.getByRole("radio", { name: /Könnyű/i })).toBeChecked();
+  });
+
+  it("selects an experience pack, constrains difficulty, and freezes it into the game", async () => {
+    render(<PlayerSetup />);
+    const challengePack = await screen.findByRole("article", { name: "Nehéz menet" });
+    fireEvent.click(within(challengePack).getByRole("button", { name: "Ezt választom" }));
+
+    expect(screen.getByRole("radio", { name: /Nehéz/i })).toBeChecked();
+    expect(screen.queryByRole("radio", { name: /Közepes/i })).not.toBeInTheDocument();
+
+    fireEvent.change(screen.getByLabelText("Játékos neve 1"), {
+      target: { value: "Anna" },
+    });
+    fireEvent.change(screen.getByLabelText("Játékos neve 2"), {
+      target: { value: "Béla" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Játék indítása" }));
+
+    expect(useGameStore.getState().game?.settings.packId).toBe("challenge-hungarian");
   });
 });

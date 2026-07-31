@@ -93,6 +93,23 @@ describe("localized word packs", () => {
     vi.restoreAllMocks();
   });
 
+  it("enforces the selected experience pack compatibility", () => {
+    const challengeWord = pickWord({
+      language: "hu",
+      difficulty: "hard",
+      category: "draw",
+      packId: "challenge-hungarian",
+    });
+    expect(challengeWord.difficulty).toBe("hard");
+
+    expect(() => pickWord({
+      language: "hu",
+      difficulty: "medium",
+      category: "draw",
+      packId: "challenge-hungarian",
+    })).toThrow('does not support difficulty "medium"');
+  });
+
   it("reuses the matching pool only after all matching tasks were used", () => {
     const pack = getWordPack("hu");
     const matchingIds = pack.words

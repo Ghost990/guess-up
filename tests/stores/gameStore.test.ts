@@ -16,7 +16,12 @@ describe("game store", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
     localStorage.clear();
-    useGameStore.setState({ game: null, language: "hu", lastResult: null });
+    useGameStore.setState({
+      game: null,
+      language: "hu",
+      lastResult: null,
+      roundHistory: [],
+    });
     vi.useRealTimers();
   });
 
@@ -72,6 +77,27 @@ describe("game store", () => {
       settings: { language: "en", difficulty: "challenging" },
       currentWord: { difficulty: "challenging" },
     });
+  });
+
+  it("freezes the selected pack and validates its difficulty contract", () => {
+    expect(() => useGameStore.getState().setupGame({
+      playerNames: ["Anna", "Béla"],
+      difficulty: "medium",
+      roundsPerPlayer: 1,
+      roundDuration: 60000,
+      language: "hu",
+      packId: "challenge-hungarian",
+    })).toThrow('does not support difficulty "medium"');
+
+    useGameStore.getState().setupGame({
+      playerNames: ["Anna", "Béla"],
+      difficulty: "hard",
+      roundsPerPlayer: 1,
+      roundDuration: 60000,
+      language: "hu",
+      packId: "challenge-hungarian",
+    });
+    expect(useGameStore.getState().game?.settings.packId).toBe("challenge-hungarian");
   });
 
   it("uses an absolute deadline and supports pause/resume", () => {
@@ -135,6 +161,27 @@ describe("game store", () => {
     expect(useGameStore.getState().game?.currentRound).toBe(1);
   });
 
+  it("records versioned correct, passed, and timed-out recap events", () => {
+    setup(["Anna", "Béla"], 2);
+    useGameStore.getState().startPlaying();
+    const firstGame = useGameStore.getState().game!;
+    useGameStore.getState().endRound(true, firstGame.players[1].id);
+    useGameStore.getState().startNextRound();
+    useGameStore.getState().startPlaying();
+    useGameStore.getState().endRound(false, undefined, "passed");
+    useGameStore.getState().startNextRound();
+    useGameStore.getState().startPlaying();
+    useGameStore.getState().endRound(false, undefined, "timedOut");
+
+    expect(useGameStore.getState().roundHistory.map((event) => event.outcome)).toEqual([
+      "correct",
+      "passed",
+      "timedOut",
+    ]);
+    expect(useGameStore.getState().roundHistory.every((event) => event.schemaVersion === 1))
+      .toBe(true);
+  });
+
   it("resets the game while keeping the selected language", () => {
     setup(["Anna", "Béla"], 1);
     useGameStore.getState().resetGame();
@@ -142,6 +189,7 @@ describe("game store", () => {
     expect(useGameStore.getState()).toMatchObject({
       game: null,
       lastResult: null,
+      roundHistory: [],
       language: "en",
     });
   });

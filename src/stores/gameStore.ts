@@ -2,7 +2,12 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { getCategoryForTurn, getTotalRounds, applyScore, GUESSER_POINTS, PRESENTER_POINTS } from "@/lib/game/rounds";
 import { initializePlayerOrder } from "@/lib/game/turnRotation";
-import { pickWord } from "@/lib/game/wordPacks";
+import { getDefaultPackId, getTaskPackManifest, pickWord } from "@/lib/game/wordPacks";
+import {
+  RECAP_EVENT_SCHEMA_VERSION,
+  type RecapRoundEventV1,
+  type RecapRoundOutcome,
+} from "@/types/recap";
 import type {
   Category,
   Difficulty,
@@ -18,6 +23,7 @@ export interface SetupGameInput {
   roundsPerPlayer: number;
   roundDuration: 30000 | 45000 | 60000 | 90000;
   language: Language;
+  packId?: string;
   categories?: Category[];
 }
 
@@ -25,18 +31,26 @@ interface GameStore {
   game: Game | null;
   language: Language;
   lastResult: RoundResult | null;
+  roundHistory: RecapRoundEventV1[];
   setLanguage: (language: Language) => void;
   setupGame: (input: SetupGameInput) => void;
   startPlaying: () => void;
   pauseRound: () => void;
   resumeRound: () => void;
-  endRound: (success: boolean, guesserId?: string) => void;
+  endRound: (
+    success: boolean,
+    guesserId?: string,
+    failureOutcome?: Extract<RecapRoundOutcome, "passed" | "timedOut">,
+  ) => void;
   startNextRound: () => void;
   finishGame: () => void;
   resetGame: () => void;
 }
 
-type PersistedGameState = Pick<GameStore, "game" | "language" | "lastResult">;
+type PersistedGameState = Pick<
+  GameStore,
+  "game" | "language" | "lastResult" | "roundHistory"
+>;
 
 function createId(prefix: string): string {
   const id =
@@ -66,6 +80,7 @@ export const useGameStore = create<GameStore>()(
       game: null,
       language: "hu",
       lastResult: null,
+      roundHistory: [],
 
       setLanguage: (language) => {
         if (get().game) return;
@@ -78,6 +93,7 @@ export const useGameStore = create<GameStore>()(
         roundsPerPlayer,
         roundDuration,
         language,
+        packId,
         categories = ["draw", "explain", "signal"],
       }) => {
         const names = normalizeNames(playerNames);
@@ -86,6 +102,14 @@ export const useGameStore = create<GameStore>()(
         }
         if (["lowEnglish", "challenging"].includes(difficulty) && language !== "en") {
           throw new Error("This difficulty requires the English language.");
+        }
+        const resolvedPackId = packId ?? getDefaultPackId(language);
+        const selectedPack = getTaskPackManifest(resolvedPackId, language);
+        if (!selectedPack.compatibility.difficulties.includes(difficulty)) {
+          throw new Error(`Task pack "${resolvedPackId}" does not support difficulty "${difficulty}".`);
+        }
+        if (categories.some((category) => !selectedPack.compatibility.categories.includes(category))) {
+          throw new Error(`Task pack "${resolvedPackId}" does not support every selected category.`);
         }
 
         const now = Date.now();
@@ -105,6 +129,7 @@ export const useGameStore = create<GameStore>()(
           language,
           difficulty,
           category: currentCategory,
+          packId: resolvedPackId,
         });
 
         const game: Game = {
@@ -116,6 +141,7 @@ export const useGameStore = create<GameStore>()(
           currentCategory,
           currentWord,
           settings: {
+            packId: resolvedPackId,
             roundsPerPlayer,
             totalRounds,
             difficulty,
@@ -132,7 +158,7 @@ export const useGameStore = create<GameStore>()(
           endedAt: null,
         };
 
-        set({ game, language, lastResult: null });
+        set({ game, language, lastResult: null, roundHistory: [] });
       },
 
       startPlaying: () => {
@@ -175,8 +201,8 @@ export const useGameStore = create<GameStore>()(
         });
       },
 
-      endRound: (success, guesserId) => {
-        const { game } = get();
+      endRound: (success, guesserId, failureOutcome = "passed") => {
+        const { game, roundHistory } = get();
         if (!game || (game.phase !== "playing" && game.phase !== "paused")) return;
 
         const presenter = game.players[game.currentPlayerIndex];
@@ -204,6 +230,17 @@ export const useGameStore = create<GameStore>()(
           guesserPoints: validGuesser ? GUESSER_POINTS : 0,
         };
         const isLastRound = game.currentRound >= game.settings.totalRounds - 1;
+        const roundEvent: RecapRoundEventV1 = {
+          schemaVersion: RECAP_EVENT_SCHEMA_VERSION,
+          roundIndex: game.currentRound,
+          completedAt: Date.now(),
+          category: game.currentCategory,
+          outcome: validGuesser ? "correct" : failureOutcome,
+          presenterId: presenter.id,
+          guesserId: validGuesser,
+          presenterPoints: lastResult.presenterPoints,
+          guesserPoints: lastResult.guesserPoints,
+        };
 
         set({
           game: {
@@ -215,6 +252,7 @@ export const useGameStore = create<GameStore>()(
             endedAt: isLastRound ? Date.now() : null,
           },
           lastResult,
+          roundHistory: [...roundHistory, roundEvent],
         });
       },
 
@@ -235,6 +273,7 @@ export const useGameStore = create<GameStore>()(
           language: game.settings.language,
           difficulty: game.settings.difficulty,
           category: currentCategory,
+          packId: game.settings.packId ?? getDefaultPackId(game.settings.language),
           excludeIds: game.usedWordIds,
         });
 
@@ -268,11 +307,11 @@ export const useGameStore = create<GameStore>()(
         });
       },
 
-      resetGame: () => set({ game: null, lastResult: null }),
+      resetGame: () => set({ game: null, lastResult: null, roundHistory: [] }),
     }),
     {
       name: "guessup-game-state",
-      version: 2,
+      version: 3,
       migrate: (persistedState, version) => {
         const state = persistedState as Partial<GameStore>;
         if (version < 2) {
@@ -281,14 +320,29 @@ export const useGameStore = create<GameStore>()(
             game: null,
             language,
             lastResult: null,
+            roundHistory: [],
           };
         }
-        return state as PersistedGameState;
+        if (version < 3) {
+          return {
+            game: state.game ?? null,
+            language: state.language === "en" ? "en" : "hu",
+            lastResult: state.lastResult ?? null,
+            roundHistory: [],
+          };
+        }
+        return {
+          game: state.game ?? null,
+          language: state.language === "en" ? "en" : "hu",
+          lastResult: state.lastResult ?? null,
+          roundHistory: Array.isArray(state.roundHistory) ? state.roundHistory : [],
+        } satisfies PersistedGameState;
       },
       partialize: (state) => ({
         game: state.game,
         language: state.language,
         lastResult: state.lastResult,
+        roundHistory: state.roundHistory,
       }),
     },
   ),

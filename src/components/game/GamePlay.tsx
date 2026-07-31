@@ -152,7 +152,7 @@ export function GamePlay() {
   const completeRound = (success: boolean, guesserId?: string) => {
     if (success) trigger("correct");
     else if (!timeExpired) trigger("pass");
-    endRound(success, guesserId);
+    endRound(success, guesserId, timeExpired ? "timedOut" : "passed");
   };
 
   return (

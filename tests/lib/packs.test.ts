@@ -20,8 +20,10 @@ describe("task pack registry", () => {
   it("registers localized manifests that reference the existing word-pack sources", () => {
     expect(validateTaskPackManifests(taskPackManifests, taskContentSources)).toEqual([]);
     expect(taskPackRegistry.getAll().map((manifest) => manifest.id)).toEqual([
+      "challenge-hungarian",
       "classic-english",
       "classic-hungarian",
+      "easy-energy-english",
     ]);
     expect(classicHungarianPackManifest.contentSource.location).toBe("src/data/words-hu.json");
     expect(classicEnglishPackManifest.contentSource.location).toBe("src/data/words-en.json");
@@ -29,9 +31,12 @@ describe("task pack registry", () => {
 
   it("filters deterministically by locale, audience, availability, and tags", () => {
     expect(taskPackRegistry.filter({ locale: "hu" }).map((manifest) => manifest.id)).toEqual([
+      "challenge-hungarian",
       "classic-hungarian",
     ]);
     expect(taskPackRegistry.filter({ audience: "family", tags: ["classic"] })).toHaveLength(2);
+    expect(taskPackRegistry.filter({ locale: "hu", audience: "adult", tags: ["challenge"] }))
+      .toHaveLength(1);
     expect(taskPackRegistry.filter({ availability: "premium" })).toEqual([]);
   });
 

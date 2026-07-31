@@ -49,5 +49,6 @@ test("English two-player game survives refresh and reaches game over", async ({ 
   await page.getByRole("button", { name: "Pass" }).click();
 
   await expect(page.getByRole("heading", { name: `${firstPlayer} wins!` })).toBeVisible();
-  await expect(page.getByText("Final standings")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Final standings" }).first()).toBeVisible();
+  await expect(page.getByRole("region", { name: "Game Night Recap" })).toBeVisible();
 });

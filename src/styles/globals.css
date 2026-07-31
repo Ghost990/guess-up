@@ -118,6 +118,10 @@ h2 {
   fill: var(--accent);
 }
 
+.logo__card-back {
+  fill: #6dc6dd;
+}
+
 .logo__arrow {
   fill: none;
   stroke: var(--accent-ink);
@@ -129,7 +133,14 @@ h2 {
 .logo__spark {
   fill: var(--brand-spark);
   stroke: var(--accent-ink);
-  stroke-width: 1.5;
+  stroke-width: 1.2;
+}
+
+.logo__motion {
+  fill: none;
+  stroke: var(--brand-spark);
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
 .logo__type {
@@ -1350,6 +1361,11 @@ h2 {
   gap: 24px;
 }
 
+.game-over-recap {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
 .winner-panel {
   min-height: 560px;
   display: flex;
@@ -1481,7 +1497,7 @@ h2 {
     gap: 4px;
   }
 
-  .topbar .language-switch > svg {
+  .topbar .language-switch {
     display: none;
   }
 
