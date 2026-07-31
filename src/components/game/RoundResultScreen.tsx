@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check, SkipForward } from "lucide-react";
+import { ArrowGlyph, CheckGlyph, SkipGlyph } from "@/components/icons";
 import { CategoryBadge } from "./CategoryBadge";
 import { Scoreboard } from "./Scoreboard";
 import { messages } from "@/i18n/translations";
@@ -26,7 +26,7 @@ export function RoundResultScreen() {
         <section className="result-stage" aria-labelledby="result-title">
           <CategoryBadge category={result.category} language={language} />
           <span className="result-status" data-success={result.success}>
-            {result.success ? <Check aria-hidden="true" /> : <SkipForward aria-hidden="true" />}
+            {result.success ? <CheckGlyph aria-hidden="true" /> : <SkipGlyph aria-hidden="true" />}
           </span>
           <h1 id="result-title">
             {result.success ? copy.result.successTitle : copy.result.passTitle}
@@ -52,7 +52,7 @@ export function RoundResultScreen() {
             <span>{copy.result.nextUp(nextPlayer.name)}</span>
             <button className="primary-button" type="button" onClick={startNextRound}>
               {copy.common.continue}
-              <ArrowRight aria-hidden="true" size={20} />
+              <ArrowGlyph aria-hidden="true" size={20} />
             </button>
             <button className="quiet-button" type="button" onClick={finishGame}>
               {copy.common.finishGame}

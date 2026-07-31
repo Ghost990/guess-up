@@ -2,19 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  BadgeCheck,
-  CircleHelp,
-  EyeOff,
-  Hand,
-  MessageCircle,
-  Pencil,
-  SlidersHorizontal,
-  Smartphone,
-  Timer,
-  Trophy,
-  UsersRound,
-  X,
-} from "lucide-react";
+  AwardGlyph,
+  CloseGlyph,
+  ControlsGlyph,
+  HelpGlyph,
+  HideGlyph,
+  PencilGlyph,
+  PhoneGlyph,
+  PlayersGlyph,
+  SignalGlyph,
+  SpeakGlyph,
+  TimerGlyph,
+  TrophyGlyph,
+} from "@/components/icons";
 import { messages } from "@/i18n/translations";
 import type { Language } from "@/types";
 
@@ -27,35 +27,35 @@ function StepVisual({ index }: { index: number }) {
   if (index === 0) {
     return (
       <span className="howto-visual" aria-hidden="true">
-        <UsersRound size={48} strokeWidth={1.8} />
-        <SlidersHorizontal className="howto-visual__detail" size={25} />
+        <PlayersGlyph size={48} />
+        <ControlsGlyph className="howto-visual__detail" size={25} />
       </span>
     );
   }
   if (index === 1) {
     return (
       <span className="howto-visual" aria-hidden="true">
-        <Smartphone size={50} strokeWidth={1.8} />
-        <EyeOff className="howto-visual__detail" size={25} />
+        <PhoneGlyph size={50} />
+        <HideGlyph className="howto-visual__detail" size={25} />
       </span>
     );
   }
   if (index === 2) {
     return (
       <span className="howto-visual howto-visual--wide" aria-hidden="true">
-        <Timer size={46} strokeWidth={1.8} />
+        <TimerGlyph size={46} />
         <span className="howto-visual__modes">
-          <Pencil size={20} />
-          <MessageCircle size={20} />
-          <Hand size={20} />
+          <PencilGlyph size={20} />
+          <SpeakGlyph size={20} />
+          <SignalGlyph size={20} />
         </span>
       </span>
     );
   }
   return (
     <span className="howto-visual" aria-hidden="true">
-      <Trophy size={48} strokeWidth={1.8} />
-      <BadgeCheck className="howto-visual__detail" size={25} />
+      <TrophyGlyph size={48} />
+      <AwardGlyph className="howto-visual__detail" size={25} />
     </span>
   );
 }
@@ -84,7 +84,7 @@ export function HowToPlay({ language, compact = false }: HowToPlayProps) {
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
       >
-        <CircleHelp aria-hidden="true" size={19} />
+        <HelpGlyph aria-hidden="true" size={19} />
         <span>{copy.button}</span>
       </button>
 
@@ -112,7 +112,7 @@ export function HowToPlay({ language, compact = false }: HowToPlayProps) {
             aria-label={copy.close}
             onClick={() => setOpen(false)}
           >
-            <X aria-hidden="true" />
+            <CloseGlyph aria-hidden="true" />
           </button>
         </div>
 
@@ -134,7 +134,7 @@ export function HowToPlay({ language, compact = false }: HowToPlayProps) {
           type="button"
           onClick={() => setOpen(false)}
         >
-          <BadgeCheck aria-hidden="true" size={20} />
+          <AwardGlyph aria-hidden="true" size={20} />
           {copy.close}
         </button>
       </dialog>

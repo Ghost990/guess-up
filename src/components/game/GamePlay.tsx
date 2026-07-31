@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, Eye, EyeOff, SkipForward } from "lucide-react";
+import { CheckGlyph, HideGlyph, RevealGlyph, SkipGlyph } from "@/components/icons";
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { useEffects } from "@/components/effects/EffectsProvider";
 import { PackScene } from "@/components/illustrations";
@@ -108,7 +108,7 @@ export function GamePlay() {
               />
             </div>
           ) : null}
-          <span className="privacy-label"><EyeOff aria-hidden="true" />{copy.ready.privateLabel}</span>
+          <span className="privacy-label"><HideGlyph aria-hidden="true" />{copy.ready.privateLabel}</span>
           <CategoryBadge
             category={game.currentCategory}
             language={language}
@@ -122,7 +122,7 @@ export function GamePlay() {
             type="button"
             onClick={() => setRevealedRoundKey(roundKey)}
           >
-            <Eye aria-hidden="true" size={20} />
+            <RevealGlyph aria-hidden="true" size={20} />
             {copy.ready.reveal}
           </button>
         </div>
@@ -157,7 +157,7 @@ export function GamePlay() {
             }}
           >
             {copy.reveal.startNow}
-            <Check aria-hidden="true" size={20} />
+            <CheckGlyph aria-hidden="true" size={20} />
           </button>
         </div>
       </main>
@@ -228,14 +228,14 @@ export function GamePlay() {
               aria-controls="active-task-card"
               onClick={() => setShownRoundKey((current) => (current === roundKey ? null : roundKey))}
             >
-              {showWord ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
+              {showWord ? <HideGlyph aria-hidden="true" /> : <RevealGlyph aria-hidden="true" />}
               <span className="sr-only">{showWord ? copy.play.hideWord : copy.play.peek}</span>
             </button>
           </div>
 
           <div className="play-actions">
             <button className="primary-button" type="button" onClick={openScoring}>
-              <Check aria-hidden="true" size={22} />
+              <CheckGlyph aria-hidden="true" size={22} />
               {copy.play.gotIt}
             </button>
             <button
@@ -243,7 +243,7 @@ export function GamePlay() {
               type="button"
               onClick={() => completeRound(false)}
             >
-              <SkipForward aria-hidden="true" size={21} />
+              <SkipGlyph aria-hidden="true" size={21} />
               {copy.play.pass}
             </button>
           </div>

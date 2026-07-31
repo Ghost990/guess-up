@@ -1,11 +1,11 @@
-import { Hand, MessageCircle, Pencil } from "lucide-react";
+import { PencilGlyph, SignalGlyph, SpeakGlyph } from "@/components/icons";
 import { messages } from "@/i18n/translations";
 import type { Category, Language } from "@/types";
 
 const icons = {
-  draw: Pencil,
-  explain: MessageCircle,
-  signal: Hand,
+  draw: PencilGlyph,
+  explain: SpeakGlyph,
+  signal: SignalGlyph,
 };
 
 interface CategoryBadgeProps {

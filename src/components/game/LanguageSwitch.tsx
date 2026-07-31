@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe2 } from "lucide-react";
+import { GlobeGlyph } from "@/components/icons";
 import { messages } from "@/i18n/translations";
 import type { Language } from "@/types";
 
@@ -23,7 +23,7 @@ export function LanguageSwitch({
       role="group"
       aria-label={copy.setup.gameLanguage}
     >
-      {!compact && <Globe2 aria-hidden="true" size={18} />}
+      {!compact && <GlobeGlyph aria-hidden="true" size={18} />}
       {(["hu", "en"] as const).map((option) => (
         <button
           key={option}

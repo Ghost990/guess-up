@@ -1,7 +1,15 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { ArrowRight, Check, Clock3, Layers3, Plus, Trash2, Users } from "lucide-react";
+import {
+  AddGlyph,
+  ArrowGlyph,
+  CheckGlyph,
+  DeleteGlyph,
+  LayersGlyph,
+  PlayersGlyph,
+  TimerGlyph,
+} from "@/components/icons";
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { PackScene } from "@/components/illustrations";
 import { PackPicker } from "@/components/packs";
@@ -202,7 +210,7 @@ export function PlayerSetup() {
         <form className="setup-form" onSubmit={handleSubmit}>
           <section className="form-section" aria-labelledby="players-title">
             <div className="section-heading">
-              <span className="section-icon"><Users aria-hidden="true" size={19} /></span>
+              <span className="section-icon"><PlayersGlyph aria-hidden="true" size={19} /></span>
               <div>
                 <h2 id="players-title">{copy.setup.players}</h2>
                 <p>{copy.setup.minPlayers}</p>
@@ -232,7 +240,7 @@ export function PlayerSetup() {
                       aria-label={`${copy.setup.removePlayer}: ${player.name || index + 1}`}
                       onClick={() => removePlayer(index)}
                     >
-                      <Trash2 aria-hidden="true" size={18} />
+                      <DeleteGlyph aria-hidden="true" size={18} />
                     </button>
                   )}
                 </div>
@@ -246,7 +254,7 @@ export function PlayerSetup() {
                 className="text-button"
                 onClick={() => setPlayers((drafts) => [...drafts, createDraft()])}
               >
-                <Plus aria-hidden="true" size={18} />
+                <AddGlyph aria-hidden="true" size={18} />
                 {copy.setup.addPlayer}
               </button>
             )}
@@ -334,7 +342,7 @@ export function PlayerSetup() {
               ))}
             </div>
             <p className="selection-summary">
-              <Layers3 aria-hidden="true" size={17} />
+              <LayersGlyph aria-hidden="true" size={17} />
               {copy.setup.totalTasks(totalTasks)}
             </p>
           </section>
@@ -355,7 +363,7 @@ export function PlayerSetup() {
                   aria-pressed={roundDuration === option}
                   onClick={() => setRoundDuration(option)}
                 >
-                  <Clock3 aria-hidden="true" size={16} />
+                  <TimerGlyph aria-hidden="true" size={16} />
                   {option / 1000} {copy.setup.seconds}
                 </button>
               ))}
@@ -380,7 +388,7 @@ export function PlayerSetup() {
                   onClick={() => toggleCategory(category)}
                 >
                   <CategoryBadge category={category} language={language} />
-                  {categories.includes(category) && <Check aria-hidden="true" size={18} />}
+                  {categories.includes(category) && <CheckGlyph aria-hidden="true" size={18} />}
                 </button>
               ))}
             </div>
@@ -389,7 +397,7 @@ export function PlayerSetup() {
           <div className="start-area">
             <button className="primary-button" type="submit" disabled={!canStart}>
               {copy.setup.start}
-              <ArrowRight aria-hidden="true" size={20} />
+              <ArrowGlyph aria-hidden="true" size={20} />
             </button>
             {!canStart && !hasDuplicates && <p>{copy.setup.startHint}</p>}
           </div>

@@ -13,7 +13,7 @@ const word: Word = {
 };
 
 describe("WordAssist", () => {
-  it("renders honest Hungarian metadata with localized tags and no unsupported speech control", () => {
+  it("renders honest Hungarian metadata with localized tags and no audible pronunciation control", () => {
     render(<WordAssist word={word} language="hu" />);
 
     fireEvent.click(screen.getByRole("button", { name: "Segítség mutatása" }));

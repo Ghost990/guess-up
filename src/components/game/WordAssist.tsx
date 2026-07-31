@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
-import { Volume2 } from "lucide-react";
+import { useState } from "react";
 import { getLowEnglishHungarianGloss } from "@/content/hints/lowEnglishHuGlosses";
 import { messages } from "@/i18n/translations";
 import { getWordAssistFacts } from "@/lib/game/wordAssist";
@@ -12,44 +11,14 @@ interface WordAssistProps {
   language: Language;
 }
 
-function canUseSpeechSynthesis(): boolean {
-  return (
-    typeof window !== "undefined" &&
-    "speechSynthesis" in window &&
-    "SpeechSynthesisUtterance" in window
-  );
-}
-
-function subscribeToSpeechSupport() {
-  return () => undefined;
-}
-
-function getServerSpeechSupport(): boolean {
-  return false;
-}
-
 export function WordAssist({ word, language }: WordAssistProps) {
   const [open, setOpen] = useState(false);
-  const speechAvailable = useSyncExternalStore(
-    subscribeToSpeechSupport,
-    canUseSpeechSynthesis,
-    getServerSpeechSupport,
-  );
   const copy = messages[language];
   const facts = getWordAssistFacts(word);
   const hungarianGloss = getLowEnglishHungarianGloss(word);
   const localizedTags = facts.tags.map(
     (tag) => copy.assist.tagLabels[tag as keyof typeof copy.assist.tagLabels] ?? tag,
   );
-
-
-  const speak = () => {
-    if (!canUseSpeechSynthesis()) return;
-    const utterance = new SpeechSynthesisUtterance(word.text);
-    utterance.lang = language === "hu" ? "hu-HU" : "en-US";
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-  };
 
   return (
     <section className="word-assist" aria-label={copy.assist.title}>
@@ -77,12 +46,6 @@ export function WordAssist({ word, language }: WordAssistProps) {
             <li>{copy.assist.firstCharacter(facts.firstCharacter)}</li>
             <li>{localizedTags.length > 0 ? copy.assist.tags(localizedTags.join(", ")) : copy.assist.noTags}</li>
           </ul>
-          {speechAvailable ? (
-            <button className="secondary-button word-assist__listen" type="button" onClick={speak}>
-              <Volume2 aria-hidden="true" size={18} />
-              {copy.assist.listen}
-            </button>
-          ) : null}
         </div>
       ) : null}
     </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Check, TimerOff, UserRound, X } from "lucide-react";
+import { CheckGlyph, CloseGlyph, PlayerGlyph, TimeUpGlyph } from "@/components/icons";
 import { messages } from "@/i18n/translations";
 import type { Language, Player } from "@/types";
 
@@ -52,7 +52,7 @@ export function ScoringDialog({
     >
       <div className="dialog-heading">
         <span className="dialog-icon">
-          {timeExpired ? <TimerOff aria-hidden="true" /> : <Check aria-hidden="true" />}
+          {timeExpired ? <TimeUpGlyph aria-hidden="true" /> : <CheckGlyph aria-hidden="true" />}
         </span>
         <div>
           <h2 id="scoring-title">
@@ -67,7 +67,7 @@ export function ScoringDialog({
             aria-label={copy.common.cancel}
             onClick={onCancel}
           >
-            <X aria-hidden="true" />
+            <CloseGlyph aria-hidden="true" />
           </button>
         )}
       </div>
@@ -80,7 +80,7 @@ export function ScoringDialog({
             autoFocus={index === 0}
             onClick={() => onSelect(player.id)}
           >
-            <UserRound aria-hidden="true" size={20} />
+            <PlayerGlyph aria-hidden="true" size={20} />
             <span>{player.name}</span>
             <strong>{player.score}</strong>
           </button>

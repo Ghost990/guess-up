@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { RotateCcw, Trophy } from "lucide-react";
+import { ReplayGlyph, TrophyGlyph } from "@/components/icons";
 import { useEffects } from "@/components/effects/EffectsProvider";
 import { PackScene } from "@/components/illustrations";
 import { GameNightRecap } from "@/components/recap/GameNightRecap";
@@ -83,14 +83,14 @@ export function GameOver() {
             />
           </div>
         ) : null}
-        <span className="winner-icon"><Trophy aria-hidden="true" /></span>
+        <span className="winner-icon"><TrophyGlyph aria-hidden="true" /></span>
         <p>{copy.gameOver.title}</p>
         <h1 id="game-over-title">
           {leaders.length > 1 ? copy.gameOver.tie : copy.gameOver.winner(leaders[0].name)}
         </h1>
         <span>{copy.gameOver.tasksPlayed(roundHistory.length)}</span>
         <button className="primary-button" type="button" onClick={resetGame}>
-          <RotateCcw aria-hidden="true" size={20} />
+          <ReplayGlyph aria-hidden="true" size={20} />
           {copy.common.playAgain}
         </button>
       </section>

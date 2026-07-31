@@ -1,6 +1,6 @@
 "use client";
 
-import { Smartphone, Volume2, VolumeX } from "lucide-react";
+import { PhoneGlyph, SoundOffGlyph, SoundOnGlyph } from "@/components/icons";
 import { useEffects } from "./EffectsProvider";
 import type { Language } from "@/types";
 
@@ -37,7 +37,7 @@ export function EffectsSettings({ language, compact = false }: { language: Langu
         title={preferences.sound ? labels.soundOn : labels.soundOff}
         onClick={() => setPreference("sound", !preferences.sound)}
       >
-        {preferences.sound ? <Volume2 aria-hidden="true" size={18} /> : <VolumeX aria-hidden="true" size={18} />}
+        {preferences.sound ? <SoundOnGlyph aria-hidden="true" size={18} /> : <SoundOffGlyph aria-hidden="true" size={18} />}
         {!compact && <span>{preferences.sound ? labels.soundOn : labels.soundOff}</span>}
       </button>
       <button
@@ -55,7 +55,7 @@ export function EffectsSettings({ language, compact = false }: { language: Langu
         disabled={!capabilities.haptics}
         onClick={() => setPreference("haptics", !preferences.haptics)}
       >
-        <Smartphone aria-hidden="true" size={18} />
+        <PhoneGlyph aria-hidden="true" size={18} />
         {!compact && <span>{preferences.haptics ? labels.hapticsOn : labels.hapticsOff}</span>}
       </button>
     </div>
