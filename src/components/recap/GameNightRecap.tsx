@@ -72,61 +72,61 @@ export function GameNightRecap({
   return (
     <section
       aria-label={labels.title}
-      className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-5 text-[var(--ink)] sm:p-7"
+      className="recap-sheet"
     >
-      <header className="space-y-2">
-        <p className="text-sm font-bold uppercase tracking-[0.12em] text-[var(--accent)]">{labels.title}</p>
-        <h2 id="game-night-recap-title" className="text-2xl font-black tracking-tight sm:text-3xl">
+      <header className="recap-sheet__header">
+        <p>{labels.title}</p>
+        <h2 id="game-night-recap-title">
           {winnerText}
         </h2>
       </header>
 
-      <dl className="mt-6 grid grid-cols-4 divide-x divide-[var(--line)] rounded-xl border border-[var(--line)] bg-[var(--surface-raised)] px-1 py-3">
-        <div className="min-w-0 px-2 text-center">
-          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.tasksPlayed}</dt>
-          <dd className="mt-1 text-xl font-black">{recap.roundCounts.tasksPlayed}</dd>
+      <dl className="recap-stats">
+        <div>
+          <dt>{labels.tasksPlayed}</dt>
+          <dd>{recap.roundCounts.tasksPlayed}</dd>
         </div>
-        <div className="min-w-0 px-2 text-center">
-          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.correct}</dt>
-          <dd className="mt-1 text-xl font-black">{recap.roundCounts.correct}</dd>
+        <div>
+          <dt>{labels.correct}</dt>
+          <dd>{recap.roundCounts.correct}</dd>
         </div>
-        <div className="min-w-0 px-2 text-center">
-          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.passed}</dt>
-          <dd className="mt-1 text-xl font-black">{recap.roundCounts.passed}</dd>
+        <div>
+          <dt>{labels.passed}</dt>
+          <dd>{recap.roundCounts.passed}</dd>
         </div>
-        <div className="min-w-0 px-2 text-center">
-          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.timedOut}</dt>
-          <dd className="mt-1 text-xl font-black">{recap.roundCounts.timedOut}</dd>
+        <div>
+          <dt>{labels.timedOut}</dt>
+          <dd>{recap.roundCounts.timedOut}</dd>
         </div>
       </dl>
 
       {availableAwards.length > 0 ? (
-        <section aria-labelledby="recap-awards-title" className="mt-6">
-          <h3 id="recap-awards-title" className="text-lg font-black">{labels.awards}</h3>
-          <dl className="mt-3 grid gap-3 md:grid-cols-3">
+        <section aria-labelledby="recap-awards-title" className="recap-awards">
+          <h3 id="recap-awards-title">{labels.awards}</h3>
+          <dl>
             {availableAwards.map((award) => (
-              <div key={award.id} className="rounded-xl border border-[var(--line)] p-4">
-                <dt className="font-bold">{award.label}</dt>
-                <dd className="mt-1 text-[var(--muted)]">{award.value}</dd>
+              <div key={award.id}>
+                <dt>{award.label}</dt>
+                <dd>{award.value}</dd>
               </div>
             ))}
           </dl>
         </section>
       ) : null}
 
-      <section aria-labelledby="recap-standings-title" className="mt-6">
-        <h3 id="recap-standings-title" className="text-lg font-black">{labels.finalStandings}</h3>
-        <ol className="mt-3 space-y-2">
+      <section aria-labelledby="recap-standings-title" className="recap-standings">
+        <h3 id="recap-standings-title">{labels.finalStandings}</h3>
+        <ol>
           {recap.rankings.map((entry) => (
-            <li key={entry.playerId} className="flex items-center justify-between gap-3 rounded-xl bg-[var(--surface-raised)] px-4 py-3">
-              <span className="min-w-0 truncate font-bold">{entry.rank}. {entry.playerName}</span>
-              <strong>{entry.score} <span className="text-sm font-semibold text-[var(--muted)]">{labels.points}</span></strong>
+            <li key={entry.playerId}>
+              <span>{entry.rank}. {entry.playerName}</span>
+              <strong>{entry.score} <small>{labels.points}</small></strong>
             </li>
           ))}
         </ol>
       </section>
 
-      <div className="mt-6">
+      <div className="recap-sheet__actions">
         <RecapShareActions
           labels={labels.share}
           capabilities={shareCapabilities}

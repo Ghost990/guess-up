@@ -23,14 +23,14 @@ export function PackPicker({
   onSelect,
 }: PackPickerProps) {
   return (
-    <section aria-labelledby="pack-picker-heading">
-      <h2 id="pack-picker-heading" className="text-2xl font-extrabold tracking-tight">
+    <section className="pack-picker" aria-labelledby="pack-picker-heading">
+      <h2 id="pack-picker-heading" className="pack-picker__title">
         {copy.heading}
       </h2>
       {items.length === 0 ? (
-        <p className="mt-3 text-[var(--muted)]">{copy.emptyMessage}</p>
+        <p className="pack-picker__empty">{copy.emptyMessage}</p>
       ) : (
-        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="pack-picker__grid">
           {items.map(({ manifest, access }) => (
             <PackCard
               key={manifest.id}

@@ -6,6 +6,7 @@ import { useEffects } from "@/components/effects/EffectsProvider";
 import { PackScene } from "@/components/illustrations";
 import { GameNightRecap } from "@/components/recap/GameNightRecap";
 import { taskPackRegistry } from "@/content/packs";
+import { getPackSurfaceAttributes } from "@/lib/packs";
 import { buildGameNightRecap } from "@/lib/recap/buildGameNightRecap";
 import {
   copyRecapText,
@@ -67,9 +68,10 @@ export function GameOver() {
   const selectedPack = game.settings.packId
     ? taskPackRegistry.getById(game.settings.packId)
     : null;
+  const packSurface = getPackSurfaceAttributes(selectedPack);
 
   return (
-    <main className="game-over-page">
+    <main className="game-over-page" {...packSurface}>
       <section
         className="winner-panel"
         aria-labelledby="game-over-title"

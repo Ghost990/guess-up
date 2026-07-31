@@ -32,12 +32,14 @@ export function PackCard({
     : selected
       ? copy.selectedLabel
       : copy.selectLabel;
-  const style: CSSProperties = { borderColor: manifest.visualTheme.accentColor };
+  const style = {
+    "--pack-card-accent": manifest.visualTheme.accentColor,
+  } as CSSProperties;
 
   return (
     <article
       aria-label={manifest.metadata.title}
-      className="flex min-h-52 flex-col rounded-xl border bg-[var(--surface-raised)] p-5"
+      className="pack-card"
       data-cover-asset={manifest.visualTheme.coverAsset}
       data-pack-id={manifest.id}
       data-pack-style={manifest.visualTheme.backgroundStyle}
@@ -45,22 +47,22 @@ export function PackCard({
       data-testid={`pack-card-${manifest.id}`}
       style={style}
     >
-      <div className="mb-5 overflow-hidden rounded-lg border border-[var(--line)] bg-[#fff8e8]">
+      <div className="pack-card__art">
         <PackScene
           className="block h-auto w-full"
           coverAsset={manifest.visualTheme.coverAsset}
         />
       </div>
-      <div className="flex-1">
-        <p className="mb-2 text-sm font-semibold text-[var(--muted)]">
+      <div className="pack-card__copy">
+        <p className="pack-card__audience">
           {copy.audienceLabels?.[manifest.audience] ?? manifest.audience}
         </p>
-        <h3 className="text-xl font-extrabold tracking-tight">{manifest.metadata.title}</h3>
-        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{manifest.metadata.description}</p>
+        <h3>{manifest.metadata.title}</h3>
+        <p className="pack-card__description">{manifest.metadata.description}</p>
       </div>
       <button
         aria-pressed={!locked && selected}
-        className={selected && !locked ? "primary-button mt-5" : "secondary-button mt-5"}
+        className={selected && !locked ? "primary-button pack-card__action" : "secondary-button pack-card__action"}
         disabled={locked}
         onClick={() => onSelect?.(manifest.id)}
         type="button"

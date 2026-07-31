@@ -77,7 +77,7 @@ export function RecapShareActions({
   }
 
   return (
-    <div aria-label={labels.nativeShare} className="flex flex-wrap gap-3">
+    <div aria-label={labels.nativeShare} className="recap-share-actions">
       {actions.map((action) => (
         <ShareButton
           key={action.label}

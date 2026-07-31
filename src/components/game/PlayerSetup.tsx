@@ -14,7 +14,11 @@ import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { PackScene } from "@/components/illustrations";
 import { PackPicker } from "@/components/packs";
 import { taskPackManifests, taskPackRegistry } from "@/content/packs";
-import { createFreeEntitlementProvider, resolvePackPickerItems } from "@/lib/packs";
+import {
+  createFreeEntitlementProvider,
+  getPackSurfaceAttributes,
+  resolvePackPickerItems,
+} from "@/lib/packs";
 import { getDefaultPackId } from "@/lib/game/wordPacks";
 import { CategoryBadge } from "./CategoryBadge";
 import { HowToPlay } from "./HowToPlay";
@@ -78,6 +82,7 @@ export function PlayerSetup() {
   const [packItems, setPackItems] = useState<readonly PackPickerItem[]>([]);
   const copy = messages[language];
   const selectedPack = taskPackRegistry.getById(selectedPackId);
+  const packSurface = getPackSurfaceAttributes(selectedPack);
   const languageDifficultyOptions =
     language === "en" ? englishDifficultyOptions : standardDifficultyOptions;
   const difficultyOptions = selectedPack
@@ -169,7 +174,7 @@ export function PlayerSetup() {
   };
 
   return (
-    <main className="setup-page">
+    <main className="setup-page" {...packSurface}>
       <header className="topbar">
         <Logo />
         <div className="topbar-actions">
