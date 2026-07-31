@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { HelpGlyph } from "@/components/icons";
 import { getLowEnglishHungarianGloss } from "@/content/hints/lowEnglishHuGlosses";
 import { messages } from "@/i18n/translations";
 import { getWordAssistFacts } from "@/lib/game/wordAssist";
@@ -29,7 +30,8 @@ export function WordAssist({ word, language }: WordAssistProps) {
         aria-controls="word-assist-details"
         onClick={() => setOpen((current) => !current)}
       >
-        {open ? copy.assist.hide : copy.assist.show}
+        <HelpGlyph aria-hidden="true" size={24} />
+        <span className="sr-only">{open ? copy.assist.hide : copy.assist.show}</span>
       </button>
       {open ? (
         <div id="word-assist-details" className="word-assist__details">

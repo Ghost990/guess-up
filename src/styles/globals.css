@@ -1057,11 +1057,15 @@ h2 {
   gap: 12px;
 }
 
-.word-assist__toggle,
-.word-assist__listen {
+.word-assist__toggle {
+  width: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  padding: 0;
   color: var(--accent-ink);
   background: rgb(255 248 232 / 80%);
   border-color: rgb(17 17 22 / 44%);
+  border-radius: 50%;
 }
 
 .word-assist__details {
@@ -1105,12 +1109,6 @@ h2 {
   font-size: 0.86rem;
 }
 
-.word-assist__listen {
-  margin-top: 16px;
-  color: #fff8e8;
-  background: var(--accent-ink);
-  border-color: var(--accent-ink);
-}
 
 /* Active game */
 

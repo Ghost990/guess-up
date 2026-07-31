@@ -116,7 +116,7 @@ const hu = {
     firstCharacter: (value: string) => `Első karakter: ${value}`,
     tags: (value: string) => `Címkék: ${value}`,
     noTags: "Nincs további biztonságos címke.",
-    listen: "Kiejtés meghallgatása",
+
     tagLabels: {
       action: "cselekvés", animal: "állat", body: "testrész", building: "épület",
       challenging: "haladó", charades: "mutogatás", clothing: "ruházat", concept: "fogalom",
@@ -301,7 +301,7 @@ const en = {
     firstCharacter: (value: string) => `First character: ${value}`,
     tags: (value: string) => `Tags: ${value}`,
     noTags: "No additional safe tags are available.",
-    listen: "Listen to pronunciation",
+
     tagLabels: {
       action: "action", animal: "animal", body: "body", building: "building",
       challenging: "challenging", charades: "charades", clothing: "clothing", concept: "concept",
