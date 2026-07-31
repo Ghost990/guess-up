@@ -1,5 +1,7 @@
 # Stunning Timer Design System
 
+> **Historical document.** This file describes an earlier timer design, not the current UI specification. See `PROJECT_STATUS.md` and `docs/DOCUMENTATION_MAP.md`.
+
 ## Overview
 Modern, immersive countdown timer for GuessUp mobile party game with full-screen treatment, 2025 design trends, and beautiful animations.
 

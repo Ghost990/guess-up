@@ -1,5 +1,7 @@
 # GuessUp - Risk Assessment & Mitigation Strategy
 
+> **Historical document.** This assessment targets an earlier architecture and is not the current risk register. See `PROJECT_STATUS.md` and `docs/DOCUMENTATION_MAP.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game  
 **Phase**: Risk Analysis  
 **Date**: November 7, 2025  

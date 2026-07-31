@@ -1,5 +1,7 @@
 # GuessUp - Testing Strategy
 
+> **Historical document.** This strategy contains retired architecture and examples. Current commands are in `AGENTS.md`; executable tests under `tests/` are authoritative.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Tester**: Tester Agent
 **Date**: November 7, 2025

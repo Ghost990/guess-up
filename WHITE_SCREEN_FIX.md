@@ -1,5 +1,7 @@
 # White Screen Issue - FIXED ✅
 
+> **Historical document.** This is a dated implementation record, not a current specification. See `PROJECT_STATUS.md` and `docs/DOCUMENTATION_MAP.md`.
+
 ## Problem Identified
 
 When users clicked "Start Game" after entering player names, the screen would turn white (blank) instead of showing the game.

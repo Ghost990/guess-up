@@ -1,5 +1,7 @@
 # GuessUp - Design System
 
+> **Historical document.** This file describes an earlier visual system. Current styles in `src/styles/globals.css` are authoritative; see `PROJECT_STATUS.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Designer Agent**: Complete Design System
 **Date**: November 7, 2025

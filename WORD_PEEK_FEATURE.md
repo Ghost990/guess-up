@@ -1,5 +1,7 @@
 # Word Peek Feature - Implementation Complete ✅
 
+> **Historical document.** This is a dated implementation record, not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Overview
 
 Successfully implemented a word peek feature that allows the presenter to click on the category badge to reveal the word for 5 seconds during gameplay.

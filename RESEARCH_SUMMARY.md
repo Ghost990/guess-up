@@ -1,5 +1,7 @@
 # GuessUp Research - Executive Summary
 
+> **Historical document.** This file describes earlier research, not the current implementation. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Quick Facts
 
 **Market Context**

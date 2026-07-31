@@ -1,5 +1,7 @@
 # GuessUp - Quality Assurance
 
+> **Historical document.** This QA plan contains retired behavior and expected values. Current quality gates are in `AGENTS.md` and verified results in `PROJECT_STATUS.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Tester**: Tester Agent
 **Date**: November 7, 2025

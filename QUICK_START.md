@@ -1,5 +1,7 @@
 # Quick Start: Stunning Timer Implementation
 
+> **Historical document.** This file describes an earlier timer prototype. For current setup and verification use `README.md`, `AGENTS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## What Was Changed
 
 ### Files Modified

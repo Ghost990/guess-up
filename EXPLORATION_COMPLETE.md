@@ -1,5 +1,7 @@
 # GuessUp - Explorer Agent: Research Complete
 
+> **Historical document.** This file describes earlier research, not the current implementation. See `PROJECT_STATUS.md` and `docs/DOCUMENTATION_MAP.md`.
+
 **Status**: ✅ Complete  
 **Confidence**: 95%  
 **Date**: November 7, 2025

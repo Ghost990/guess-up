@@ -1,5 +1,7 @@
 # New Scoring System & Round Structure - Implementation Complete ✅
 
+> **Historical document.** This is a dated implementation record and contains retired timing/round details. Current scoring and flow are defined in `GAME_RULES.md`.
+
 ## Overview
 
 Successfully implemented a comprehensive scoring system update with player selection and enhanced round structure.

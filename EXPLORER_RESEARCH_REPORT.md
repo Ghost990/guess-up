@@ -1,4 +1,6 @@
 # GuessUp - Comprehensive Research Report
+
+> **Historical document.** This file describes earlier research, not the current implementation. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
 ## Explorer Agent Deep Dive - Foundation for Architecture & Design
 
 **Project**: GuessUp - Mobile-First Activity Party Game  

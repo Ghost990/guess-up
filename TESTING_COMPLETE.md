@@ -1,5 +1,7 @@
 # GuessUp - Testing Phase Complete
 
+> **Historical document.** This file describes an earlier planned test phase. Current commands and verified results are in `README.md`, `AGENTS.md`, and `PROJECT_STATUS.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Tester**: Tester Agent
 **Date**: November 7, 2025

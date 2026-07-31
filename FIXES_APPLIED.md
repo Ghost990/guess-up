@@ -1,5 +1,7 @@
 # Fixes Applied - GuessUp Project
 
+> **Historical document.** This is a dated implementation record, not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Issue #1: Tailwind CSS v4 PostCSS Error ✅ FIXED
 
 **Error**:

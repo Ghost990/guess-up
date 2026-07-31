@@ -1,5 +1,7 @@
 # GuessUp - Implementation Summary
 
+> **Historical document.** This summary predates the current implementation. See `PROJECT_STATUS.md`, `GAME_RULES.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Implementer**: Implementer Agent
 **Date**: November 7, 2025

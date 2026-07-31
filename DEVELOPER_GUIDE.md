@@ -1,5 +1,7 @@
 # GuessUp - Developer Guide
 
+> **Historical document.** This guide contains retired architecture and commands. Use `README.md`, `AGENTS.md`, `GAME_RULES.md`, and `docs/DOCUMENTATION_MAP.md` for current development.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Version**: 1.0.0
 **Last Updated**: November 7, 2025

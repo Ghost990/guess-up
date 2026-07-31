@@ -1,5 +1,7 @@
 # GuessUp - Implementation Guide
 
+> **Historical document.** This file describes an earlier prototype and is not a current implementation guide. See `README.md`, `AGENTS.md`, `GAME_RULES.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Designer Agent**: Developer Handoff Guide
 **Date**: November 7, 2025

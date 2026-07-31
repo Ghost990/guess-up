@@ -1,5 +1,7 @@
 # GuessUp - Implementation Roadmap
 
+> **Historical document.** This roadmap predates the current implementation and is not an active backlog. See `PROJECT_STATUS.md` and `docs/DOCUMENTATION_MAP.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game  
 **Phase**: Development Planning  
 **Date**: November 7, 2025  

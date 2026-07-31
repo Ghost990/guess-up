@@ -1,5 +1,7 @@
 # GuessUp - Data Models & Type System
 
+> **Historical document.** This file describes an earlier prototype and is not a current type reference. The TypeScript source is authoritative; see `README.md` and `docs/DOCUMENTATION_MAP.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game  
 **Phase**: Data Architecture  
 **Date**: November 7, 2025  

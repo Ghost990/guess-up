@@ -1,5 +1,7 @@
 # Timer Design: Before & After Comparison
 
+> **Historical document.** This is a dated design record, not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Visual Transformation Summary
 
 ### Before: Simple Circular Timer

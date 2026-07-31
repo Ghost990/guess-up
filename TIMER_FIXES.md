@@ -1,5 +1,7 @@
 # Timer & Player Name Issues - FIXED ✅
 
+> **Historical document.** This is a dated implementation record, not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Problems Identified
 
 The user reported three critical issues during gameplay:

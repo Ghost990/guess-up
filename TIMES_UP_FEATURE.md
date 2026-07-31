@@ -1,5 +1,7 @@
 # Time's Up Screen & Manual Progression - Implementation Complete ✅
 
+> **Historical document.** This is a dated implementation record, not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Overview
 
 Successfully implemented a dramatic "Time's Up" screen with blinking red animation and manual progression control. Timer no longer auto-advances to next round - players must manually click to proceed.

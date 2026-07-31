@@ -1,5 +1,7 @@
 # GuessUp - Component Specifications
 
+> **Historical document.** This file describes an earlier prototype and is not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Designer Agent**: Complete Component Library
 **Date**: November 7, 2025

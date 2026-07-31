@@ -1,5 +1,7 @@
 # GuessUp - Detailed Test Plans
 
+> **Historical document.** These test plans target an earlier game model. Current behavior is defined by `GAME_RULES.md` and executable tests under `tests/`.
+
 **Project**: GuessUp - Mobile-First Activity Party Game
 **Tester**: Tester Agent
 **Date**: November 7, 2025

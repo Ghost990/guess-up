@@ -1,43 +1,44 @@
-# Guess Up — Party Word Guessing Game
+# GuessUp — current project context
 
-Pass-and-play szójátszma app. Csapatok felváltva tippelnek szavakat, amíg az időzítő le nem jár. 540+ szavas magyar adatbázis. Offline-ready PWA.
+Egytelefonos, pass-and-play activity party game. A játékosok rajzolnak, körülírnak vagy mutogatnak; a presenter és a helyesen tippelő játékos is pontot kap.
 
-## Stack
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS + Framer Motion animációk
-- **PWA**: `@ducanh2912/next-pwa` — offline support, SW cache
-- **Icons**: Lucide React
+## Aktuális stack
 
-## File Structure
+- Next.js 16.2.11 / App Router / Turbopack
+- React 19.2.8
+- TypeScript strict
+- Tailwind CSS 4.3
+- Zustand persist
+- Vitest + React Testing Library + Playwright
+
+## Kritikus szabályok
+
+- 2–8 játékos, a sorrend a játék elején Fisher–Yates-szel egyszer randomizálódik.
+- `totalRounds = playerCount × roundsPerPlayer`.
+- Presenter +2, kiválasztott guesser +1; pass/no one = 0.
+- A presenter nem választható guesserként.
+- A reveal és a timer indítása explicit gombnyomás.
+- A timer abszolút `roundEndsAt` időpontot használ; refresh nem indítja újra.
+- A scorer dialog szünetelteti és perzisztálja a maradék időt.
+- A játék state localStorage-ban marad; nincs hálózati multiplayer vagy cross-device sync.
+
+## Task packok
+
+- Magyar: 540 (`easy`, `medium`, `hard`)
+- Angol: 900 (`lowEnglish`, `easy`, `medium`, `challenging`, `hard`)
+- Kategóriák: `draw`, `explain`, `signal`
+
+## Minőségkapu
+
+```bash
+npm run check
+npm run test:e2e
 ```
-src/app/
-  page.tsx          — Főoldal, játék state gép (PlayerSetup → GamePlay → Results)
-  layout.tsx        — Root layout, PWA meta
-src/components/
-  game/
-    PlayerSetup.tsx — Játékosok nevei, csapat konfig
-    GamePlay.tsx    — Aktív játék, timer, kártya fordítás
-    Results.tsx     — Eredmény képernyő
-src/data/
-  words.ts          — 540+ szavas magyar adatbázis, kategóriák szerint
-```
 
-## Game Logic — Kritikus szabályok
-- **Fisher-Yates randomizáció** — mindig ezt használd, ne `sort(() => Math.random() - 0.5)` (biased!)
-- **Race condition guard**: `prevTimeLeft` ref a timer reset-nél — ne töröld ki
-- **Game-level used words**: külön `gameUsedWords` Set a session-on belüli duplikáció ellen
-- **Pass-and-play**: eszközöket passzolnak körönként, nincs hálózat
+## Dokumentáció
 
-## PWA Cache
-- Service Worker automatikusan kezel offline-t
-- Ha PWA-t módosítasz → `next build` után teszteld offline módban
-- Cache bust: `public/sw.js` nem kézzel szerkesztendő (generált)
+A jelenlegi viselkedés forrása: `GAME_RULES.md` + tesztelt kód. Olvasási sorrend: `README.md`, `PROJECT_STATUS.md`, `docs/DOCUMENTATION_MAP.md`. A régi root-level research/design/roadmap fájlok historical anyagok, nem élő specifikációk.
 
-## Deployment
-- Tailscale URL: `https://ankyr-thinkpad-t470-w10dg.taila52c96.ts.net:8444`
-- Start: `bash /home/ankyr/clawd/scripts/start_guessup.sh`
+## PWA megjegyzés
 
-## Design
-- Neon Arcade stílus: élénk színek, nagy gombok, mobil-first
-- Framer Motion: kártya flip animáció, képernyő átmenetek
-- **Ne változtasd** a timer logikát vagy a round state gépet anélkül hogy megérted a race condition javítást
+Van manifest és production service-worker registration, de a jelenlegi `public/sw.js` network-only és törli a régi cache-eket. Ne állítsd, hogy a build offline-ready.

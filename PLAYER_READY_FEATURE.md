@@ -1,5 +1,7 @@
 # Player Ready Screen & React Error Fix - Implementation Complete ✅
 
+> **Historical document.** This is a dated implementation record, not a current specification. See `README.md`, `GAME_RULES.md`, `PROJECT_STATUS.md`, and `docs/DOCUMENTATION_MAP.md`.
+
 ## Overview
 
 Successfully implemented a Player Ready screen with 10-second countdown, skip button, and fixed critical React setState error. Enhanced all transition screens with beautiful gradients and animations.
