@@ -56,6 +56,7 @@ describe("GamePlay task reveal", () => {
 
     fireEvent.click(toggle);
     const card = document.getElementById("active-task-card");
+    expect(card?.parentElement).toHaveClass("prompt-ticket");
     expect(card?.nextElementSibling).toBe(toggle);
     expect(toggle).toHaveAccessibleName("Hide task");
     expect(toggle).toHaveAttribute("aria-pressed", "true");

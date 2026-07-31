@@ -93,6 +93,8 @@ export function GamePlay() {
 
   const roundNumber = game.currentRound + 1;
   const progressLabel = `${copy.common.round} ${roundNumber} / ${game.settings.totalRounds}`;
+  const promptLength = game.currentWord.text.trim().length;
+  const promptTextSize = promptLength > 26 ? "long" : promptLength > 15 ? "medium" : "short";
 
   if (game.phase === "wordReveal" && !wordRevealed) {
     return (
@@ -207,26 +209,29 @@ export function GamePlay() {
           />
           <span className="sr-only" aria-live="polite">{importantTimeAnnouncement}</span>
 
-          <section
-            id="active-task-card"
-            className="active-task-card"
-            aria-live="polite"
-            aria-atomic="true"
-            data-revealed={showWord}
-          >
-            {showWord ? <p>{game.currentWord.text}</p> : <p>{copy.play.wordHidden}</p>}
-          </section>
+          <div className="prompt-ticket" data-revealed={showWord}>
+            <section
+              id="active-task-card"
+              className="active-task-card"
+              aria-live="polite"
+              aria-atomic="true"
+              data-revealed={showWord}
+              data-text-size={promptTextSize}
+            >
+              {showWord ? <p>{game.currentWord.text}</p> : <p>{copy.play.wordHidden}</p>}
+            </section>
 
-          <button
-            type="button"
-            className="peek-button"
-            aria-pressed={showWord}
-            aria-controls="active-task-card"
-            onClick={() => setShownRoundKey((current) => (current === roundKey ? null : roundKey))}
-          >
-            {showWord ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
-            {showWord ? copy.play.hideWord : copy.play.peek}
-          </button>
+            <button
+              type="button"
+              className="peek-button"
+              aria-pressed={showWord}
+              aria-controls="active-task-card"
+              onClick={() => setShownRoundKey((current) => (current === roundKey ? null : roundKey))}
+            >
+              {showWord ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
+              <span className="sr-only">{showWord ? copy.play.hideWord : copy.play.peek}</span>
+            </button>
+          </div>
 
           <div className="play-actions">
             <button className="primary-button" type="button" onClick={openScoring}>

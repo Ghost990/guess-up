@@ -58,7 +58,7 @@ test("English two-player game survives refresh and reaches game over", async ({ 
   ]);
   expect(cardBox).not.toBeNull();
   expect(toggleBox).not.toBeNull();
-  expect(cardBox!.y + cardBox!.height).toBeLessThanOrEqual(toggleBox!.y);
+  expect(cardBox!.x + cardBox!.width).toBeLessThanOrEqual(toggleBox!.x);
 
   await page.getByRole("button", { name: "Got it!" }).click();
   await page.getByRole("dialog").getByRole("button", { name: secondPlayer }).click();
