@@ -11,6 +11,7 @@ import { RoundResultScreen } from "./RoundResultScreen";
 import { Scoreboard } from "./Scoreboard";
 import { ScoringDialog } from "./ScoringDialog";
 import { TimerDial } from "./TimerDial";
+import { WordAssist } from "./WordAssist";
 import { messages } from "@/i18n/translations";
 import { useGameStore } from "@/stores/gameStore";
 
@@ -30,8 +31,8 @@ export function GamePlay() {
   const resumeRound = useGameStore((state) => state.resumeRound);
   const endRound = useGameStore((state) => state.endRound);
   const { trigger } = useEffects();
-  const [wordRevealed, setWordRevealed] = useState(false);
-  const [showWord, setShowWord] = useState(false);
+  const [revealedRoundKey, setRevealedRoundKey] = useState<string | null>(null);
+  const [shownRoundKey, setShownRoundKey] = useState<string | null>(null);
   const [scoringOpen, setScoringOpen] = useState(game?.phase === "paused");
   const [remainingMs, setRemainingMs] = useState(0);
   const [timerExpired, setTimerExpired] = useState(false);
@@ -41,6 +42,9 @@ export function GamePlay() {
   const currentPlayer = game?.players[game.currentPlayerIndex];
   const language = game?.settings.language ?? "hu";
   const copy = messages[language];
+  const roundKey = game ? `${game.id}:${game.currentRound}` : null;
+  const wordRevealed = revealedRoundKey === roundKey;
+  const showWord = shownRoundKey === roundKey;
 
   useEffect(() => {
     if (!game || (game.phase !== "playing" && game.phase !== "paused")) return;
@@ -103,7 +107,7 @@ export function GamePlay() {
           <button
             className="primary-button"
             type="button"
-            onClick={() => setWordRevealed(true)}
+            onClick={() => setRevealedRoundKey(roundKey)}
           >
             <Eye aria-hidden="true" size={20} />
             {copy.ready.reveal}
@@ -123,6 +127,7 @@ export function GamePlay() {
           <p className="category-instruction">
             {copy.categories[game.currentCategory].instruction}
           </p>
+          <WordAssist word={game.currentWord} language={language} />
           <button
             className="primary-button primary-button--inverse"
             onClick={() => {
@@ -186,19 +191,22 @@ export function GamePlay() {
           <button
             type="button"
             className="peek-button"
-            onPointerDown={() => setShowWord(true)}
-            onPointerUp={() => setShowWord(false)}
-            onPointerCancel={() => setShowWord(false)}
-            onPointerLeave={() => setShowWord(false)}
-            onBlur={() => setShowWord(false)}
-            onKeyDown={(event) => {
-              if (event.key === " " || event.key === "Enter") setShowWord(true);
-            }}
-            onKeyUp={() => setShowWord(false)}
+            aria-pressed={showWord}
+            aria-controls="active-task-card"
+            onClick={() => setShownRoundKey((current) => (current === roundKey ? null : roundKey))}
           >
             {showWord ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
-            {showWord ? game.currentWord.text : copy.play.peek}
+            {showWord ? copy.play.hideWord : copy.play.peek}
           </button>
+
+          <section
+            id="active-task-card"
+            className="active-task-card"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {showWord ? <p>{game.currentWord.text}</p> : <p>{copy.play.wordHidden}</p>}
+          </section>
 
           <div className="play-actions">
             <button className="primary-button" type="button" onClick={openScoring}>
