@@ -62,9 +62,28 @@ describe("GameNightRecap", () => {
 
     expect(screen.getByRole("heading", { name: "Anna wins!" })).toBeInTheDocument();
     expect(screen.getByText("Tasks played").nextElementSibling).toHaveTextContent("3");
-    expect(screen.getByText("Best presenter").parentElement).toHaveTextContent("Anna — 2/3 correct");
+    expect(screen.getByText("Best presenter").parentElement).toHaveTextContent("Anna - 2/3 correct");
     expect(screen.getByRole("heading", { name: "Final standings" })).toBeInTheDocument();
     expect(screen.getByRole("status")).toHaveTextContent("Sharing is unavailable");
+  });
+
+  it("omits the awards section when every award lacks enough data", () => {
+    render(
+      <GameNightRecap
+        recap={buildGameNightRecap({
+          ...input,
+          rounds: [
+            { schemaVersion: 1, roundIndex: 0, completedAt: 1, category: "draw", outcome: "passed", presenterId: "a", guesserId: null, presenterPoints: 0, guesserPoints: 0 },
+          ],
+        })}
+        labels={labels}
+        shareCapabilities={{ nativeShare: false, pngDownload: false, textShare: false }}
+        shareCallbacks={{}}
+      />,
+    );
+
+    expect(screen.queryByRole("heading", { name: "Awards" })).not.toBeInTheDocument();
+    expect(screen.queryByText("Not enough data yet")).not.toBeInTheDocument();
   });
 
   it("uses only injected share capabilities and callbacks", () => {

@@ -1,11 +1,6 @@
 "use client";
 
-import type {
-  GameNightRecapViewModelV1,
-  RecapPairingAward,
-  RecapPresenterAward,
-  RecapGuesserAward,
-} from "@/types/recap";
+import type { GameNightRecapViewModelV1 } from "@/types/recap";
 import {
   RecapShareActions,
   type RecapShareCallbacks,
@@ -42,22 +37,6 @@ interface GameNightRecapProps {
   shareCallbacks: RecapShareCallbacks;
 }
 
-function AwardValue({
-  award,
-  unavailable,
-  value,
-}: {
-  award: RecapPresenterAward | RecapGuesserAward | RecapPairingAward;
-  unavailable: string;
-  value: string | null;
-}) {
-  if (award.availability === "insufficientData" || !value) {
-    return <p>{unavailable}</p>;
-  }
-
-  return <p>{value}</p>;
-}
-
 export function GameNightRecap({
   recap,
   labels,
@@ -72,6 +51,23 @@ export function GameNightRecap({
   const presenter = recap.awards.bestPresenter;
   const guesser = recap.awards.bestGuesser;
   const pairing = recap.awards.strongestPairing;
+  const availableAwards = [
+    presenter.availability === "insufficientData" ? null : {
+      id: "presenter",
+      label: labels.bestPresenter,
+      value: `${presenter.playerNames.join(", ")} - ${labels.presenterValue(presenter.correct, presenter.attempts)}`,
+    },
+    guesser.availability === "insufficientData" ? null : {
+      id: "guesser",
+      label: labels.bestGuesser,
+      value: `${guesser.playerNames.join(", ")} - ${labels.guesserValue(guesser.correct)}`,
+    },
+    pairing.availability === "insufficientData" ? null : {
+      id: "pairing",
+      label: labels.strongestPairing,
+      value: `${pairing.presenterNames.map((name, index) => `${name} + ${pairing.guesserNames[index]}`).join(", ")} - ${labels.pairingValue(pairing.correct)}`,
+    },
+  ].filter((award): award is NonNullable<typeof award> => award !== null);
 
   return (
     <section
@@ -85,66 +81,38 @@ export function GameNightRecap({
         </h2>
       </header>
 
-      <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-xl bg-[var(--surface-raised)] p-3">
-          <dt className="text-sm text-[var(--muted)]">{labels.tasksPlayed}</dt>
+      <dl className="mt-6 grid grid-cols-4 divide-x divide-[var(--line)] rounded-xl border border-[var(--line)] bg-[var(--surface-raised)] px-1 py-3">
+        <div className="min-w-0 px-2 text-center">
+          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.tasksPlayed}</dt>
           <dd className="mt-1 text-xl font-black">{recap.roundCounts.tasksPlayed}</dd>
         </div>
-        <div className="rounded-xl bg-[var(--surface-raised)] p-3">
-          <dt className="text-sm text-[var(--muted)]">{labels.correct}</dt>
+        <div className="min-w-0 px-2 text-center">
+          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.correct}</dt>
           <dd className="mt-1 text-xl font-black">{recap.roundCounts.correct}</dd>
         </div>
-        <div className="rounded-xl bg-[var(--surface-raised)] p-3">
-          <dt className="text-sm text-[var(--muted)]">{labels.passed}</dt>
+        <div className="min-w-0 px-2 text-center">
+          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.passed}</dt>
           <dd className="mt-1 text-xl font-black">{recap.roundCounts.passed}</dd>
         </div>
-        <div className="rounded-xl bg-[var(--surface-raised)] p-3">
-          <dt className="text-sm text-[var(--muted)]">{labels.timedOut}</dt>
+        <div className="min-w-0 px-2 text-center">
+          <dt className="text-xs text-[var(--muted)] sm:text-sm">{labels.timedOut}</dt>
           <dd className="mt-1 text-xl font-black">{recap.roundCounts.timedOut}</dd>
         </div>
       </dl>
 
-      <section aria-labelledby="recap-awards-title" className="mt-6">
-        <h3 id="recap-awards-title" className="text-lg font-black">{labels.awards}</h3>
-        <dl className="mt-3 grid gap-3 md:grid-cols-3">
-          <div className="rounded-xl border border-[var(--line)] p-4">
-            <dt className="font-bold">{labels.bestPresenter}</dt>
-            <dd className="mt-1 text-[var(--muted)]">
-              <AwardValue
-                award={presenter}
-                unavailable={labels.unavailableAward}
-                value={presenter.availability === "insufficientData"
-                  ? null
-                  : `${presenter.playerNames.join(", ")} — ${labels.presenterValue(presenter.correct, presenter.attempts)}`}
-              />
-            </dd>
-          </div>
-          <div className="rounded-xl border border-[var(--line)] p-4">
-            <dt className="font-bold">{labels.bestGuesser}</dt>
-            <dd className="mt-1 text-[var(--muted)]">
-              <AwardValue
-                award={guesser}
-                unavailable={labels.unavailableAward}
-                value={guesser.availability === "insufficientData"
-                  ? null
-                  : `${guesser.playerNames.join(", ")} — ${labels.guesserValue(guesser.correct)}`}
-              />
-            </dd>
-          </div>
-          <div className="rounded-xl border border-[var(--line)] p-4">
-            <dt className="font-bold">{labels.strongestPairing}</dt>
-            <dd className="mt-1 text-[var(--muted)]">
-              <AwardValue
-                award={pairing}
-                unavailable={labels.unavailableAward}
-                value={pairing.availability === "insufficientData"
-                  ? null
-                  : `${pairing.presenterNames.map((name, index) => `${name} + ${pairing.guesserNames[index]}`).join(", ")} — ${labels.pairingValue(pairing.correct)}`}
-              />
-            </dd>
-          </div>
-        </dl>
-      </section>
+      {availableAwards.length > 0 ? (
+        <section aria-labelledby="recap-awards-title" className="mt-6">
+          <h3 id="recap-awards-title" className="text-lg font-black">{labels.awards}</h3>
+          <dl className="mt-3 grid gap-3 md:grid-cols-3">
+            {availableAwards.map((award) => (
+              <div key={award.id} className="rounded-xl border border-[var(--line)] p-4">
+                <dt className="font-bold">{award.label}</dt>
+                <dd className="mt-1 text-[var(--muted)]">{award.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ) : null}
 
       <section aria-labelledby="recap-standings-title" className="mt-6">
         <h3 id="recap-standings-title" className="text-lg font-black">{labels.finalStandings}</h3>

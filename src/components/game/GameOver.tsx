@@ -14,7 +14,6 @@ import {
   shareRecapNative,
 } from "@/lib/recap/browserRecapShare";
 import { RECAP_EVENT_SCHEMA_VERSION } from "@/types/recap";
-import { Scoreboard } from "./Scoreboard";
 import { messages } from "@/i18n/translations";
 import { useGameStore } from "@/stores/gameStore";
 
@@ -95,12 +94,6 @@ export function GameOver() {
           {copy.common.playAgain}
         </button>
       </section>
-
-      <Scoreboard
-        players={game.players}
-        language={language}
-        title={copy.gameOver.finalStandings}
-      />
 
       {recap ? (
         <div className="game-over-recap">
