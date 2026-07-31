@@ -24,6 +24,12 @@ describe("task pack registry", () => {
       "classic-english",
       "classic-hungarian",
       "easy-energy-english",
+      "gaming-english",
+      "gaming-hungarian",
+      "movies-english",
+      "movies-hungarian",
+      "series-english",
+      "series-hungarian",
     ]);
     expect(classicHungarianPackManifest.contentSource.location).toBe("src/data/words-hu.json");
     expect(classicEnglishPackManifest.contentSource.location).toBe("src/data/words-en.json");
@@ -33,6 +39,9 @@ describe("task pack registry", () => {
     expect(taskPackRegistry.filter({ locale: "hu" }).map((manifest) => manifest.id)).toEqual([
       "challenge-hungarian",
       "classic-hungarian",
+      "gaming-hungarian",
+      "movies-hungarian",
+      "series-hungarian",
     ]);
     expect(taskPackRegistry.filter({ audience: "family", tags: ["classic"] })).toHaveLength(2);
     expect(taskPackRegistry.filter({ locale: "hu", audience: "adult", tags: ["challenge"] }))

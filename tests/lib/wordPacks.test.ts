@@ -1,5 +1,10 @@
 import { describe, expect, it, vi } from "vitest";
-import { getWordPack, pickWord } from "@/lib/game/wordPacks";
+import {
+  getWordPack,
+  getWordPackForContentSource,
+  pickWord,
+} from "@/lib/game/wordPacks";
+import { taskPackRegistry } from "@/content/packs";
 import type { Category, Difficulty, Language } from "@/types";
 
 const languages: Language[] = ["hu", "en"];
@@ -123,5 +128,34 @@ describe("localized word packs", () => {
     });
 
     expect(matchingIds).toContain(word.id);
+  });
+
+  it.each([
+    { packId: "movies-hungarian", language: "hu", idPrefix: "movies-hu-" },
+    { packId: "movies-english", language: "en", idPrefix: "movies-en-" },
+    { packId: "series-hungarian", language: "hu", idPrefix: "series-hu-" },
+    { packId: "series-english", language: "en", idPrefix: "series-en-" },
+    { packId: "gaming-hungarian", language: "hu", idPrefix: "gaming-hu-" },
+    { packId: "gaming-english", language: "en", idPrefix: "gaming-en-" },
+  ] as const)("keeps $packId isolated to its themed runtime source", ({ packId, language, idPrefix }) => {
+    const manifest = taskPackRegistry.getById(packId);
+    expect(manifest).toBeDefined();
+
+    const sourcePack = getWordPackForContentSource(manifest!.contentSource.id);
+    expect(sourcePack.words).toHaveLength(12);
+    expect(getWordPack(language).words.some((word) => word.id.startsWith(idPrefix))).toBe(false);
+
+    for (const difficulty of manifest!.compatibility.difficulties) {
+      for (const category of manifest!.compatibility.categories) {
+        const candidates = sourcePack.words.filter(
+          (word) => word.difficulty === difficulty && word.categories.includes(category),
+        );
+        expect(candidates).toHaveLength(2);
+
+        const word = pickWord({ language, difficulty, category, packId });
+        expect(word.id.startsWith(idPrefix)).toBe(true);
+        expect(candidates).toContainEqual(word);
+      }
+    }
   });
 });

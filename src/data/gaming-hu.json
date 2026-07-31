@@ -1,0 +1,17 @@
+{
+  "metadata": {"version": "1.0.0", "language": "hu", "totalWords": 12, "categories": ["draw", "explain", "signal"], "difficulties": ["easy", "medium"], "lastUpdated": "2026-07-31"},
+  "words": [
+    {"id":"gaming-hu-easy-draw-01","text":"Pac-Man labirintusa","categories":["draw"],"difficulty":"easy","length":19,"tags":["gaming","easy","draw"]},
+    {"id":"gaming-hu-easy-draw-02","text":"Minecraft kocka","categories":["draw"],"difficulty":"easy","length":15,"tags":["gaming","easy","draw"]},
+    {"id":"gaming-hu-easy-explain-03","text":"extra élet","categories":["explain"],"difficulty":"easy","length":10,"tags":["gaming","easy","explain"]},
+    {"id":"gaming-hu-easy-explain-04","text":"főellenség","categories":["explain"],"difficulty":"easy","length":10,"tags":["gaming","easy","explain"]},
+    {"id":"gaming-hu-easy-signal-05","text":"Mario ugrása","categories":["signal"],"difficulty":"easy","length":12,"tags":["gaming","easy","signal"]},
+    {"id":"gaming-hu-easy-signal-06","text":"Tetris sor törlése","categories":["signal"],"difficulty":"easy","length":18,"tags":["gaming","easy","signal"]},
+    {"id":"gaming-hu-medium-draw-07","text":"The Legend of Zelda Triforce","categories":["draw"],"difficulty":"medium","length":28,"tags":["gaming","medium","draw"]},
+    {"id":"gaming-hu-medium-draw-08","text":"Sonic the Hedgehog gyűrűje","categories":["draw"],"difficulty":"medium","length":26,"tags":["gaming","medium","draw"]},
+    {"id":"gaming-hu-medium-explain-09","text":"kooperatív küldetés","categories":["explain"],"difficulty":"medium","length":19,"tags":["gaming","medium","explain"]},
+    {"id":"gaming-hu-medium-explain-10","text":"nyílt világú térkép","categories":["explain"],"difficulty":"medium","length":19,"tags":["gaming","medium","explain"]},
+    {"id":"gaming-hu-medium-signal-11","text":"autóversenyjáték drift","categories":["signal"],"difficulty":"medium","length":22,"tags":["gaming","medium","signal"]},
+    {"id":"gaming-hu-medium-signal-12","text":"ritmusjáték kombó","categories":["signal"],"difficulty":"medium","length":17,"tags":["gaming","medium","signal"]}
+  ]
+}

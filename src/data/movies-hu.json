@@ -1,0 +1,17 @@
+{
+  "metadata": {"version": "1.0.0", "language": "hu", "totalWords": 12, "categories": ["draw", "explain", "signal"], "difficulties": ["easy", "medium"], "lastUpdated": "2026-07-31"},
+  "words": [
+    {"id":"movies-hu-easy-draw-01","text":"A cápa","categories":["draw"],"difficulty":"easy","length":6,"tags":["movies","easy","draw"]},
+    {"id":"movies-hu-easy-draw-02","text":"E.T., a földönkívüli","categories":["draw"],"difficulty":"easy","length":20,"tags":["movies","easy","draw"]},
+    {"id":"movies-hu-easy-explain-03","text":"fénykard","categories":["explain"],"difficulty":"easy","length":8,"tags":["movies","easy","explain"]},
+    {"id":"movies-hu-easy-explain-04","text":"időgép","categories":["explain"],"difficulty":"easy","length":6,"tags":["movies","easy","explain"]},
+    {"id":"movies-hu-easy-signal-05","text":"varázspálca","categories":["signal"],"difficulty":"easy","length":11,"tags":["movies","easy","signal"]},
+    {"id":"movies-hu-easy-signal-06","text":"szuperhős köpeny","categories":["signal"],"difficulty":"easy","length":16,"tags":["movies","easy","signal"]},
+    {"id":"movies-hu-medium-draw-07","text":"Indiana Jones kalapja","categories":["draw"],"difficulty":"medium","length":21,"tags":["movies","medium","draw"]},
+    {"id":"movies-hu-medium-draw-08","text":"Godzilla","categories":["draw"],"difficulty":"medium","length":8,"tags":["movies","medium","draw"]},
+    {"id":"movies-hu-medium-explain-09","text":"rendezői csapó","categories":["explain"],"difficulty":"medium","length":14,"tags":["movies","medium","explain"]},
+    {"id":"movies-hu-medium-explain-10","text":"film noir nyomozó","categories":["explain"],"difficulty":"medium","length":17,"tags":["movies","medium","explain"]},
+    {"id":"movies-hu-medium-signal-11","text":"némafilmes pantomim","categories":["signal"],"difficulty":"medium","length":19,"tags":["movies","medium","signal"]},
+    {"id":"movies-hu-medium-signal-12","text":"űrhajó landolása","categories":["signal"],"difficulty":"medium","length":16,"tags":["movies","medium","signal"]}
+  ]
+}

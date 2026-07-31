@@ -1,0 +1,17 @@
+{
+  "metadata": {"version": "1.0.0", "language": "hu", "totalWords": 12, "categories": ["draw", "explain", "signal"], "difficulties": ["easy", "medium"], "lastUpdated": "2026-07-31"},
+  "words": [
+    {"id":"series-hu-easy-draw-01","text":"Trónok harca sárkánya","categories":["draw"],"difficulty":"easy","length":21,"tags":["series","easy","draw"]},
+    {"id":"series-hu-easy-draw-02","text":"Jóbarátok kanapéja","categories":["draw"],"difficulty":"easy","length":18,"tags":["series","easy","draw"]},
+    {"id":"series-hu-easy-explain-03","text":"Sherlock Holmes nagyítója","categories":["explain"],"difficulty":"easy","length":25,"tags":["series","easy","explain"]},
+    {"id":"series-hu-easy-explain-04","text":"Stranger Things bicikli","categories":["explain"],"difficulty":"easy","length":23,"tags":["series","easy","explain"]},
+    {"id":"series-hu-easy-signal-05","text":"Ki vagy, Doki? TARDIS","categories":["signal"],"difficulty":"easy","length":21,"tags":["series","easy","signal"]},
+    {"id":"series-hu-easy-signal-06","text":"A Simpson család fánkja","categories":["signal"],"difficulty":"easy","length":23,"tags":["series","easy","signal"]},
+    {"id":"series-hu-medium-draw-07","text":"Breaking Bad lakókocsi","categories":["draw"],"difficulty":"medium","length":22,"tags":["series","medium","draw"]},
+    {"id":"series-hu-medium-draw-08","text":"The Mandalorian sisakja","categories":["draw"],"difficulty":"medium","length":23,"tags":["series","medium","draw"]},
+    {"id":"series-hu-medium-explain-09","text":"krimisorozat nyomozója","categories":["explain"],"difficulty":"medium","length":22,"tags":["series","medium","explain"]},
+    {"id":"series-hu-medium-explain-10","text":"sitcom nevetősáv","categories":["explain"],"difficulty":"medium","length":16,"tags":["series","medium","explain"]},
+    {"id":"series-hu-medium-signal-11","text":"zombiapokalipszis túlélő","categories":["signal"],"difficulty":"medium","length":24,"tags":["series","medium","signal"]},
+    {"id":"series-hu-medium-signal-12","text":"cliffhanger évadzáró","categories":["signal"],"difficulty":"medium","length":20,"tags":["series","medium","signal"]}
+  ]
+}

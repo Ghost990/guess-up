@@ -20,6 +20,28 @@ describe("PackScene", () => {
     expect(scene?.querySelectorAll("image")).toHaveLength(0);
   });
 
+  it.each([
+    ["movies-cinema-reel", "movies-cinema"],
+    ["series-episode-screen", "series-episode"],
+    ["gaming-pixel-arcade", "gaming-pixel"],
+  ])("renders %s as the %s themed scene family", (coverAsset, sceneFamily) => {
+    const { container } = render(
+      <PackScene coverAsset={coverAsset} decorative={false} title={`${sceneFamily} artwork`} />,
+    );
+
+    expect(screen.getByRole("img", { name: `${sceneFamily} artwork` })).toBeInTheDocument();
+    expect(container.querySelector("svg")).toHaveAttribute("data-scene-family", sceneFamily);
+  });
+
+  it("uses crisp pixel-grid geometry for the gaming scene", () => {
+    const { container } = render(<PackScene coverAsset="gaming-pixel-arcade" />);
+
+    expect(container.querySelector('g[data-scene-family="gaming-pixel"]')).toHaveAttribute(
+      "shape-rendering",
+      "crispEdges",
+    );
+  });
+
   it("uses a titled image contract when artwork is meaningful", () => {
     render(
       <PackScene

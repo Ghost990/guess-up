@@ -1,5 +1,11 @@
 import englishPack from "@/data/words-en.json";
+import gamingEnglishPack from "@/data/gaming-en.json";
+import gamingHungarianPack from "@/data/gaming-hu.json";
 import hungarianPack from "@/data/words-hu.json";
+import moviesEnglishPack from "@/data/movies-en.json";
+import moviesHungarianPack from "@/data/movies-hu.json";
+import seriesEnglishPack from "@/data/series-en.json";
+import seriesHungarianPack from "@/data/series-hu.json";
 import { taskPackRegistry } from "@/content/packs";
 import type { Category, Difficulty, Language, Word, WordPack } from "@/types";
 import type { TaskPackManifest } from "@/types/packs";
@@ -9,6 +15,17 @@ const packs = {
   hu: hungarianPack,
   en: englishPack,
 } as unknown as Record<Language, WordPack>;
+
+const packsByContentSource = {
+  "word-pack-hu": hungarianPack,
+  "word-pack-en": englishPack,
+  "movies-pack-hu": moviesHungarianPack,
+  "movies-pack-en": moviesEnglishPack,
+  "series-pack-hu": seriesHungarianPack,
+  "series-pack-en": seriesEnglishPack,
+  "gaming-pack-hu": gamingHungarianPack,
+  "gaming-pack-en": gamingEnglishPack,
+} as unknown as Record<string, WordPack>;
 
 const defaultPackIds: Record<Language, string> = {
   hu: "classic-hungarian",
@@ -29,6 +46,14 @@ export function getTaskPackManifest(packId: string, language: Language): TaskPac
 
 export function getWordPack(language: Language): WordPack {
   return packs[language];
+}
+
+export function getWordPackForContentSource(contentSourceId: string): WordPack {
+  const wordPack = packsByContentSource[contentSourceId];
+  if (!wordPack) {
+    throw new Error(`No runtime word pack is registered for content source "${contentSourceId}".`);
+  }
+  return wordPack;
 }
 
 interface PickWordOptions {
@@ -53,7 +78,8 @@ export function pickWord({
   if (!manifest.compatibility.categories.includes(category)) {
     throw new Error(`Task pack "${packId}" does not support category "${category}".`);
   }
-  const words = getWordPack(language).words;
+
+  const words = getWordPackForContentSource(manifest.contentSource.id).words;
   const matching = words.filter(
     (word) => word.difficulty === difficulty && word.categories.includes(category),
   );

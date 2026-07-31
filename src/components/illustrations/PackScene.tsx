@@ -5,6 +5,9 @@ export const PACK_SCENE_COVER_ASSETS = [
   "challenge-hungarian-climb",
   "classic-english-table",
   "easy-energy-english-city",
+  "movies-cinema-reel",
+  "series-episode-screen",
+  "gaming-pixel-arcade",
 ] as const;
 
 export type PackSceneCoverAsset = (typeof PACK_SCENE_COVER_ASSETS)[number];
@@ -175,6 +178,77 @@ function EasyEnergyEnglishScene() {
   );
 }
 
+function MovieCinemaScene() {
+  return (
+    <>
+      <path d="M 0 77 H 220 V 96 H 0 Z" fill={coral} opacity="0.3" />
+      <g fill={ink} stroke={ink} strokeWidth="3">
+        <path d="M 50 23 H 158 V 70 H 50 Z" fill={paper} />
+        <path d="M 50 23 L 66 12 H 174 L 158 23 Z" fill={yellow} />
+        <circle cx="178" cy="53" fill={yellow} r="22" />
+        <circle cx="178" cy="53" fill={paper} r="8" />
+      </g>
+      <g fill={paper}>
+        <circle cx="178" cy="36" r="4" />
+        <circle cx="193" cy="50" r="4" />
+        <circle cx="184" cy="67" r="4" />
+        <circle cx="164" cy="67" r="4" />
+        <circle cx="159" cy="47" r="4" />
+      </g>
+      <path d="M 80 35 L 128 47 L 80 59 Z" fill={coral} stroke={ink} strokeLinejoin="round" strokeWidth="3" />
+      <Outline>
+        <path d="M 73 70 V 86 M 136 70 V 86" fill="none" />
+        <path d="M 61 86 H 148" fill="none" />
+      </Outline>
+    </>
+  );
+}
+
+function SeriesEpisodeScene() {
+  return (
+    <>
+      <path d="M 0 78 H 220 V 96 H 0 Z" fill={cyan} opacity="0.3" />
+      <g fill={ink} stroke={ink} strokeLinejoin="round" strokeWidth="3">
+        <path d="M 35 19 H 166 V 71 H 35 Z" fill={paper} />
+        <path d="M 43 27 H 120 V 62 H 43 Z" fill={cyan} />
+        <path d="M 133 30 H 157 V 36 H 133 Z M 133 42 H 157 V 48 H 133 Z M 133 54 H 151 V 60 H 133 Z" fill={coral} stroke="none" />
+        <path d="M 75 71 V 84 H 126 V 71" fill={yellow} />
+      </g>
+      <g fill={paper} stroke={ink} strokeLinejoin="round" strokeWidth="3">
+        <path d="M 18 40 H 31 V 52 H 18 Z" />
+        <path d="M 21 37 H 28 V 40 H 21 Z" fill={yellow} />
+        <path d="M 21 52 V 60 H 28 V 52" fill={yellow} />
+      </g>
+      <Outline>
+        <path d="M 63 16 L 75 7 M 137 16 L 149 7" fill="none" />
+      </Outline>
+    </>
+  );
+}
+
+function GamingPixelArcadeScene() {
+  return (
+    <g data-scene-family="gaming-pixel" shapeRendering="crispEdges">
+      <path d="M 0 76 H 220 V 96 H 0 Z" fill={ink} opacity="0.12" />
+      <g stroke={ink} strokeWidth="3">
+        <path d="M 67 12 H 154 V 79 H 67 Z" fill={ink} />
+        <path d="M 75 20 H 146 V 56 H 75 Z" fill={cyan} />
+        <path d="M 84 28 H 96 V 40 H 84 Z M 111 24 H 123 V 36 H 111 Z M 128 36 H 140 V 48 H 128 Z" fill={mint} stroke="none" />
+        <path d="M 76 64 H 97 V 73 H 76 Z M 124 64 H 145 V 73 H 124 Z" fill={coral} />
+        <path d="M 104 61 H 116 V 76 H 104 Z" fill={yellow} />
+      </g>
+      <g fill={yellow} stroke={ink} strokeWidth="3">
+        <path d="M 20 24 H 36 V 40 H 20 Z M 36 40 H 52 V 56 H 36 Z M 52 24 H 68 V 40 H 52 Z" />
+        <path d="M 164 25 H 180 V 41 H 164 Z M 180 41 H 196 V 57 H 180 Z M 196 25 H 212 V 41 H 196 Z" />
+      </g>
+      <g fill={coral} stroke={ink} strokeWidth="3">
+        <path d="M 16 69 H 30 V 83 H 16 Z M 30 55 H 44 V 69 H 30 Z M 44 69 H 58 V 83 H 44 Z" />
+        <path d="M 178 70 H 192 V 84 H 178 Z M 192 56 H 206 V 70 H 192 Z M 206 70 H 220 V 84 H 206 Z" />
+      </g>
+    </g>
+  );
+}
+
 function SignalBoardScene() {
   return (
     <>
@@ -216,6 +290,19 @@ const sceneByAsset: Record<PackSceneCoverAsset, () => ReactNode> = {
   "challenge-hungarian-climb": ChallengeHungarianScene,
   "classic-english-table": ClassicEnglishScene,
   "easy-energy-english-city": EasyEnergyEnglishScene,
+  "movies-cinema-reel": MovieCinemaScene,
+  "series-episode-screen": SeriesEpisodeScene,
+  "gaming-pixel-arcade": GamingPixelArcadeScene,
+};
+
+const sceneFamilyByAsset: Record<PackSceneCoverAsset, string> = {
+  "classic-hungarian-party": "classic-party",
+  "challenge-hungarian-climb": "challenge-climb",
+  "classic-english-table": "classic-table",
+  "easy-energy-english-city": "easy-city",
+  "movies-cinema-reel": "movies-cinema",
+  "series-episode-screen": "series-episode",
+  "gaming-pixel-arcade": "gaming-pixel",
 };
 
 export function PackScene({
@@ -226,7 +313,9 @@ export function PackScene({
   className,
 }: PackSceneProps) {
   const titleId = `pack-scene-title-${useId().replace(/:/g, "")}`;
-  const Scene = sceneByAsset[coverAsset as PackSceneCoverAsset] ?? SignalBoardScene;
+  const sceneCoverAsset = coverAsset as PackSceneCoverAsset;
+  const Scene = sceneByAsset[sceneCoverAsset] ?? SignalBoardScene;
+  const sceneFamily = sceneFamilyByAsset[sceneCoverAsset] ?? "signal-board";
 
   return (
     <svg
@@ -234,6 +323,7 @@ export function PackScene({
       aria-labelledby={decorative ? undefined : titleId}
       className={className}
       data-pack-scene={coverAsset}
+      data-scene-family={sceneFamily}
       data-scene-variant={variant}
       fill="none"
       focusable="false"

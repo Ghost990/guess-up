@@ -1,0 +1,17 @@
+{
+  "metadata": {"version": "1.0.0", "language": "en", "totalWords": 12, "categories": ["draw", "explain", "signal"], "difficulties": ["easy", "medium"], "lastUpdated": "2026-07-31"},
+  "words": [
+    {"id":"gaming-en-easy-draw-01","text":"Pac-Man maze","categories":["draw"],"difficulty":"easy","length":12,"tags":["gaming","easy","draw"]},
+    {"id":"gaming-en-easy-draw-02","text":"Minecraft block","categories":["draw"],"difficulty":"easy","length":15,"tags":["gaming","easy","draw"]},
+    {"id":"gaming-en-easy-explain-03","text":"extra life","categories":["explain"],"difficulty":"easy","length":10,"tags":["gaming","easy","explain"]},
+    {"id":"gaming-en-easy-explain-04","text":"final boss","categories":["explain"],"difficulty":"easy","length":10,"tags":["gaming","easy","explain"]},
+    {"id":"gaming-en-easy-signal-05","text":"Mario jump","categories":["signal"],"difficulty":"easy","length":10,"tags":["gaming","easy","signal"]},
+    {"id":"gaming-en-easy-signal-06","text":"Tetris line clear","categories":["signal"],"difficulty":"easy","length":17,"tags":["gaming","easy","signal"]},
+    {"id":"gaming-en-medium-draw-07","text":"The Legend of Zelda Triforce","categories":["draw"],"difficulty":"medium","length":28,"tags":["gaming","medium","draw"]},
+    {"id":"gaming-en-medium-draw-08","text":"Sonic the Hedgehog ring","categories":["draw"],"difficulty":"medium","length":23,"tags":["gaming","medium","draw"]},
+    {"id":"gaming-en-medium-explain-09","text":"co-op quest","categories":["explain"],"difficulty":"medium","length":11,"tags":["gaming","medium","explain"]},
+    {"id":"gaming-en-medium-explain-10","text":"open-world map","categories":["explain"],"difficulty":"medium","length":14,"tags":["gaming","medium","explain"]},
+    {"id":"gaming-en-medium-signal-11","text":"racing-game drift","categories":["signal"],"difficulty":"medium","length":17,"tags":["gaming","medium","signal"]},
+    {"id":"gaming-en-medium-signal-12","text":"rhythm-game combo","categories":["signal"],"difficulty":"medium","length":17,"tags":["gaming","medium","signal"]}
+  ]
+}

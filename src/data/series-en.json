@@ -1,0 +1,17 @@
+{
+  "metadata": {"version": "1.0.0", "language": "en", "totalWords": 12, "categories": ["draw", "explain", "signal"], "difficulties": ["easy", "medium"], "lastUpdated": "2026-07-31"},
+  "words": [
+    {"id":"series-en-easy-draw-01","text":"Game of Thrones dragon","categories":["draw"],"difficulty":"easy","length":22,"tags":["series","easy","draw"]},
+    {"id":"series-en-easy-draw-02","text":"Friends sofa","categories":["draw"],"difficulty":"easy","length":12,"tags":["series","easy","draw"]},
+    {"id":"series-en-easy-explain-03","text":"Sherlock Holmes magnifying glass","categories":["explain"],"difficulty":"easy","length":32,"tags":["series","easy","explain"]},
+    {"id":"series-en-easy-explain-04","text":"Stranger Things bicycle","categories":["explain"],"difficulty":"easy","length":23,"tags":["series","easy","explain"]},
+    {"id":"series-en-easy-signal-05","text":"Doctor Who TARDIS","categories":["signal"],"difficulty":"easy","length":17,"tags":["series","easy","signal"]},
+    {"id":"series-en-easy-signal-06","text":"The Simpsons donut","categories":["signal"],"difficulty":"easy","length":18,"tags":["series","easy","signal"]},
+    {"id":"series-en-medium-draw-07","text":"Breaking Bad RV","categories":["draw"],"difficulty":"medium","length":15,"tags":["series","medium","draw"]},
+    {"id":"series-en-medium-draw-08","text":"The Mandalorian helmet","categories":["draw"],"difficulty":"medium","length":22,"tags":["series","medium","draw"]},
+    {"id":"series-en-medium-explain-09","text":"crime-show detective","categories":["explain"],"difficulty":"medium","length":20,"tags":["series","medium","explain"]},
+    {"id":"series-en-medium-explain-10","text":"sitcom laugh track","categories":["explain"],"difficulty":"medium","length":18,"tags":["series","medium","explain"]},
+    {"id":"series-en-medium-signal-11","text":"zombie-apocalypse survivor","categories":["signal"],"difficulty":"medium","length":26,"tags":["series","medium","signal"]},
+    {"id":"series-en-medium-signal-12","text":"season-finale cliffhanger","categories":["signal"],"difficulty":"medium","length":25,"tags":["series","medium","signal"]}
+  ]
+}

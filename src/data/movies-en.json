@@ -1,0 +1,17 @@
+{
+  "metadata": {"version": "1.0.0", "language": "en", "totalWords": 12, "categories": ["draw", "explain", "signal"], "difficulties": ["easy", "medium"], "lastUpdated": "2026-07-31"},
+  "words": [
+    {"id":"movies-en-easy-draw-01","text":"Jaws","categories":["draw"],"difficulty":"easy","length":4,"tags":["movies","easy","draw"]},
+    {"id":"movies-en-easy-draw-02","text":"E.T. the Extra-Terrestrial","categories":["draw"],"difficulty":"easy","length":26,"tags":["movies","easy","draw"]},
+    {"id":"movies-en-easy-explain-03","text":"lightsaber","categories":["explain"],"difficulty":"easy","length":10,"tags":["movies","easy","explain"]},
+    {"id":"movies-en-easy-explain-04","text":"time machine","categories":["explain"],"difficulty":"easy","length":12,"tags":["movies","easy","explain"]},
+    {"id":"movies-en-easy-signal-05","text":"magic wand","categories":["signal"],"difficulty":"easy","length":10,"tags":["movies","easy","signal"]},
+    {"id":"movies-en-easy-signal-06","text":"superhero cape","categories":["signal"],"difficulty":"easy","length":14,"tags":["movies","easy","signal"]},
+    {"id":"movies-en-medium-draw-07","text":"Indiana Jones hat","categories":["draw"],"difficulty":"medium","length":17,"tags":["movies","medium","draw"]},
+    {"id":"movies-en-medium-draw-08","text":"Godzilla","categories":["draw"],"difficulty":"medium","length":8,"tags":["movies","medium","draw"]},
+    {"id":"movies-en-medium-explain-09","text":"director clapperboard","categories":["explain"],"difficulty":"medium","length":21,"tags":["movies","medium","explain"]},
+    {"id":"movies-en-medium-explain-10","text":"film noir detective","categories":["explain"],"difficulty":"medium","length":19,"tags":["movies","medium","explain"]},
+    {"id":"movies-en-medium-signal-11","text":"silent-film mime","categories":["signal"],"difficulty":"medium","length":16,"tags":["movies","medium","signal"]},
+    {"id":"movies-en-medium-signal-12","text":"spaceship landing","categories":["signal"],"difficulty":"medium","length":17,"tags":["movies","medium","signal"]}
+  ]
+}
