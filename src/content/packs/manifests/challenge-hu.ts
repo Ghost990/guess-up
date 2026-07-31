@@ -23,7 +23,7 @@ export const challengeHungarianPackManifest = {
   },
   visualTheme: {
     accentColor: "#ef5d7a",
-    coverAsset: "challenge-hungarian-abstract",
+    coverAsset: "challenge-hungarian-climb",
     backgroundStyle: "playful",
   },
   tags: ["challenge", "party", "hungarian"],

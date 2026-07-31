@@ -23,7 +23,7 @@ export const classicEnglishPackManifest = {
   },
   visualTheme: {
     accentColor: "#6dc6dd",
-    coverAsset: "classic-english-abstract",
+    coverAsset: "classic-english-table",
     backgroundStyle: "cool",
   },
   tags: ["classic", "party", "english"],

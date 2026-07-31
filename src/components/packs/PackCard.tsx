@@ -1,6 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
+import { PackScene } from "@/components/illustrations/PackScene";
 import type { PackAccessState, PackAudience, TaskPackManifest } from "@/types/packs";
 
 export interface PackCardCopy {
@@ -44,7 +45,12 @@ export function PackCard({
       data-testid={`pack-card-${manifest.id}`}
       style={style}
     >
-      <div className="mb-5 h-2 w-16 rounded-full" style={{ backgroundColor: manifest.visualTheme.accentColor }} />
+      <div className="mb-5 overflow-hidden rounded-lg border border-[color:var(--border)] bg-[#fff8e8]">
+        <PackScene
+          className="block h-auto w-full"
+          coverAsset={manifest.visualTheme.coverAsset}
+        />
+      </div>
       <div className="flex-1">
         <p className="mb-2 text-sm font-semibold text-[var(--muted)]">
           {copy.audienceLabels?.[manifest.audience] ?? manifest.audience}

@@ -23,7 +23,7 @@ export const classicHungarianPackManifest = {
   },
   visualTheme: {
     accentColor: "#f5b642",
-    coverAsset: "classic-hungarian-abstract",
+    coverAsset: "classic-hungarian-party",
     backgroundStyle: "warm",
   },
   tags: ["classic", "party", "hungarian"],

@@ -23,7 +23,7 @@ export const easyEnergyEnglishPackManifest = {
   },
   visualTheme: {
     accentColor: "#9fe870",
-    coverAsset: "easy-energy-english-abstract",
+    coverAsset: "easy-energy-english-city",
     backgroundStyle: "playful",
   },
   tags: ["easy", "party", "english-learning"],
