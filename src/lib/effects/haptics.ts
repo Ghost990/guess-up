@@ -5,6 +5,8 @@ export type VibrationPattern = number | number[];
 const HAPTIC_PATTERNS: Record<EffectCue, VibrationPattern> = {
   roundStart: 35,
   countdown: 18,
+  countdownUrgent: [18, 30, 28],
+  countdownFinal: 42,
   correct: [35, 35, 75],
   pass: 30,
   timeout: [80, 45, 80],

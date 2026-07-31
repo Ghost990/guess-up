@@ -10,6 +10,11 @@ interface Tone {
 const TONES: Record<EffectCue, Tone[]> = {
   roundStart: [{ frequency: 440, duration: 0.08 }, { frequency: 660, duration: 0.11, delay: 0.07 }],
   countdown: [{ frequency: 330, duration: 0.045, gain: 0.045 }],
+  countdownUrgent: [
+    { frequency: 440, duration: 0.045, gain: 0.045 },
+    { frequency: 523, duration: 0.06, delay: 0.065, gain: 0.047 },
+  ],
+  countdownFinal: [{ frequency: 659, duration: 0.085, gain: 0.05 }],
   correct: [{ frequency: 523, duration: 0.08 }, { frequency: 784, duration: 0.15, delay: 0.08 }],
   pass: [{ frequency: 220, duration: 0.09, gain: 0.04 }],
   timeout: [{ frequency: 196, duration: 0.16 }, { frequency: 147, duration: 0.2, delay: 0.13 }],
@@ -32,6 +37,10 @@ function getAudioContext(): AudioContext | null {
 
 export function canPlayAudio(): boolean {
   return typeof window !== "undefined" && typeof window.AudioContext === "function";
+}
+
+export function getSoundPattern(cue: EffectCue): readonly Tone[] {
+  return TONES[cue];
 }
 
 export async function playEffectSound(cue: EffectCue): Promise<boolean> {

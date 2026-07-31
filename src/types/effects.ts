@@ -1,6 +1,8 @@
 export type EffectCue =
   | "roundStart"
   | "countdown"
+  | "countdownUrgent"
+  | "countdownFinal"
   | "correct"
   | "pass"
   | "timeout"

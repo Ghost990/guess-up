@@ -1,5 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
-import { createEffectEngine } from "@/lib/effects/effectEngine";
+import {
+  createEffectEngine,
+  getCountdownEffectCue,
+} from "@/lib/effects/effectEngine";
 import { getHapticPattern, triggerHaptic } from "@/lib/effects/haptics";
 import {
   DEFAULT_EFFECTS_PREFERENCES,
@@ -7,6 +10,18 @@ import {
   readEffectsPreferences,
   writeEffectsPreferences,
 } from "@/lib/effects/preferences";
+import { getSoundPattern } from "@/lib/effects/soundEngine";
+
+const EFFECT_CUES = [
+  "roundStart",
+  "countdown",
+  "countdownUrgent",
+  "countdownFinal",
+  "correct",
+  "pass",
+  "timeout",
+  "winner",
+] as const;
 
 function createStorage(initial: string | null = null) {
   let value = initial;
@@ -41,7 +56,15 @@ describe("effects preferences", () => {
 describe("haptics", () => {
   it("uses short, deterministic patterns", () => {
     expect(getHapticPattern("countdown")).toBe(18);
+    expect(getHapticPattern("countdownUrgent")).toEqual([18, 30, 28]);
+    expect(getHapticPattern("countdownFinal")).toBe(42);
     expect(getHapticPattern("winner")).toEqual([45, 35, 45, 35, 110]);
+  });
+
+  it("defines a pattern for every effect cue", () => {
+    for (const cue of EFFECT_CUES) {
+      expect(getHapticPattern(cue)).toBeDefined();
+    }
   });
 
   it("fails safely when vibration is unavailable or throws", () => {
@@ -53,6 +76,25 @@ describe("haptics", () => {
         }),
       }),
     ).toBe(false);
+  });
+});
+
+describe("countdown effect cues", () => {
+  it("maps only final countdown boundaries to escalating cues", () => {
+    expect(getCountdownEffectCue(6)).toBeNull();
+    expect(getCountdownEffectCue(5)).toBe("countdown");
+    expect(getCountdownEffectCue(3)).toBe("countdown");
+    expect(getCountdownEffectCue(2)).toBe("countdownUrgent");
+    expect(getCountdownEffectCue(1)).toBe("countdownFinal");
+    expect(getCountdownEffectCue(0)).toBeNull();
+  });
+});
+
+describe("effect sounds", () => {
+  it("defines a tone pattern for every effect cue", () => {
+    for (const cue of EFFECT_CUES) {
+      expect(getSoundPattern(cue)).not.toHaveLength(0);
+    }
   });
 });
 
