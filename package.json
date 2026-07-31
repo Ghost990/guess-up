@@ -1,7 +1,7 @@
 {
   "name": "guess-up",
   "version": "1.0.0",
-  "description": "Mobile-first multilingual activity party game",
+  "description": "Hoppra! — mobile-first multilingual activity party game",
   "private": true,
   "scripts": {
     "dev": "next dev",

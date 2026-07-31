@@ -4,25 +4,40 @@ interface LogoProps {
 
 export function Logo({ compact = false }: LogoProps) {
   return (
-    <span className={`logo${compact ? " logo--compact" : ""}`} aria-label="GuessUp">
+    <span className={`logo${compact ? " logo--compact" : ""}`} aria-label="Hoppra!">
       <svg
         className="logo__mark"
         viewBox="0 0 40 40"
         aria-hidden="true"
         focusable="false"
       >
-        <path
+        <rect
+          className="logo__card-back"
+          x="5"
+          y="8"
+          width="25"
+          height="25"
+          rx="7"
+
+        />
+        <rect
           className="logo__bubble"
-          d="M8 5h24a5 5 0 0 1 5 5v16a5 5 0 0 1-5 5H19l-7 5v-5H8a5 5 0 0 1-5-5V10a5 5 0 0 1 5-5Z"
+          x="10"
+          y="5"
+          width="25"
+          height="27"
+          rx="7"
+
         />
         <path
           className="logo__arrow"
-          d="m14.5 19 5.5-5.5 5.5 5.5M20 14v11"
+          d="M23 11.5v10"
         />
-        <circle className="logo__spark" cx="31.5" cy="8.5" r="3.5" />
+        <circle className="logo__spark" cx="23" cy="26" r="2" />
+        <path className="logo__motion" d="M32.5 5.5 35 3M35 9h3M31.5 2l1-2" />
       </svg>
       <span className="logo__type">
-        Guess<span>Up</span>
+        Hoppra<span>!</span>
       </span>
     </span>
   );

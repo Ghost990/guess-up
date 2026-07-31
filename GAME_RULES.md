@@ -1,11 +1,12 @@
-# GuessUp — canonical game rules
+# Hoppra! — canonical game rules
 
 This file is the source of truth for current gameplay behavior. If an older planning or implementation document conflicts with this file and the tested code, this file and the code win.
 
 ## Setup
 
 - A game requires **2–8 unique, non-empty player names**.
-- The host chooses the interface/task language, difficulty, rounds per player, round duration, and enabled categories.
+- The host chooses the interface/task language, experience pack, difficulty, rounds per player, round duration, and enabled categories.
+- A pack manifest may constrain the available difficulties and categories. Setup rejects incompatible pack/language/difficulty/category combinations.
 - Rounds per player: **1, 2, 3, or 4**.
 - Round duration: **30, 45, 60, or 90 seconds**.
 - At least one category must remain enabled.
@@ -47,17 +48,19 @@ wordReveal → playing ⇄ paused → roundEnd → wordReveal | gameOver
 - Opening the guesser selector pauses the timer and persists the remaining duration.
 - Cancelling the selector resumes from the persisted remaining duration.
 - An active or paused game resumes after refresh.
-- Game, language, and latest round result are stored in `localStorage` under `guessup-game-state`.
+- Game, language, latest round result, selected pack ID, and versioned round history are stored in `localStorage` under `guessup-game-state`.
+- Persisted v2 state migrates to v3 with an empty round history; old games without a pack ID resolve to the locale's default classic pack.
 - Saved setup player names use `guessup-player-names`.
 
 ## Languages and task packs
 
 - Supported languages: Hungarian (`hu`) and English (`en`).
-- The selected language controls both interface copy and the task pack.
-- Language and difficulty are frozen into game settings when a game starts.
+- The selected language controls interface copy and which compatible experience packs are offered.
+- Language, pack ID, and difficulty are frozen into game settings when a game starts.
 - Hungarian pack: **540 tasks** across three difficulties.
 - English pack: **900 tasks** across five difficulties.
 - Each task declares one or more compatible categories.
+- Experience packs use versioned manifests and content-source references. They may filter the shared source records without duplicating task data.
 - Used task IDs are excluded from selection until the matching language/difficulty/category pool is exhausted; the pool may then repeat.
 
 ## End of game
@@ -65,3 +68,5 @@ wordReveal → playing ⇄ paused → roundEnd → wordReveal | gameOver
 - The final scheduled round transitions directly to `gameOver` after scoring or passing.
 - Final standings are sorted by score.
 - Starting a new game clears the current game and result while keeping the selected interface language and saved setup names.
+- Every resolved round appends exactly one `correct`, `passed`, or `timedOut` history event.
+- Game Over builds the recap from that round history and can share a localized text summary or download a 1080 × 1350 PNG card.

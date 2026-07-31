@@ -1,4 +1,4 @@
-# GuessUp
+# Hoppra! (working name; formerly GuessUp)
 
 Mobile-first, single-device party game for 2–8 players. Pass one phone around, then draw, explain, or act out a localized task while the others guess.
 
@@ -13,6 +13,9 @@ Mobile-first, single-device party game for 2–8 players. Pass one phone around,
 - Presenter + guesser scoring
 - Refresh-safe persisted game state and absolute round deadlines
 - Installable web app manifest
+- Experience-based task-pack picker with versioned manifests and entitlement boundary
+- Game Night Recap with standings, round statistics, native share, text copy, and PNG export
+- Optional sound, haptics, and reduced-motion-aware winner celebration
 
 > The service worker currently uses a network-only strategy. The app is installable, but a fresh load is not guaranteed to work offline.
 
@@ -33,7 +36,7 @@ See [GAME_RULES.md](GAME_RULES.md) for the canonical behavior.
 - English: **900** tasks across `lowEnglish`, `easy`, `medium`, `challenging`, and `hard`
 - Categories: `draw`, `explain`, `signal`
 
-The JSON metadata and runtime validation live in `src/data/words-hu.json`, `src/data/words-en.json`, and `src/lib/game/wordPacks.ts`.
+The source tasks remain in `src/data/words-hu.json` and `src/data/words-en.json`. Versioned pack manifests, registry validation, entitlement boundaries, and experience-based filtering live under `src/content/packs` and `src/lib/packs`; runtime task resolution lives in `src/lib/game/wordPacks.ts`.
 
 ## Stack
 
@@ -87,6 +90,7 @@ Start with:
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) — verified implementation status
 - [WORD_DATABASE_INFO.md](WORD_DATABASE_INFO.md) — task-pack schema and counts
 - [docs/PRODUCT_STRATEGY_AND_MONETIZATION.md](docs/PRODUCT_STRATEGY_AND_MONETIZATION.md) — approved product expansion, monetization, and first-wave scope
+- [docs/BRAND_NAME_RESEARCH.md](docs/BRAND_NAME_RESEARCH.md) — Hoppra working-name research, collision checks, risks, and logo direction
 - [docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md) — active versus historical documents
 
 Many older root-level documents are retained as implementation history. They may describe retired multiplayer, scoring, reveal, or design prototypes and are not authoritative unless listed as active in the documentation map.

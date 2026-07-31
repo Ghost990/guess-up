@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title id="title">GuessUp app icon</title>
-  <rect width="512" height="512" rx="104" fill="#17130e"/>
-  <path fill="#ff6239" d="M118 92h276c40 0 72 32 72 72v174c0 40-32 72-72 72H251l-103 72v-72h-30c-40 0-72-32-72-72V164c0-40 32-72 72-72Z"/>
-  <path fill="none" stroke="#17130e" stroke-linecap="round" stroke-linejoin="round" stroke-width="42" d="m176 252 80-80 80 80M256 180v150"/>
-  <circle cx="390" cy="134" r="46" fill="#ffd84c" stroke="#17130e" stroke-width="20"/>
+  <title id="title">Hoppra! app icon</title>
+  <rect width="512" height="512" rx="112" fill="#17130e"/>
+  <rect x="72" y="132" width="300" height="300" rx="76" fill="#6dc6dd"/>
+  <rect x="128" y="82" width="304" height="318" rx="78" fill="#ff6239"/>
+  <path d="M280 154v122" fill="none" stroke="#17130e" stroke-width="42" stroke-linecap="round"/>
+  <circle cx="280" cy="332" r="25" fill="#ffd84c" stroke="#17130e" stroke-width="14"/>
+  <path d="m396 86 34-31M421 125h44M383 47l12-41" fill="none" stroke="#ffd84c" stroke-width="22" stroke-linecap="round"/>
 </svg>

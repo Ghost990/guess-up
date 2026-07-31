@@ -1,4 +1,4 @@
-# GuessUp documentation map
+# Hoppra! / GuessUp documentation map
 
 The repository contains current documentation and retained historical planning artifacts. Use this map to avoid implementing retired specifications.
 
@@ -13,6 +13,7 @@ The repository contains current documentation and retained historical planning a
 - `CLAUDE.md` — compact agent context
 - `docs/ENGLISH_PROMPT_RESEARCH.md` — research constraints for the current English expansion
 - `docs/PRODUCT_STRATEGY_AND_MONETIZATION.md` — approved post-legacy product direction, numbered feature scope, scalable architecture boundaries, and monetization hypotheses
+- `docs/BRAND_NAME_RESEARCH.md` — current working-name decision, store/domain collision research, legal caveats, and logo direction
 
 The tested code remains the final executable source of truth.
 
