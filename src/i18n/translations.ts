@@ -17,6 +17,55 @@ const hu = {
     explain: { label: "Körülírás", instruction: "Írd körül – a szó és ragozott alakjai nélkül." },
     signal: { label: "Mutogatás", instruction: "Mutogasd el – hangok és tárgyak nélkül." },
   },
+  home: {
+    homeLabel: "Hoppra főoldal",
+    backHome: "Vissza a Hoppra főoldalára",
+    navigation: { howItWorks: "Így működik", newGame: "Új játék" },
+    hero: {
+      kicker: "Partyjáték egy telefonon",
+      title: "Egy telefon. Az egész társaság játékban.",
+      description: "Rajzolj, írj körül vagy mutogass. A Hoppra vezeti a köröket, méri az időt és számolja a pontokat.",
+      primaryAction: "Új játék",
+      secondaryAction: "Így működik",
+      previewLabel: "A Hoppra játékmódjainak előnézete",
+      previewCaption: "Három feladattípus, egy közös pontverseny.",
+    },
+    howItWorks: {
+      title: "Így működik",
+      intro: "Nem kell pakli vagy külön kijelző. Egy telefon körbejár, a Hoppra pedig kézben tartja a játékot.",
+      steps: [
+        { title: "Írjátok be a neveket", description: "Ketten már indulhattok, de akár nyolcan is beszállhattok." },
+        { title: "Adjátok tovább a telefont", description: "Mindig csak a soron következő játékos látja a titkos feladatot." },
+        { title: "Mutassátok be időre", description: "Rajzzal, körülírással vagy mutogatással kell célba érni." },
+        { title: "Osszátok ki a pontokat", description: "A bemutató és a kitaláló is pontot kap. A végén jön az esti összefoglaló." },
+      ],
+    },
+    categories: {
+      title: "Három mód. Háromféle káosz.",
+      intro: "Ugyanaz a feladat teljesen más játék lesz attól függően, hogyan kell bemutatnod.",
+      items: {
+        draw: { title: "Rajzold le. Ne mondd ki.", description: "Vonalakból kell rájönni a megoldásra. Művészi tehetség nem szükséges, sőt." },
+        explain: { title: "Beszélj róla. Kerüld meg a szót.", description: "Magyarázz gyorsan és pontosan, de a megfejtést és annak alakjait nem mondhatod ki." },
+        signal: { title: "Mutasd el. Hang nélkül.", description: "Jöhet a testbeszéd, az eltúlzott mozdulat és a teljesen félreértett pantomim." },
+      },
+    },
+    worlds: {
+      title: "Válasszatok játékuniverzumot",
+      intro: "Maradhattok a klasszikus keveréknél, vagy építhetitek az estét kedvenc filmekre, sorozatokra és játékokra.",
+      items: {
+        classic: { title: "Klasszikus", description: "Ismerős tárgyak, helyzetek és fogalmak vegyesen." },
+        movies: { title: "Filmek", description: "Mozis címek és ikonikus történetek a nappali vásznára." },
+        series: { title: "Sorozatok", description: "Epizódok, karakterek és közös darálások emlékei." },
+        gaming: { title: "Gaming", description: "Kontrollerek, hősök és legendás virtuális világok." },
+      },
+    },
+    finalCta: {
+      title: "Kik vannak játékban?",
+      description: "Adjátok meg a neveket, válasszatok csomagot és már indulhat is az első feladat.",
+      action: "Új játék",
+    },
+    footer: "Egy telefonos partyjáték közös estékhez.",
+  },
   setup: {
     tagline: "Egy telefon. Sok nevetés.",
     title: "Készítsétek elő a játékot",
@@ -201,6 +250,55 @@ const en = {
     draw: { label: "Draw", instruction: "Draw it – no speaking, letters, or numbers." },
     explain: { label: "Explain", instruction: "Describe it – without saying the word or its variants." },
     signal: { label: "Act", instruction: "Act it out – no sounds and no pointing at objects." },
+  },
+  home: {
+    homeLabel: "Hoppra home",
+    backHome: "Back to the Hoppra home page",
+    navigation: { howItWorks: "How it works", newGame: "New game" },
+    hero: {
+      kicker: "A party game on one phone",
+      title: "One phone. Everyone is in the game.",
+      description: "Draw, explain, or act it out. Hoppra runs the turns, keeps time, and counts every point.",
+      primaryAction: "New game",
+      secondaryAction: "How it works",
+      previewLabel: "Preview of Hoppra game modes",
+      previewCaption: "Three task types, one shared race for points.",
+    },
+    howItWorks: {
+      title: "How it works",
+      intro: "No deck and no second screen. One phone travels around the group while Hoppra keeps the game moving.",
+      steps: [
+        { title: "Add the players", description: "Start with two people or bring up to eight into the game." },
+        { title: "Pass the phone", description: "Only the current player gets to see the secret task." },
+        { title: "Present against the clock", description: "Reach the answer by drawing, explaining, or acting it out." },
+        { title: "Award the points", description: "Both presenter and guesser can score. The night ends with a full recap." },
+      ],
+    },
+    categories: {
+      title: "Three modes. Three kinds of chaos.",
+      intro: "The same prompt becomes a different game depending on how you have to present it.",
+      items: {
+        draw: { title: "Draw it. Do not say it.", description: "Turn a few lines into the answer. Artistic skill is not required, which usually helps." },
+        explain: { title: "Talk around it. Avoid the word.", description: "Explain quickly and clearly without saying the answer or any form of it." },
+        signal: { title: "Act it out. No sound.", description: "Use body language, oversized gestures, and gloriously misunderstood pantomime." },
+      },
+    },
+    worlds: {
+      title: "Pick your game universe",
+      intro: "Stay with the classic mix or build the night around favorite movies, series, and games.",
+      items: {
+        classic: { title: "Classic", description: "A lively mix of familiar objects, situations, and ideas." },
+        movies: { title: "Movies", description: "Film titles and iconic stories brought to the living room." },
+        series: { title: "Series", description: "Characters, episodes, and memories from shared binges." },
+        gaming: { title: "Gaming", description: "Controllers, heroes, and legendary virtual worlds." },
+      },
+    },
+    finalCta: {
+      title: "Who is in the game?",
+      description: "Add the names, choose a pack, and jump straight into the first task.",
+      action: "New game",
+    },
+    footer: "A one-phone party game for nights together.",
   },
   setup: {
     tagline: "One phone. Plenty of laughs.",

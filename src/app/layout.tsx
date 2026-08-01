@@ -3,6 +3,7 @@ import { Barlow_Condensed, Nunito_Sans } from "next/font/google";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import "../styles/globals.css";
 import "../styles/game-night.css";
+import "../styles/home.css";
 
 const displayFont = Barlow_Condensed({
   subsets: ["latin", "latin-ext"],

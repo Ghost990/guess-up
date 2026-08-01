@@ -933,7 +933,7 @@ h2 {
 }
 
 .category-choices .category-badge {
-  padding: 0;
+  padding-inline: 9px 15px;
   background: transparent;
 }
 

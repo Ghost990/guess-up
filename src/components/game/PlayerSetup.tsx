@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
 import {
   AddGlyph,
@@ -176,7 +177,9 @@ export function PlayerSetup() {
   return (
     <main className="setup-page" {...packSurface}>
       <header className="topbar">
-        <Logo />
+        <Link className="brand-link" href="/" aria-label={copy.home.backHome}>
+          <Logo />
+        </Link>
         <div className="topbar-actions">
           <EffectsSettings language={language} compact />
           <HowToPlay language={language} />

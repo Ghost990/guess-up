@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("English two-player game survives refresh and reaches game over", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/new-game");
   await page.getByRole("button", { name: "Hogyan játssz?" }).click();
   await expect(page.getByRole("dialog", { name: "Így játsszatok" })).toBeVisible();
   await page.getByRole("button", { name: "Értem, kezdhetjük" }).last().click();
