@@ -8,22 +8,6 @@ export type GamePhase =
   | "roundEnd"
   | "gameOver";
 
-export const VALID_PHASE_TRANSITIONS: Record<GamePhase, GamePhase[]> = {
-  wordReveal: ["playing", "gameOver"],
-  playing: ["paused", "roundEnd", "gameOver"],
-  paused: ["playing", "roundEnd", "gameOver"],
-  roundEnd: ["wordReveal", "gameOver"],
-  gameOver: [],
-};
-
-export type Role = "drawer" | "explainer" | "signer" | "guesser";
-
-export const CATEGORY_TO_ROLE: Record<Category, Role> = {
-  draw: "drawer",
-  explain: "explainer",
-  signal: "signer",
-};
-
 export interface GameSettings {
   /** Optional only for migration compatibility with persisted v2 games. */
   packId?: string;
@@ -32,7 +16,6 @@ export interface GameSettings {
   difficulty: Difficulty;
   categories: Category[];
   roundDuration: 30000 | 45000 | 60000 | 90000;
-  wordRevealDuration: number;
   language: Language;
 }
 
@@ -59,7 +42,6 @@ export interface Game {
   usedWordIds: string[];
   roundEndsAt: number | null;
   pausedRemainingMs: number | null;
-  createdAt: number;
   startedAt: number;
   endedAt: number | null;
 }

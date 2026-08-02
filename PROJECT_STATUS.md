@@ -2,16 +2,18 @@
 
 **Last verified:** 2026-08-02
 
-**Branch:** `codex/pack-themes-pwa-monetization` (fresh `main` baseline: `4508f83`)
+**Branch:** `main` (delivered product baseline: `cb5e707`)
 
-**Status:** distinct pack worlds, simplified progressive setup, all-open monetization boundary, offline PWA, and performance fixes are implemented locally
+**Status:** distinct pack worlds, simplified progressive setup, all-open monetization boundary, offline PWA, and performance fixes are delivered; pnpm 11 is the canonical package manager
 
 `Hoppra!` is the recommended working public name for the product formerly called GuessUp. Internal repository names and persisted storage keys remain unchanged until trademark and domain clearance are complete.
 
 ## Delivery state
 
-- Local `main`, `origin/main`, and `origin/HEAD` were synchronized at `4508f83` before this documentation update.
+- Local `main`, `origin/main`, and `origin/HEAD` were synchronized at `cb5e707` before the pnpm migration.
 - The former product-platform work is no longer isolated on a feature branch; it is part of the active `main` line.
+- Dependency installation, project scripts, and Playwright server startup use pnpm 11. The committed `pnpm-lock.yaml` replaces `package-lock.json`; pnpm settings and the native-build allowlist live in `pnpm-workspace.yaml`.
+- The production module graph was reduced to 71 reachable TypeScript/TSX files. Retired multiplayer/event/timer utilities, unused state fields, an inactive Tailwind v3 config, and three unused dependencies were removed.
 - The public landing page is served at `/`; setup and all persisted game phases are served at `/new-game`.
 - Historical repository and storage names remain `guess-up` / `guessup-*` for compatibility.
 
@@ -133,12 +135,13 @@ The repository contains **1,512 task records across eight JSON content sources**
 ## Verified quality gates
 
 ```text
-npm run lint       passed
-npm run typecheck  passed
-npm run test       108/108 passed across 22 files
-npm run build      passed; static / and /new-game routes generated
-npm run test:e2e   2/2 passed (Desktop Chrome + Pixel 5)
-npm run test:pwa   1/1 passed (production Pixel 5, controlled offline reload)
+pnpm lint       passed
+pnpm typecheck  passed
+pnpm test       102/102 passed across 22 files
+pnpm build      passed; static / and /new-game routes generated
+pnpm test:e2e   2/2 passed (Desktop Chrome + Pixel 5)
+pnpm test:pwa   1/1 passed (production Pixel 5, controlled offline reload)
+pnpm audit      passed; no known vulnerabilities
 git diff --check   passed
 ```
 
@@ -173,10 +176,11 @@ Bounded production visual QA:
 ## Development
 
 ```bash
-npm install
-npm run dev
-npm run check
-npm run test:e2e
+corepack enable
+pnpm install
+pnpm dev
+pnpm check
+pnpm test:e2e
 ```
 
 Default development URL: `http://localhost:3000`

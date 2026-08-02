@@ -100,9 +100,9 @@ A new task must:
 Run:
 
 ```bash
-npm run test -- tests/lib/wordPacks.test.ts
-npm run check
-npm run test:e2e
+pnpm test -- tests/lib/wordPacks.test.ts
+pnpm check
+pnpm test:e2e
 ```
 
 When adding a new content source, register it in `src/content/packs/contentSources.ts` and add a compatible versioned manifest under `src/content/packs/manifests`.

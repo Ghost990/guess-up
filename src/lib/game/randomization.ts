@@ -31,20 +31,3 @@ export function fisherYatesShuffle<T>(array: T[]): T[] {
 export function getRandomItem<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
 }
-
-/**
- * Get multiple random items from array (without replacement)
- *
- * @param array - Array to select from
- * @param count - Number of items to select
- * @returns Array of random items
- */
-export function getRandomItems<T>(array: T[], count: number): T[] {
-  const shuffled = fisherYatesShuffle(array);
-  return shuffled.slice(0, Math.min(count, array.length));
-}
-
-/**
- * Alias for fisherYatesShuffle for simpler imports
- */
-export const shuffle = fisherYatesShuffle;

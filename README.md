@@ -48,19 +48,23 @@ Base tasks live in `src/data/words-hu.json` and `src/data/words-en.json`; isolat
 
 ## Stack
 
-- Next.js 16.2.11 / App Router / Turbopack
+- Next.js 16.2.12 / App Router / Turbopack
 - React 19.2.8
 - TypeScript 5.9 strict mode
 - Tailwind CSS 4.3
 - Zustand 5 with persisted client state
+- pnpm 11.9.0
 - Vitest + React Testing Library
 - Playwright desktop and Pixel 5 E2E coverage
+
+The committed `pnpm-lock.yaml` is the dependency source of truth. Project-level pnpm settings and the native-build allowlist live in `pnpm-workspace.yaml`.
 
 ## Local development
 
 ```bash
-npm install
-npm run dev
+corepack enable
+pnpm install
+pnpm dev
 ```
 
 The default dev URL is `http://localhost:3000`. Playwright starts or reuses the app at `http://127.0.0.1:3100`.
@@ -68,12 +72,12 @@ The default dev URL is `http://localhost:3000`. Playwright starts or reuses the 
 ## Verification
 
 ```bash
-npm run check
-npm run test:e2e
-npm run test:pwa
+pnpm check
+pnpm test:e2e
+pnpm test:pwa
 ```
 
-`npm run check` runs ESLint, TypeScript, Vitest, and the production build. `npm run test:pwa` starts that production build and proves the game route can reopen offline under service-worker control.
+`pnpm check` runs ESLint, TypeScript, Vitest, and the production build. `pnpm test:pwa` starts that production build and proves the game route can reopen offline under service-worker control.
 
 ## Project structure
 

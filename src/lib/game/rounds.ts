@@ -8,7 +8,7 @@ export function getTotalRounds(playerCount: number, roundsPerPlayer: number): nu
   return playerCount * roundsPerPlayer;
 }
 
-export function getPlayerIndexForRound(roundIndex: number, playerCount: number): number {
+function getPlayerIndexForRound(roundIndex: number, playerCount: number): number {
   if (playerCount < 1) throw new Error("At least one player is required.");
   return roundIndex % playerCount;
 }

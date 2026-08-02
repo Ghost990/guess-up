@@ -9,6 +9,7 @@ Egytelefonos, pass-and-play activity party game. A lokalizált Hoppra kezdőolda
 - TypeScript strict
 - Tailwind CSS 4.3
 - Zustand persist
+- pnpm 11.9.0
 - Vitest + React Testing Library + Playwright
 
 ## Kritikus szabályok
@@ -40,8 +41,8 @@ Egytelefonos, pass-and-play activity party game. A lokalizált Hoppra kezdőolda
 ## Minőségkapu
 
 ```bash
-npm run check
-npm run test:e2e
+pnpm check
+pnpm test:e2e
 ```
 
 ## Dokumentáció

@@ -21,17 +21,18 @@ Current behavior is defined by the tested code and `GAME_RULES.md`. Start with `
 ## Commands
 
 ```bash
-npm install
-npm run dev
-npm run lint
-npm run typecheck
-npm run test
-npm run build
-npm run check
-npm run test:e2e
+corepack enable
+pnpm install
+pnpm dev
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm check
+pnpm test:e2e
 ```
 
-`npm run check` is the canonical local quality gate: lint + typecheck + Vitest + production build. Playwright separately exercises Desktop Chrome and Pixel 5 at `http://127.0.0.1:3100`.
+`pnpm check` is the canonical local quality gate: lint + typecheck + Vitest + production build. Playwright separately exercises Desktop Chrome and Pixel 5 at `http://127.0.0.1:3100`.
 
 ## Coding conventions
 

@@ -25,12 +25,6 @@ export interface WordPack {
   words: Word[];
 }
 
-export interface WordFilter {
-  category?: Category | Category[];
-  difficulty?: Difficulty | Difficulty[];
-  excludeIds?: string[];
-}
-
 export const DIFFICULTY_LEVELS: Difficulty[] = [
   "lowEnglish",
   "easy",

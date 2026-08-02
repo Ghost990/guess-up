@@ -49,6 +49,7 @@ wordReveal → playing ⇄ paused → roundEnd → wordReveal | gameOver
 - Cancelling the selector resumes from the persisted remaining duration.
 - An active or paused game resumes after refresh.
 - Game, language, latest round result, selected pack ID, and versioned round history are stored in `localStorage` under `guessup-game-state`.
+- Persisted player records contain only ID, display name, and score. Retired host/connection/guess flags, automatic-reveal timing, and server-event/timer state are not part of the active model; extra legacy fields are ignored when old state is loaded.
 - Persisted v2 state migrates to v3 with an empty round history; old games without a pack ID resolve to the locale's default classic pack.
 - Saved setup player names use `guessup-player-names`.
 

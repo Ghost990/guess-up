@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { getCategoryForTurn, getTotalRounds, applyScore, GUESSER_POINTS, PRESENTER_POINTS } from "@/lib/game/rounds";
-import { initializePlayerOrder } from "@/lib/game/turnRotation";
+import { fisherYatesShuffle } from "@/lib/game/randomization";
 import { getDefaultPackId, getTaskPackManifest, pickWord } from "@/lib/game/wordPacks";
 import {
   RECAP_EVENT_SCHEMA_VERSION,
@@ -17,7 +17,7 @@ import type {
   RoundResult,
 } from "@/types";
 
-export interface SetupGameInput {
+interface SetupGameInput {
   playerNames: string[];
   difficulty: Difficulty;
   roundsPerPlayer: number;
@@ -113,16 +113,12 @@ export const useGameStore = create<GameStore>()(
         }
 
         const now = Date.now();
-        const createdPlayers: Player[] = names.map((name, index) => ({
+        const createdPlayers: Player[] = names.map((name) => ({
           id: createId("player"),
           name,
           score: 0,
-          joinedAt: now,
-          isHost: index === 0,
-          isActive: true,
-          hasGuessedCorrectly: false,
         }));
-        const players = initializePlayerOrder(createdPlayers);
+        const players = fisherYatesShuffle(createdPlayers);
         const totalRounds = getTotalRounds(players.length, roundsPerPlayer);
         const currentCategory = getCategoryForTurn(0, players.length, categories);
         const currentWord = pickWord({
@@ -147,13 +143,11 @@ export const useGameStore = create<GameStore>()(
             difficulty,
             categories,
             roundDuration,
-            wordRevealDuration: 3000,
             language,
           },
           usedWordIds: [currentWord.id],
           roundEndsAt: null,
           pausedRemainingMs: null,
-          createdAt: now,
           startedAt: now,
           endedAt: null,
         };

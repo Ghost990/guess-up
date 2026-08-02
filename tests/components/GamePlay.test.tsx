@@ -8,8 +8,8 @@ function gameFor(phase: Game["phase"]): Game {
   return {
     id: "game-1",
     players: [
-      { id: "player-1", name: "Ava", score: 0, joinedAt: 0, isHost: true, isActive: true, hasGuessedCorrectly: false },
-      { id: "player-2", name: "Ben", score: 0, joinedAt: 0, isHost: false, isActive: true, hasGuessedCorrectly: false },
+      { id: "player-1", name: "Ava", score: 0 },
+      { id: "player-2", name: "Ben", score: 0 },
     ],
     phase,
     currentRound: 0,
@@ -23,13 +23,11 @@ function gameFor(phase: Game["phase"]): Game {
       difficulty: "lowEnglish",
       categories: ["draw"],
       roundDuration: 30000,
-      wordRevealDuration: 3000,
       language: "en",
     },
     usedWordIds: ["apple"],
     roundEndsAt: phase === "playing" ? Date.now() + 30000 : null,
     pausedRemainingMs: null,
-    createdAt: 0,
     startedAt: 0,
     endedAt: null,
   };

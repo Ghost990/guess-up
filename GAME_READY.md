@@ -6,8 +6,9 @@
 ## Start locally
 
 ```bash
-npm install
-npm run dev
+corepack enable
+pnpm install
+pnpm dev
 ```
 
 Open `http://localhost:3000`, choose **New Game**, and continue at `/new-game`. The Playwright configuration uses `http://127.0.0.1:3100`.
@@ -63,16 +64,16 @@ The app includes a typed web manifest, safe-area metadata, install icons, a prod
 ## Verification
 
 ```bash
-npm run check
-npm run test:e2e
-npm run test:pwa
+pnpm check
+pnpm test:e2e
+pnpm test:pwa
 ```
 
 As of 2026-08-02:
 
 - ESLint passed
 - TypeScript passed
-- 108/108 unit and component tests passed across 22 files
+- 102/102 unit and component tests passed across 22 files
 - production build passed
 - Playwright passed on Desktop Chrome and Pixel 5
 - production PWA test passed with a controlled, offline Pixel 5 reload
