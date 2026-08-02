@@ -1,4 +1,4 @@
-# GuessUp — play and operation guide
+# Hoppra! — play and operation guide
 
 **Status:** playable and locally verified
 **Canonical rules:** [GAME_RULES.md](GAME_RULES.md)
@@ -10,16 +10,14 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. The Playwright configuration uses `http://127.0.0.1:3100`.
+Open `http://localhost:3000`, choose **New Game**, and continue at `/new-game`. The Playwright configuration uses `http://127.0.0.1:3100`.
 
 ## Set up a game
 
 - Add 2–8 unique player names.
 - Choose Hungarian or English.
-- Pick a difficulty available for that language.
-- Choose 1–4 rounds per player.
-- Choose a 30, 45, 60, or 90 second round.
-- Enable one or more categories: drawing, explaining, or acting/signalling.
+- Choose one of the experience packs available for that language.
+- Start immediately with the shown defaults, or open **Game rules / Játékszabályok** to change difficulty, rounds, time, and categories.
 - Start the game. Presenter order is shuffled once.
 
 ## Play a round
@@ -28,8 +26,9 @@ Open `http://localhost:3000`. The Playwright configuration uses `http://127.0.0.
 - Keep the screen private and tap the reveal button.
 - Read the task and category instruction.
 - Tap the explicit start button to begin the timer.
+- Open **Standings / Állás** only when the group wants to check the current score; it stays collapsed during play.
 - Draw, explain, or act according to the category.
-- Hold the task button if the presenter needs to peek again.
+- Tap the task control to reveal the task again; tap once more to hide it.
 - Tap **Got it** when someone answers correctly, then select the guesser.
 - Tap **Pass** or choose **No one** if nobody answered correctly.
 - Review the result and explicitly continue to the next turn.
@@ -50,27 +49,31 @@ Open `http://localhost:3000`. The Playwright configuration uses `http://127.0.0.
 
 Local browser storage is device- and browser-specific. A game opened in another browser or device will not share state.
 
-## Language packs
+## Task sources
 
-- Hungarian: 540 tasks (`easy`, `medium`, `hard`)
-- English: 900 tasks (`lowEnglish`, `easy`, `medium`, `challenging`, `hard`)
+- Hungarian base library: 540 tasks (`easy`, `medium`, `hard`)
+- English base library: 900 tasks (`lowEnglish`, `easy`, `medium`, `challenging`, `hard`)
+- Movie, series, and gaming sources: 12 tasks per theme and language
+- Ten experience manifests select either a compatible slice of a base library or one isolated theme source
 
 ## Installability and offline behavior
 
-The app includes a web manifest and production service-worker registration, so supported browsers can install it. The current service worker is deliberately network-only and clears old caches; do not describe the current build as fully offline-ready.
+The app includes a typed web manifest, safe-area metadata, install icons, a production service worker, and an offline fallback. After one successful online load, the public app shell and `/new-game` route can be reopened without a connection. Updates are offered explicitly so an active round is not reloaded unexpectedly. Account, checkout, and future entitlement endpoints intentionally remain network-only.
 
 ## Verification
 
 ```bash
 npm run check
 npm run test:e2e
+npm run test:pwa
 ```
 
-As of 2026-07-31:
+As of 2026-08-02:
 
 - ESLint passed
 - TypeScript passed
-- 33/33 unit and component tests passed
+- 108/108 unit and component tests passed across 22 files
 - production build passed
 - Playwright passed on Desktop Chrome and Pixel 5
-- no console errors or horizontal overflow were found in setup and active-play visual QA
+- production PWA test passed with a controlled, offline Pixel 5 reload
+- The latest committed visual QA found no console errors or horizontal overflow on the checked mobile and desktop surfaces

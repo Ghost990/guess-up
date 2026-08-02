@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   AddGlyph,
   ArrowGlyph,
@@ -13,10 +13,10 @@ import {
 } from "@/components/icons";
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { PackScene } from "@/components/illustrations";
-import { PackPicker } from "@/components/packs";
+import { PackIdentity, PackPicker } from "@/components/packs";
 import { taskPackManifests, taskPackRegistry } from "@/content/packs";
 import {
-  createFreeEntitlementProvider,
+  createOpenAccessEntitlementProvider,
   getPackSurfaceAttributes,
   resolvePackPickerItems,
 } from "@/lib/packs";
@@ -92,7 +92,11 @@ export function PlayerSetup() {
       )
     : languageDifficultyOptions;
 
-  const validNames = players.map((player) => player.name.trim()).filter(Boolean);
+  const validNames = useMemo(
+    () => players.map((player) => player.name.trim()).filter(Boolean),
+    [players],
+  );
+  const serializedValidNames = JSON.stringify(validNames);
   const hasDuplicates =
     new Set(validNames.map((name) => name.toLocaleLowerCase(language))).size !==
     validNames.length;
@@ -100,13 +104,20 @@ export function PlayerSetup() {
   const totalTasks = validNames.length * roundsPerPlayer;
 
   useEffect(() => {
-    localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(validNames));
-  }, [validNames]);
+    const timeout = window.setTimeout(() => {
+      try {
+        localStorage.setItem(PLAYER_STORAGE_KEY, serializedValidNames);
+      } catch {
+        // Storage is optional; private browsing must not block setup.
+      }
+    }, 250);
+    return () => window.clearTimeout(timeout);
+  }, [serializedValidNames]);
 
   useEffect(() => {
     let active = true;
     const manifests = taskPackManifests.filter((manifest) => manifest.locale === language);
-    const entitlementProvider = createFreeEntitlementProvider(manifests);
+    const entitlementProvider = createOpenAccessEntitlementProvider(manifests);
     void resolvePackPickerItems(manifests, entitlementProvider).then((items) => {
       if (active) setPackItems(items);
     });
@@ -194,16 +205,19 @@ export function PlayerSetup() {
           <p className="setup-subtitle">{copy.setup.subtitle}</p>
 
           {selectedPack ? (
-            <div className="setup-pack-art" aria-hidden="true">
-              <PackScene
-                coverAsset={selectedPack.visualTheme.coverAsset}
-                variant="setup"
-              />
-            </div>
+            <>
+              <PackIdentity manifest={selectedPack} language={language} />
+              <div className="setup-pack-art" aria-hidden="true">
+                <PackScene
+                  coverAsset={selectedPack.visualTheme.coverAsset}
+                  variant="setup"
+                />
+              </div>
+            </>
           ) : null}
 
-          <div className="rules-list">
-            <h2>{copy.setup.rulesTitle}</h2>
+          <details className="rules-list">
+            <summary>{copy.setup.rulesTitle}</summary>
             <ol>
               {copy.setup.rules.map((rule, index) => (
                 <li key={rule}>
@@ -212,7 +226,7 @@ export function PlayerSetup() {
                 </li>
               ))}
             </ol>
-          </div>
+          </details>
         </section>
 
         <form className="setup-form" onSubmit={handleSubmit}>
@@ -268,36 +282,6 @@ export function PlayerSetup() {
             )}
           </section>
 
-          <section className="form-section" aria-labelledby="difficulty-title">
-            <div className="form-section-heading">
-              <h2 id="difficulty-title">{copy.setup.difficulty}</h2>
-            </div>
-            <div
-              className="segmented-grid segmented-grid--difficulty"
-              role="radiogroup"
-              aria-labelledby="difficulty-title"
-            >
-              {difficultyOptions.map((option) => {
-                const optionCopy = copy.setup.difficultyOptions[option];
-                return (
-                  <label key={option}>
-                    <input
-                      type="radio"
-                      name="difficulty"
-                      value={option}
-                      checked={difficulty === option}
-                      onChange={() => setDifficulty(option)}
-                    />
-                    <span>
-                      <strong>{optionCopy.label}</strong>
-                      <small>{optionCopy.description}</small>
-                    </span>
-                  </label>
-                );
-              })}
-            </div>
-          </section>
-
           <section
             className="form-section"
             role="group"
@@ -328,79 +312,124 @@ export function PlayerSetup() {
             />
           </section>
 
-          <section
-            className="form-section"
-            role="group"
-            aria-labelledby="rounds-title"
-          >
-            <div className="form-section-heading">
-              <h2 id="rounds-title">{copy.setup.roundsPerPlayer}</h2>
-              <p className="field-hint">{copy.setup.roundsHint}</p>
-            </div>
-            <div className="choice-row">
-              {roundOptions.map((option) => (
-                <button
-                  key={option}
-                  type="button"
-                  aria-pressed={roundsPerPlayer === option}
-                  onClick={() => setRoundsPerPlayer(option)}
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-            <p className="selection-summary">
-              <LayersGlyph aria-hidden="true" size={17} />
-              {copy.setup.totalTasks(totalTasks)}
-            </p>
-          </section>
+          <details className="setup-options">
+            <summary>
+              <span>{copy.setup.optionsTitle}</span>
+              <small>
+                {copy.setup.optionsSummary(
+                  roundsPerPlayer,
+                  roundDuration / 1000,
+                  categories.length,
+                )}
+              </small>
+            </summary>
 
-          <section
-            className="form-section"
-            role="group"
-            aria-labelledby="duration-title"
-          >
-            <div className="form-section-heading">
-              <h2 id="duration-title">{copy.setup.duration}</h2>
-            </div>
-            <div className="choice-row choice-row--duration">
-              {durationOptions.map((option) => (
-                <button
-                  key={option}
-                  type="button"
-                  aria-pressed={roundDuration === option}
-                  onClick={() => setRoundDuration(option)}
+            <div className="setup-options__body">
+              <section className="form-section" aria-labelledby="difficulty-title">
+                <div className="form-section-heading">
+                  <h2 id="difficulty-title">{copy.setup.difficulty}</h2>
+                </div>
+                <div
+                  className="segmented-grid segmented-grid--difficulty"
+                  role="radiogroup"
+                  aria-labelledby="difficulty-title"
                 >
-                  <TimerGlyph aria-hidden="true" size={16} />
-                  {option / 1000} {copy.setup.seconds}
-                </button>
-              ))}
-            </div>
-          </section>
+                  {difficultyOptions.map((option) => {
+                    const optionCopy = copy.setup.difficultyOptions[option];
+                    return (
+                      <label key={option}>
+                        <input
+                          type="radio"
+                          name="difficulty"
+                          value={option}
+                          checked={difficulty === option}
+                          onChange={() => setDifficulty(option)}
+                        />
+                        <span>
+                          <strong>{optionCopy.label}</strong>
+                          <small>{optionCopy.description}</small>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+              </section>
 
-          <section
-            className="form-section"
-            role="group"
-            aria-labelledby="categories-title"
-          >
-            <div className="form-section-heading">
-              <h2 id="categories-title">{copy.setup.categories}</h2>
+              <section
+                className="form-section"
+                role="group"
+                aria-labelledby="rounds-title"
+              >
+                <div className="form-section-heading">
+                  <h2 id="rounds-title">{copy.setup.roundsPerPlayer}</h2>
+                  <p className="field-hint">{copy.setup.roundsHint}</p>
+                </div>
+                <div className="choice-row">
+                  {roundOptions.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      aria-pressed={roundsPerPlayer === option}
+                      onClick={() => setRoundsPerPlayer(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+                <p className="selection-summary">
+                  <LayersGlyph aria-hidden="true" size={17} />
+                  {copy.setup.totalTasks(totalTasks)}
+                </p>
+              </section>
+
+              <section
+                className="form-section"
+                role="group"
+                aria-labelledby="duration-title"
+              >
+                <div className="form-section-heading">
+                  <h2 id="duration-title">{copy.setup.duration}</h2>
+                </div>
+                <div className="choice-row choice-row--duration">
+                  {durationOptions.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      aria-pressed={roundDuration === option}
+                      onClick={() => setRoundDuration(option)}
+                    >
+                      <TimerGlyph aria-hidden="true" size={16} />
+                      {option / 1000} {copy.setup.seconds}
+                    </button>
+                  ))}
+                </div>
+              </section>
+
+              <section
+                className="form-section"
+                role="group"
+                aria-labelledby="categories-title"
+              >
+                <div className="form-section-heading">
+                  <h2 id="categories-title">{copy.setup.categories}</h2>
+                </div>
+                <div className="category-choices">
+                  {categoryOptions.map((category) => (
+                    <button
+                      key={category}
+                      type="button"
+                      data-category={category}
+                      aria-pressed={categories.includes(category)}
+                      onClick={() => toggleCategory(category)}
+                    >
+                      <CategoryBadge category={category} language={language} />
+                      {categories.includes(category) && <CheckGlyph aria-hidden="true" size={18} />}
+                    </button>
+                  ))}
+                </div>
+              </section>
             </div>
-            <div className="category-choices">
-              {categoryOptions.map((category) => (
-                <button
-                  key={category}
-                  type="button"
-                  data-category={category}
-                  aria-pressed={categories.includes(category)}
-                  onClick={() => toggleCategory(category)}
-                >
-                  <CategoryBadge category={category} language={language} />
-                  {categories.includes(category) && <CheckGlyph aria-hidden="true" size={18} />}
-                </button>
-              ))}
-            </div>
-          </section>
+          </details>
 
           <div className="start-area">
             <button className="primary-button" type="submit" disabled={!canStart}>

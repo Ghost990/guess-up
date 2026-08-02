@@ -5,6 +5,7 @@ import { CheckGlyph, HideGlyph, RevealGlyph, SkipGlyph } from "@/components/icon
 import { EffectsSettings } from "@/components/effects/EffectsSettings";
 import { useEffects } from "@/components/effects/EffectsProvider";
 import { PackScene } from "@/components/illustrations";
+import { PackIdentity } from "@/components/packs";
 import { taskPackRegistry } from "@/content/packs";
 import { getCountdownEffectCue } from "@/lib/effects/effectEngine";
 import { getPackSurfaceAttributes } from "@/lib/packs";
@@ -103,12 +104,15 @@ export function GamePlay() {
       <main className="handoff-screen" data-category={game.currentCategory} {...packSurface}>
         <div className="handoff-content">
           {selectedPack ? (
-            <div className="handoff-pack-art" aria-hidden="true">
-              <PackScene
-                coverAsset={selectedPack.visualTheme.coverAsset}
-                variant="handoff"
-              />
-            </div>
+            <>
+              <PackIdentity manifest={selectedPack} language={language} />
+              <div className="handoff-pack-art" aria-hidden="true">
+                <PackScene
+                  coverAsset={selectedPack.visualTheme.coverAsset}
+                  variant="handoff"
+                />
+              </div>
+            </>
           ) : null}
           <span className="privacy-label"><HideGlyph aria-hidden="true" />{copy.ready.privateLabel}</span>
           <CategoryBadge
@@ -137,12 +141,15 @@ export function GamePlay() {
       <main className="reveal-screen" data-category={game.currentCategory} {...packSurface}>
         <div className="reveal-content">
           {selectedPack ? (
-            <div className="reveal-pack-art" aria-hidden="true">
-              <PackScene
-                coverAsset={selectedPack.visualTheme.coverAsset}
-                variant="reveal"
-              />
-            </div>
+            <>
+              <PackIdentity manifest={selectedPack} language={language} />
+              <div className="reveal-pack-art" aria-hidden="true">
+                <PackScene
+                  coverAsset={selectedPack.visualTheme.coverAsset}
+                  variant="reveal"
+                />
+              </div>
+            </>
           ) : null}
           <CategoryBadge category={game.currentCategory} language={language} />
           <p>{copy.reveal.label}</p>
@@ -194,8 +201,11 @@ export function GamePlay() {
         </div>
       </header>
 
-      <div className="play-layout">
+      <div className="play-layout play-layout--focused">
         <section className="play-stage" aria-labelledby="play-title">
+          {selectedPack ? (
+            <PackIdentity manifest={selectedPack} language={language} compact />
+          ) : null}
           <CategoryBadge
             category={game.currentCategory}
             language={language}
@@ -251,7 +261,7 @@ export function GamePlay() {
           </div>
         </section>
 
-        <Scoreboard players={game.players} language={language} />
+        <Scoreboard players={game.players} language={language} collapsible />
       </div>
 
       <ScoringDialog

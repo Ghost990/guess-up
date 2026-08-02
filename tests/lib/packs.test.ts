@@ -10,7 +10,9 @@ import {
   TaskPackRegistryError,
   createFreeEntitlementProvider,
   createLocalDemoEntitlementProvider,
+  createOpenAccessEntitlementProvider,
   createTaskPackRegistry,
+  getPackSurfaceAttributes,
   resolvePackPickerItems,
   validateTaskPackManifests,
 } from "@/lib/packs";
@@ -44,6 +46,22 @@ describe("task pack registry", () => {
     expect(taskPackRegistry.getById("movies-hungarian")?.visualTheme.surfaceStyle).toBe("cinema");
     expect(taskPackRegistry.getById("series-hungarian")?.visualTheme.surfaceStyle).toBe("broadcast");
     expect(taskPackRegistry.getById("gaming-hungarian")?.visualTheme.surfaceStyle).toBe("arcade");
+  });
+
+  it("exposes safe semantic theme attributes for every game phase", () => {
+    const attributes = getPackSurfaceAttributes(
+      taskPackRegistry.getById("gaming-hungarian"),
+    );
+
+    expect(attributes).toMatchObject({
+      "data-pack-id": "gaming-hungarian",
+      "data-pack-theme": "arcade",
+      "data-pack-surface": "arcade",
+      style: {
+        "--pack-stage-radius": "4px",
+        "--pack-control-radius": "3px",
+      },
+    });
   });
 
   it("filters deterministically by locale, audience, availability, and tags", () => {
@@ -141,5 +159,13 @@ describe("pack entitlements", () => {
       { manifest: { id: "classic-hungarian" }, access: "available" },
       { manifest: { id: "english-demo-premium" }, access: "available" },
     ]);
+  });
+
+  it("keeps every known pack open during the pre-monetization rollout", async () => {
+    const provider = createOpenAccessEntitlementProvider(manifests);
+
+    await expect(provider.canAccessPack("classic-hungarian")).resolves.toBe(true);
+    await expect(provider.canAccessPack("english-demo-premium")).resolves.toBe(true);
+    await expect(provider.canAccessPack("not-a-pack")).resolves.toBe(false);
   });
 });

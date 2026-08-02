@@ -76,6 +76,17 @@ describe("GamePlay task reveal", () => {
     expect(gamePage).toHaveStyle({ "--pack-accent": "#9fe870" });
   });
 
+  it("keeps the live standings collapsed until the players request them", () => {
+    render(<GamePlay />);
+
+    const standings = screen.getByText("Standings").closest("details");
+    expect(standings).not.toHaveAttribute("open");
+    expect(within(standings!).getAllByText("Ava")).toHaveLength(2);
+
+    fireEvent.click(within(standings!).getByText("Standings"));
+    expect(standings).toHaveAttribute("open");
+  });
+
   it("only offers task help after the player explicitly reveals the private task", () => {
     useGameStore.setState({ game: gameFor("wordReveal") });
     render(<GamePlay />);

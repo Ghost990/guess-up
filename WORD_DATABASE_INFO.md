@@ -1,9 +1,19 @@
-# GuessUp task-pack reference
+# Hoppra! task-pack reference
 
-The current game ships two localized JSON task packs:
+The current game ships two large localized base libraries and six isolated theme sources.
+
+Base libraries:
 
 - `src/data/words-hu.json` — Hungarian, version 2.0.0
 - `src/data/words-en.json` — English, version 2.3.0
+
+Dedicated theme sources:
+
+- `src/data/movies-hu.json`, `src/data/movies-en.json`
+- `src/data/series-hu.json`, `src/data/series-en.json`
+- `src/data/gaming-hu.json`, `src/data/gaming-en.json`
+
+Each dedicated source is version 1.0.0 and contains 12 tasks: six `easy` and six `medium`.
 
 ## Verified counts
 
@@ -24,6 +34,14 @@ The current game ships two localized JSON task packs:
 - `challenging`: 180
 - `hard`: 180
 - Unique IDs: 900
+
+### Dedicated themes
+
+- Movies: 12 Hungarian + 12 English
+- Series: 12 Hungarian + 12 English
+- Gaming: 12 Hungarian + 12 English
+- Additional isolated tasks: **72**
+- Repository total: **1,512 records across eight JSON sources**
 
 Supported category identifiers are `draw`, `explain`, and `signal`. A task can be compatible with one or more categories.
 
@@ -56,7 +74,9 @@ Supported category identifiers are `draw`, `explain`, and `signal`. A task can b
 
 `src/lib/game/wordPacks.ts`:
 
-- selects the pack matching the frozen game language;
+- resolves the selected immutable `packId` through the manifest registry;
+- loads that manifest's registered base or isolated content source;
+- verifies the source locale matches the frozen game language;
 - filters by exact difficulty;
 - filters by category compatibility;
 - excludes task IDs already used in the current game;
@@ -69,7 +89,7 @@ Selection uses the shared randomization helper rather than `Array.sort(() => Mat
 
 A new task must:
 
-- have an ID unique within its language pack;
+- have an ID unique within its JSON content source;
 - use a difficulty declared in that pack's metadata;
 - include at least one supported category;
 - have localized, family-appropriate text;
@@ -85,4 +105,6 @@ npm run check
 npm run test:e2e
 ```
 
-Do not maintain hand-written distribution numbers in multiple documents. This file and each JSON pack's metadata are the human-readable references; the JSON arrays and tests are the final executable source of truth.
+When adding a new content source, register it in `src/content/packs/contentSources.ts` and add a compatible versioned manifest under `src/content/packs/manifests`.
+
+Do not maintain hand-written distribution numbers in multiple documents. This file and each JSON source's metadata are the human-readable references; the JSON arrays, registry, and tests are the final executable source of truth.

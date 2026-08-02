@@ -6,16 +6,17 @@ Current behavior is defined by the tested code and `GAME_RULES.md`. Start with `
 
 ## Project structure
 
-- `src/app` — Next.js 16 App Router entry, metadata, and global wiring
-- `src/components/game` — setup, handoff, gameplay, scoring, results, and game-over UI
-- `src/data` — Hungarian and English task packs
+- `src/app` — Next.js 16 App Router routes: localized home at `/`, game flow at `/new-game`, metadata, and global wiring
+- `src/components` — game flow plus home, effects, pack picker, illustrations, icon system, and recap UI
+- `src/content` — versioned pack manifests, content-source registry, and offline assistance content
+- `src/data` — Hungarian and English base libraries plus dedicated movie, series, and gaming sources
 - `src/i18n` — localized interface copy
-- `src/lib/game` — task selection, randomization, rounds, scoring, and rotation
+- `src/lib` — game rules/selection plus effects, pack registry/entitlements, and recap generation/export
 - `src/stores` — persisted Zustand game state
-- `src/styles` — Tailwind import, design tokens, and responsive component CSS
+- `src/styles` — Tailwind import, shared tokens, home, and game-night responsive CSS
 - `src/types` — shared TypeScript contracts
 - `tests` — unit, component, and Playwright E2E coverage
-- `public` — manifest, icons, and network-only service worker
+- `public` — icons and namespaced offline service worker; the typed manifest lives in `src/app/manifest.ts`
 
 ## Commands
 

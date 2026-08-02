@@ -3,6 +3,7 @@
 import { ArrowGlyph, CheckGlyph, SkipGlyph } from "@/components/icons";
 import { taskPackRegistry } from "@/content/packs";
 import { getPackSurfaceAttributes } from "@/lib/packs";
+import { PackIdentity } from "@/components/packs";
 import { CategoryBadge } from "./CategoryBadge";
 import { Scoreboard } from "./Scoreboard";
 import { messages } from "@/i18n/translations";
@@ -30,6 +31,9 @@ export function RoundResultScreen() {
     <main className="game-page" {...packSurface}>
       <div className="result-layout">
         <section className="result-stage" aria-labelledby="result-title">
+          {selectedPack ? (
+            <PackIdentity manifest={selectedPack} language={language} />
+          ) : null}
           <CategoryBadge category={result.category} language={language} />
           <span className="result-status" data-success={result.success}>
             {result.success ? <CheckGlyph aria-hidden="true" /> : <SkipGlyph aria-hidden="true" />}

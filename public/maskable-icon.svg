@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Hoppra! maskable app icon</title>
+  <rect width="512" height="512" fill="#17130e"/>
+  <g transform="translate(72 72) scale(.72)">
+    <rect x="72" y="132" width="300" height="300" rx="76" fill="#6dc6dd"/>
+    <rect x="128" y="82" width="304" height="318" rx="78" fill="#ff6239"/>
+    <path d="M280 154v122" fill="none" stroke="#17130e" stroke-width="42" stroke-linecap="round"/>
+    <circle cx="280" cy="332" r="25" fill="#ffd84c" stroke="#17130e" stroke-width="14"/>
+    <path d="m396 86 34-31M421 125h44M383 47l12-41" fill="none" stroke="#ffd84c" stroke-width="22" stroke-linecap="round"/>
+  </g>
+</svg>

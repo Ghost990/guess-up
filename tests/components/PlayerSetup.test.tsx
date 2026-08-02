@@ -35,6 +35,16 @@ describe("PlayerSetup", () => {
       .toBeInTheDocument();
   });
 
+  it("keeps optional game rules collapsed until players need them", () => {
+    render(<PlayerSetup />);
+
+    const options = screen.getByText("Játékszabályok").closest("details");
+    expect(options).not.toHaveAttribute("open");
+
+    fireEvent.click(within(options!).getByText("Játékszabályok"));
+    expect(options).toHaveAttribute("open");
+  });
+
   it("starts a valid English game with the selected settings", () => {
     render(<PlayerSetup />);
     fireEvent.click(screen.getAllByRole("button", { name: "English" })[0]);
@@ -60,6 +70,7 @@ describe("PlayerSetup", () => {
       .toBeInTheDocument();
 
     fireEvent.click(screen.getAllByRole("button", { name: "English" })[0]);
+    fireEvent.click(screen.getByText("Game rules"));
     expect(screen.getByRole("radio", { name: /Low English/i })).toBeInTheDocument();
     const challenging = screen.getByRole("radio", { name: /Challenging/i });
     fireEvent.click(challenging);
@@ -77,6 +88,7 @@ describe("PlayerSetup", () => {
     render(<PlayerSetup />);
     const challengePack = await screen.findByRole("article", { name: "Nehéz menet" });
     fireEvent.click(within(challengePack).getByRole("button", { name: "Ezt választom" }));
+    fireEvent.click(screen.getByText("Játékszabályok"));
 
     expect(screen.getByRole("radio", { name: /Nehéz/i })).toBeChecked();
     expect(screen.queryByRole("radio", { name: /Közepes/i })).not.toBeInTheDocument();

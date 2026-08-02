@@ -13,7 +13,20 @@ The repository contains current documentation and retained historical planning a
 - `CLAUDE.md` — compact agent context
 - `docs/ENGLISH_PROMPT_RESEARCH.md` — research constraints for the current English expansion
 - `docs/PRODUCT_STRATEGY_AND_MONETIZATION.md` — approved post-legacy product direction, numbered feature scope, scalable architecture boundaries, and monetization hypotheses
+- `docs/MONETIZATION_AND_DATA_ARCHITECTURE.md` — implementation-ready Supabase, purchase, entitlement, protected-content, offline, and EU/Hungary launch architecture
 - `docs/BRAND_NAME_RESEARCH.md` — current working-name decision, store/domain collision research, legal caveats, and logo direction
+
+## Current implementation and design references
+
+- `docs/design/HOPPRA_GAME_NIGHT_IDENTITY.md` — implemented game-night visual identity and surface rules
+- `docs/design/HOPPRA_GLYPHS_COMPACT_PLAY_AND_THEME_WORLDS.md` — glyph system, compact gameplay, and themed-world direction
+- `docs/design/hoppra-glyphs.md` — glyph usage reference
+- `docs/design/recap-poster-export.md` — current recap poster export layout
+- `docs/research/COUNTDOWN_AUDIO.md` — bounded audio-cue research used by the effects engine
+- `docs/research/MOBILE_REVEAL_AND_HINTS.md` — implemented mobile reveal and task-assistance rationale
+- `docs/research/SVG_ART_DIRECTION.md` — pack-scene art direction
+
+These files explain current implementation decisions, but `GAME_RULES.md`, `PROJECT_STATUS.md`, and tested code remain authoritative for behavior and status.
 
 The tested code remains the final executable source of truth.
 

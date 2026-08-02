@@ -13,6 +13,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
+    "test:pwa": "npm run build && playwright test --config=playwright.pwa.config.ts",
     "check": "npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "repository": {

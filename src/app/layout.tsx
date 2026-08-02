@@ -20,20 +20,20 @@ const bodyFont = Nunito_Sans({
 export const metadata: Metadata = {
   title: "Hoppra! — Party Game",
   description: "A fast, multilingual draw, explain, and act party game.",
-  manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Hoppra!",
   },
   icons: {
-    apple: "/icon-192.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   themeColor: "#17130e",
 };
 

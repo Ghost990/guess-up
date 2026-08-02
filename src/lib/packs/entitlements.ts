@@ -25,6 +25,22 @@ export function createFreeEntitlementProvider(
   };
 }
 
+/**
+ * Temporary rollout policy: every known pack remains playable while the
+ * catalogue and commerce model are prepared for monetization.
+ */
+export function createOpenAccessEntitlementProvider(
+  manifests: readonly TaskPackManifest[],
+): EntitlementProvider {
+  const knownIds = knownPackIds(manifests);
+
+  return {
+    async canAccessPack(packId: string): Promise<boolean> {
+      return knownIds.has(packId);
+    },
+  };
+}
+
 export function createLocalDemoEntitlementProvider(
   manifests: readonly TaskPackManifest[],
   demoUnlockedPackIds: readonly string[] = [],

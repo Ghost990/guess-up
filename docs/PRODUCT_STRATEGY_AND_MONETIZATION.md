@@ -43,10 +43,10 @@ The stable baseline provides:
 - once-per-game shuffled player order;
 - persisted absolute-deadline timer and phase-guarded Zustand state;
 - presenter +2 and guesser +1 scoring;
-- installable PWA shell with network-only service worker;
+- installable PWA with an offline public shell, safe updates, and network-only private API boundaries;
 - lint, strict typecheck, unit/component tests, production build, and two-device-class E2E coverage.
 
-Current commercial-layer gaps include no recap export, no game history, no custom or thematic pack registry, no effects preference layer, no audio/haptics, no purchase entitlement model, and no real offline cache.
+Recap export, thematic pack manifests, effects, audio/haptics, and the public offline shell are now implemented. Production accounts, purchase processing, protected premium payload delivery, hosted recap URLs, analytics, and cross-device history remain future work. The implementation-ready backend decision is documented in [`MONETIZATION_AND_DATA_ARCHITECTURE.md`](MONETIZATION_AND_DATA_ARCHITECTURE.md).
 
 # Prioritized feature opportunities
 

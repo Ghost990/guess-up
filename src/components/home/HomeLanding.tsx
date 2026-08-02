@@ -13,8 +13,8 @@ import {
   TrophyGlyph,
 } from "@/components/icons";
 import { PackScene } from "@/components/illustrations";
+import { useHomeLanguage } from "@/hooks/useHomeLanguage";
 import { messages } from "@/i18n/translations";
-import { useGameStore } from "@/stores/gameStore";
 
 const categories = ["draw", "explain", "signal"] as const;
 const stepIcons = [PlayersGlyph, PhoneGlyph, TimerGlyph, TrophyGlyph];
@@ -26,8 +26,7 @@ const worlds = [
 ] as const;
 
 export function HomeLanding() {
-  const language = useGameStore((state) => state.language);
-  const setLanguage = useGameStore((state) => state.setLanguage);
+  const { language, setLanguage } = useHomeLanguage();
   const copy = messages[language].home;
 
   useEffect(() => {

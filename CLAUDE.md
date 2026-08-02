@@ -1,6 +1,6 @@
-# GuessUp — current project context
+# Hoppra! / GuessUp — current project context
 
-Egytelefonos, pass-and-play activity party game. A játékosok rajzolnak, körülírnak vagy mutogatnak; a presenter és a helyesen tippelő játékos is pontot kap.
+Egytelefonos, pass-and-play activity party game. A lokalizált Hoppra kezdőoldal a `/`, a teljes játékmenet a `/new-game` útvonalon él. A játékosok rajzolnak, körülírnak vagy mutogatnak; a presenter és a helyesen tippelő játékos is pontot kap.
 
 ## Aktuális stack
 
@@ -24,9 +24,18 @@ Egytelefonos, pass-and-play activity party game. A játékosok rajzolnak, körü
 
 ## Task packok
 
-- Magyar: 540 (`easy`, `medium`, `hard`)
-- Angol: 900 (`lowEnglish`, `easy`, `medium`, `challenging`, `hard`)
+- Magyar alapkönyvtár: 540 (`easy`, `medium`, `hard`)
+- Angol alapkönyvtár: 900 (`lowEnglish`, `easy`, `medium`, `challenging`, `hard`)
+- Külön filmes, sorozatos és gaming források: témánként és nyelvenként 12, összesen 72 további feladat
+- 10 verziózott experience manifest: nyelvenként 5
 - Kategóriák: `draw`, `explain`, `signal`
+
+## Aktuális termékfelületek
+
+- Lokalizált landing page és külön játékútvonal
+- Experience pack picker és manifest-alapú vizuális témák
+- Koppintással nyitható/zárható aktív feladatkártya és offline Low English súgó
+- Opcionális hang/haptika, Game Night Recap, szöveges megosztás és PNG export
 
 ## Minőségkapu
 
@@ -41,4 +50,4 @@ A jelenlegi viselkedés forrása: `GAME_RULES.md` + tesztelt kód. Olvasási sor
 
 ## PWA megjegyzés
 
-Van manifest és production service-worker registration, de a jelenlegi `public/sw.js` network-only és törli a régi cache-eket. Ne állítsd, hogy a build offline-ready.
+Van típusos manifest, külön maskable/Apple ikon, production service-worker registration, névterezett app-shell/runtime cache és offline fallback. Az auth, checkout és entitlement API-k továbbra is szándékosan network-only működjenek.

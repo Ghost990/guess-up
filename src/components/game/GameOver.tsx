@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ReplayGlyph, TrophyGlyph } from "@/components/icons";
 import { useEffects } from "@/components/effects/EffectsProvider";
 import { PackScene } from "@/components/illustrations";
+import { PackIdentity } from "@/components/packs";
 import { GameNightRecap } from "@/components/recap/GameNightRecap";
 import { taskPackRegistry } from "@/content/packs";
 import { getPackSurfaceAttributes } from "@/lib/packs";
@@ -77,6 +78,9 @@ export function GameOver() {
         aria-labelledby="game-over-title"
         data-celebrate={!capabilities.reducedMotion}
       >
+        {selectedPack ? (
+          <PackIdentity manifest={selectedPack} language={language} />
+        ) : null}
         {selectedPack ? (
           <div className="winner-pack-art" aria-hidden="true">
             <PackScene

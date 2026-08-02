@@ -6,6 +6,7 @@ test("English two-player game survives refresh and reaches game over", async ({ 
   await expect(page.getByRole("dialog", { name: "Így játsszatok" })).toBeVisible();
   await page.getByRole("button", { name: "Értem, kezdhetjük" }).last().click();
   await page.getByRole("button", { name: "English" }).first().click();
+  await page.getByText("Game rules", { exact: true }).click();
   await page.getByText("Low English", { exact: true }).click();
   await expect(page.getByRole("radio", { name: /Low English/ })).toBeChecked();
   await page.getByLabel("Player name 1").fill("Anna");
@@ -41,6 +42,12 @@ test("English two-player game survives refresh and reaches game over", async ({ 
   await page.getByRole("button", { name: "Show help" }).click();
   await expect(page.getByText(/^Hungarian meaning:/)).toBeVisible();
   await page.getByRole("button", { name: "Start now" }).click();
+
+  const standings = page.locator(".scoreboard--collapsible");
+  await expect(standings).not.toHaveAttribute("open");
+  await standings.locator("summary").click();
+  await expect(standings).toHaveAttribute("open");
+  await standings.locator("summary").click();
 
   const taskCard = page.locator("#active-task-card");
   const taskToggle = page.locator(".peek-button");

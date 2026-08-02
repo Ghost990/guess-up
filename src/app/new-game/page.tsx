@@ -1,14 +1,33 @@
 "use client";
 
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
 import { EffectsProvider } from "@/components/effects/EffectsProvider";
-import { GameOver } from "@/components/game/GameOver";
-import { GamePlay } from "@/components/game/GamePlay";
 import { Logo } from "@/components/game/Logo";
-import { PlayerSetup } from "@/components/game/PlayerSetup";
 import { useHasHydrated } from "@/hooks/useHasHydrated";
 import { messages } from "@/i18n/translations";
 import { useGameStore } from "@/stores/gameStore";
+
+function PhaseLoading() {
+  return (
+    <main className="loading-screen" aria-busy="true">
+      <Logo />
+    </main>
+  );
+}
+
+const PlayerSetup = dynamic(
+  () => import("@/components/game/PlayerSetup").then((module) => module.PlayerSetup),
+  { loading: PhaseLoading },
+);
+const GamePlay = dynamic(
+  () => import("@/components/game/GamePlay").then((module) => module.GamePlay),
+  { loading: PhaseLoading },
+);
+const GameOver = dynamic(
+  () => import("@/components/game/GameOver").then((module) => module.GameOver),
+  { loading: PhaseLoading },
+);
 
 export default function NewGamePage() {
   const game = useGameStore((state) => state.game);

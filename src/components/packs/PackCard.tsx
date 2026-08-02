@@ -43,6 +43,7 @@ export function PackCard({
       data-cover-asset={manifest.visualTheme.coverAsset}
       data-pack-id={manifest.id}
       data-pack-style={manifest.visualTheme.backgroundStyle}
+      data-pack-theme={manifest.visualTheme.surfaceStyle}
       data-selected={selected}
       data-testid={`pack-card-${manifest.id}`}
       style={style}

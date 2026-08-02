@@ -27,7 +27,7 @@ This file is the source of truth for current gameplay behavior. If an older plan
 - Each round starts in a private handoff screen.
 - The current presenter explicitly reveals the task; there is no automatic three-second reveal.
 - The presenter explicitly starts the timer after reading the task.
-- During active play, holding the task button temporarily reveals the task again.
+- During active play, tapping the task control reveals the task in a separate card; tapping again hides it.
 
 ## Scoring
 
@@ -57,8 +57,10 @@ wordReveal → playing ⇄ paused → roundEnd → wordReveal | gameOver
 - Supported languages: Hungarian (`hu`) and English (`en`).
 - The selected language controls interface copy and which compatible experience packs are offered.
 - Language, pack ID, and difficulty are frozen into game settings when a game starts.
-- Hungarian pack: **540 tasks** across three difficulties.
-- English pack: **900 tasks** across five difficulties.
+- The Hungarian base library contains **540 tasks** across three difficulties.
+- The English base library contains **900 tasks** across five difficulties.
+- Movie, series, and gaming packs use dedicated 12-task sources for each language, adding **72 isolated theme tasks** across six files.
+- Ten experience manifests are registered: five Hungarian and five English.
 - Each task declares one or more compatible categories.
 - Experience packs use versioned manifests and content-source references. They may filter the shared source records without duplicating task data.
 - Used task IDs are excluded from selection until the matching language/difficulty/category pool is exhausted; the pool may then repeat.

@@ -102,6 +102,9 @@ const hu = {
       challenging: { label: "Haladó", description: "Az angol Medium és Hard közötti szint" },
       hard: { label: "Nehéz", description: "Elvontabb, ritkább és összetettebb feladatok" },
     },
+    optionsTitle: "Játékszabályok",
+    optionsSummary: (rounds: number, seconds: number, categoryCount: number) =>
+      `${rounds} kör · ${seconds} mp · ${categoryCount} mód`,
     roundsPerPlayer: "Körök játékosonként",
     roundsHint: "Mindenki ugyanannyiszor kerül sorra.",
     duration: "Idő feladatonként",
@@ -336,6 +339,9 @@ const en = {
       challenging: { label: "Challenging", description: "Trickier prompts without going fully Hard" },
       hard: { label: "Hard", description: "More abstract, unusual, and complex tasks" },
     },
+    optionsTitle: "Game rules",
+    optionsSummary: (rounds: number, seconds: number, categoryCount: number) =>
+      `${rounds} rounds · ${seconds} sec · ${categoryCount} modes`,
     roundsPerPlayer: "Rounds per player",
     roundsHint: "Everyone gets the same number of turns.",
     duration: "Time per task",
